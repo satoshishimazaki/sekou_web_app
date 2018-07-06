@@ -50,6 +50,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-byebug'
   gem 'pry-rails'
+  gem 'overcommit'
 end
 
 group :test do
