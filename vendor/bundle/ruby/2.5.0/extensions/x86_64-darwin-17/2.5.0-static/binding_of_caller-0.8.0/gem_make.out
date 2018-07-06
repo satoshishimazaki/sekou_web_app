@@ -1,0 +1,16 @@
+current directory: /Users/zielson_account/sekou.com/sekou_web_app/vendor/bundle/ruby/2.5.0/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+/Users/zielson_account/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20180706-16121-riy39o.rb extconf.rb
+
+current directory: /Users/zielson_account/sekou.com/sekou_web_app/vendor/bundle/ruby/2.5.0/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+make "DESTDIR=" clean
+make: *** No rule to make target `clean'.  Stop.
+
+current directory: /Users/zielson_account/sekou.com/sekou_web_app/vendor/bundle/ruby/2.5.0/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+make "DESTDIR="
+echo "Nada."
+Nada.
+
+current directory: /Users/zielson_account/sekou.com/sekou_web_app/vendor/bundle/ruby/2.5.0/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+make "DESTDIR=" install
+echo "Nada."
+Nada.

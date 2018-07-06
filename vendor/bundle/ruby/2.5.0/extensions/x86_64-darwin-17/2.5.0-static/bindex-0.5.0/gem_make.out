@@ -1,0 +1,15 @@
+current directory: /Users/zielson_account/sekou.com/sekou_web_app/vendor/bundle/ruby/2.5.0/gems/bindex-0.5.0/ext/bindex
+/Users/zielson_account/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20180706-16121-61wlo0.rb extconf.rb
+creating Makefile
+
+current directory: /Users/zielson_account/sekou.com/sekou_web_app/vendor/bundle/ruby/2.5.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" clean
+
+current directory: /Users/zielson_account/sekou.com/sekou_web_app/vendor/bundle/ruby/2.5.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR="
+compiling cruby.c
+linking shared-object bindex/cruby.bundle
+
+current directory: /Users/zielson_account/sekou.com/sekou_web_app/vendor/bundle/ruby/2.5.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20180706-16121-1os0urs/bindex
