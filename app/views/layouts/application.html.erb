@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SekouWebApp</title>
+    <title><%= yield(:title) %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,8 +10,22 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="wrapper">
+      <header>
+        <% if yield(:header).empty? %>
+          <%= render 'layouts/header' %>
+        <% else %>
+          <%= yield :header %>
+        <% end %>
+      </header>
       <%= yield %>
+      <footer>
+        <% if yield(:footer).empty? %>
+          <%= render 'layouts/footer' %>
+        <% else %>
+          <%= yield :footer %>
+        <% end %>
+      </footer>
     </div>
   </body>
 </html>
