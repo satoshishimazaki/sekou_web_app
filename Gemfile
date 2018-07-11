@@ -9,8 +9,6 @@ gem 'rails', '~> 5.2.0'
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
-# Use bootstrap
-gem 'bootstrap-sass', '~> 3.3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -52,7 +50,6 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-byebug'
   gem 'pry-rails'
-  gem 'overcommit'
 end
 
 group :test do
@@ -63,8 +60,9 @@ group :test do
   gem 'chromedriver-helper'
 end
 
-#Use user configration framework
-gem 'devise'
+  #Adds user registratation support gems
+  gem 'devise'
+  gem 'annotate'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
