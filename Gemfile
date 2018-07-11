@@ -64,5 +64,11 @@ end
   gem 'devise'
   gem 'annotate'
 
+  #views
+  gem 'bootstrap'
+  gem 'jquery-rails'
+  gem 'popper_js'
+  gem 'tether-rails'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
