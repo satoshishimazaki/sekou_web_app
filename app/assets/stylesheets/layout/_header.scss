@@ -2,217 +2,142 @@
 
 header{
   position: relative;
-  height: 120px;
+  height: 80px;
   //transition:height .8s;
   background: $cb;
   //
-  @extend %cf;
-
+  @include cf;
   .container{
     background: $cb;
+    height: inherit;
     @media #{$desktop} {
       width: 100%;
     }
+    @media #{$sm} {
+      width: 100%;
+    }
 
+    .row {
+    height: inherit;
+
+    .container-fluid {
+    height: inherit;
+    background: $ck;
 
     h1{
-      font-size: 1.2rem;
+      font-size: 1.8rem;
       position: relative;
-      top: 30px;
+      // top: 20px;
       float: left;
       margin-right: 32px;
       // transform: translateX(-150%);
       z-index: 100;
+      width: 30%;
+      color: #fff;
+      font-weight: bold;
+      padding: 20px;
       &.st{
         transition:transform 1s ease;
         transform: rotateX(0);
       }
       a{
         color: $cf;
-        img{
-          width: 280px;
-          display: block;
-          margin-bottom: 8px;
         }
-      }
-    }//h1
+      }//h1
 
-    nav{
-      position: relative;
-      z-index: 100;
-      float: left;
-      // opacity: 0;
-      &.st{
-        // transition:opacity .8s ease .2s;
-        // opacity: 1;
-      }
-      ul{
-        @extend %cf;
-        li{
-          font-size: 1.4rem;
-          font-feature-settings : "palt";
-          height: 120px;
-          line-height: 120px;
-          margin-right: 24px;
-          float: left;
-          letter-spacing: -1px;
-          &:last-of-type{
-            margin-right: 0;
-          }
-          a{
-            position: relative;
-            display: inline;
-            color: $cf;
-            overflow: hidden;
-            &:before{
-              overflow: hidden;
-              @include absPosition($top: 1.6em, $right: auto, $bottom: auto, $left: 0);
-              content: "";
-              display: inline-block;
-              width: 0;
-              height: 1px;
-              background: $ck;
-              transition:width .5s ease-in;
-            }
-            &:hover{
-              color: $ck;
-              &::before{
-                width: 100%;
-              }
-            }
-          }
-        }
-      }
-      @media #{$desktop2} {
-        ul{
-          width: inherit;
-          max-width: 300px;
-          padding-top: 34px;
-          li{
+      nav {
+        height: inherit;
+        list-style: none;
+        overflow: hidden;
+        ul {
+          height: 100%;
+          width: 100%;
+          li {
+            width: 23%;
+            text-align: center;
+            background-color: $ck;
+            float: left;
             height: inherit;
-            line-height: inherit;
-            margin-bottom: 16px;
-            &:nth-child(3n){
-              margin-right: 0;
+            line-height: 50px;
+            margin-right: 2px;
+            font-size: 1.4rem;
+            display: flex;
+              a {
+                text-decoration: none;
+                color: #fff;
+                font-weight: bold;
+                padding: 20px;
+                height: inherit;
+              } //a
+              .child {
+                display: none;
+                position: absolute;
+                top: 400%;
+                width: 23%;
+              }//child
+
+              /*設定ドロップメニューのための共通処理*/
+              %inner-li {
+                    right: 38%;
+                    position: absolute;
+                    font-size: 1.2rem;
+                    height: 80%;
+                    color: $cb;
+                    border-top: solid black 1px;
+                    width: 62%;
+                    padding: 3%;
+              }//inner li
+              /*設定項目4つをforで回す*/
+              $length:3;
+              @for $i from 0 through $length {
+                .inner-li_#{$i+1} {
+                    @extend %inner-li;
+                    top: -300+$i*80%;
+                }
+              }
+              //inner_li 設定ドロップの共通処理
+
+              .menu:after {
+                position: absolute;
+                top: 25%;
+                right: 14%;
+                // margin-top: auto;
+                // margin-bottom: auto;
+                // text-align: center;
+                content: '▶︎';
+                font-size: 1.0rem;
+                // font-weight: bold;
+                -moz-transform: rotate(90deg);
+                -ms-transform: rotate(90deg);
+                -webkit-transform: rotate(90deg);
+                transform: rotate(90deg);
+                -moz-transition: all, 0.25s, linear;
+                -o-transition: all, 0.25s, linear;
+                -webkit-transition: all, 0.25s, linear;
+                transition: all, 0.25s, linear;
             }
-          }
-        }
-      }
-    }//nav
 
-    .tel-box{
-      padding:0 16px;
-      position: relative;
-      height: 120px;
-      @include absPosition($top: 0, $right: 0, $bottom: auto, $left: auto);
-      background: $ck;
-      // transform: translateX(150%);
-      &.st{
-        // transition:transform 1s ease;
-        transform: rotateX(0);
-      }
-      &::before{
-        @include absPosition($top: 0, $right: auto, $bottom: auto, $left: -120px);
-        content: "";
-        display: block;
-        width: 0;
-        height: 0;
-        border-top: 60px solid $cb;
-        border-right: 60px solid $ck;
-        border-bottom: 60px solid $ck;
-        border-left: 60px solid $cb;
-      }
+              .menu.active:after {
+                  -moz-transform: translate(0, 50%);
+                  -ms-transform: translate(0, 50%);
+                  -webkit-transform: translate(0, 50%);
+                  transform: translate(0, 50%);
+                  -moz-transform: rotate(-90deg);
+                  -ms-transform: rotate(-90deg);
+                  -webkit-transform: rotate(-90deg);
+                  transform: rotate(-90deg);
+              }
 
-      .txt-01{
-        margin-top: 4px;
-        font-size: 1.8rem;
-        font-weight: bold;
-        letter-spacing: 0;
-        span{
-          color: $cb;
-        }
-      }
+            }//li
+          }//ul
+        }//nav
 
-      a{
-        color: $cb;
-        font-size:4rem;
-        font-weight: 500;
-        margin-bottom: 4px;
-        img{
-          width: 32px;
-        }
-        &:hover{
-          cursor: default;
-        }
-      }
-      .txt-02{
-        font-size: 1.4rem;
-        line-height: 1.4em;
-      }
-    }//.tel-box
-
+      }//container-fluid
+    }//row
   }//.container
-
-  //scroll event
-  // &.scroll{
-  //   .container{
-  //     width: 100%;
-  //     height: 60px;
-  //     @include fixPosition($top: 0, $right: auto, $bottom: auto, $left: 0);
-  //     z-index: 1000;
-  //     background: $cb;
-  //     @include bs($x:0,$y:0,$b:10px);
-  //
-  //     h1{
-  //       top: 10px;
-  //       a{
-  //         img{
-  //           width: 180px;
-  //         }
-  //       }
-  //     }//h1
-  //     nav{
-  //       ul{
-  //         li{
-  //           height: 60px;
-  //           line-height: 60px;
-  //         }
-  //       }
-  //       @media #{$desktop2} {
-  //         ul{
-  //           padding-top: 12px;
-  //           li{
-  //             font-size: 1.2rem;
-  //             margin-bottom: 10px;
-  //             height: inherit;
-  //             line-height: inherit;
-  //           }
-  //         }
-  //       }
-  //     }//nav
-  //     .tel-box{
-  //       height: 60px;
-  //       &::before{
-  //         left: -60px;
-  //         border-width: 30px;
-  //       }
-  //       .txt-01{
-  //         display: none;
-  //       }
-  //       a{
-  //         margin-top: 4px;
-  //         font-size: 3rem;
-  //         img{
-  //           width: 22px;
-  //         }
-  //       }
-  //       .txt-02{
-  //         font-size: 1.2rem;
-  //       }
-  //     }//.tel-box
-  //   }
-  // }//&.scroll
 }//header
+
+
 
 
 /*sp Layout
