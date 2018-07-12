@@ -20,11 +20,7 @@
       </header>
       <%= yield %>
       <footer>
-        <% if yield(:footer).empty? %>
-          <%= render 'layouts/footer' %>
-        <% else %>
-          <%= yield :footer %>
-        <% end %>
+        <%= render 'layouts/footer' %>
       </footer>
     </div>
     <script>

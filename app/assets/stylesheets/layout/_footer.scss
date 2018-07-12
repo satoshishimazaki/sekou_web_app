@@ -1,1 +1,89 @@
 @import "definition/base";
+
+
+footer{
+  position: relative;
+  // height: 160px;
+  padding-top: 20px;
+  box-sizing: border-box;
+  background: $ck;
+  .container-fluid {
+    margin-top: 30px;
+  }
+  .logo{
+    width: 280px;
+    float: left;
+    margin-right: 60px;
+    margin-bottom: 20px;
+    a{
+      font-size: 1.6rem;
+      color: $cb;
+      img{
+        width: 100%;
+      }
+    }
+  }
+
+  ul{
+    float: right;
+    li{
+      display: inline-block;
+      margin-right: 20px;
+      line-height: 62px;
+      color: $cb;
+      font-size: 1.2rem;
+      a{
+        color: $cb;
+      }
+    }
+  }
+  .copy{
+    color: $cb;
+    text-align: center;
+    font-size: 1rem;
+    clear: both;
+    // padding: 8px 0;
+  }
+
+  #backtop{
+    @include absPosition($top: auto, $right: 0, $bottom: 0px, $left: auto);
+    height: 160px;
+    overflow: hidden;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}//fotter
+
+/*sp Layout
+---------------------------------------*/
+@media #{$sp} {
+footer{
+  height: inherit;
+  .logo{
+    float: none;
+    margin-bottom: 20px;
+  }
+  ul{
+    margin-bottom: 20px;
+    li{
+      font-size: 1.4rem;
+      line-height: inherit;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+
+  #backtop{
+    height: 100px;
+    img{
+      height: 100%;
+    }
+  }
+
+  .copy{
+    font-size: 1.2rem;
+  }
+
+}//footer
+}//@media #{$sp}
