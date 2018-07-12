@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_11_090354) do
+ActiveRecord::Schema.define(version: 2018_07_12_062100) do
 
   create_table "clients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -36,6 +36,19 @@ ActiveRecord::Schema.define(version: 2018_07_11_090354) do
     t.index ["email"], name: "index_clients_on_email", unique: true
     t.index ["reset_password_token"], name: "index_clients_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_clients_on_unlock_token", unique: true
+  end
+
+  create_table "scouts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "agreement_count"
+    t.integer "client_id"
+    t.integer "employee_id"
+    t.string "summary"
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id", "employee_id"], name: "index_scouts_on_client_id_and_employee_id", unique: true
+    t.index ["client_id"], name: "index_scouts_on_client_id"
+    t.index ["employee_id"], name: "index_scouts_on_employee_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
