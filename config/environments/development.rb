@@ -66,13 +66,13 @@ Rails.application.configure do
   }
   config.action_mailer.logger = nil
   config.action_mailer.delivery_method = :smtp
-  #config.aciton_mailer.smtp_settings = {
-  #  address: 'smtp.gmail.com',
-  #  port: 587,
-  #  authentication: :plain,
-  #  user_name: Rails.application.secrets.SMTP_EMAIL,
-  #  password: Rails.application.secrets.SMTP_PASSWORD
-  #}
+#  config.aciton_mailer.smtp_settings = {
+#    address: 'smtp.gmail.com',
+#    port: 587,
+#    authentication: :plain,
+#    user_name: Rails.application.secrets.SMTP_EMAIL,
+#    password: Rails.application.secrets.SMTP_PASSWORD
+#  }
 
 
 end
