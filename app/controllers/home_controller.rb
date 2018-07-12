@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  layout "home_application"
+  layout "clienttest"
   def index
   end
 end

@@ -112,7 +112,7 @@ header{
                 -o-transition: all, 0.25s, linear;
                 -webkit-transition: all, 0.25s, linear;
                 transition: all, 0.25s, linear;
-            }
+              }
 
               .menu.active:after {
                   -moz-transform: translate(0, 50%);
@@ -128,6 +128,17 @@ header{
             }//li
           }//ul
         }//nav
+
+        /*CL用をユーザー側から@extendして利用*/
+        .hidden-md-down-cl {
+          @extend .hidden-md-down;
+          li {
+            width: 19%;
+          }
+          .menu:after {
+            right: 9%;
+          }
+        }
 
         #nav-drawer{
           display: none;

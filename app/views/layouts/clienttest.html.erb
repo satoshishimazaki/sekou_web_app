@@ -1,0 +1,49 @@
+<%= provide(:title, 'SekouAPP') %>
+<% content_for :header do %>
+<div class="container">
+ <div class="row">
+   <div class="container-fluid">
+     <h1>施工ネット 測量・設計</h1>
+      <nav class="hidden-md-down-cl">
+        <ul>
+          <li><a href="/#service">求職者</a></li>
+          <li><a href="/#point">スカウト</a></li>
+          <li><a href="/#flow">メッセージ</a></li>
+          <li><a href="/#flow">クリップ</a></li>
+          <li><a class="toggle menu" href="/#faq">設定</a>
+            <ul class="inner child">
+              <li class="inner-li_1">公開情報</li>
+              <li class="inner-li_2">ログイン情報</li>
+              <li class="inner-li_3">通知機能</li>
+              <li class="inner-li_4">退会</li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div id="nav-drawer">
+        <input id="nav-input" type="checkbox" class="nav-unshown">
+        <label id="nav-open" for="nav-input"><span></span></label>
+        <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+        <div id="nav-content">
+          <ul>
+            <li class="nav-li_1"><a href="/#service">求職者</a></li>
+            <li class="nav-li_1"><a href="/#point">スカウト</a></li>
+            <li class="nav-li_1"><a href="/#flow">メッセージ</a></li>
+            <li class="nav-li_1"><a href="/#flow">クリップ</a></li>
+            <li class="nav-li_2">設定
+              <ul class="inner child">
+                <li class="nav-li_1"><a>アカウント情報</a></li>
+                <li class="nav-li_1"><a>ログイン情報</a></li>
+                <li class="nav-li_1"><a>通知機能</a></li>
+                <li class="nav-li_1"><a>テンプレート</a></li>
+                <li class="nav-li_1"><a>退会</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><!--container-fluid-->
+  </div><!--row-->
+</div><!--container-->
+<% end %>
+<% parent_layout 'application' %>
