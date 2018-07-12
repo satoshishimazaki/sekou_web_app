@@ -32,6 +32,6 @@ class User < ApplicationRecord
          :confirmable, :lockable, :timeoutable
 
   has_many :active_relationships,class_name: "Scout",
-            foregin_key:"employee_id",
+            foreign_key:"employee_id",
             dependent:  :destroy
 end

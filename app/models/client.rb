@@ -32,6 +32,6 @@ class Client < ApplicationRecord
          :confirmable, :lockable, :timeoutable
 
   has_many :active_relationships, class_name:"Scout",
-            foregin_key: "client_id",
+            foreign_key: "client_id",
             dependent: :destroy
 end
