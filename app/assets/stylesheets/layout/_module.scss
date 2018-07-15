@@ -2,8 +2,14 @@
 
 /*form
 ==============================================================================================*/
+form {
+  max-width: 800px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="hidden"]):not([type="submit"]):not([type="reset"]):not([type="button"]):not([type="image"]),button, textarea, select{
+button, textarea, select{
   margin: 0;
   padding: 0;
   background: none;
@@ -15,71 +21,210 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="h
   appearance: none;
 }
 
-.wrapper{
+// /*Base input*/
 input{
-    &[type="text"],
-    &[type="password"],
-    &[type="search"],
-    &[type="number"],
-    &[type="tel"],
-    &[type="url"],
-    &[type="email"]{
-      width: 100%;
-      display: block;
+  &[type="text"],
+  &[type="password"],
+  &[type="search"],
+  &[type="number"],
+  &[type="tel"],
+  &[type="url"],
+  &[type="email"]{
+    // width: 100%;
+    // display: block;
+    // box-sizing: border-box;
+    // padding:2.5%;
+    // height: 60px;
+    // background: $cb;
+    // border: 1px solid $cl;
+    // @media #{$desktop} {
+    //   height: 50px;
+    // }
+    // box-sizing: border-box;
+    // border: 1px solid $cl;
+    // background: #fff;
+      border: 1px solid #D7D7D7;
+      box-shadow: 0px 1px 2px rgba(0,0,0,0.1);
+      -o-box-shadow: 0px 1px 2px rgba(0,0,0,0.1);
+      -ms-box-shadow: 0px 1px 2px rgba(0,0,0,0.1);
+      -moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.1);
+      -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.1);
+      border-radius: 3px;
       box-sizing: border-box;
-      padding:2.5%;
-      height: 60px;
-      background: $cb;
-      border: 1px solid $cl;
-      @media #{$desktop} {
-        height: 50px;
-      }
-      box-sizing: border-box;
-      border: 1px solid $cl;
-    }
-    &[type="submit"],&[type="reset"],&[type="button"]{
-      padding:2.5%;
-      background: $ck;
-      color: $cb;
-      height: 60px;
-      @media #{$desktop} {
-        height: 50px;
-      }
-      min-width: 50px;
-      text-align: center;
-    }
-    &[type="image"]{
-      width: 100%;
-    }
-    &::-webkit-input-placeholder{
-      padding-top: 4px;
-    }
-  }//input
-
-  textarea{
-      padding:2.5%;
-      box-sizing: border-box;
-      border: 1px solid $cl;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      font-size: 1.4rem;
+      padding: 0.5%;
+      height: 5%;
+      // width: 100%;
+      // max-width: 460px;
   }
-
-  select{
+  &[type="submit"],&[type="reset"],&[type="button"]{
+    padding:2.5%;
+    background: $ck;
+    color: $cb;
+    height: 60px;
+    @media #{$desktop} {
+      height: 50px;
+    }
+    min-width: 50px;
+    text-align: center;
+  }
+  &[type="image"]{
     width: 100%;
-      padding: 2.5%;
-      height: 60px;
-      @media #{$desktop} {
-        height: 50px;
-      }
-      box-sizing: border-box;
-      border: 1px solid $cl;
-      background: $cb;
+  }
+  &::-webkit-input-placeholder{
+    padding-top: 4px;
+  }
+}//input
+
+textarea{
+    padding:2.5%;
+    box-sizing: border-box;
+    border: 1px solid $cl;
+}
+
+select{
+  width: 100%;
+    padding: 2.5%;
+    height: 60px;
+    @media #{$desktop} {
+      height: 50px;
+    }
+    box-sizing: border-box;
+    border: 1px solid $cl;
+    background: $cb;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+button{
+  @extend input[type="submit"];
+}
+
+/*入力フローティングラベル*/
+/*extend用の親要素*/
+%has-float-label {
+  margin: 2%;
+  @include float-label-container;
+
+  @include float-label;
+
+  select {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
   }
 
-  select::-ms-expand {
-      display: none;
-  }
+  input, select {
+    @include float-label-input;
+    font-size: inherit;
+    padding-top: 1em;
+    margin-bottom: 2px;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 2px solid rgba(0,0,0,.1);
+    width: 100%;
 
-  button{
-    @extend input[type="submit"];
-  }
+    @include float-label-scaled {
+      top: .25em;
+    }
 
-}//wrapper
+    &:focus {
+      outline: none;
+      border-color: $ckh;
+    }
+  }
+}
+
+/*1列ラージ*/
+.has-float-label_full_lg {
+  @extend %has-float-label;
+  width: 60%;
+  @media #{$sp} {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/*1列スモール中央揃え ログイン*/
+.has-float-label_full_sm {
+  @extend %has-float-label;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  @media #{$sp} {
+    width: 100%;
+  }
+}
+
+/*2列並び*/
+.has-float-label_full_2col {
+  @extend %has-float-label;
+  width: 46%;
+  float: left;
+}
+
+
+
+/* css checkbox01 */
+.checkbox_col {
+    width: 100%;
+    display: flex;
+}
+
+.checkbox01-input{
+  display: none;
+}
+.checkbox01-parts{
+  position: relative;
+  padding: 10% 12% 10% 21%;
+  transition: .3s;
+  color: #444;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  display: inline-block;
+  line-height: 1;
+  font-size: 1.2rem;
+  width: 100%;
+  height: 100%;
+}
+.checkbox01-parts::before{
+  content: "";
+  display: block;
+  left: 9%;
+  width: 8%;
+  height: 25%;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+  background: #fff;
+  position: absolute;
+}
+.checkbox01-input:checked + .checkbox01-parts{
+  background: $ck;
+  color: #fff;
+  border: 1px solid $ck;
+}
+.checkbox01-input:checked + .checkbox01-parts::after{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 26%;
+  left: 10%;
+  width: 6%;
+  height: 21%;
+  transform: rotate(40deg);
+  border-bottom: 2px solid $ck;
+  border-right: 3px solid $ck;
+}
+
+.labeltag {
+  width: 100%;
+  margin-left: 0.5%;
+  margin-right: auto;
+  float: left;
+  height: 50px;
+}
