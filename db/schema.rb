@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_12_062100) do
+ActiveRecord::Schema.define(version: 2018_07_15_104938) do
+
+  create_table "careers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "employee_id"
+    t.string "conmany_name"
+    t.date "start"
+    t.date "end"
+    t.integer "employment_pattern_id"
+    t.string "career_outline"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "clients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -36,6 +47,68 @@ ActiveRecord::Schema.define(version: 2018_07_12_062100) do
     t.index ["email"], name: "index_clients_on_email", unique: true
     t.index ["reset_password_token"], name: "index_clients_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_clients_on_unlock_token", unique: true
+  end
+
+  create_table "clients_companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "address_post"
+    t.integer "prefecture_id"
+    t.string "address_city"
+    t.string "address_building"
+    t.date "established"
+    t.string "president"
+    t.integer "employees_number"
+    t.string "employees_memo"
+    t.integer "stock"
+    t.string "stock_memo"
+    t.string "homepage"
+    t.time "time_start"
+    t.time "time_end"
+    t.string "time_memo"
+    t.float "averages_ages"
+    t.string "domain_text"
+    t.string "welfare"
+    t.string "day_off"
+    t.string "recruiter"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "employees_acounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "last_name"
+    t.string "first_name"
+    t.string "last_name_kana"
+    t.string "first_name_kana"
+    t.string "phone_number"
+    t.string "email"
+    t.date "birth"
+    t.string "sex"
+    t.string "password"
+    t.string "employment_status"
+    t.string "address_post"
+    t.integer "prefecture_id"
+    t.string "address_city"
+    t.string "address_building"
+    t.string "university"
+    t.string "faculty"
+    t.integer "graduate"
+    t.integer "desired_salary"
+    t.string "personal_summary"
+    t.string "not_public_company"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "job_objectives", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "qualifications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "scouts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
