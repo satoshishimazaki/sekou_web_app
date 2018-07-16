@@ -3,11 +3,7 @@ class CreateScouts < ActiveRecord::Migration[5.2]
     create_table :scouts do |t|
       t.integer :agreement_count
       t.integer :client_id       ,foreign_key: true
-<<<<<<< HEAD
-      t.integer :employee_id     ,foregin_key: true
-=======
       t.integer :employee_id     ,foreign_key: true
->>>>>>> chatting
       t.string :summary
       t.string :content
 
