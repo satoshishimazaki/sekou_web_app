@@ -1,0 +1,2 @@
+json.extract! employees_account, :id, :last_name, :first_name, :last_name_kana, :first_name_kana, :phone_number, :email, :birth, :sex, :password, :employment_status, :address_post, :prefecture_id, :address_city, :address_building, :university, :faculty, :graduate, :desired_salary, :personal_summary, :not_public_company, :created_at, :updated_at
+json.url employees_account_url(employees_account, format: :json)

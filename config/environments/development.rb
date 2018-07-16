@@ -7,7 +7,7 @@ Rails.application.configure do
   config.cache_classes = false
 
   # Do not eager load code on boot.
-  config.eager_load = false
+  config.eager_load = false 
 
   # Show full error reports.
   config.consider_all_requests_local = true
@@ -67,11 +67,11 @@ Rails.application.configure do
   config.action_mailer.logger = nil
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com',
-    port: 587,
-    authentication: :plain,
-    user_name: Rails.application.secrets.SMTP_EMAIL,
-    password: Rails.application.secrets.SMTP_PASSWORD
+    address:         'smtp.gmail.com',
+    port:            587,
+    authentication:  :plain,
+    user_name:       "zielson.info@gmail.com",
+    password:        "xmhrwkdmohgwiobk"
   }
 
 
