@@ -289,3 +289,43 @@ button{
     font-size: 1.2rem;
   }
 }
+
+/* ボタン系コンポーネント*/
+/* btn親要素 構造*/
+%btn_skel {
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 3px;
+  padding: 0.5em 1em;
+  text-align: center;
+  margin: 0.5em 1em;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+/* btnデフォルトカラー*/
+%btn_color {
+  color: $cb;
+  background: $ck;/*ボタン色*/
+}
+
+/* btnサイズ*/
+%btn_sm {
+  width: 20%;
+}
+
+%btn_mid {
+  width: 30%;
+}
+
+%btn_lar {
+  width: 45%;
+}
+
+/* ログインボタン*/
+.log_btn {
+  @extend %btn_skel;
+  @extend %btn_sm;
+  @extend %btn_color;
+}
