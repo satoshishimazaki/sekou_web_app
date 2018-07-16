@@ -1,0 +1,2 @@
+class EmploymentPattern < ApplicationRecord
+end

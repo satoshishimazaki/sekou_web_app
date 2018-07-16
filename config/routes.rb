@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  resources :domains
+  resources :clients_companies
+  resources :employment_patterns
+  resources :qualifications
+  resources :careers
   resources :job_objecticves
   resources :employees_accounts
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

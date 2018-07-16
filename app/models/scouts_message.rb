@@ -1,0 +1,2 @@
+class ScoutsMessage < ApplicationRecord
+end

@@ -10,15 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_16_074729) do
+ActiveRecord::Schema.define(version: 2018_07_16_084329) do
 
   create_table "careers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "employee_id"
-    t.string "conmany_name"
+    t.string "company_name"
     t.date "start"
     t.date "end"
-    t.integer "employment_pattern_id"
+    t.integer "employee_pattern_id"
     t.string "career_outline"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "careers_objectives", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "career_id"
+    t.integer "objective_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -62,14 +69,27 @@ ActiveRecord::Schema.define(version: 2018_07_16_074729) do
     t.integer "stock"
     t.string "stock_memo"
     t.string "homepage"
-    t.time "time_start"
-    t.time "time_end"
+    t.string "time_start"
+    t.string "time_end"
     t.string "time_memo"
-    t.float "averages_ages"
+    t.float "average_ages"
     t.string "domain_text"
     t.string "welfare"
     t.string "day_off"
     t.string "recruiter"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "clients_domains", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "clients_id"
+    t.integer "domains"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "domains", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -99,38 +119,19 @@ ActiveRecord::Schema.define(version: 2018_07_16_074729) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "employees_acounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "last_name"
-    t.string "first_name"
-    t.string "last_name_kana"
-    t.string "first_name_kana"
-    t.string "phone_number"
-    t.string "email"
-    t.date "birth"
-    t.string "sex"
-    t.string "password"
-    t.string "employment_status"
-    t.string "address_post"
-    t.integer "prefecture_id"
-    t.string "address_city"
-    t.string "address_building"
-    t.string "university"
-    t.string "faculty"
-    t.integer "graduate"
-    t.integer "desired_salary"
-    t.string "personal_summary"
-    t.string "not_public_company"
+  create_table "employees_objectives", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "objectives_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "job_objecticves", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "employment_patterns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "job_objectives", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "job_objecticves", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -153,6 +154,14 @@ ActiveRecord::Schema.define(version: 2018_07_16_074729) do
     t.index ["client_id", "employee_id"], name: "index_scouts_on_client_id_and_employee_id", unique: true
     t.index ["client_id"], name: "index_scouts_on_client_id"
     t.index ["employee_id"], name: "index_scouts_on_employee_id"
+  end
+
+  create_table "scouts_messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "scout_id"
+    t.string "content"
+    t.binary "attachment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
