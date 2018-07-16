@@ -1,0 +1,2 @@
+class JobObjecticfe < ApplicationRecord
+end
