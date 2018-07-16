@@ -86,10 +86,17 @@ textarea{
 
 select{
   width: 100%;
-    padding: 2.5%;
-    height: 60px;
+    padding: 1.5%;
+    height: 5%;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.1);
+    -o-box-shadow: 0px 1px 2px rgba(0,0,0,0.1);
+    -ms-box-shadow: 0px 1px 2px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.1);
     @media #{$desktop} {
-      height: 50px;
+      height: 8%;
     }
     box-sizing: border-box;
     border: 1px solid $cl;
@@ -133,6 +140,13 @@ button{
   @extend %must_button;
   top: 10%;
   left: -1.5%;
+}
+
+/*フォーム上文字横に設置*/
+.must_btton_over_text {
+@extend %must_button;
+  top: 9%;
+  left: 9%;
 }
 
 
@@ -262,4 +276,16 @@ button{
   margin-right: auto;
   float: left;
   height: 50px;
+}
+
+
+/* css 入力フォーム上説明文字と必須ボタン */
+.over_text_col {
+  width: 100%;
+  position: relative;
+  padding-top: 2%;
+  float: left;
+  p {
+    font-size: 1.2rem;
+  }
 }
