@@ -104,10 +104,43 @@ button{
   @extend input[type="submit"];
 }
 
+.button_group {
+  position: relative;
+}
+
+
+/*必須ボタン 親クラス　extend 位置はそれぞれで調整*/
+%must_button {
+  margin: 1% 0% 0% 2%;
+  font-size: 1rem;
+  background: red;
+  width: 30px;
+  text-align: center;
+  border-radius: 3px;
+  color: white;
+  position: absolute;
+}
+
+/*必須ボタン テキスト用*/
+.must_btton_text {
+  @extend %must_button;
+  top: 3%;
+  left: -2%;
+}
+
+/*タグ用*/
+.must_btton_check {
+  @extend %must_button;
+  top: 10%;
+  left: -1.5%;
+}
+
+
 /*入力フローティングラベル*/
 /*extend用の親要素*/
 %has-float-label {
   margin: 2%;
+  padding: 3% 0% 0% 0%;
   @include float-label-container;
 
   @include float-label;
@@ -129,7 +162,7 @@ button{
     width: 100%;
 
     @include float-label-scaled {
-      top: .25em;
+      top: 2.25em;
     }
 
     &:focus {
@@ -174,6 +207,8 @@ button{
 .checkbox_col {
     width: 100%;
     display: flex;
+    position: relative;
+    padding-top: 6%;
 }
 
 .checkbox01-input{
@@ -196,7 +231,7 @@ button{
   content: "";
   display: block;
   left: 9%;
-  width: 8%;
+  width: 10%;
   height: 25%;
   border-radius: 4px;
   border: 1px solid #aaa;
@@ -212,8 +247,8 @@ button{
   content: "";
   display: block;
   position: absolute;
-  top: 26%;
-  left: 10%;
+  top: 20%;
+  left: 12%;
   width: 6%;
   height: 21%;
   transform: rotate(40deg);
