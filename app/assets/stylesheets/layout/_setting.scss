@@ -66,12 +66,11 @@ a {
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 1%;
+  padding-bottom: 1%;
   @media #{$sp} {
     width: 100%;
     max-width: none;
-    padding-top: 3%;
-    padding-left: 2%;
-    padding-right: 2%;
+    padding: 3% 2%;
   }
 }
 

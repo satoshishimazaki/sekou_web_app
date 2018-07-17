@@ -1,0 +1,56 @@
+@import "definition/base";
+@import "layout/base";
+
+
+/* スカウト詳細ページテーブル  table============*/
+.table_1 {
+  @extend %table_skel;
+  @extend %table_col;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8%;
+  margin-bottom: 2%;
+  width: 90%;
+  th  {
+    width: 30%;
+    text-align: left;
+  }//th
+  @media #{$sp} {
+     th,td{
+      width: 100%;
+      display: block;
+      border-top: none;
+    }//th,td sp
+  }//sp
+}//table_1
+
+
+/* オファー受け取りボタン*/
+.accept_btn {
+  @extend %btn_skel;
+  @extend %btn_mid;
+  @extend %btn_color;
+  background: #1927a2;
+}
+
+
+/* スカウト詳細メッセージ============*/
+.message-dtail{
+  width: 90%;
+  border: 1px solid #ddd;
+  box-shadow: 0px 0px 2px #bfbfbf;
+  margin-top: 3%;
+  padding: 2%;
+  float: left;
+  margin-left: 5%;
+  margin-right: 5%;
+  p {
+    overflow-wrap : break-word;
+    font-size: 1.4rem;
+  }
+}
+
+.tag-detail-scout {
+  @extend .tag;
+  margin: 2% 0% 0% 5%;
+}
