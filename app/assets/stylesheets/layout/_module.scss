@@ -409,3 +409,89 @@ button{
     width: 25%;
   }
 }
+
+/*フレーム系モジュール*/
+/*横枠*/
+/* frame 親要素 構造*/
+%frame_skel {
+  float: left;
+  border-bottom:1px solid rgba(0,0,0,.1);
+  width: 100%;
+  .content {
+    padding: 2%;
+  }//.content
+  a {
+    width: 100%;
+    text-decoration: underline;
+  }//a
+  p {
+    padding: 0.3% 0.7%;
+  }
+  .text {
+    float: left;
+  }
+}
+
+/* frame 親要素　カラー*/
+%frame_color {
+  background: $cb;
+  &:hover {
+    background: $csh2;
+  }//:hover
+}
+
+/* ユーザースカウト一覧*/
+.frame_index {
+  @extend %frame_skel;
+  @extend %frame_color;
+  .unread_tag {
+    padding: 0.5% 0.7%;
+    width: 6%;
+    float: left;
+    margin-right: 5%;
+  }
+}
+
+
+/* tag系のコンポーネント ============*/
+/* tag */
+.tag {
+  display: flex;
+  float: left;
+  width: 50%;
+  height: 10%;
+}
+
+/* tag span*/
+%tag_model {
+  padding: 1.2% 0.7%;
+  font-size: 1rem;
+  border-radius: 34px;
+  height: 10%;
+  margin: 0.5%;
+  box-shadow: 0.5px 0.5px 1px #bfbfbf
+}
+
+/* tag 種別カラーごと------*/
+/* 特徴tag*/
+.tag_1{
+  @extend %tag_model;
+  background: #9efb9f;
+}
+.tag_2{
+  @extend %tag_model;
+  background: #fbad9e;
+}
+
+/* 未読tag*/
+.unread_tag{
+  @extend %tag_model;
+  border-radius: 5px;
+  color: white;
+  background: #a8a9ab;
+  text-align: center;
+  box-shadow: 1px 1px 1px #bfbfbf;
+  p {
+    margin-bottom: 0px;
+  }
+}
