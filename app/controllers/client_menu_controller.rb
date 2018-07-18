@@ -1,0 +1,2 @@
+class ClientMenuController < ApplicationController
+end
