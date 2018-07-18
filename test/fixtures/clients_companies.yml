@@ -1,0 +1,45 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  address_post: MyString
+  prefecture_id: 1
+  address_city: MyString
+  address_building: MyString
+  established: 2018-07-16
+  president: MyString
+  employees_number: 1
+  employees_memo: MyString
+  stock: 1
+  stock_memo: MyString
+  homepage: MyString
+  time_start: MyString
+  time_end: MyString
+  time_memo: MyString
+  average_ages: 1.5
+  domain_text: MyString
+  welfare: MyString
+  day_off: MyString
+  recruiter: MyString
+
+two:
+  name: MyString
+  address_post: MyString
+  prefecture_id: 1
+  address_city: MyString
+  address_building: MyString
+  established: 2018-07-16
+  president: MyString
+  employees_number: 1
+  employees_memo: MyString
+  stock: 1
+  stock_memo: MyString
+  homepage: MyString
+  time_start: MyString
+  time_end: MyString
+  time_memo: MyString
+  average_ages: 1.5
+  domain_text: MyString
+  welfare: MyString
+  day_off: MyString
+  recruiter: MyString

@@ -1,0 +1,2 @@
+class ClientsDomain < ApplicationRecord
+end

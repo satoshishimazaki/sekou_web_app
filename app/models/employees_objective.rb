@@ -1,0 +1,2 @@
+class EmployeesObjective < ApplicationRecord
+end
