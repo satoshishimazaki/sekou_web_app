@@ -484,7 +484,7 @@ button{
   color: white;
   background: #a8a9ab;
   text-align: center;
-  box-shadow: 1px 1px 1px #bfbfbf;
+  @include shadow;
   p {
     margin-bottom: 0px;
   }

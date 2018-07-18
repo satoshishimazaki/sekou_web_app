@@ -105,3 +105,8 @@
       @content;
   }
 }
+
+ /*shadow*/
+@mixin shadow {
+  box-shadow: 1px 1px 1px #bfbfbf;
+}

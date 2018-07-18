@@ -6,6 +6,7 @@ html {
   font-size: 62.5%;
   min-width: 320px;
   overflow-x: hidden;
+  height: 100%;
 }
 
 body {
@@ -17,7 +18,7 @@ body {
   //font-feature-settings: "palt";
   text-align: justify;
   overflow-x: hidden;
-
+  height: 100%;
   &.no_scroll{
     position: fixed;
     overflow-y: scroll;
@@ -48,6 +49,7 @@ a {
 
 #wrapper {
   background: $cs2;
+  height: 100%;
 }
 
 .content_upper {
@@ -79,4 +81,12 @@ a {
   padding-left: 0px;
   padding-right: 0px;
   padding-top: 0%;
+}
+
+.full_container {
+  @extend .content_container;
+  max-width: none;
+  padding-left: 0px;
+  padding-right: 0px;
+  height: 100%;
 }
