@@ -3,10 +3,11 @@
 $cb:#ffffff;//base color
 $cf:#333333;//font color
 $cl:#cccccc;//border color
-$ck:#EF7A00;//key color
+$ck:#194fa2;//key color
 $cg:#f3f3f3;//background color
 $ckh:lighten($ck,40%);//key color hover
 $cs:#007DC0;//sub color
 $csh:lighten($cs,40%);//sub color hover
-$cs2:#19A7DD;//sub2 color
-$cs3:#FFDC00;//sub3 color
+$cs2:rgba(201, 214, 232, 0.24);//sub2 color
+$cs3:rgba(80, 160, 241, 1);//sub3 color
+$cs4:rgba(2, 63, 113, 1);//sub4 color

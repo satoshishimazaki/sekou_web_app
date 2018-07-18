@@ -1,1 +1,285 @@
 @import "definition/base";
+
+header{
+  position: relative;
+  height: 80px;
+  //transition:height .8s;
+  background: $cb;
+  //
+  @include cf;
+  .container{
+    background: $cb;
+    height: inherit;
+    @media #{$desktop} {
+      width: 100%;
+    }
+    @media #{$sm} {
+      width: 100%;
+    }
+
+    .container-fluid {
+    height: inherit;
+    background: $ck;
+
+    h1{
+      font-size: 1.8rem;
+      position: relative;
+      // top: 20px;
+      float: left;
+      margin-right: 32px;
+      // transform: translateX(-150%);
+      z-index: 100;
+      width: 30%;
+      color: #fff;
+      font-weight: bold;
+      padding: 20px;
+      &.st{
+        transition:transform 1s ease;
+        transform: rotateX(0);
+      }
+      a{
+        color: $cf;
+        }
+      }//h1
+
+      nav {
+        height: inherit;
+        list-style: none;
+        overflow: hidden;
+        ul {
+          height: 100%;
+          width: 100%;
+          li {
+            width: 23%;
+            text-align: center;
+            background-color: $ck;
+            float: left;
+            height: inherit;
+            line-height: 50px;
+            margin-right: 2px;
+            font-size: 1.4rem;
+            display: flex;
+              a {
+                text-decoration: none;
+                color: #fff;
+                font-weight: bold;
+                padding: 20px;
+                height: inherit;
+              } //a
+              .child {
+                display: none;
+                position: absolute;
+                top: 400%;
+                width: 23%;
+              }//child
+
+              /*設定ドロップメニューのための共通処理*/
+              %inner-li {
+                    right: 38%;
+                    position: absolute;
+                    font-size: 1.2rem;
+                    height: 80%;
+                    color: $cb;
+                    border-top: solid black 1px;
+                    width: 62%;
+                    padding: 3%;
+              }//inner li
+              /*設定項目4つをforで回す*/
+              $length:3;
+              @for $i from 0 through $length {
+                .inner-li_#{$i+1} {
+                    @extend %inner-li;
+                    top: -300+$i*80%;
+                }
+              }
+              //inner_li 設定ドロップの共通処理
+
+              .menu:after {
+                position: absolute;
+                top: 25%;
+                right: 14%;
+                // margin-top: auto;
+                // margin-bottom: auto;
+                // text-align: center;
+                content: '▶︎';
+                font-size: 1.0rem;
+                // font-weight: bold;
+                -moz-transform: rotate(90deg);
+                -ms-transform: rotate(90deg);
+                -webkit-transform: rotate(90deg);
+                transform: rotate(90deg);
+                -moz-transition: all, 0.25s, linear;
+                -o-transition: all, 0.25s, linear;
+                -webkit-transition: all, 0.25s, linear;
+                transition: all, 0.25s, linear;
+              }
+
+              .menu.active:after {
+                  -moz-transform: translate(0, 50%);
+                  -ms-transform: translate(0, 50%);
+                  -webkit-transform: translate(0, 50%);
+                  transform: translate(0, 50%);
+                  -moz-transform: rotate(-90deg);
+                  -ms-transform: rotate(-90deg);
+                  -webkit-transform: rotate(-90deg);
+                  transform: rotate(-90deg);
+              }
+
+            }//li
+          }//ul
+        }//nav
+
+        /*CL用をユーザー側から@extendして利用*/
+        .hidden-md-down-cl {
+          @extend .hidden-md-down;
+          li {
+            width: 19%;
+          }
+          .menu:after {
+            right: 9%;
+          }
+        }
+
+        #nav-drawer{
+          display: none;
+        }//.nav-drawer
+
+      }//container-fluid
+  }//.container
+}//header
+
+
+
+
+/*sp Layout
+---------------------------------------*/
+@media #{$sp} {
+header{
+  height: 60px;
+  .container{
+    .container-fluid {
+    h1{
+      font-size: 1rem;
+      a{
+        img{
+          width:230px;
+        }
+      }
+    }//h1
+
+    .btn-mail{
+      width: 40px;
+      @include absPosition($top: 10px, $right: 15px, $bottom: auto, $left: auto);
+      // transform: translateX(300%);
+      &.st{
+        transition:transform .8s ease;
+        transform: rotateX(0);
+      }
+      img{
+        border-radius: 4px;
+      }
+    }
+
+    .hidden-md-down {
+      display: none;
+    }//.hidden-md-down
+
+    /*ハンバーガーメニューのコード*/
+    #nav-drawer{
+      position: relative;
+      display: inline;
+      float: right;
+      padding: 30px;
+      /*チェックボックス等は非表示に*/
+      .nav-unshown {
+        display:none;
+      }
+      /*アイコンのスペース*/
+      #nav-open {
+          display: inline-block;
+          width: 30px;
+          height: 22px;
+          vertical-align: middle;
+          /*ハンバーガーアイコンをCSSだけで表現*/
+          %nav-open-bar {
+            position: absolute;
+            height: 3px;/*線の太さ*/
+            width: 25px;/*長さ*/
+            border-radius: 3px;
+            background: $cb;
+            display: block;
+            content: '';
+            cursor: pointer;
+          }
+          span {
+            @extend %nav-open-bar;
+          }
+          span:before {
+            @extend %nav-open-bar;
+            bottom: -8px;
+          }
+          span:after {
+            @extend %nav-open-bar;
+            bottom: -16px;
+          }
+      }//.nav-open
+
+      /*閉じる用の薄黒カバー*/
+      #nav-close {
+          display: none;/*はじめは隠しておく*/
+          position: fixed;
+          z-index: 99;
+          top: 0;/*全体に広がるように*/
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: black;
+          opacity: 0;
+          transition: .3s ease-in-out;
+      }
+
+      /*中身*/
+      #nav-content {
+          overflow: auto;
+          position: fixed;
+          top: 0;
+          left: 0;
+          z-index: 9999;/*最前面に*/
+          width: 90%;/*右側に隙間を作る*/
+          max-width: 330px;/*最大幅*/
+          height: 100%;
+          background: #fff;/*背景色*/
+          transition: .0.5 ease-in-out;/*滑らかに表示*/
+          -webkit-transform: translateX(-105%);
+          transform: translateX(-105%);/*左に隠しておく*/
+          ul {
+            list-style: none;
+            padding: 5%;
+            .nav-li_1 {
+              padding: 5%;
+              border-bottom: 1px dotted #d4d4d4;
+            }// li
+            .nav-li_2 {
+              padding: 5%;
+            }
+          }// ul
+      }
+
+      /*チェックが入ったらもろもろ表示*/
+      #nav-input:checked ~ #nav-close {
+          display: block;/*カバーを表示*/
+          opacity: .5;
+      }
+
+      #nav-input:checked ~ #nav-content {
+          -webkit-transform: translateX(0%);
+          transform: translateX(0%);/*中身を表示*/
+          box-shadow: 6px 0 25px rgba(0,0,0,.15);
+      }
+
+    }//.nav-drawer
+
+  }//.container-fluid
+}//.container
+} //header
+}//@media #{$sp}
