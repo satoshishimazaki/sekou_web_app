@@ -7,4 +7,9 @@ class HomeController < ApplicationController
   def test
     render :layout => 'clienttest'
   end
+
+  def dbindex
+    render :layout => 'clienttest'
+  end
+
 end

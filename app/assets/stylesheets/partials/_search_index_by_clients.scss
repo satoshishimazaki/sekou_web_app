@@ -1,0 +1,188 @@
+@import "definition/base";
+@import "layout/base";
+
+.content_container {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+/* 検索ボックス*/
+.search-box {
+  margin-left: auto;
+  margin-right: auto;
+  //table_1を利用
+  .table_1 {
+    @extend %table_skel;
+    @extend %table_col;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 90%;
+    th  {
+      width: 30%;
+      text-align: left;
+    }//th
+    .over_text_col {
+      width: 10%;
+    }//over_text_col
+    .ndash {
+      padding: 2% 2% 0% 2%;
+      float: left;
+    }
+    .checkbox_col {
+      padding-top: 2%;
+    }
+    .labeltag {
+      width: 110px;
+      height: 50px;
+      margin-right: 0%;
+    }
+    .checkbox01-parts {
+      width: 100px;
+      font-size: 1rem;
+      padding: 16% 9% 10% 24%;
+      height: 50px;
+    }
+    .checkbox01-input:checked + .checkbox01-parts::after {
+      top: 34%;
+    }
+    @media #{$sp} {
+       th,td{
+        width: 100%;
+        display: block;
+        border-top: none;
+      }//th,td sp
+    }//sp
+    /*css radio02*/
+    .radio02 {
+      font-size: 1rem;
+    }
+    .radio02-input{
+      display: none;
+    }
+    .radio02-input + label{
+      padding-left: 20px;
+      position:relative;
+      margin-right: 20px;
+    }
+    .radio02-input + label::before{
+      content: "";
+      display: block;
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      width: 15px;
+      height: 15px;
+      border: 1px solid #999;
+      border-radius: 50%;
+    }
+    .radio02-input:checked + label{
+      color: $ck;
+    }
+    .radio02-input:checked + label::after{
+      content: "";
+      display: block;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 11px;
+      height: 11px;
+      background: $ck;
+      border-radius: 50%;
+    }
+  }//table_1
+}//search-box
+
+/* 検索ボタン*/
+.search_btn {
+  @extend %btn_skel;
+  @extend %btn_mid;
+  @extend %btn_color;
+  background: #1927a2;
+}
+
+/* 検索結果情報*/
+.search-result {
+  max-width: 870px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  width: 90%;
+}
+
+/* 検索結果の求職者一覧*/
+.search-index-box {
+  //clearfixをmixinで呼び出し
+  @include cf;
+  .frame_index {
+    @extend %frame_skel;
+    @extend %frame_color;
+    .frame-head {
+      p {
+      font-size: 2.5rem;
+      font-family: bold;
+      }//p
+    }//frame-head
+    .frame-middle1 {
+      @include cf;
+      .left-character {
+        width: 40%;
+        float: left;
+        padding: 1% 0.4%;
+        ul {
+          padding-left: 0px;
+          margin-bottom: 0px;
+          li {
+            display: inline;
+            font-size: 1.4rem;
+            @include all-but(1) {
+              &:before {
+                 content: "/";
+              }//擬似クラスbefore スラッシュを挿入
+            }//mixin all-but
+          }//li
+        }//ul
+      }//left-character
+      .right-character {
+        width: 40%;
+        float: left;
+        /* tag 種別カラーごと------*/
+        /* 特徴tag*/
+        .tag-3{
+          @extend %tag_model;
+          background: #ef492a;
+          color: white;
+          width: 20%;
+          text-align: center;
+          p {
+            margin:5% 0%;
+          }//p
+        }//tag-3
+      }//right-character
+    }//frame-middle1
+    .frame-middle2 {
+      float: left;
+      @include cf;
+      width: 100%;
+      margin: 0.5% 0%;
+      .tag-4 {
+        @extend %tag_model;
+        background: $cs;
+        border-radius: 5px;
+        color: white;
+      }//tag-3
+    }//frame-middle2
+    .frame-bottom {
+      float: left;
+      @include cf;
+      width: 100%;
+      margin: 0.5% 0%;
+      .tag_2 {
+        background: $ck;
+        color: white;
+      }
+    }//frame-bottom
+  }//frame_index
+}//search-index-box
