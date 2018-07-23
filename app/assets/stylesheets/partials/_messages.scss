@@ -3,14 +3,14 @@
 
 
 .main-parts {
-  background: #fcc;
+  background: $cb;
   width: 65%;
-  min-height: 80%;
+  min-height: 115%;
 }
 .side-parts {
-  background: #fea;
+  background: $cb;
   width: 35%;
-  min-height: 80%;
+  min-height: 115%;
   border-right: 1px solid gray;
 }
 
@@ -47,58 +47,206 @@
 }
 
 /*タブ切り替え全体のスタイル*/
-.tabs {
-margin-top: 50px;
-padding-bottom: 40px;
-background-color: #fff;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-width: 100%;
-margin: 0 auto;}
+.messages_tabs {
+  margin-top: 50px;
+  padding-bottom: 40px;
+  background-color: $cb;
+  width: 100%;
+  margin: 0 auto;
+}
+
 /*タブのスタイル*/
 .tab_item {
-width: calc(100%/3);
-height: 50px;
-border-bottom: 3px solid #5ab4bd;
-background-color: #d9d9d9;
-line-height: 50px;
-font-size: 16px;
-text-align: center;
-color: #565656;
-display: block;
-float: left;
-text-align: center;
-font-weight: bold;
-transition: all 0.2s ease;
+  width: calc(100%/2);
+  height: 50px;
+  border-bottom: 3px solid #gray;
+  background-color: $cb;
+  line-height: 50px;
+  font-size: 1.2rem;
+  text-align: center;
+  color: $cf;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  @include shadow
 }
+
 .tab_item:hover {
-opacity: 0.75;
+  opacity: 0.75;
+  border-bottom: 3px solid $ck;
+  background: $csh2;
 }
+
 /*ラジオボタンを全て消す*/
 input[name="tab_item"] {
-display: none;
+  display: none;
 }
+
+input[name="tab_sub"] {
+  display: none;
+}
+
 /*タブ切り替えの中身のスタイル*/
 .tab_content {
-display: none;
-padding: 40px 40px 0;
-clear: both;
-overflow: hidden;
+  display: none;
+  // padding: 40px 40px 0;
+  clear: both;
+  overflow: hidden;
 }
+
 /*選択されているタブのコンテンツのみを表示*/
 #all:checked ~ #all_content,
-#programming:checked ~ #programming_content,
-#design:checked ~ #design_content {
-display: block;
-min-height: 150px;
-overflow: scroll;
+#unread:checked ~ #unread_content {
+  display: block;
+  min-height: 150px;
+  overflow: scroll;
+  // padding: 2% 2% 2% 5%;
 }
+
 /*選択されているタブのスタイルを変える*/
-.tabs input:checked + .tab_item {
-background-color: #5ab4bd;
-color: #fff;
+.messages_tabs input:checked + .tab_item {
+  background-color: $cb;
+  color: $cf;
+  border-bottom: 3px solid $ck;
+  font-style: bold;
+  font-size: 1.6rem;
+  @include shadow
 }
 
 .tab_content_description {
   max-height: 850px;
   overflow: scroll;
 }
+
+/*messageタブ系*/
+.messages_subject {
+  width: 100%;
+  height: 50px;
+  display: block;
+  input:checked + .tab_sub {
+    background-color: $csh2;
+    color: $cf;
+    text-align: left;
+    box-shadow: 1px 1px 1px $csh2;
+  }
+}
+
+/*タブのスタイル*/
+.tab_sub {
+  width: 100%;
+  height: 100%;
+  background-color: $cb;
+  line-height: 50px;
+  font-size: 1.2rem;
+  text-align: left;
+  color: $cf;
+  display: block;
+  float: left;
+  transition: all 0.2s ease;
+  padding-left: 3%;
+}
+
+.tab_sub:hover {
+  opacity: 0.75;
+  background: #f3f3f761;
+}
+
+/*メッセージ詳細画面*/
+.messege-detail-head{
+  width: 100%;
+  height: 100%;
+  background: $cb;
+  text-align: left;
+  p {
+    font-size: 1.8rem;
+    padding-left: 3%;
+    padding-top: 2%;
+    font-weight: bold;
+  }
+}
+
+/*メッセージ詳細　コンテナ*/
+.message-container-box {
+  height: 100vh;
+  overflow: scroll;
+  padding-bottom: 23%;
+  .message-container {
+    width: 100%;
+    overflow: scroll;
+    @include shadow;
+    .message-container-head {
+      display: flex;
+      p {
+        padding-top: 3%;
+        font-size: 1.2rem;
+      }
+      .send-subject {
+        width: 50%;
+        p {
+            padding-left: 2%;
+            float: left;
+        }
+      }//send-subject 送信者
+      .send-time {
+        width: 50%;
+        float: right;
+        p {
+            float: right;
+            padding-right: 2%;
+        }
+      }//send-time　送信時間
+    }//message-container-head　
+    .message-text {
+      width: 100%;
+      padding: 2% 3%;
+      overflow-wrap : break-word;
+    }//message-text 本文
+  }//message-container
+}//message-container-box
+
+.message-container:hover {
+  background: $csh2;
+}
+
+/*メッセージ送付box */
+.send-box {
+  height: 190px;
+  position: fixed;
+  background: $cb;
+  bottom: 0px;
+  width: 65%;
+  .send-box-border {
+    height: 90%;
+    border: 1px solid #bfbfbf;
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
+    @include shadow;
+    .send-head {
+      height: 20%;
+      padding: 1%;
+      border-bottom: 1px solid #bfbfbf;
+      .send-btn {
+        @extend %btn_sm;
+        @extend %btn_color;
+        text-align: center;
+        width: 50px;
+        float: right;
+        height: 25px;
+        margin-top: -0.4%;
+        border-radius: 3px;
+        border-bottom: solid 2px #627295;
+        padding-top: 0.5%;
+      }//send-btn
+    }//send-head
+    .send-detail {
+      height: 85%;
+      overflow-wrap : break-word;
+      padding: 1%;
+      overflow: scroll;
+    }//send-detail
+  }//send-box-border
+}//send-box

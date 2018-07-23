@@ -25,9 +25,11 @@
         <%= flash_message(flash[:notice], :info) if flash[:notice]  %>
       </div>
       <%= yield %>
-      <footer>
-        <%= render 'layouts/footer' %>
-      </footer>
+      <% if yield(:footer).empty? %>
+          <%= render 'layouts/footer' %>
+      <% else %>
+          <%= yield :footer %>
+      <% end %>
     </div>
     <script>
       function demo01() {
