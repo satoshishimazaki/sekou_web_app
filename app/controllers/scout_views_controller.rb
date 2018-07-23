@@ -1,5 +1,5 @@
 class ScoutViewsController < ApplicationController
   def index
-    @scouts = Scout.new
+    @scouts = Scout.all
   end
 end
