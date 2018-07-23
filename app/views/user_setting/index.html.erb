@@ -1,0 +1,40 @@
+<!--
+* 設定画面の一覧を表示するviewファイル。
+* 決めなくてはいけないこと：特になし
+* 最終編集 : 2018.7.23  edited by takuya
+-->
+
+<!--
+* 未解決のバグ等
+  * 画面のヘッダーが最初のトップページの状態で、メニュー画面のようなページがない
+  * テーブルへレコードを格納して表示を確認していないので、テーブルの中身によってはうまく行かない可能性がある。
+  * 詳細を表示 機能をつけて、 souct.contentを表示するページ遷移が未作成
+-->
+
+<div class="content_container">
+  <div class="detail_scout">
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+  <table class="table_1">
+    <tr>
+    <th><%= link_to "公開情報" , :action => 'viewconfig' %> </th>
+    </tr>
+
+    <tr>
+    <th><%= link_to "ログイン情報" , :action => 'logininfo' %> </th>
+    </tr>
+
+    <tr>
+    <th><%= link_to "通知機能" , :action => 'popupconfig' %> </th>
+    </tr>
+
+    <tr>
+    <th><%= link_to "退会する" , :action => 'byebye' %> </th>
+    </tr>
+
+  </table>
+  </div>
+</div>

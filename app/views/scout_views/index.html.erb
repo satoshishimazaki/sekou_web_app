@@ -1,0 +1,58 @@
+<!--
+* スカウトの一覧を表示するviewファイル。
+* 決めなくてはいけないこと：スカウトの表示数 max, 表示順(新着順, view数順 ,おすすめ順 ...etc)
+* ひとまず、クライアントid順,全部表示で実装する
+* 最終編集 : 2018.7.23  edited by takuya
+-->
+
+<!--
+* 未解決のバグ等
+  * 画面のヘッダーが最初のトップページの状態で、メニュー画面のようなページがない
+  * テーブルへレコードを格納して表示を確認していないので、テーブルの中身によってはうまく行かない可能性がある。
+  * 詳細を表示 機能をつけて、 souct.contentを表示するページ遷移が未作成
+  * 普通に作成したのに、全然表示されない
+-->
+
+
+
+<div class="content_container">
+  <div class="detail_scout">
+
+    <!-- テスト -->
+<div>
+    <tr>
+    <th><%= link_to "もっと詳しい情報を見てみる" , :action => 'detail' %> </th>
+    </tr>
+</div>
+    <!-- テストここまで -->
+
+    <% @scouts.each do |scout| %>
+  <table class="table_1">
+    <tr>
+    <th>会社名</th>
+    <td><%= scout.client_id %></td>
+    </tr>
+    <tr>
+    <th>件名</th>
+    <td><%= scout.summary %></td>
+    </tr>
+  </table>
+  <div class="btn-position">
+    <a class="accept_btn">選考を希望する</a>
+  </div>
+  <div class="message-dtail">
+    <p><%= scout.content %>
+    </p>
+  </div>
+  <div class="tag-detail-scout">
+    <span class="tag_1">未経験者歓迎</span>
+    <span class="tag_2">測量士</span>
+    <span class="tag_2">測量士補</span>
+    <span class="tag_2">職種人気</span>
+  </div>
+  <div class="btn-position">
+  <a class="accept_btn">選考を希望する</a>
+  </div>
+  <% end %>
+</div>
+</div>

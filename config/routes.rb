@@ -5,6 +5,16 @@ Rails.application.routes.draw do
   get 'test' => 'home#test', as: :home_test
   get 'dbindex' => 'home#dbindex', as: :home_dbindex
 
+  get 'scout_views' => 'scout_views#index'
+      get 'scout_views/detail' => 'detail'
+
+  #このuser_settingはresourceをうまく使ってスリムにかけそう。後ほどリファクタリングする. 7.23記載のコメント
+  get 'user_setting' => 'user_setting#index'
+      get 'user_setting/viewconfig' => 'viewconfig'
+      get 'user_setting/byebye'     => 'byebye'
+      get 'user_setting/logininfo'  => 'logininfo'
+      get 'user_setting/popupconfig'=> 'popupconfig'
+
   devise_for :users, controllers: {
       registrations: 'users/registrations',
       sessions: 'users/sessions',

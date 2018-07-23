@@ -1,0 +1,44 @@
+<!--
+* 通知設定を編集するviewファイル。
+* 決めなくてはいけないこと：通知機能を、このアプリケーションの中での通知なのかスマホのポップアップ通知も含むのか。
+* ひとまず、みためだけ実装する。
+* 最終編集 : 2018.7.23  edited by takuya
+-->
+
+<!--
+* 未解決のバグ等
+  * 画面のヘッダーが最初のトップページの状態で、メニュー画面のようなページがない
+-->
+
+
+<div class="content_container">
+  <div class="detail_scout">
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+  <table class="table_1">
+    <tr>
+    <th>通知設定を変更する</th>
+    <div class="tag-detail-scout">
+      <span class="tag_1">ON</span>
+      <!-- 未実装 -->
+    <!--  <td><%=  %></td> -->
+
+      <span class="tag_2">OFF</span>
+      <!-- 未実装 -->
+    <!--  <td><%=  %></td> -->
+
+    </div>
+    </tr>
+
+
+  </table>
+
+  <br></br>
+  <br></br>
+  <tr>
+    <th><%= link_to "設定画面へ戻る" , :action => 'index' %></th>
+  </tr>
+</div>

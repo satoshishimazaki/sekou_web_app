@@ -1,0 +1,41 @@
+<!--
+* ログイン情報を編集するviewファイル。
+* 決めなくてはいけないこと：ここで編集可能な情報を決める。
+                        多分、devise gemのパス / username編集の挙動をうまく使えばいける気がする。
+* ひとまず、ページだけ実装する。
+* 最終編集 : 2018.7.23  edited by takuya
+-->
+
+<!--
+* 未解決のバグ等
+  * 画面のヘッダーが最初のトップページの状態で、メニュー画面のようなページがない
+-->
+
+
+<div class="content_container">
+  <div class="detail_scout">
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+  <table class="table_1">
+    <tr>
+    <th>パスワードを変更する</th>
+    <!-- 未実装 -->
+  <!--  <td><%=  %></td> -->
+    </tr>
+
+    <tr>
+    <th>ユーザ名を変更する</th>
+    <!-- 未実装 -->
+  <!--  <td><%=  %></td> -->
+    </tr>
+
+  </table>
+  <br></br>
+  <br></br>
+  <tr>
+    <th><%= link_to "設定画面へ戻る" , :action => 'index' %></th>
+  </tr>
+</div>
