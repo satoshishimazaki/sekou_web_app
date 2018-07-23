@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   get 'test' => 'home#test', as: :home_test
 
   get 'scout_views' => 'scout_views#index'
+  get 'user_setting' => 'user_setting#index'
+      get 'user_setting/viewconfig' => 'viewconfig'
+      get 'user_setting/byebye'     => 'byebye'
+      get 'user_setting/logininfo'  => 'logininfo'
+      get 'user_setting/popupconfig'=> 'popupconfig'
 
   devise_for :users, controllers: {
       registrations: 'users/registrations',
