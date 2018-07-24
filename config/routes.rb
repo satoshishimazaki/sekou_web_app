@@ -15,6 +15,9 @@ Rails.application.routes.draw do
       get 'user_setting/logininfo'  => 'logininfo'
       get 'user_setting/popupconfig'=> 'popupconfig'
 
+  #employee_accountsへのルーティング
+    resources :employees_accounts
+
   devise_for :users, controllers: {
       registrations: 'users/registrations',
       sessions: 'users/sessions',
@@ -22,7 +25,6 @@ Rails.application.routes.draw do
       unlooks: 'users/unlooks',
       passwords: 'users/passwords'
     }
-
 
 
   devise_for :clients, controllers: {
