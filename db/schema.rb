@@ -120,7 +120,6 @@ ActiveRecord::Schema.define(version: 2018_07_16_084329) do
   end
 
   create_table "employees_objectives", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "employee_id"
     t.integer "objectives_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
