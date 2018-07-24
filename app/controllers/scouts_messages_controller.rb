@@ -1,0 +1,2 @@
+class ScoutsMessagesController < ApplicationController
+end
