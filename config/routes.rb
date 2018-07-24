@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'test' => 'home#test', as: :home_test
   get 'dbindex' => 'home#dbindex', as: :home_dbindex
+  get 'detailscout' => 'home#detailscout', as: :home_detailscout
 
   get 'scout_views' => 'scout_views#index'
       get 'scout_views/detail' => 'detail'
