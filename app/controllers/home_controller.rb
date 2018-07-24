@@ -16,4 +16,8 @@ class HomeController < ApplicationController
     render :layout => 'clienttest'
   end
 
+  def firstscout
+    render :layout => 'clienttest'
+  end
+
 end
