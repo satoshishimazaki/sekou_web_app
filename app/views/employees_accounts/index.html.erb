@@ -1,0 +1,58 @@
+<!--
+* 自分の登録情報を表示するページ
+* 決めなくてはいけないこと：リンク先をもう少し明確にする。ここの編集/表示 ...etcの詳細の仕様を決めていなかったので...
+* 最終編集 : 2018.7.24  edited by takuya
+-->
+
+<!--
+* 未解決のバグ等
+  * 画面のヘッダーが最初のトップページの状態で、メニュー画面のようなページがない
+  * DRYがうまくできていない。ここ絶対効率化できる。プログラムの保守性的にもリファクタリングする必要あり。
+-->
+<div>
+  <br></br> <br></br> <br></br> <br></br>
+  <h1>施工ネット 測量・設計</h1>
+</div>
+
+
+<div class="content_container">
+  <div class="detail_scout">
+
+  <table class="table_1">
+    <tr>
+    <th>名前(苗字)</th>
+    <td><%= Employees_account.last_name %></td>
+    <th>名前(名前)</th>
+    <td><%= Employees_account.first_name %></td>
+    </tr>
+
+    <tr>
+    <th>名前(ミョウジ)</th>
+    <td><%= Employees_account.last_name_kana %></td>
+    <th>名前(ナマエ)</th>
+    <td><%= Employees_account.first_name_kana %></td>
+    </tr>
+
+    <tr>
+    <th>電話番号</th>
+    <td><%= Employees_account.phone_number %></td>
+    </tr>
+
+    <tr>
+    <th>メールアドレス</th>
+    <td><%= Employees_account.email %></td>
+    </tr>
+
+    <tr>
+    <th>生年月日</th>
+    <td><%= Employees_account.birth %></td>
+    </tr>
+
+    <tr>
+    <th>・・・</th>
+    <td>・・・</td>
+    </tr>
+
+  </table>
+  </div>
+</div>

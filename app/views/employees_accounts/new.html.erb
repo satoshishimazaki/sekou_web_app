@@ -1,8 +1,22 @@
+<!--
+* 退会設定をするviewファイル。データベースからemployee_idに紐づく全データを削除するクエリを送れるように設定する
+* 決めなくてはいけないこと：admin に通知を出すだけにして、管理者が全データを削除する操作をする業務フローにするかどうか。
+　　　　　　　　　　　　　　あるいは、退会すると全データが削除されますが本当にいいですか？という確認が画面を表示させるかどうか。
+                        または、パスワードによる認証を必要とするかどうか。
+* ひとまず、全データをDBから削除するクエリにする。認証は一切取らない。
+* 最終編集 : 2018.7.23  edited by takuya
+-->
+
+<!--
+* 未解決のバグ等
+  * 画面のヘッダーが最初のトップページの状態で、メニュー画面のようなページがない
+-->
+
 
 <div class="content_container">
   <div class="detail_scout">
 
-
+  <%= from_with model: employee_accounts.new do |f|}  %>
 <form>
   <!-- <div class="msr_text_03"> -->
   <div class="button_group">
@@ -10,6 +24,7 @@
     <input id="eee" type="text" placeholder="山田"/>
     <label for="eee">名前</label>
     <p class="must_btton_text">必須</p>
+    <% f.text_field :last_name %>
   </div>
   </div>
 
@@ -62,7 +77,7 @@
   </label>
   <label class="labeltag">
     <input type="checkbox" name="checkbox01[]" class="checkbox01-input">
-    <span class="checkbox01-parts">チェッ</span>
+    <span class="checkbox01-parts">チェック</span>
   </label>
   <label class="labeltag">
     <input type="checkbox" name="checkbox01[]" class="checkbox01-input">
@@ -88,4 +103,6 @@
 
 
 </form>
+<% end %>
+</div>
 </div>
