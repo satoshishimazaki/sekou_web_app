@@ -1,7 +1,7 @@
 class EmployeesAccountsController < ApplicationController
 
   def index
-    @employees_accounts = Employees_account
+    @employees_accounts = Employees_account #.allが必要だと思われる
   end
 
   def edit
