@@ -290,6 +290,9 @@ button{
   margin-right: auto;
   display: block;
   border-bottom: solid 2px #627295;
+  :hover {
+    background: #636363;
+  }
 }
 
 /* btnデフォルトカラー*/

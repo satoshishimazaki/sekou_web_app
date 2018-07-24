@@ -12,4 +12,8 @@ class HomeController < ApplicationController
     render :layout => 'clienttest'
   end
 
+  def detailscout
+    render :layout => 'clienttest'
+  end
+
 end
