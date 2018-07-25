@@ -20,6 +20,14 @@ Rails.application.routes.draw do
   #employee_accountsへのルーティング
     resources :employees_accounts
 
+
+  #staticpagesへのルーティング
+  get '/companysummary' => 'static_pages#companysummary'
+  get '/contactus'      => 'static_pages#contactus'
+  get '/convention'     => 'static_pages#convention'
+  get '/faq'            => 'static_pages#faq'
+  get '/privacypolicy'  => 'static_pages#praivacypolicy'
+
   devise_for :users, controllers: {
       registrations: 'users/registrations',
       sessions: 'users/sessions',
