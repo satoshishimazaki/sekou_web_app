@@ -1,26 +1,64 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
+<% content_for :header do %>
+<div class="container">
+ <div class="row">
+   <div class="container-fluid">
+     <h1><a href="/"><font color = "ffffff">施工ネット.com</font></a></h1>
+    </div><!--container-fluid-->
+  </div><!--row-->
+</div><!--container-->
 <% end %>
+<div class="register-session-container">
+  <div class="form-wrapper">
+    <h2>登録がお済みの方</h2>
 
-<%= render "users/shared/links" %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+
+      <% if devise_mapping.rememberable? -%>
+        <div class="save-check-btn">
+          <%= f.check_box :remember_me, :class =>"heckbox" %>
+          <%= f.label :remember_me, :class =>"label-remeber-me" %>
+        </div>
+      <% end -%>
+
+      <div class="button-panel">
+        <%= f.submit "ログインする", :class=> "button" %>
+      </div>
+    <% end %>
+
+    <%= render "users/shared/links" %>
+
+  </div><!--form-wrapper-->
+</div><!--register-session-container-->
+
+<% content_for :footer do %>
+<footer>
+<div class="container">
+ <div class="row">
+     <p class="logo"><strong>
+       <a href="/">
+         施工ネット 測量・設計
+       </a>
+     </strong></p>
+     <ul>
+       <li>運営会社</li>
+       <li>利用規約</li>
+       <li>プライバシーポリシー</li>
+       <li>ヘルプ</li>
+       <li>お問い合わせ</li>
+     </ul>
+      <p class="copy">&copy;&nbsp;施工ネット</p>
+ </div><!--row-->
+</div><!--container-->
+<div id="backtop">
+</div>
+</footer>
+<% end %>
