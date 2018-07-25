@@ -1,23 +1,23 @@
 class HomeController < ApplicationController
   # layout "clienttest"
   def index
-    render :layout => 'home_application'
+    render :layout => 'user_application'
   end
 
   def test
-    render :layout => 'clienttest'
+    render :layout => 'client_application'
   end
 
   def dbindex
-    render :layout => 'clienttest'
+    render :layout => 'client_application'
   end
 
   def detailscout
-    render :layout => 'clienttest'
+    render :layout => 'client_application'
   end
 
   def firstscout
-    render :layout => 'clienttest'
+    render :layout => 'client_application'
   end
 
 end
