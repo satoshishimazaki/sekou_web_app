@@ -97,3 +97,10 @@ a {
   padding-top: 0%;
   @include cf
 }
+
+//devise_registration_session
+.register-session-container {
+  @extend .content_container;
+  margin-top: 13%;
+  margin-bottom: 13%;
+}

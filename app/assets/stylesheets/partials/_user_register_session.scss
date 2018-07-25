@@ -1,0 +1,89 @@
+@import "definition/base";
+@import "layout/base";
+
+.form-wrapper {
+  background: $cs5;
+  margin: 3em auto;
+  padding: 0 1em;
+  max-width: 370px;
+  box-shadow: 2px 2px 4px #bfbfbf;
+  h2 {
+    text-align: center;
+    padding: 1em 0;
+  }//h1
+  .form {
+    padding: 0 1.5em;
+  }//form
+  .field {
+    margin-bottom: 0.75em;
+    width: 100%;
+    input {
+       background: #fafafa;
+       border: none;
+       border-bottom: 2px solid #e9e9e9;
+       color: #666;
+       font-family: 'Open Sans', sans-serif;
+       font-size: 1em;
+       height: 50px;
+       transition: border-color 0.3s;
+       width: 100%;
+       &:focus {
+         border-bottom: 2px solid #c0c0c0;
+         outline: none;
+       }//input:focus
+    }//input
+  }//field
+
+  .save-check-btn {
+    float: left;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    .checkbox {
+      display: inline;
+    }
+    label {
+      .label-remeber-me{
+        float: left;
+        margin-top: 5.5%;
+      }//label-remeber-me
+    }//label
+  }//save-check-btn
+
+  .button-panel {
+    margin: 2em 0 0;
+    width: 100%;
+    .button {
+      background: $cs7;
+      border: none;
+      color: $cb;
+      cursor: pointer;
+      height: 50px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1.2em;
+      letter-spacing: 0.05em;
+      text-align: center;
+      text-transform: uppercase;
+      transition: background 0.3s ease-in-out;
+      width: 100%;
+      &:hover {
+        background: $cs6;
+      }//button:hover
+    }//button
+  }//button-panel
+
+  .form-footer {
+    font-size: 1em;
+    padding: 2em 0;
+    text-align: center;
+    a {
+    @include linkColor($ck);
+     // color: #8c8c8c;
+     // text-decoration: none;
+     // transition: border-color 0.3s;
+     // &:hover {
+     //   border-bottom: 1px dotted #8c8c8c;
+     // }//a:hover
+   }//a
+  }//form-footer
+
+}//form-wrapper
