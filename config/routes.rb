@@ -18,7 +18,7 @@ Rails.application.routes.draw do
       get 'user_setting/popupconfig'=> 'popupconfig'
 
   #employee_accountsへのルーティング
-    resources :employees_accounts
+    resources :employee_accounts
 
 
   #staticpagesへのルーティング

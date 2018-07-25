@@ -1,7 +1,7 @@
-class EmployeesAccountsController < ApplicationController
+class EmployeeAccountsController < ApplicationController
 
   def index
-    @employees_accounts = Employees_account #.allが必要だと思われる
+    @employee_accounts = EmployeeAccount.all #.allが必要だと思われる
 
     #エラーメッセージは次の通り
     #Unable to autoload constant Employees_account, expected /Users/zielson_account/sekou.com/sekou_web_app/app/models/employees_account.rb to define it
@@ -12,7 +12,7 @@ class EmployeesAccountsController < ApplicationController
   end
 
   def new
-    @employees_account = Employees_account.new
+    @employee_account = Employee_account.new
   end
 
   def delete
