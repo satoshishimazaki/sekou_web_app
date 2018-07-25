@@ -12,7 +12,7 @@ class EmployeeAccountsController < ApplicationController
   end
 
   def new
-    @employee_account = Employee_account.new
+    @employee_account = EmployeeAccount.new
   end
 
   def delete

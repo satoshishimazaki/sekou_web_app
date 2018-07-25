@@ -16,7 +16,7 @@
 <div class="content_container">
   <div class="detail_scout">
 
-  <%= from_with model: employee_accounts.new do |f|}  %>
+  <%= from_with model: EmployeeAccount.new do |f|}  %>
 <form>
   <!-- <div class="msr_text_03"> -->
   <div class="button_group">
@@ -24,7 +24,7 @@
     <input id="eee" type="text" placeholder="山田"/>
     <label for="eee">名前</label>
     <p class="must_btton_text">必須</p>
-    <% f.text_field :last_name %>
+    <% f.text_field :employee_account_last_name %>
   </div>
   </div>
 
