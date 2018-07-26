@@ -12,34 +12,32 @@
 -->
 
 
-<div class="content_container">
-  <div class="detail_scout">
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-  <table class="table_1">
-    <tr>
-    <th>通知設定を変更する</th>
-    <div class="tag-detail-scout">
-      <span class="tag_1">ON</span>
-      <!-- 未実装 -->
-    <!--  <td><%=  %></td> -->
-
-      <span class="tag_2">OFF</span>
-      <!-- 未実装 -->
-    <!--  <td><%=  %></td> -->
-
-    </div>
-    </tr>
-
-
-  </table>
-
-  <br></br>
-  <br></br>
-  <tr>
-    <th><%= link_to "設定画面へ戻る" , :action => 'index' %></th>
-  </tr>
+<div class="content_upper">
+  <h3>通知設定</h3>
 </div>
+<div class="setting-container-detail">
+  <div class="display-scoutmail">
+    <div class="display-title">
+      <h3>新着スカウトのメール通知</h3>
+    </div><!--display-title -->
+    <div class="display-detail">
+      <p>必ず通知させていただくようになっております。</p>
+    </div><!--display-detail -->
+  </div><!--display-scoutmail -->
+
+  <div class="display-popupmail">
+    <div class="display-detail">
+      <h3>施工ネットからのお知らせメール</h3>
+      <div class="radio02">
+        <input type="radio" name="radio02" class="radio02-input" id="radio02-01">
+        <label for="radio02-01">受け取る</label>
+        <input type="radio" name="radio02" class="radio02-input" id="radio02-02">
+        <label for="radio02-02">受け取らない</label>
+      </div><!--radio02 -->
+    </div><!--display-detail -->
+  </div><!--display-popupmail -->
+
+  <div class="return-guide">
+    <%= link_to "設定画面へ戻る" , :action => 'index' %>
+  </div>
+</div><!--setting-container-detail -->

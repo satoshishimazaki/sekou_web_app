@@ -154,6 +154,7 @@
   }
 }
 
+//パスワードの変更
 .register-new-pass {
   @extend %display-container;
   .display-detail {
@@ -161,9 +162,33 @@
       width: 96%;
       border-bottom: 1px solid #b9b9b9;
       font-size: 1.8rem;
+      padding-bottom: 1.5%;
     }
     p {
       font-type: bold;
     }
   }
 }//register-new-pass
+
+
+//通知設定ページ
+//スカウト通知メール
+.display-scoutmail {
+  @extend %display-container;
+}
+
+//施工ネットからのお知らせメール設定
+.display-popupmail {
+  @extend %display-container;
+  .display-detail {
+    h3 {
+      width: 96%;
+      border-bottom: 1px solid #b9b9b9;
+      font-size: 1.8rem;
+      padding-bottom: 1.5%;
+    }
+    p {
+      font-type: bold;
+    }
+  }
+}//display-popup
