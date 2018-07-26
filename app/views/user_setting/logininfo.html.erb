@@ -11,31 +11,32 @@
   * 画面のヘッダーが最初のトップページの状態で、メニュー画面のようなページがない
 -->
 
-
-<div class="content_container">
-  <div class="detail_scout">
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-  <table class="table_1">
-    <tr>
-    <th>パスワードを変更する</th>
-    <!-- 未実装 -->
-  <!--  <td><%=  %></td> -->
-    </tr>
-
-    <tr>
-    <th>ユーザ名を変更する</th>
-    <!-- 未実装 -->
-  <!--  <td><%=  %></td> -->
-    </tr>
-
-  </table>
-  <br></br>
-  <br></br>
-  <tr>
-    <th><%= link_to "設定画面へ戻る" , :action => 'index' %></th>
-  </tr>
+<div class="content_upper">
+  <h3>メールアドレスの変更</h3>
 </div>
+<div class="setting-container-detail">
+  <div class="registration-container">
+    <p>登録済みのメールアドレス</p>
+    <div class="mail-text">
+      <p>test@gmail.com</p>
+    </div><!--mail-text -->
+  </div><!--registration-container -->
+
+  <div class="display-release">
+    <div class="display-title">
+      <h3>新しいメールアドレスへの変更</h3>
+    </div><!--display-title -->
+    <div class="display-detail">
+      <form>
+        <div class="has-float-label_full_lg">
+          <input id="eee" type="text" placeholder=""/>
+        </div>
+      </form><!--from -->
+      <div class="update-btn">変更する</div>
+    </div><!--display-detaile -->
+  </div><!--register-new-mail -->
+
+  <div class="return-guide">
+    <%= link_to "設定画面へ戻る" , :action => 'index' %>
+  </div>
+</div><!--setting-container-detail -->

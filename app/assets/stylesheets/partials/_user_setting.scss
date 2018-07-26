@@ -123,3 +123,34 @@
 .return-guide {
   margin: 6% 2% 3% 2%;
 }//return-guide
+
+//メールアドレスの変更ページ
+//既存メールアドレス表記
+.registration-container {
+  margin: 2%;
+  border: 1px solid #ec926b;
+  background: #f5dabb;
+  padding: 2%;
+  @include shadow
+}//registration-container
+
+//新いメールアドレスの登録
+.register-new-mail {
+  @extend %display-container;
+}//register-new-mail
+
+//変更ボタンの登録
+.update-btn {
+  @extend %btn_skel;
+  @extend %btn_sm;
+  @extend %btn_color;
+  background: $ck;
+  margin-bottom: 2%;
+  transition: .4s;
+  float: left;
+  margin-left: 2%;
+  margin-right: 70%;
+  &:hover {
+    background: $ckh;
+  }
+}
