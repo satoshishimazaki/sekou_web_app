@@ -145,12 +145,25 @@
   @extend %btn_sm;
   @extend %btn_color;
   background: $ck;
-  margin-bottom: 2%;
   transition: .4s;
   float: left;
-  margin-left: 2%;
-  margin-right: 70%;
+  margin:5% 40%;
+  width: 20%;
   &:hover {
     background: $ckh;
   }
 }
+
+.register-new-pass {
+  @extend %display-container;
+  .display-detail {
+    h3 {
+      width: 96%;
+      border-bottom: 1px solid #b9b9b9;
+      font-size: 1.8rem;
+    }
+    p {
+      font-type: bold;
+    }
+  }
+}//register-new-pass
