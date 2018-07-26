@@ -1,28 +1,28 @@
 @import "definition/base";
 @import "layout/base";
 
-//detail内の各コンテナをクラス化
-%display-container {
-  margin: 2%;
-  background: $cs5;
-  padding: 2%;
-  @include cf;
-  @include shadow;
-  .display-title {
-    border-bottom: 1px solid gray;
-    margin: 1%;
-    float: left;
-    width: 100%;
-    h3 {
-      font-size: 1.8rem;
-    }
-  }//display-title
-  .display-detail {
-    margin: 1%;
-    float: left;
-    width: 100%;
-  }//display-detail
-}//display-container
+// //detail内の各コンテナをクラス化
+// %display-container {
+//   margin: 2%;
+//   background: $cs5;
+//   padding: 2%;
+//   @include cf;
+//   @include shadow;
+//   .display-title {
+//     border-bottom: 1px solid gray;
+//     margin: 1%;
+//     float: left;
+//     width: 100%;
+//     h3 {
+//       font-size: 1.8rem;
+//     }
+//   }//display-title
+//   .display-detail {
+//     margin: 1%;
+//     float: left;
+//     width: 100%;
+//   }//display-detail
+// }//display-container
 
 //detail内のスカウトボタンをクラス化
 %btns-scout-clip {

@@ -11,35 +11,66 @@
   * 画面のヘッダーが最初のトップページの状態で、メニュー画面のようなページがない
 -->
 
-
-<div class="content_container">
-  <div class="detail_scout">
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-  <table class="table_1">
-    <tr>
-    <th>プロフィールの公開設定を変更する</th>
-    <div class="tag-detail-scout">
-      <span class="tag_1">公開する</span>
-      <!-- 未実装 -->
-    <!--  <td><%=  %></td> -->
-
-      <span class="tag_2">公開しない</span>
-      <!-- 未実装 -->
-    <!--  <td><%=  %></td> -->
-
-    </div>
-    </tr>
-
-
-  </table>
-
-  <br></br>
-  <br></br>
-  <tr>
-    <th><%= link_to "設定画面へ戻る" , :action => 'index' %></th>
-  </tr>
+<div class="content_upper">
+  <h3>公開情報設定</h3>
 </div>
+<div class="setting-container-detail">
+  <div class="display-ng">
+    <div class="display-title">
+      <h3>ブロックワード</h3>
+    </div><!--display-title -->
+    <div class="display-detail">
+      <p>※スカウト ⇒ 「有限会ジールソン」「ジールソン株式会社」などをブロック</p>
+      <form>
+        <div class="has-float-label_full_lg">
+          <input id="eee" type="text" placeholder=""/>
+        </div>
+      </form><!--from -->
+      <div class="add-btn">追加する</div>
+      <div class="ng-index-container">
+        <div class="ng-record">
+          <div class="ng-name">
+            <p>メルカリ株式会社</p>
+          </div><!--ng-name -->
+          <div class="ng-remove-btn">
+            解除
+          </div><!--ng-remove-btn -->
+        </div><!--ng-record -->
+        <div class="ng-record">
+          <div class="ng-name">
+            <p>株式会社ジールソン</p>
+          </div><!--ng-name -->
+          <div class="ng-remove-btn">
+            解除
+          </div><!--ng-remove-btn -->
+        </div><!--ng-record -->
+        <div class="ng-record">
+          <div class="ng-name">
+            <p>株式会社トヨタ</p>
+          </div><!--ng-name -->
+          <div class="ng-remove-btn">
+            解除
+          </div><!--ng-remove-btn -->
+        </div><!--ng-record -->
+      </div><!--ng-indx-container -->
+    </div><!--display-detail -->
+  </div><!--display-ng -->
+
+  <div class="display-release">
+    <div class="display-title">
+      <h3>プロフィールを公開しますか？</h3>
+    </div><!--display-title -->
+    <div class="display-detail">
+      <div class="radio02">
+      <input type="radio" name="radio02" class="radio02-input" id="radio02-01">
+      <label for="radio02-01">公開する</label>
+      <input type="radio" name="radio02" class="radio02-input" id="radio02-02">
+      <label for="radio02-02">公開しない</label>
+      </div><!--radio02 -->
+    </div><!--display-detail -->
+  </div><!--display-release -->
+
+  <div class="return-guide">
+    <%= link_to "設定画面へ戻る" , :action => 'index' %>
+  </div>
+</div><!--settomg-container-detail -->

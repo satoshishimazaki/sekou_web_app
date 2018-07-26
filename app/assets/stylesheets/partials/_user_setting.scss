@@ -10,6 +10,7 @@
   padding-bottom: 3%;
   margin-bottom: 25%;
   margin-top: 3%;
+  // @include display-container;
 
   ul {
     padding: 0;
@@ -49,3 +50,76 @@
     }//li
   }//ul
 }//setting-container
+
+.setting-container-detail {
+  @extend .setting-container;
+  width: 60%;
+  @include cf;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  margin-bottom: 5%;
+  margin-top: 1%;
+}
+
+//各ページのコンテナ
+//公開情報
+//NGワード設定
+.display-ng {
+  @extend %display-container;
+  .add-btn {
+    @extend %btn_skel;
+    @extend %btn_sm;
+    @extend %btn_color;
+    background: $cs7;
+    margin-bottom: 2%;
+    transition: .4s;
+    float: left;
+    margin-left: 2%;
+    margin-right: 70%;
+    &:hover {
+      background: $cs6;
+    }
+  }//add-btn
+  .ng-index-container {
+    @include cf;
+    float: left;
+    width: 90%;
+    margin: 2%;
+    .ng-record {
+      @include cf;
+      border-bottom: 1px solid #80808036;
+      width: 100%;
+      .ng-name {
+        width: 70%;
+        float: left;
+        margin-top: 2%;
+      }//ng-name
+      .ng-remove-btn {
+        width: 15%;
+        float: right;
+        @extend %btn_skel;
+        @extend %btn_sm;
+        @extend %btn_color;
+        background: #1927a2;
+        margin-bottom: 2%;
+        transition: .4s;
+        margin-top: 1%;
+        margin-bottom: 1%;
+        margin-right: 2%;
+        &:hover {
+          background: $ck;
+        }
+      }//ng-remove-btn
+    }//ng-record
+  }//ng-index-container
+}//display-ng
+
+//公開設定
+.display-release {
+  @extend %display-container;
+}//display-release
+
+//設定画面へ戻るボタン
+.return-guide {
+  margin: 6% 2% 3% 2%;
+}//return-guide

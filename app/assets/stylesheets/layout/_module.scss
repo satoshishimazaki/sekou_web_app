@@ -618,3 +618,65 @@ $easing: ease;
         }
     }
 }
+
+//detail内の各コンテナをクラス化
+%display-container {
+  margin: 2%;
+  background: $cs5;
+  padding: 2%;
+  @include cf;
+  @include shadow;
+  .display-title {
+    border-bottom: 1px solid gray;
+    margin: 1%;
+    float: left;
+    width: 100%;
+    h3 {
+      font-size: 1.8rem;
+    }
+  }//display-title
+  .display-detail {
+    margin: 1%;
+    float: left;
+    width: 100%;
+  }//display-detail
+}//display-container
+
+//radioボタン
+/*css radio02*/
+.radio02 {
+  font-size: 1rem;
+}
+.radio02-input{
+  display: none;
+}
+.radio02-input + label{
+  padding-left: 20px;
+  position:relative;
+  margin-right: 20px;
+}
+.radio02-input + label::before{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #999;
+  border-radius: 50%;
+}
+.radio02-input:checked + label{
+  color: $ck;
+}
+.radio02-input:checked + label::after{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 11px;
+  height: 11px;
+  background: $ck;
+  border-radius: 50%;
+}
