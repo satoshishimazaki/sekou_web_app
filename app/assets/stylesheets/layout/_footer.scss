@@ -18,6 +18,10 @@ footer{
     a{
       font-size: 1.6rem;
       color: $cb;
+      &:hover {
+        color: $csh;
+        text-decoration: none;
+      }
       img{
         width: 100%;
       }
@@ -34,6 +38,10 @@ footer{
       font-size: 1.2rem;
       a{
         color: $cb;
+        &:hover {
+          color: $csh;
+          text-decoration: none;
+        }
       }
     }
   }
