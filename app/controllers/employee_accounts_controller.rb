@@ -5,6 +5,7 @@ class EmployeeAccountsController < ApplicationController
   end
 
   def edit
+    @employee_account = EmployeeAccount.find(params[:id])
   end
 
   def new
@@ -12,12 +13,21 @@ class EmployeeAccountsController < ApplicationController
   end
 
   def show
+    @employee_accout = EmployeeAccount.find(params[:id])
   end
 
   def create
     @employee_account = EmployeeAccount.new(employee_account_params)
     @employee_account.save
     redirect_to employee_accounts_path
+  end
+
+  def update
+    @employee_account = EmployeeAccount.find(params[:id])
+    @employee_account.update(employee_account_params)
+  end
+
+  def delete
   end
 
   def employee_account_params
@@ -43,9 +53,5 @@ class EmployeeAccountsController < ApplicationController
       :employee_account_not_public_company
     )
   end
-
-  def delete
-  end
-
 
 end
