@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   get '/contactus'      => 'static_pages#contactus'
   get '/convention'     => 'static_pages#convention'
   get '/faq'            => 'static_pages#faq'
-  get '/privacypolicy'  => 'static_pages#praivacypolicy'
+  get '/privacypolicy'  => 'static_pages#privacypolicy'
 
   devise_for :users, controllers: {
       registrations: 'users/registrations',
