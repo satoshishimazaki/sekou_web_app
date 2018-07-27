@@ -1,2 +1,11 @@
 @import "definition/base";
 @import "layout/base";
+
+
+.setting-container-detail-contact {
+  @extend .setting-container-detail;
+  margin-bottom: 8%;
+  .display-contact {
+    @extend %display-container;
+  }
+}
