@@ -1,4 +1,4 @@
-class HomeController < ApplicationController
+class HomeController < ActionController::Base
   # layout "clienttest"
   def index
     render :layout => 'user_application'
