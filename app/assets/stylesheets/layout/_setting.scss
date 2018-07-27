@@ -163,6 +163,7 @@ a {
   }//ul
 }//setting-container
 
+//よく利用する大枠ホワイト
 .setting-container-detail {
   @extend .setting-container;
   width: 60%;
@@ -172,3 +173,12 @@ a {
   margin-bottom: 5%;
   margin-top: 1%;
 }
+
+//よく利用するオレンジ色のコンテナ
+.oragne-container {
+  margin: 2%;
+  border: 1px solid #ec926b;
+  background: #f5dabb;
+  padding: 2%;
+  @include shadow
+}//registration-container
