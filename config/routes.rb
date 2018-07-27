@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       get 'user_setting/byebye'     => 'byebye'
       get 'user_setting/logininfo'  => 'logininfo'
       get 'user_setting/popupconfig'=> 'popupconfig'
+      get 'user_setting/byebyeresult'=> 'byebyeresult'
 
   #employee_accountsへのルーティング
     resources :employee_accounts

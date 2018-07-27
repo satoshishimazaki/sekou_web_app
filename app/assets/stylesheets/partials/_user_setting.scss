@@ -192,3 +192,22 @@
     }
   }
 }//display-popup
+
+//退会処理ページ
+//本当に退会するか確認head
+.confirm-quit-head {
+  margin: 2%;
+  border: 1px solid #ec926b;
+  background: #f5dabb;
+  padding: 2%;
+  @include shadow
+}//confirm-quit-head
+
+//退会ボタン
+.quit-btn {
+  @extend .update-btn;
+}
+
+//退会ボタン
+#result-quit {
+}

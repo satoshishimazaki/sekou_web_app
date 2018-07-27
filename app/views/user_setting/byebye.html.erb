@@ -12,27 +12,31 @@
   * 画面のヘッダーが最初のトップページの状態で、メニュー画面のようなページがない
 -->
 
+<!--
+*jQueryが効かないのでAjaxがうまくいかない？
+  * できれば退会ボタンを押したらパスワード入力させて退会手続きにさせる。
+-->
 
-<div class="content_container">
-  <div class="detail_scout">
-  <table class="table_1">
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <tr>
-    <th>施工ネット.comから退会する。</th>
-    <!-- 未実装 -->
-  <!--  <td><%=  %></td> -->
-    </tr>
 
-  </table>
-  <br></br>
-  <br></br>
+<div class="content_upper">
+  <h3>退会処理</h3>
+</div>
+<div class="setting-container-detail">
+  <div class="confirm-quit-head">
+    <p>本当に退会しますか？</p>
+  </div><!--confirm-quit-head -->
+  <%= link_to "退会する", {action: :byebye}, remote: true, class: "btn quit-btn" %>
+  <div id="result-quit">
+  </div><!--result-quit ajaxのresult箇所 -->
+</div><!--setting-container-detail -->
 <!-- ここはいらなさそう。なぜなら、退会するから設定画面に戻ることはない。
   <tr>
     <th><%= link_to "設定画面へ戻る" , :action => 'index' %></th>
   </tr>
 -->
-</div>
+
+<!-- <%= content_for :jsfooter do %>
+<script>
+  test()
+</script>
+<% end %> -->

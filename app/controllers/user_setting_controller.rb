@@ -9,6 +9,11 @@ class UserSettingController < ApplicationController
     # ここに、削除に必要そうなデータベースで必要なインスタンス変数を羅列する。 多分「変数名.delete」だと思う。
   end
 
+  def byebyeresult
+    #退会するボタンを押してメールアドレス入力させる。一応保留にしておく。
+    # @user = User.find(params[:id])
+  end
+
   def popupconfig
   end
 
