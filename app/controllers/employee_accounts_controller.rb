@@ -1,7 +1,7 @@
 class EmployeeAccountsController < ApplicationController
 
   def index
-    @employee_account = EmployeeAccount.all #.allが必要だと思われる
+    @employee_account = EmployeeAccount.all
   end
 
   def edit
