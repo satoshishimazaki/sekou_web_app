@@ -9,3 +9,58 @@
     @extend %display-container;
   }
 }
+
+//FAQページ
+.setting-container-detail {
+  .faq-head{
+    margin-bottom: 8%;
+    ul {
+      li {
+        background: $cs9;
+        a {
+          padding-top: 2%
+        }//a
+      }//li
+    }//ul
+  }//faq-head
+  .display-faq {
+    @extend %display-container;
+    .display-detail {
+      h3 {
+        width: 96%;
+        border-bottom: 1px solid #b9b9b9;
+        font-size: 1.8rem;
+        padding-bottom: 1.5%;
+      }
+      p {
+        font-type: bold;
+      }
+      dl {
+      width: 100% ;
+      // height: 10em ;
+      padding: 0px 1em ;
+      text-align: left ;
+      }
+
+      dt {
+      width: 100% ;
+      // height: 1.6em ;
+      padding: 0px 1em ;
+      background-color: $cs9;
+      color: white;
+      margin-top: 4%;
+      line-height: 2.028571;
+      }
+
+      dd {
+      margin-left: 0px ;
+      width: 100% ;
+      padding: 0px 1em ;
+      font-size: 0.9em ;
+      text-align: left ;
+      background-color: $cg ;
+      line-height: 1.8;
+      }
+    }//display-detail
+  }//display-faq
+}//setting-container-detail
