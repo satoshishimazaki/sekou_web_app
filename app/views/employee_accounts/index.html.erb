@@ -8,3 +8,115 @@
   * 画面のヘッダーが最初のトップページの状態で、メニュー画面のようなページがない
   * DRYがうまくできていない。ここ絶対効率化できる。プログラムの保守性的にもリファクタリングする必要あり。
 -->
+<div class="content_container">
+  <div class="detail_scout">
+    <div>
+      <br><br><br><br>
+      <h3>プロフィール一覧</h3>
+    </div>
+  <table class="table_1">
+
+    <tr>
+    <th>苗字</th>
+    <td><%= @employee_account_last_name %></td>
+    <th>名前</th>
+    <td><%= @employee_account_first_name %></td>
+    </tr>
+
+
+    <tr>
+    <th>ミョウジ</th>
+    <td><%= @employee_account_last_name_kana %></td>
+    <th>ナマエ</th>
+    <td><%= @employee_account_first_name_kana %></td>
+    </tr>
+  </table>
+
+
+<table class="table_1">
+    <tr>
+    <th>電話番号</th>
+    <td><%= @employee_account_phone_number %></td>
+    </tr>
+
+    <tr>
+    <th>メールアドレス</th>
+    <td><%= @employee_account_email %></td>
+    </tr>
+
+    <tr>
+    <th>生年月日</th>
+    <td><%= @employee_account_birth %></td>
+    </tr>
+
+    <tr>
+    <th>生年月日</th>
+    <td><%= @employee_account_birth %></td>
+    </tr>
+
+    <tr>
+    <th>性別</th>
+    <td><%= @employee_account_sex %></td>
+    </tr>
+
+    <tr>
+    <th>就労状況</th>
+    <td><%= @employee_account_employment_status %></td>
+    </tr>
+
+    <tr>
+    <th>郵便番号</th>
+    <td><%= @employee_account_address_post %></td>
+    </tr>
+
+    <tr>
+    <th>都道府県id</th>    <!-- 後ほど、id から件名に自動変換するプログラムへ変更する -->
+    <td><%= @employee_account_prefecture_id %></td>
+    </tr>
+
+    <tr>
+    <th>住所(市町村)</th>
+    <td><%= @employee_account_address_city %></td>
+    </tr>
+
+    <tr>
+    <th>住所(番地・建物名)</th>
+    <td><%= @employee_account_address_building %></td>
+    </tr>
+
+    <tr>
+    <th>大学名</th>
+    <td><%= @employee_account_university %></td>
+    </tr>
+
+    <tr>
+    <th>学部名</th>
+    <td><%= @employee_account_faculty %></td>
+    </tr>
+
+    <tr>
+    <th>卒業年</th>
+    <td><%= @employee_account_graduate %></td>
+    </tr>
+
+    <tr>
+    <th>希望年収</th>
+    <td><%= @employee_account_desired_salary %></td>
+    </tr>
+
+    <tr>
+    <th>自己PR</th>
+    <td><%= @employee_account_personal_summary %></td>
+    </tr>
+
+    <tr>
+    <th>公開NG企業</th>
+    <td><%= @employee_account_not_public_company %></td>
+    </tr>
+  </table>
+
+
+
+
+  </div>
+</div>

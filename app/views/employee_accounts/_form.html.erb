@@ -1,111 +1,119 @@
 
-<div class="content_container">
-  <div class="detail_scout">
-    <div>
-      <br><br><br><br>
-      <h3>プロフィール一覧</h3>
-    </div>
-  <table class="table_1">
-    <tr>
-    <th>苗字</th>
-    <td><%= @employee_account_last_name %></td>
-    <th>名前</th>
-    <td><%= @employee_account_first_name %></td>
-    </tr>
+<br><br><br><br><br><br>
 
+<%= form_with(model: EmployeeAccount, loacl: true) do |form| %>
 
-    <tr>
-    <th>ミョウジ</th>
-    <td><%= @employee_account_last_name_kana %></td>
-    <th>ナマエ</th>
-    <td><%= @employee_account_first_name_kana %></td>
-    </tr>
-  </table>
+<div class="button_group">
+    <%= form.label :苗字 %>
+    <%= form.text_field :苗字, id: :employee_account_last_name %>
 
-<table class="table_1">
-    <tr>
-    <th>電話番号</th>
-    <td><%= @employee_account_phone_number %></td>
-    </tr>
-
-    <tr>
-    <th>メールアドレス</th>
-    <td><%= @employee_account_email %></td>
-    </tr>
-
-    <tr>
-    <th>生年月日</th>
-    <td><%= @employee_account_birth %></td>
-    </tr>
-
-    <tr>
-    <th>生年月日</th>
-    <td><%= @employee_account_birth %></td>
-    </tr>
-
-    <tr>
-    <th>性別</th>
-    <td><%= @employee_account_sex %></td>
-    </tr>
-
-    <tr>
-    <th>就労状況</th>
-    <td><%= @employee_account_employment_status %></td>
-    </tr>
-
-    <tr>
-    <th>郵便番号</th>
-    <td><%= @employee_account_address_post %></td>
-    </tr>
-
-    <tr>
-    <th>都道府県id</th>    <!-- 後ほど、id から件名に自動変換するプログラムへ変更する -->
-    <td><%= @employee_account_prefecture_id %></td>
-    </tr>
-
-    <tr>
-    <th>住所(市町村)</th>
-    <td><%= @employee_account_address_city %></td>
-    </tr>
-
-    <tr>
-    <th>住所(番地・建物名)</th>
-    <td><%= @employee_account_address_building %></td>
-    </tr>
-
-    <tr>
-    <th>大学名</th>
-    <td><%= @employee_account_university %></td>
-    </tr>
-
-    <tr>
-    <th>学部名</th>
-    <td><%= @employee_account_faculty %></td>
-    </tr>
-
-    <tr>
-    <th>卒業年</th>
-    <td><%= @employee_account_graduate %></td>
-    </tr>
-
-    <tr>
-    <th>希望年収</th>
-    <td><%= @employee_account_desired_salary %></td>
-    </tr>
-
-    <tr>
-    <th>自己PR</th>
-    <td><%= @employee_account_personal_summary %></td>
-    </tr>
-
-    <tr>
-    <th>公開NG企業</th>
-    <td><%= @employee_account_not_public_company %></td>
-    </tr>
-  </table>
-
-
-
-
+    <%= form.label :名前 %>
+    <%= form.text_field :名前, id: :employee_account_first_name %>
+    <br><br>
   </div>
+
+<div class="button_group">
+    <%= form.label :ミョウジ %>
+    <%= form.text_field :ミョウジ, id: :employee_account_last_name_kana %>
+
+    <%= form.label :ナマエ %>
+    <%= form.text_field :ナマエ, id: :employee_account_first_name_kana %>
+    <br><br><br>
+  </div>
+
+<div class="button_group">
+    <%= form.label :電話番号 %>
+    <%= form.text_field :電話番号, id: :employee_account_phone_number%>
+    <br><br><br>
+  </div>
+
+<div class="button_group">
+    <%= form.label :メールアドレス %>
+    <%= form.text_field :メールアドレス, id: :employee_account_email %>
+    <br><br><br>
+  </div>
+
+<div class="button_group">
+    <%= form.label :生年月日 %>
+    <%= form.date_field :生年月日, id: :employee_account_birth%>
+    <br><br><br>
+  </div>
+
+<div class="button_group">
+    <%= form.label :性別 %>
+    <%= form.text_field :性別, id: :employee_account_sex %>
+    <br><br><br>
+  </div>
+
+<div class="button_group">
+    <%= form.label :就労状況 %>
+    <%= form.text_field :就労状況, id: :employee_account_employment_status%>
+    <br><br><br>
+  </div>
+
+<div class="button_group">
+    <%= form.label :郵便番号 %>
+    <%= form.text_field :郵便番号, id: :employee_account_address_post %>
+    <br><br>
+  </div>
+
+<div class="button_group">
+    <%= form.label :都道府県 %>
+    <%= form.text_field :都道府県, id: :employee_account_prefecture_id %>
+    <br><br>
+  </div>
+
+<div class="button_group">
+    <%= form.label :住所_市町村 %>
+    <%= form.text_field :住所_市町村, id: :employee_account_address_city %>
+    <br><br>
+  </div>
+
+<div class="button_group">
+    <%= form.label :住所_番地・建物名 %>
+    <%= form.text_field :住所_番地・建物名, id: :employee_account_address_building %>
+    <br><br>
+  </div>
+
+<div class="button_group">
+    <%= form.label :大学名 %>
+    <%= form.text_field :大学名, id: :employee_account_university %>
+    <br><br><br>
+  </div>
+
+<div class="button_group">
+    <%= form.label :学部名 %>
+    <%= form.text_field :学部名, id: :employee_account_faculty %>
+    <br><br><br>
+  </div>
+
+<div class="button_group">
+    <%= form.label :卒業年 %>
+    <%= form.text_field :卒業年, id: :employee_account_graduate %>
+    <br><br><br>
+  </div>
+
+<div class="button_group">
+    <%= form.label :希望年収 %>
+    <%= form.text_field :希望年収, id: :employee_account_desired_salary %>万円
+    <br><br><br>
 </div>
+
+<div class="button_group">
+    <%= form.label :自己PR %>
+    <%= form.text_area :自己PR, id: :employee_account_personal_summary %>
+    <br><br><br>
+</div>
+
+<div class="button_group">
+    <%= form.label :公開NG企業 %>
+    <%= form.text_field :公開NG企業, id: :employee_account_not_public_company %>
+    <br><br><br>
+</div>
+
+
+<div>
+  <%= form.submit :送信 %>
+</div>
+
+<% end %>
