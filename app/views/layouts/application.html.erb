@@ -4,6 +4,7 @@
     <title><%= yield(:title) %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
@@ -11,13 +12,11 @@
 
   <body>
     <div id="wrapper">
-      <header>
-        <% if yield(:header).empty? %>
-          <%= render 'layouts/header' %>
-        <% else %>
-          <%= yield :header %>
-        <% end %>
-      </header>
+      <% if yield(:header).empty? %>
+        <%= render 'layouts/header' %>
+      <% else %>
+        <%= yield :header %>
+      <% end %>
       <div class="container py-4 px-0">
         <%= flash_message(flash[:success], :success) if flash[:sucess] %>
         <%= flash_message(flash[:error], :danger) if flash[:error] %>

@@ -182,3 +182,16 @@ a {
   padding: 2%;
   @include shadow
 }//registration-container
+
+
+
+//top_indexのコンテナ
+.top-index-setting-container-detail {
+  @extend .setting-container;
+  width: 100%;
+  @include cf;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  margin-bottom: 5%;
+  margin-top: 1%;
+}

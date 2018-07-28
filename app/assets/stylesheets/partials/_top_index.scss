@@ -1,0 +1,90 @@
+@import "definition/base";
+@import "layout/base";
+
+//無料登録ボタン
+.top-guide-message-btn {
+  @extend %btn_skel;
+  @extend %btn_lar;
+  @extend %btn_color;
+  background: $cs10;
+  transition: .4s;
+  float: left;
+  position: absolute;
+  bottom: 6%;
+  width: 50%;
+  left: 25%;
+  height: 11%;
+  padding-top: 0.5%;
+  border: 3px solid white;
+  font-size: 2.8rem;
+  &:hover {
+    background: $cs6;
+    text-decoration: none;
+  }
+}//top-guide-message-contain
+
+
+.pc-main-visual{
+  @include cf;
+  height: 500px;
+  // background:url(#{$imgPath}/bg-main-visual.jpg) no-repeat;
+  // img {
+  background-size: cover;
+  background-position: bottom;
+  margin-top: -1%;
+  position: relative;
+}//pc-main-visual
+
+
+@media #{$desktop} {
+  .sp-main-visual {
+    display: none;
+  }//pc-main-visual
+}
+
+/*width-max Layout
+---------------------------------------*/
+@media #{$desktop4} {
+  .pc-main-visual {
+    height: 600px;
+  }//pc-main-visual
+}
+
+/*sp Layout
+---------------------------------------*/
+@media #{$sm} {
+  .pc-main-visual {
+    height: 380px;
+    .top-guide-message-btn {
+      font-size: 2.4rem;
+    }
+  }//pc-main-visual
+  .sp-main-visual {
+    display: none;
+  }//sp-main-visual
+}
+
+@media #{$sp2} {
+  .pc-main-visual {
+    display: none;
+  }//pc-main-visual
+  .sp-main-visual {
+    height: 600px;
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
+    .top-guide-message-btn {
+      width: 90%;
+      bottom: 2%;
+      left: 5%;
+      padding-top: 4%;
+      font-size: 2rem;
+    }//top-guide-message-btn
+  }//sp-main-visual
+}
+
+@media #{$sp3} {
+  .sp-main-visual {
+    height: 500px;
+  }//sp-main-visual
+}
