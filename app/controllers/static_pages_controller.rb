@@ -1,4 +1,7 @@
-class StaticPagesController < ApplicationController
+class StaticPagesController <  ActionController::Base
+  #applicationControlerを継承していない
+  ##なぜならば、applicationControlerで、ユーザー認証をしないと
+  ## スカウトページなどを閲覧できないようにリダイレクトするコードを実装しているため
   def companysummary
     @user = 1
     if @user = 1

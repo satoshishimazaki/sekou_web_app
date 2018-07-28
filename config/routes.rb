@@ -11,12 +11,21 @@ Rails.application.routes.draw do
       get 'scout_views/detail' => 'detail'
 
   #このuser_settingはresourceをうまく使ってスリムにかけそう。後ほどリファクタリングする. 7.23記載のコメント
-  get 'user_setting' => 'user_setting#index'
-      get 'user_setting/viewconfig' => 'viewconfig'
-      get 'user_setting/byebye'     => 'byebye'
-      get 'user_setting/logininfo'  => 'logininfo'
-      get 'user_setting/popupconfig'=> 'popupconfig'
-      get 'user_setting/byebyeresult'=> 'byebyeresult'
+  get 'user_setting'   => 'user_setting#index'
+      get 'user_setting/viewconfig'   => 'viewconfig'
+      get 'user_setting/byebye'       => 'byebye'
+      get 'user_setting/logininfo'    => 'logininfo'
+      get 'user_setting/popupconfig'  => 'popupconfig'
+      get 'user_setting/byebyeresult' => 'byebyeresult'
+
+  #このclient_settingはresourceをうまく使ってスリムにかけそう。後ほどリファクタリングする. 7.27記載のコメント
+  get 'client_setting' => 'client_setting#index'
+      get 'client_setting/accountsetting' => 'accountsetting'
+      get 'client_setting/template'       => 'template'
+      get 'client_setting/logininfo'      => 'logininfo'
+      get 'client_setting/popupconfig'    => 'popupconfig'
+      get 'client_setting/accountdelete'  => 'accountdelete'
+
 
   #employee_accountsへのルーティング
     resources :employee_accounts

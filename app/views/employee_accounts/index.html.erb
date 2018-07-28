@@ -2,16 +2,12 @@
 * 自分の登録情報を表示するページ
 * 決めなくてはいけないこと：リンク先をもう少し明確にする。ここの編集/表示 ...etcの詳細の仕様を決めていなかったので...
 * 最終編集 : 2018.7.24  edited by takuya
--->
 
-<!--
+<!-
 * 未解決のバグ等
   * 画面のヘッダーが最初のトップページの状態で、メニュー画面のようなページがない
   * DRYがうまくできていない。ここ絶対効率化できる。プログラムの保守性的にもリファクタリングする必要あり。
 -->
-
-
-
 <div class="content_container">
   <div class="detail_scout">
     <div>
@@ -19,6 +15,7 @@
       <h3>プロフィール一覧</h3>
     </div>
   <table class="table_1">
+
     <tr>
     <th>苗字</th>
     <td><%= @employee_account_last_name %></td>
@@ -27,13 +24,16 @@
     </tr>
 
 
+
     <tr>
     <th>ミョウジ</th>
     <td><%= @employee_account_last_name_kana %></td>
     <th>ナマエ</th>
     <td><%= @employee_account_first_name_kana %></td>
     </tr>
+
   </table>
+
 
 <table class="table_1">
     <tr>

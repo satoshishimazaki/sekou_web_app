@@ -1,0 +1,131 @@
+<!--
+* userモデルとの整合性をとって、メールアドレスの記入を不要にする or 認証をとってバッティングしないようにする。
+という設定が必要。
+
+いくつか、フィールドの制限(integerとか。testとか。が縛りが弱いので直す。)
+
+* 入力途中でフォームを送信できてしまうので、必須回答を埋めないと送信できないように制限をかける。
+
+final edited by takuya at 2018.7.27
+
+-->
+
+
+<br><br><br><br><br><br>
+
+<%= form_with(model: EmployeeAccount, loacl: true) do |form| %>
+
+<div class="button_group">
+    <%= form.label :苗字 %>
+    <%= form.text_field :苗字, id: :employee_account_last_name %>
+
+    <%= form.label :名前 %>
+    <%= form.text_field :名前, id: :employee_account_first_name %>
+    <br><br>
+  </div>
+
+<div class="button_group">
+    <%= form.label :ミョウジ %>
+    <%= form.text_field :ミョウジ, id: :employee_account_last_name_kana %>
+
+    <%= form.label :ナマエ %>
+    <%= form.text_field :ナマエ, id: :employee_account_first_name_kana %>
+    <br><br><br>
+  </div>
+
+<div class="button_group">
+    <%= form.label :電話番号 %>
+    <%= form.text_field :電話番号, id: :employee_account_phone_number%>
+    <br><br><br>
+  </div>
+
+<div class="button_group">
+    <%= form.label :メールアドレス %>
+    <%= form.text_field :メールアドレス, id: :employee_account_email %>
+    <br><br><br>
+  </div>
+
+<div class="button_group">
+    <%= form.label :生年月日 %>
+    <%= form.date_field :生年月日, id: :employee_account_birth%>
+    <br><br><br>
+  </div>
+
+<div class="button_group">
+    <%= form.label :性別 %>
+    <%= form.text_field :性別, id: :employee_account_sex %>
+    <br><br><br>
+  </div>
+
+<div class="button_group">
+    <%= form.label :就労状況 %>
+    <%= form.text_field :就労状況, id: :employee_account_employment_status%>
+    <br><br><br>
+  </div>
+
+<div class="button_group">
+    <%= form.label :郵便番号 %>
+    <%= form.text_field :郵便番号, id: :employee_account_address_post %>
+    <br><br>
+  </div>
+
+<div class="button_group">
+    <%= form.label :都道府県 %>
+    <%= form.text_field :都道府県, id: :employee_account_prefecture_id %>
+    <br><br>
+  </div>
+
+<div class="button_group">
+    <%= form.label :住所_市町村 %>
+    <%= form.text_field :住所_市町村, id: :employee_account_address_city %>
+    <br><br>
+  </div>
+
+<div class="button_group">
+    <%= form.label :住所_番地・建物名 %>
+    <%= form.text_field :住所_番地・建物名, id: :employee_account_address_building %>
+    <br><br>
+  </div>
+
+<div class="button_group">
+    <%= form.label :大学名 %>
+    <%= form.text_field :大学名, id: :employee_account_university %>
+    <br><br><br>
+  </div>
+
+<div class="button_group">
+    <%= form.label :学部名 %>
+    <%= form.text_field :学部名, id: :employee_account_faculty %>
+    <br><br><br>
+  </div>
+
+<div class="button_group">
+    <%= form.label :卒業年 %>
+    <%= form.text_field :卒業年, id: :employee_account_graduate %>
+    <br><br><br>
+  </div>
+
+<div class="button_group">
+    <%= form.label :希望年収 %>
+    <%= form.text_field :希望年収, id: :employee_account_desired_salary %>万円
+    <br><br><br>
+</div>
+
+<div class="button_group">
+    <%= form.label :自己PR %>
+    <%= form.text_area :自己PR, id: :employee_account_personal_summary %>
+    <br><br><br>
+</div>
+
+<div class="button_group">
+    <%= form.label :公開NG企業 %>
+    <%= form.text_field :公開NG企業, id: :employee_account_not_public_company %>
+    <br><br><br>
+</div>
+
+
+<div>
+  <%= form.submit :送信 %>
+</div>
+
+<% end %>
