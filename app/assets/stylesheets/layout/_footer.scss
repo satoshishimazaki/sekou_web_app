@@ -6,7 +6,7 @@ footer{
   // height: 160px;
   padding-top: 20px;
   box-sizing: border-box;
-  background: $ck;
+  background: $cb;
   .container-fluid {
     margin-top: 30px;
   }
@@ -17,7 +17,7 @@ footer{
     margin-bottom: 20px;
     a{
       font-size: 1.6rem;
-      color: $cb;
+      color: $ck;
       &:hover {
         color: $csh;
         text-decoration: none;
@@ -34,10 +34,10 @@ footer{
       display: inline-block;
       margin-right: 20px;
       line-height: 62px;
-      color: $cb;
+      color: $ck;
       font-size: 1.2rem;
       a{
-        color: $cb;
+        color: $ck;
         &:hover {
           color: $csh;
           text-decoration: none;
@@ -46,7 +46,7 @@ footer{
     }
   }
   .copy{
-    color: $cb;
+    color: $ck;
     text-align: center;
     font-size: 1rem;
     clear: both;

@@ -3,16 +3,207 @@
 <%= link_to "Client Sign up", 'clients/sign_up', class: "btn btn-lg btn-primary" %>
 
 -->
-<!-- トップ画像はguideボタン以外は貼り付け　後日リファクタリング
+<!-- FIXED:トップ画像はguideボタン以外は貼り付け　後日リファクタリング
+
+-->
+<!-- FIXED:特徴とSTEPのパネル高さがグリッドで揃わない
+
+-->
+
+<!-- Must FIXED:スマホ用レイアウト整える
 
 -->
 
 
-<div class="full_container">
+<div class="top-full-container">
   <div class="pc-main-visual" style= "background-image:url(<%= asset_path "bg-main-visual-pc.jpg"%>)">
-    <a href="/" class="top-guide-message-btn">まずはカンタン無料登録！</a>
+    <a href="#contact" class="top-guide-message-btn">まずはカンタン無料登録！</a>
   </div>
   <div class="sp-main-visual" style= "background-image:url(<%= asset_path "bg-main-visual-sp.jpg"%>)">
-    <a href="/" class="top-guide-message-btn">まずはカンタン無料登録！</a>
+    <a href="#contact" class="top-guide-message-btn">まずはカンタン無料登録！</a>
   </div>
+
+  <div class="top-point-container">
+    <div class="top-point-title">
+      <div class="top-point-title-en">
+        <h2>POINT</h2>
+      </div><!--top-point-title -->
+      <div class="top-point-title-ja">
+        <h3>【施工ネット測量・設計】の３つの特徴</h3>
+      </div><!--top-point-title -->
+    </div><!--top-point-title -->
+    <div class="three-boxes-container">
+      <ul class="row">
+          <li class="col-md-4">
+            <div class="inner-box">
+              <%= image_tag("point/point01-specialized.gif", :alt => "特徴01測量・設計に特化アイコン") %>
+                <h3>測量・設計に特化</h3>
+                <p>砂塵や鳥類のフンなどを専用の洗浄機と洗剤でクリーニングが可能です。。ソーラーパネル洗浄・清掃の専門業者を紹介をいたします。</p>
+            </div>
+          </li>
+          <li class="col-md-4">
+            <div class="inner-box">
+              <%= image_tag("point/point02-scout.gif", :alt => "特徴02スカウト受取りアイコン") %>
+              <h3>スカウトを受け取る</h3>
+              <p>ソーラーパネル洗浄・清掃の専門業者を紹介をいたします。ラインが揃わないなぜだろう<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </p>
+            </div>
+          </li>
+          <li class="col-md-4">
+            <div class="inner-box">
+              <%= image_tag("point/point03-anonymous.gif", :alt => "特徴03完全匿名性アイコン") %>
+              <h3>完全匿名制</h3>
+              <p>砂塵や鳥類のフンなどを専用の洗浄機と洗剤でクリーニングが可能です。。ソーラーパネル洗浄・清掃の専門業者を紹介をいたします。</p>
+            </div>
+          </li>
+      </ul>
+     </div>
+    </div><!--top-point-container -->
+
+    <div class="section-flow">
+      <h2>登録無料！簡単！３STEP！</h2>
+      <div class="step-visual" style= "background-image:url(<%= asset_path "bg-step-img-pc.jpg"%>)">
+
+        <div class="top-step-title">
+          <div class="top-step-title-en">
+            <h3>STEP</h3>
+          </div><!--top-point-title -->
+          <div class="top-step-title-ja">
+            <p>【施工ネット測量・設計】の３つのステップ</p>
+          </div><!--top-point-title -->
+        </div><!--top-point-title -->
+
+        <div class="three-boxes-container">
+        <div class="row">
+            <div class="col-md-4">
+              <div class="inner-box">
+                <%= image_tag("step/step01-register", :alt => "ステップ01プロフィール登録アイコン") %>
+                  <h3>プロフィールを登録</h3>
+                  <p>砂塵や鳥類のフンなどを専用の洗浄機と洗剤でクリーニングが可能です。。ソーラーパネル洗浄・清掃の専門業者を紹介をいたします。</p>
+              </div>
+            </div>
+            <div class="step-arrow01">
+              <%= image_tag("img-right-arrow.svg", :alt => "右矢印") %>
+            </div>
+            <div class="col-md-4">
+              <div class="inner-box">
+                <%= image_tag("step/step02-wait.gif", :alt => "ステップ02スカウト待ちアイコン") %>
+                <h3>スカウトメールを待つ</h3>
+                <p>ソーラーパネル洗浄・清掃の専門業者を紹介をいたします。ラインが揃わないなぜだろう<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </p>
+              </div>
+            </div>
+            <div class="step-arrow02">
+              <%= image_tag("img-right-arrow.svg", :alt => "右矢印") %>
+            </div>
+            <div class="col-md-4">
+              <div class="inner-box">
+                <%= image_tag("step/step03-contact.gif", :alt => "ステップ03企業とコンタクトアイコン") %>
+                <h3>企業とコンタクト</h3>
+                <p>砂塵や鳥類のフンなどを専用の洗浄機と洗剤でクリーニングが可能です。。ソーラーパネル洗浄・清掃の専門業者を紹介をいたします。</p>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="guide-btn-container">
+        <div class="balloon1">
+          <p>簡単１０秒！まずはメールアドレスのみ！</p>
+        </div>
+        <a href="#contact" class="top-guide-message-btn">まずはカンタン無料登録！</a>
+      </div>
+      </div>
+    </div><!--section-flow-->
+
+  <div class="top-section-faq">
+      <div class="top-point-title">
+        <div class="top-point-title-en">
+          <h2>FAQ</h2>
+        </div><!--top-point-title -->
+        <div class="top-point-title-ja">
+          <h3>よくあるご質問</h3>
+        </div><!--top-point-title -->
+      </div><!--top-point-title -->
+    <div class="display-faq">
+      <div class="faq">
+        <div class="display-detail">
+          <dl>
+            <dt><span>Q.</span> 一括サイトとの違い</dt>
+            <dd><span>A.</span>一括見積もりサイトは複数の業者に対して自動的に情報を送り、見積もりを取り寄せたり、バラバラと勝手に連絡がお客様に入るのがほとんどです。<br>太陽光メンテプロでは、まずは専門コンシェルジュがお客様の要望をヒアリングし、最適な業者を紹介します。</dd>
+
+            <dt><span>Q.</span> 一度にたくさんの電話が来そう</dt>
+            <dd><span>A.</span>最初に専門コンシェルジュがお客様へ要望を確認した上で適切な業者と連絡をとり、お客様へ見積もり提案をいたしますので、たくさんの電話が来ることはございません。コンシェジュが提案した業者の中から希望にそう業者とのみ連絡を取ることが可能となります。</dd>
+
+            <dt><span>Q.</span> 紹介後の見積もりで断ることは可能か</dt>
+            <dd><span>A.</span>はい、可能です。その場合は、直接、業者へお伝えください。直接お伝えが難しい場合は、ご連絡いただければコンシェルジュからお伝えいたします。また、契約にいたらなかった理由については後日お聞かせいただければ幸いです。</dd>
+
+            <dt><span>Q.</span> 太陽光メンテプロは無料なの</dt>
+            <dd><span>A.</span>はい、無料です。本サービスは、業者側から紹介料/成約料をいただいて運営しているので、お客様から金額はいただきません。無料でご利用することが可能となっております。</dd>
+
+            <dt><span>Q.</span> 問い合わせ後の流れは</dt>
+            <dd><span>A.</span>弊社の専門コンシェルジュがいただきました電話番号へ連絡差し上げます。太陽光発電の状況や希望サービス等の情報をヒアリングし、最適な業者から概算見積もりを取得します。その後、お客様へ見積もりを提示しますので、希望に沿う業者と成約していただく流れとなります。最終仕上げありに関してヒアリングさせていただければ幸いです。</dd>
+          </dl>
+        </div><!--display-detail -->
+      </div><!--user-faq -->
+    </div><!--display-faq -->
+  </div><!--top-section-faq -->
+
+  <div class="top-section-contact" id="contact">
+    <div class="top-contact-title">
+      <h2>登録は無料です！</h2>
+    </div><!--top-contact-title -->
+    <div class="top-contact-container">
+      <div class="top-contact-flow">
+        <ul class="flow_contact">
+          <li class="active">メールアドレス入力</li>
+          <li>仮登録メール確認</li>
+          <li >会員情報入力</li>
+        </ul>
+      </div><!--top-contact-flow -->
+      <div class="top-contact-mail">
+        <div class="has-float-label_full_sm">
+          <input id="ddd" type="text" placeholder="example@gmail.com"/>
+          <label for="ddd">メールアドレス</label>
+          <p class="must_btton_text">必須</p>
+        </div>
+      </div><!--top-contact-mail -->
+      <div class="top-contact-mail-term-link">
+        <ul>
+          <li><%= link_to "『利用規約』" , convention_path %></li>
+          <li><%= link_to "『プライバシーポリシー』" , privacypolicy_path %></li>
+        </ul>
+      </div><!--top-contact-mail-term-link -->
+      <div class="top-contact-btn">
+        <a href="/" class="top-guide-message-btn">同意して仮登録メールを送る</a>
+      </div><!--top-contact-btn -->
+      <div class="top-contact-caution">
+        <ul>
+          <li>※本人認証が必要となります。すぐに受け取れるメールアドレスをご入力ください。</li>
+          <li>※メール受信制限をされている方は co.jp（採用事務局） からのメール受信を許可してください。</li>
+        </ul>
+      </div><!--top-contact-caution -->
+    </div><!--top-contact-container -->
+  </div><!--top-section-contact -->
 </div><!--full-container -->
+<% content_for :footer do %>
+<footer>
+<div class="container">
+ <div class="row">
+     <div class="logo"><strong>
+       <a href="/"><%= image_tag("blue-logo.svg", :alt => "施工ネット青色ロゴ") %></a>
+     </strong></div>
+     <ul>
+       <li><%= link_to "運営会社", companysummary_path %></li>
+       <li><%= link_to "利用規約", convention_path %></li>
+       <li><%= link_to "プライバシーポリシー", privacypolicy_path %></li>
+       <li><%= link_to "よくあるご質問", faq_path %></li>
+       <li><%= link_to "お問い合わせ", contactus_path %></li>
+     </ul>
+      <p class="copy">&copy;&nbsp;施工ネット</p>
+ </div><!--row-->
+</div><!--container-->
+<div id="backtop">
+</div>
+</footer>
+<% end %>

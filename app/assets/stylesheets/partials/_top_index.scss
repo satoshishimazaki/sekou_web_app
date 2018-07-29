@@ -17,12 +17,39 @@
   padding-top: 0.5%;
   border: 3px solid white;
   font-size: 2.8rem;
+  @include shadow;
   &:hover {
     background: $cs6;
     text-decoration: none;
   }
 }//top-guide-message-contain
 
+
+//section title　point faq共通利用
+.top-point-title {
+  @include cf;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  .top-point-title-en {
+    h2 {
+      text-align: center;
+      font-size: 3.4rem;
+      color: $ck;
+      &:before {
+        content: 'ー';
+        font-size: 2.8rem;
+      }
+      &:after {
+        content: 'ー';
+        font-size: 2.8rem;
+      }
+    }//h2
+  }//top-point-title
+  .top-point-title-ja {
+    text-align: center;
+  }//top-point-title
+}//top-point-title
 
 .pc-main-visual{
   @include cf;
@@ -35,6 +62,390 @@
   position: relative;
 }//pc-main-visual
 
+.top-point-container {
+  @include cf;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 4%;
+  margin-top: 4%;
+  .top-point-title {
+    @include cf;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    .top-point-title-en {
+      h2 {
+        text-align: center;
+        font-size: 3.4rem;
+        color: $ck;
+        &:before {
+          content: 'ー';
+          font-size: 2.8rem;
+        }
+        &:after {
+          content: 'ー';
+          font-size: 2.8rem;
+        }
+      }//h2
+    }//top-point-title
+    .top-point-title-ja {
+      text-align: center;
+    }//top-point-title
+  }//top-point-title
+  .three-boxes-container {
+    @include cf;
+    margin: 2% 0% 2% 0%;
+    ul {
+      list-style: none;
+      padding-left: 0px;
+      .inner-box {
+       border: 1px solid $cg;
+       @include shadow;
+       img {
+         width: 100%;
+       }//img
+       h3 {
+         text-align: center;
+         padding: 1%;
+         color: $ck;
+       }//h3
+       p {
+         padding: 5%;
+       }//p
+        .image-of-boxes {
+
+        }//image-of-boxes
+        .title-of-boxes {
+
+        }//title-of-boxes
+        .text-of-boxes {
+
+        }//title-of-boxes
+      }//one-of-boxes
+   }//ul
+  }//three-boxes-container
+}//top-point-container
+
+
+/*3STEP flow
+---------------------------------------*/
+.section-flow{
+  padding-top: 0;
+  h2{
+    position: relative;
+    color: $cb;
+    background: $cs4;
+    padding: 1.5%;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 60px;
+    z-index: 10;
+    &::after{
+      content: "";
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 60px 80px 0 80px;
+      border-color: $cs4 transparent transparent transparent;
+      @include absPosition($top: auto, $right: 0, $bottom: -60px, $left: 0);
+      top: auto;
+      display: block;
+      margin: 0 auto ;
+    }
+  }//h2
+  .top-step-title {
+    @include cf;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 6%;
+    .top-step-title-en {
+      h3 {
+        text-align: center;
+        font-size: 3.4rem;
+        color: $cb;
+        &:before {
+          content: 'ー';
+          font-size: 2.8rem;
+        }
+        &:after {
+          content: 'ー';
+          font-size: 2.8rem;
+        }
+      }//h3
+    }//top-point-title
+    .top-step-title-ja {
+      text-align: center;
+      p {
+        font-size: 2rem;
+        color: $cb;
+      }
+    }//top-point-title
+  }//top-point-title
+  .step-visual{
+    @include cf;
+    height: 900px;
+    background-size: cover;
+    background-position: bottom;
+    margin-top: -6%;
+    position: relative;
+    .three-boxes-container {
+      @include cf;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 2%;
+      position: relative;
+      .step-arrow01 {
+        position: absolute;
+        top: 42%;
+        left: 30%;
+        width: 6%;
+        z-index: 20;
+      }//step-arrow01
+      .step-arrow02 {
+        position: absolute;
+        top: 42%;
+        left: 64%;
+        width: 6%;
+        z-index: 20;
+      }//step-arrow02
+      .inner-box {
+       border: 1px solid $cg;
+       @include shadow;
+       background: $cb;
+       img {
+         width: 100%;
+       }//img
+       h3 {
+         text-align: center;
+         padding: 1%;
+         color: $ck;
+       }//h3
+       p {
+         padding: 5%;
+       }//p
+      }//inner-box
+    }//three-boxes-container
+    .guide-btn-container {
+      @include cf;
+      position: relative;
+      .balloon1 {
+       	position: relative;
+      	display: inline-block;
+      	padding: 7px 10px;
+       	max-width: 100%;
+        font-size: 2rem;
+        background: $cb;
+        border-radius: 6px;
+        width: 46%;
+        text-align: center;
+        margin-left: 27%;
+        margin-right: 27%;
+        margin-top: 6%;
+        color: $ck;
+        &:before{
+        	content: "";
+        	position: absolute;
+        	top: 100%;
+        	left: 50%;
+         	margin-left: -30%;
+        	border: 15px solid transparent;
+        	border-top: 15px solid $cb;
+        }
+        p {
+          margin: 0;
+  	      padding: 0;
+        }
+      }//balloon1
+      .top-guide-message-btn {
+        height: 50%;
+        padding-top: 0.5%;
+        position: absolute;
+        top: 110%;
+        a {
+          padding-top: 0%;
+        }
+      }//top-guide-message-btn
+  }//guide-btn-container
+  }//pc-step-visual
+
+
+  .txt-01{
+    text-align: center;
+    font-size: 4rem;
+    font-weight: bold;
+    color: $cs;
+    margin: 40px auto 30px;
+  }
+
+
+  ul{
+    @media #{$desktop} {
+      display: flex;
+    }
+    @include cf;
+    li{
+      border: 2px solid $cs;
+      float: left;
+      width:20.5%;
+      &:nth-child(even){
+        // @extend %flex_align;
+        width:6%;
+        border: none;
+        transform: scale(.8);
+        img{
+          width: 100%;
+        }
+      }
+
+      .txt-02{
+        text-align: center;
+        font-size: 2.6rem;
+        font-weight: bold;
+        color: $cb;
+        background: $cs;
+        height:50px;
+        line-height: 50px;
+        margin-bottom: 16px;
+      }
+      h3{
+        color: $ck;
+        text-align: center;
+        font-size: 2.6rem;
+        font-weight: bold;
+      }
+      .txt-03{
+        padding: 16px;
+      }
+    }//li
+  }
+}//.section-flow
+
+
+/*FAQ
+---------------------------------------*/
+.top-section-faq {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 4%;
+  .display-faq {
+    box-shadow: 1px 1px 5px #bfbfbf;
+  }//display-faq
+}//top-section-faq
+
+/*contact
+---------------------------------------*/
+.top-section-contact {
+  width: 100%;
+  background: $ck;
+  @include cf;
+  height: 100%;
+  padding-bottom: 2%;
+  .top-contact-title {
+    @include cf;
+    height: 100%;
+    text-align: center;
+    padding: 2%;
+    margin-left: 25%;
+    margin-right: auto;
+    width: 50%;
+    h2 {
+      font-size: 2.6rem;
+      color: $cb;
+      &:before {
+        content: '＼';
+      }
+      &:after  {
+        content: '／';
+      }
+    }
+  }//top-contact-title
+  .top-contact-container {
+    @include cf;
+    height: 100%;
+    width: 80%;
+    margin: 0% 10% 2% 10%;
+    background: $cb;
+    .top-contact-flow {
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 3%;
+      .flow_contact {
+        @extend %flow_model;
+        li {
+          width: 33%;
+        }
+      }
+      .active {
+        background-color: $cs4;
+        color: $cb;
+        &:after {
+          background-color: $cs4;
+        }
+        &:before {
+          background-color: $cs4;
+          }
+       }//active
+    }//top-contact-flow
+    .top-contact-mail {
+      margin: 1%;
+    }//top-contact-mail
+    .top-contact-mail-term-link {
+      width: 80%;
+      margin: 1%;
+      margin-left: auto;
+      margin-right: auto;
+      ul {
+        list-style: none;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        li {
+          display: inline-block;
+          margin-right: 8%;
+        }
+      }//ul
+    }//top-contact-mail-term-link
+    .top-contact-btn {
+      height: 100px;
+      position: relative;
+      @include cf;
+      .top-guide-message-btn {
+        background: $cs11;
+        padding-bottom: 4%;
+        font-size: 2rem;
+        height: 6%;
+        padding-top: 1.5%;
+        &:hover {
+          background: $cs12;
+        }
+      }//top-guide-message-btn
+    }//top-contact-btn
+    .top-contact-caution {
+      margin-top: 1%;
+      margin-bottom: 2%;
+      ul {
+        list-style: none;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+    }//top-contact-caution
+  }//top-contact-container
+}//top-section-contact
+
+
+
+
+/*サイズ別　↓記載
+---------------------------------------*/
 
 @media #{$desktop} {
   .sp-main-visual {
@@ -48,6 +459,11 @@
   .pc-main-visual {
     height: 600px;
   }//pc-main-visual
+  .section-flow{
+    .pc-step-visual{
+      height: 1000px;
+    }//pc-step-visual
+  }//section-flow
 }
 
 /*sp Layout
@@ -59,6 +475,9 @@
       font-size: 2.4rem;
     }
   }//pc-main-visual
+  .inner-box {
+    margin-bottom: 2%;
+  }
   .sp-main-visual {
     display: none;
   }//sp-main-visual
@@ -81,10 +500,54 @@
       font-size: 2rem;
     }//top-guide-message-btn
   }//sp-main-visual
+  .inner-box {
+    margin-bottom: 2%;
+  }
 }
 
 @media #{$sp3} {
   .sp-main-visual {
     height: 500px;
   }//sp-main-visual
+  .inner-box {
+    margin-bottom: 2%;
+  }
+  h2 {
+    font-size: 2.4rem;
+  }
+  .section-flow {
+    h2 {
+      padding: 3.5%;
+    }//h2
+    .step-visual {
+      height: 1700px;
+      margin-top: -19%;
+      .top-step-title {
+        padding-top: 20%;
+        h3 {
+          font-size: 2.5rem;
+        }//h3
+        p {
+          font-size: 1.8rem;
+        }//p
+      }//top-step-title
+      .guide-btn-container {
+        width: 100%;
+        .balloon1 {
+          width: 90%;
+          margin-left: 5%;
+          font-size: 1.4rem;
+        }//balloon1
+        .top-guide-message-btn {
+          margin-left: -20%;
+          font-size: 1.8rem;
+          width: 90%;
+          margin-left: -20%;
+          font-size: 1.8rem;
+          height: 60%;
+        }//top-guide-message-btn
+      }//guide-btn-container
+    }//step-visual
+
+  }//section-flow
 }
