@@ -11,7 +11,6 @@
 * 未解決のバグ等
   * 画面のヘッダーが最初のトップページの状態で、メニュー画面のようなページがない
 -->
+  <%= render 'form' , EmployeeAccount: @employee_account %>
 
-<%= render 'form' , EmployeeAccount: @employee_account %>
-
-<%= link_to "元に戻る" , :action => 'index' %>
+<%= link_to '元に戻る', 'inedex' %>

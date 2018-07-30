@@ -1,3 +1,4 @@
-<%= render 'form' , EmployeeAccount: @employee_account %>
-
-<%= link_to "元に戻る" , :action => 'index' %>
+<%= form_with(model: EmployeeAccount, loacl: true) do |form| %>
+  <%= render 'form' , EmployeeAccount: @employee_account %>
+<% end %>
+<%= link_to "元に戻る" , :action => 'show' %>

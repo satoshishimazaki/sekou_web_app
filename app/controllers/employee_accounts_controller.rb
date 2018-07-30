@@ -1,5 +1,7 @@
 class EmployeeAccountsController < ApplicationController
-
+  def index
+    @employee_account = EmployeeAccount.all
+  end
 
   def new
     @employee_account = EmployeeAccount.new
@@ -12,7 +14,7 @@ class EmployeeAccountsController < ApplicationController
   def create
     @employee_account = EmployeeAccount.new(employee_account_params)
     @employee_account.save
-    redirect_to employee_accounts_path
+    redirect_to employee_accounts_path(@employee_account)
   end
 
   def edit
