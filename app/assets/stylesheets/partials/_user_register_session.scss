@@ -49,6 +49,25 @@
     }//label
   }//save-check-btn
 
+  .register-term-link {
+    width: 80%;
+    margin: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    ul {
+      list-style: none;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      padding-left: 0%;
+      li {
+        display: inline-block;
+        margin-right: 8%;
+      }
+    }//ul
+  }//register-term-link
+
   .button-panel {
     margin: 2em 0 0;
     width: 100%;
