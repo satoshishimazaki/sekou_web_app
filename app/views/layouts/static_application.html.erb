@@ -45,27 +45,5 @@
   </header>
   <% end %>
 <% end %>
-<% content_for :footer do %>
-<footer>
-<div class="container">
- <div class="row">
-     <p class="logo"><strong>
-       <a href="/">
-         施工ネット 測量・設計
-       </a>
-     </strong></p>
-     <ul>
-       <li><%= link_to "運営会社", companysummary_path %></li>
-       <li><%= link_to "利用規約", convention_path %></li>
-       <li><%= link_to "プライバシーポリシー", privacypolicy_path %></li>
-       <li><%= link_to "よくあるご質問", faq_path %></li>
-       <li><%= link_to "お問い合わせ", contactus_path %></li>
-     </ul>
-      <p class="copy">&copy;&nbsp;施工ネット</p>
- </div><!--row-->
-</div><!--container-->
-<div id="backtop">
-</div>
-</footer>
-<% end %>
+<%= render 'layouts/footer' %>
 <% parent_layout 'application' %>

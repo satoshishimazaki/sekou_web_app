@@ -12,11 +12,7 @@
 
   <body>
     <div id="wrapper">
-      <% if yield(:header).empty? %>
-        <%= render 'layouts/header' %>
-      <% else %>
-        <%= yield :header %>
-      <% end %>
+      <%= yield :header %>
       <div class="container py-4 px-0">
         <%= flash_message(flash[:success], :success) if flash[:sucess] %>
         <%= flash_message(flash[:error], :danger) if flash[:error] %>
@@ -24,11 +20,7 @@
         <%= flash_message(flash[:notice], :info) if flash[:notice]  %>
       </div>
       <%= yield %>
-      <% if yield(:footer).empty? %>
-          <%= render 'layouts/footer' %>
-      <% else %>
-          <%= yield :footer %>
-      <% end %>
+      <%= yield :footer %>
     </div>
     <script>
       function demo01() {
