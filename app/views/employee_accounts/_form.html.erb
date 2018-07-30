@@ -14,33 +14,43 @@ final edited by takuya at 2018.7.27
 <br><br><br><br><br><br>
 
 <%= form_with(model: EmployeeAccount, loacl: true) do |form| %>
+
+  <% if @employee_account.errors.any? %>
+      <h4>入力した内容にエラーが<%= @employee_account.errors.count %>件あります</h4>
+      <ul>
+        <% @employee_account.errors.full_messages.each do |message| %>
+          <li> <%= message %></li>
+        <% end %>
+      </ul>
+  <% end %>
+
 <div class="button_group">
     <%= form.label :苗字 %>
-    <%= form.text_field :苗字, id: :employee_account_last_name %>
+    <%= form.text_field :苗字, id: :last_name %>
 
     <%= form.label :名前 %>
-    <%= form.text_field :名前, id: :employee_account_first_name %>
+    <%= form.text_field :名前, id: :first_name %>
     <br><br>
   </div>
 
 <div class="button_group">
     <%= form.label :ミョウジ %>
-    <%= form.text_field :ミョウジ, id: :employee_account_last_name_kana %>
+    <%= form.text_field :ミョウジ, id: :last_name_kana %>
 
     <%= form.label :ナマエ %>
-    <%= form.text_field :ナマエ, id: :employee_account_first_name_kana %>
+    <%= form.text_field :ナマエ, id: :first_name_kana %>
     <br><br><br>
   </div>
 
 <div class="button_group">
     <%= form.label :電話番号 %>
-    <%= form.text_field :電話番号, id: :employee_account_phone_number%>
+    <%= form.text_field :電話番号, id: :phone_number%>
     <br><br><br>
   </div>
 
 <div class="button_group">
     <%= form.label :メールアドレス %>
-    <%= form.text_field :メールアドレス, id: :employee_account_email %>
+    <%= form.text_field :メールアドレス, id: :email %>
     <br><br><br>
   </div>
 

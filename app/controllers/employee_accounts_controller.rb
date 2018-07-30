@@ -13,8 +13,14 @@ class EmployeeAccountsController < ApplicationController
 
   def create
     @employee_account = EmployeeAccount.new(employee_account_params)
-    @employee_account.save
-    redirect_to employee_accounts_path(@employee_account)
+
+    #入力内容の検証を行い、正しく入力されてればindexへ、そうでなければ、新規入力フォームを作成する。
+
+    if @employee_account.save
+      redirect_to employee_accounts_path(@employee_account)
+    else
+      render action: :new
+    end
   end
 
   def edit
