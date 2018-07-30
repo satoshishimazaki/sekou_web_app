@@ -1,12 +1,5 @@
 class EmployeeAccountsController < ApplicationController
 
-  def index
-    @employee_account = EmployeeAccount.all
-  end
-
-  def edit
-    @employee_account = EmployeeAccount.find(params[:id])
-  end
 
   def new
     @employee_account = EmployeeAccount.new
@@ -20,6 +13,10 @@ class EmployeeAccountsController < ApplicationController
     @employee_account = EmployeeAccount.new(employee_account_params)
     @employee_account.save
     redirect_to employee_accounts_path
+  end
+
+  def edit
+    @employee_account = EmployeeAccount.find(params[:id])
   end
 
   def update
