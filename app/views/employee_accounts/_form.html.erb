@@ -13,7 +13,7 @@ final edited by takuya at 2018.7.27
 
 <br><br><br><br><br><br>
 
-<%= form_with(model: EmployeeAccount, loacl: true) do |form| %>
+<%= form_with model: @employee_account, local: true do |form| %>
 
   <% if @employee_account.errors.any? %>
       <h4>入力した内容にエラーが<%= @employee_account.errors.count %>件あります</h4>
