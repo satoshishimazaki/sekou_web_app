@@ -1,21 +1,4 @@
-<% content_for :header do %>
-<header>
-<div class="container">
- <div class="row">
-   <div class="container-fluid">
-     <div class="logo">
-       <a href="/" id ="pate-top">
-         <%= image_tag("white-logo.svg", :alt => "施工ネット") %>
-       </a>
-     </div><!--logo-->
-     <div class="con-domain">
-       <p>測量・設計</p>
-     </div><!--con-domain-->
-    </div><!--container-fluid-->
-  </div><!--row-->
-</div><!--container-->
-</header>
-<% end %>
+<%= render 'layouts/header' %>
 <div class="register-session-container">
   <div class="form-wrapper">
     <h2>登録がお済みの方</h2>
@@ -47,27 +30,4 @@
 
   </div><!--form-wrapper-->
 </div><!--register-session-container-->
-
-<% content_for :footer do %>
-<footer>
-<div class="container">
- <div class="row">
-     <p class="logo"><strong>
-       <a href="/">
-         施工ネット 測量・設計
-       </a>
-     </strong></p>
-     <ul>
-       <li><%= link_to "運営会社", companysummary_path %></li>
-       <li><%= link_to "利用規約", convention_path %></li>
-       <li><%= link_to "プライバシーポリシー", privacypolicy_path %></li>
-       <li><%= link_to "よくあるご質問", faq_path %></li>
-       <li><%= link_to "お問い合わせ", contactus_path %></li>
-     </ul>
-      <p class="copy">&copy;&nbsp;施工ネット</p>
- </div><!--row-->
-</div><!--container-->
-<div id="backtop">
-</div>
-</footer>
-<% end %>
+<%= render 'layouts/footer' %>

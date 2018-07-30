@@ -181,24 +181,3 @@
     </div><!--top-contact-container -->
   </div><!--top-section-contact -->
 </div><!--full-container -->
-<% content_for :footer do %>
-<footer>
-<div class="container">
- <div class="row">
-     <div class="logo"><strong>
-       <a href="/"><%= image_tag("blue-logo.svg", :alt => "施工ネット青色ロゴ") %></a>
-     </strong></div>
-     <ul>
-       <li><%= link_to "運営会社", companysummary_path %></li>
-       <li><%= link_to "利用規約", convention_path %></li>
-       <li><%= link_to "プライバシーポリシー", privacypolicy_path %></li>
-       <li><%= link_to "よくあるご質問", faq_path %></li>
-       <li><%= link_to "お問い合わせ", contactus_path %></li>
-     </ul>
-      <p class="copy">&copy;&nbsp;施工ネット</p>
- </div><!--row-->
-</div><!--container-->
-<div id="backtop">
-</div>
-</footer>
-<% end %>

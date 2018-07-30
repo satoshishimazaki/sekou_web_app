@@ -5,7 +5,7 @@ class StaticPagesController <  ActionController::Base
   def companysummary
     @user = 1
     if @user = 1
-      render :layout => 'static_application'
+      render :layout => 'user_application'
     else
       render :layout => 'client_application'
     end
