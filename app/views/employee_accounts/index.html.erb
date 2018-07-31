@@ -1,6 +1,16 @@
 <!-- このindex.html.erbがないとエラーが発生する。
-でもこのviewで何を表示するのか不明確
-edit 2018.7.30 by takuya
+このviewファイルでは、履歴書の確認、編集を行えるようにリンクの一覧を貼るページにする。
+edit 2018.7.31 by takuya
 -->
 
-<h1> index page <h1>
+<h1> 履歴書の登録・編集ページ<h1>
+
+<h4>
+
+<%= link_to '履歴書の新規登録をする', new_employee_account_path %> <br>
+
+<%= link_to '登録した履歴書の中身を確認する', employee_account_path(@employee_account) %> <br>
+
+<%= link_to '登録した履歴書の編集をする', edit_employee_account_path(@employee_account) %> <br>
+
+</h4>

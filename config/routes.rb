@@ -7,8 +7,15 @@ Rails.application.routes.draw do
   get 'detailscout' => 'home#detailscout', as: :home_detailscout
   get 'firstscout' => 'home#firstscout', as: :home_firstscout
 
+  #求人企業から送られてきたスカウト一覧を表示するページ  7.31記載のコメント
   get 'scout_views' => 'scout_views#index'
       get 'scout_views/detail' => 'detail'
+
+  #求職者(=ユーザー)のメニュー画面
+  get 'user_menu' => 'user_menu#index'
+
+  #スカウトメッセージのメニュー画面
+  get 'scout_messages' => 'scout_messages#index'
 
   #このuser_settingはresourceをうまく使ってスリムにかけそう。後ほどリファクタリングする. 7.23記載のコメント
   get 'user_setting'   => 'user_setting#index'
@@ -31,7 +38,7 @@ Rails.application.routes.draw do
     resources :employee_accounts
 
 
-  #staticpagesへのルーティング
+  #static_pagesへのルーティング
   get '/companysummary' => 'static_pages#companysummary'
   get '/contactus'      => 'static_pages#contactus'
   get '/convention'     => 'static_pages#convention'
@@ -45,7 +52,6 @@ Rails.application.routes.draw do
       unlooks: 'users/unlooks',
       passwords: 'users/passwords'
     }
-
 
   devise_for :clients, controllers: {
       registrations: 'clients/registrations',

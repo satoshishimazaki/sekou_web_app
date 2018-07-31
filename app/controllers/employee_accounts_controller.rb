@@ -42,6 +42,7 @@ class EmployeeAccountsController < ApplicationController
         :last_name_kana,
         :first_name_kana,
         :phone_number,
+        :email,
         :birth,
         :sex,
         :employment_status,
