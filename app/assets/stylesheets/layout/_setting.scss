@@ -218,3 +218,16 @@ a {
     width: 90%;
   }
 }
+
+.setting-container {
+  @media #{$sp} {
+    width: 100%;
+  }
+}
+
+.content_upper {
+  @media #{$sp} {
+    font-size: 1.6rem;
+    margin-left: 4%;
+  }
+}
