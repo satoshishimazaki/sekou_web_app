@@ -25,6 +25,29 @@
 }//top-guide-message-contain
 
 
+//すでに登録済みの方はこちらボタン
+.top-guide-login-btn {
+  @extend %btn_skel;
+  @extend %btn_lar;
+  @extend %btn_color;
+  background: $cs13;
+  transition: .4s;
+  float: left;
+  position: absolute;
+  top: 12%;
+  width: 10%;
+  left: 33%;
+  height: 10%;
+  padding-top: 0.5%;
+  font-size: 1.3rem;
+  @include shadow;
+  &:hover {
+    background: $cs6;
+    text-decoration: none;
+  }
+}//top-guide-message-contain
+
+
 //section title　point faq共通利用
 .top-point-title {
   @include cf;
@@ -481,6 +504,9 @@
   .sp-main-visual {
     display: none;
   }//sp-main-visual
+  .top-guide-login-btn {
+    width: 15%;
+  }//top-guide-login-btn
 }
 
 @media #{$sp2} {
@@ -503,6 +529,14 @@
   .inner-box {
     margin-bottom: 2%;
   }
+  .top-guide-login-btn {
+    top: 4%;
+    width: 25%;
+    top: 1%;
+    height: 7%;
+    left: 67%;
+    font-size: 1rem;
+  }//top-guide-login-btn
 }
 
 @media #{$sp3} {
@@ -550,4 +584,17 @@
     }//step-visual
 
   }//section-flow
+  .top-guide-login-btn {
+    top: 4%;
+    width: 25%;
+    top: 1%;
+    height: 7%;
+    left: 67%;
+    font-size: 1rem;
+  }//top-guide-login-btn
+}
+
+
+@media #{$sp3} {
+
 }
