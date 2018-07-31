@@ -1,7 +1,4 @@
 class HomeController < ActionController::Base
-  #applicationControlerを継承していない
-  ##なぜならば、applicationControlerで、ユーザー認証をしないと
-  ## スカウトページなどを閲覧できないようにリダイレクトするコードを実装しているため
 
   # layout "clienttest"
   def index
