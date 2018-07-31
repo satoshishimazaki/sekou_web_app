@@ -210,3 +210,11 @@ a {
   margin-bottom: 5%;
   margin-top: 1%;
 }
+
+/*sp Layout
+---------------------------------------*/
+.setting-container-detail-form {
+  @media #{$sp} {
+    width: 90%;
+  }
+}

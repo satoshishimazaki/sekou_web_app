@@ -72,14 +72,14 @@ final edited by takuya at 2018.7.27
 <div class="button_group">
   <div class="has-float-label_full_2col">
     <%= form.label :sex, '性別' %>
-    <%= form.text_field :sex, id: :sex %>
+    <%= form.select :sex, ['男性', '女性'], :prompt =>'選択してください' %>
   </div>
 </div>
 
 <div class="button_group">
   <div class="has-float-label_full_2col">
     <%= form.label :employment_status, '就労状況' %>
-    <%= form.text_field :employment_status, id: :employment_status%>
+    <%= form.select :employment_status, ['在籍中', '無職'], :prompt =>'選択してください' %>
   </div>
 </div>
 
@@ -132,7 +132,7 @@ final edited by takuya at 2018.7.27
   </div>
 </div>
 
-<div class="button_group">
+<div class="button_group" id="mini-size">
   <div class="has-float-label_full_2col">
     <%= form.label :desired_salary, '希望年収'%>
     <%= form.text_field :desired_salary, id: :desired_salary, placeholder: "600"  %>

@@ -15,9 +15,9 @@
 <div class="content_upper">
   <h3>プロフィールの入力</h3>
 </div>
-<div class="setting-container-detail">
+<div class="setting-container-detail-form">
 <%= render 'layouts/header_user' , EmployeeAccount: @employee_account %>
 <%= render 'form' , EmployeeAccount: @employee_account %>
 
-<%= link_to '元に戻る', 'inedex' %>
+<%= link_to '元に戻る', 'inedex', class: 'rebase-link'%>
 </div>
