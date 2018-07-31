@@ -13,7 +13,6 @@ class EmployeeAccountsController < ApplicationController
 
   def create
     @employee_account = EmployeeAccount.new(employee_account_params)
-    puts(@employee_account.last_name)
     #入力内容の検証を行い、正しく入力されてればindexへ、そうでなければ、新規入力フォームを作成する。
 
     if @employee_account.save
