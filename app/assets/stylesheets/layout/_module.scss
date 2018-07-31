@@ -21,6 +21,10 @@ button, textarea, select{
   appearance: none;
 }
 
+textarea {
+  width: 100%;
+}
+
 // /*Base input*/
 input{
   &[type="text"],
@@ -100,6 +104,7 @@ button{
 
 .button_group {
   position: relative;
+  @include cf;
 }
 
 
@@ -176,7 +181,7 @@ button{
 /*1列ラージ*/
 .has-float-label_full_lg {
   @extend %has-float-label;
-  width: 60%;
+  width: 70%;
   @media #{$sp} {
     width: 100%;
     margin-left: auto;
@@ -316,6 +321,13 @@ button{
 
 /* ログインボタン*/
 .log_btn {
+  @extend %btn_skel;
+  @extend %btn_sm;
+  @extend %btn_color;
+}
+
+/* ベーシックボタン*/
+.basic-btn {
   @extend %btn_skel;
   @extend %btn_sm;
   @extend %btn_color;
@@ -702,43 +714,3 @@ $easing: ease;
     }//th,td sp
   }//sp
 }//table_1
-
-/* faq============*/
-.display-faq {
-  @extend %display-container;
-  .display-detail {
-    h3 {
-      width: 96%;
-      border-bottom: 1px solid #b9b9b9;
-      font-size: 1.8rem;
-      padding-bottom: 1.5%;
-    }
-    p {
-      font-type: bold;
-    }
-    dl {
-    width: 100% ;
-    // height: 10em ;
-    padding: 0px 1em ;
-    text-align: left ;
-    }
-    dt {
-    width: 100% ;
-    // height: 1.6em ;
-    padding: 0px 1em ;
-    background-color: $cs9;
-    color: white;
-    margin-top: 4%;
-    line-height: 2.028571;
-    }
-    dd {
-    margin-left: 0px ;
-    width: 100% ;
-    padding: 0px 1em ;
-    font-size: 0.9em ;
-    text-align: left ;
-    background-color: $cg ;
-    line-height: 1.8;
-    }
-  }//display-detail
-}//display-faq

@@ -11,6 +11,13 @@
 * 未解決のバグ等
   * 画面のヘッダーが最初のトップページの状態で、メニュー画面のようなページがない
 -->
-  <%= render 'form' , EmployeeAccount: @employee_account %>
+<div class>
+<div class="content_upper">
+  <h3>プロフィールの入力</h3>
+</div>
+<div class="setting-container-detail">
+<%= render 'layouts/header_user' , EmployeeAccount: @employee_account %>
+<%= render 'form' , EmployeeAccount: @employee_account %>
 
 <%= link_to '元に戻る', 'inedex' %>
+</div>

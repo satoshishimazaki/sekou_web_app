@@ -10,131 +10,152 @@ final edited by takuya at 2018.7.27
 
 -->
 
-
-<br><br><br><br><br><br>
-
 <%= form_with model: @employee_account, local: true do |form| %>
 
   <% if @employee_account.errors.any? %>
       <h4>入力した内容にエラーが<%= @employee_account.errors.count %>件あります</h4>
-      <ul>
-        <% @employee_account.errors.full_messages.each do |message| %>
-          <li> <%= message %></li>
-        <% end %>
-      </ul>
+      <div class="form-error">
+        <ul>
+          <% @employee_account.errors.full_messages.each do |message| %>
+            <li> <%= message %></li>
+          <% end %>
+        </ul>
+      </div>
   <% end %>
 
 <div class="button_group">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name, id: :last_name %>
-
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name, id: :first_name %>
-    <br><br>
+  <div class="has-float-label_full_2col">
+    <p class="must_btton_text">必須</p>
+    <%= form.label :last_name, '苗字' %>
+    <%= form.text_field :last_name, id: 'employee_account_last_name', placeholder: "山田"%>
   </div>
+  <div class="has-float-label_full_2col">
+    <p class="must_btton_text">必須</p>
+    <%= form.label :first_name, '名前' %>
+    <%= form.text_field :first_name, id: 'employee_account_first_name', placeholder: "太郎" %>
+  </div>
+</div>
 
 <div class="button_group">
-    <%= form.label :last_name_kana %>
-    <%= form.text_field :last_name_kana, id: :last_name_kana %>
-
-    <%= form.label :first_name_kana %>
-    <%= form.text_field :first_name_kana, id: :first_name_kana %>
-    <br><br><br>
+  <div class="has-float-label_full_2col">
+    <%= form.label :last_name_kana, 'ミョウジ' %>
+    <%= form.text_field :last_name_kana, id: :last_name_kana, placeholder: "ヤマダ" %>
   </div>
+  <div class="has-float-label_full_2col">
+    <%= form.label :first_name_kana, 'ナマエ' %>
+    <%= form.text_field :first_name_kana, id: :first_name_kana, placeholder: "タロウ" %>
+  </div>
+</div>
 
 <div class="button_group">
-    <%= form.label :phone_number %>
-    <%= form.text_field :phone_number, id: :phone_number%>
-    <br><br><br>
+  <div class="has-float-label_full_2col">
+    <p class="must_btton_text">必須</p>
+    <%= form.label :phone_number, '電話番号' %>
+    <%= form.text_field :phone_number, id: :phone_number, placeholder: '09000000000' %>
   </div>
+</div>
 
 <div class="button_group">
-    <%= form.label :email %>
-    <%= form.text_field :email, id: :email %>
-    <br><br><br>
+  <div class="has-float-label_full_2col">
+    <%= form.label :email, 'メールアドレス' %>
+    <%= form.text_field :email, id: :email, placeholder: "sample@mail.com" %>
   </div>
+</div>
 
 <div class="button_group">
-    <%= form.label :birth %>
+  <div class="has-float-label_full_2col">
+    <%= form.label :birth, '生年月日' %>
     <%= form.date_field :birth, id: :birth%>
-    <br><br><br>
   </div>
+</div>
 
 <div class="button_group">
-    <%= form.label :sex %>
+  <div class="has-float-label_full_2col">
+    <%= form.label :sex, '性別' %>
     <%= form.text_field :sex, id: :sex %>
-    <br><br><br>
   </div>
+</div>
 
 <div class="button_group">
-    <%= form.label :employment_status %>
+  <div class="has-float-label_full_2col">
+    <%= form.label :employment_status, '就労状況' %>
     <%= form.text_field :employment_status, id: :employment_status%>
-    <br><br><br>
   </div>
+</div>
 
 <div class="button_group">
-    <%= form.label :address_post %>
-    <%= form.text_field :address_post, id: :address_post %>
-    <br><br>
+  <div class="has-float-label_full_2col">
+    <%= form.label :address_post, '郵便番号' %>
+    <%= form.text_field :address_post, id: :address_post, placeholder: "1030000" %>
   </div>
+</div>
 
 <div class="button_group">
-    <%= form.label :prefecture_id %>
+  <div class="has-float-label_full_2col">
+    <%= form.label :prefecture_id, '都道府県' %>
     <%= form.text_field :prefecture_id, id: :prefecture_id %>
-    <br><br>
   </div>
-
-<div class="button_group">
-    <%= form.label :address_city %>
-    <%= form.text_field :address_city, id: :address_city %>
-    <br><br>
-  </div>
-
-<div class="button_group">
-    <%= form.label :address_building %>
-    <%= form.text_field :address_building, id: :address_building %>
-    <br><br>
-  </div>
-
-<div class="button_group">
-    <%= form.label :university %>
-    <%= form.text_field :university, id: :university %>
-    <br><br><br>
-  </div>
-
-<div class="button_group">
-    <%= form.label :faculty %>
-    <%= form.text_field :faculty, id: :faculty %>
-    <br><br><br>
-  </div>
-
-<div class="button_group">
-    <%= form.label :graduate %>
-    <%= form.text_field :graduate, id: :graduate %>
-    <br><br><br>
-  </div>
-
-<div class="button_group">
-    <%= form.label :desired_salary %>
-    <%= form.text_field :desired_salary, id: :desired_salary %>万円
-    <br><br><br>
 </div>
 
 <div class="button_group">
-    <%= form.label :personal_summary %>
+  <div class="has-float-label_full_2col">
+    <%= form.label :address_city, '住所_市町村' %>
+    <%= form.text_field :address_city, id: :address_city, placeholder: "中央区" %>
+  </div>
+</div>
+
+<div class="button_group">
+  <div class="has-float-label_full_2col">
+    <%= form.label :address_building, '住所_番地・建物名' %>
+    <%= form.text_field :address_building, id: :address_building, placeholder: "新川2-2-1 いづみハイツ茅場町913" %>
+  </div>
+</div>
+
+<div class="button_group">
+  <div class="has-float-label_full_2col">
+    <%= form.label :university, '大学名' %>
+    <%= form.text_field :university, id: :university, placeholder: "〇〇大学" %>
+  </div>
+</div>
+
+<div class="button_group">
+  <div class="has-float-label_full_2col">
+    <%= form.label :faculty, '学部名' %>
+    <%= form.text_field :faculty, id: :faculty, placeholder: "工学部建築学科" %>
+  </div>
+</div>
+
+<div class="button_group">
+  <div class="has-float-label_full_2col">
+    <%= form.label :graduate, '卒業年' %>
+    <%= form.text_field :graduate, id: :graduate, placeholder: "2008" %>
+  </div>
+</div>
+
+<div class="button_group">
+  <div class="has-float-label_full_2col">
+    <%= form.label :desired_salary, '希望年収'%>
+    <%= form.text_field :desired_salary, id: :desired_salary, placeholder: "600"  %>
+  </div>
+  <div class="form-right-space">
+    <p>万円</p>
+  </div>
+</div>
+
+<div class="button_group">
+  <div class="has-float-label_full_lg">
+    <%= form.label :personal_summary, '自己PR' %>
     <%= form.text_area :personal_summary, id: :personal_summary %>
-    <br><br><br>
+  </div>
 </div>
 
 <div class="button_group">
-    <%= form.label :not_public_company %>
-    <%= form.text_field :not_public_company, id: :not_public_company %>
-    <br><br><br>
+  <div class="has-float-label_full_2col">
+    <%= form.label :not_public_company, '公開NG企業' %>
+    <%= form.text_field :not_public_company, id: :not_public_company, placeholder: "株式会社○○" %>
+  </div>
 </div>
 
-
-<div>
-  <%= form.submit :送信 %>
-</div>
+<%= form.submit :送信, class: 'basic-btn'%>
 
 <% end %>
