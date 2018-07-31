@@ -333,6 +333,13 @@ button{
   @extend %btn_color;
 }
 
+/* 戻るリンク*/
+a.rebase-link {
+  &:before {
+    content: '<<';
+  }
+}
+
 /* ボタン配置*/
 .btn-position {
   margin-top: 3%;

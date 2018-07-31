@@ -13,8 +13,49 @@ textarea {
   @include shadow;
 }
 
-.from-error {
-  ul {
-    
+.setting-container-detail-form {
+  .basic-btn {
+    margin-top: 7%;
+    margin-bottom: 6%;
   }
 }
+
+.from-error {
+  ul {
+
+  }
+}
+
+/*sp Layout
+---------------------------------------*/
+.setting-container-detail-form {
+  @media #{$sp} {
+    #mini-size {
+      @include cf;
+      width: 100%;
+      .has-float-label_full_2col {
+        width: 80%;
+      }//has-float-label_full_2col
+      .form-right-space {
+        width: 10%;
+        font-size: 1rem;
+        float: left;
+      }//form-right-space
+    }//mini-size
+    .has-float-label_full_2col {
+      width: 90%;
+      margin-left: 5%;
+      .must_btton_text {
+        top: -15%;
+        left: 17%;
+      }//must_btton_text
+      label, > span {
+        top: 0em;
+      }//label, > span
+    }//has-float-label_full_2col
+    .basic-btn {
+      width: 50%;
+      height: 10%;
+    }//basic-btn
+  }//@media
+}//setting-container-detail-form

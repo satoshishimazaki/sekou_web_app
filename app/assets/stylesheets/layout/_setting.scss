@@ -210,3 +210,24 @@ a {
   margin-bottom: 5%;
   margin-top: 1%;
 }
+
+/*sp Layout
+---------------------------------------*/
+.setting-container-detail-form {
+  @media #{$sp} {
+    width: 90%;
+  }
+}
+
+.setting-container {
+  @media #{$sp} {
+    width: 100%;
+  }
+}
+
+.content_upper {
+  @media #{$sp} {
+    font-size: 1.6rem;
+    margin-left: 4%;
+  }
+}
