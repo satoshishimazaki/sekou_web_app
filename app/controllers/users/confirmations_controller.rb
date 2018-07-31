@@ -26,6 +26,5 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
    #The path used after confirmation.
    def after_confirmation_path_for(resource_name, resource)
      super(resource_name, resource)
-     redirect_to new_employee_accout_url    # employee_accountsを表示する
    end
 end
