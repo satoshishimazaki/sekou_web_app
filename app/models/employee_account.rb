@@ -4,6 +4,7 @@ class EmployeeAccount < ApplicationRecord
 # :employee_account_faculty, :employee_account_university,:employee_account_graduate,:employee_account_not_public_company
 # は検証対象外
 
+
   validates :last_name,
             :first_name,
             :last_name_kana,
