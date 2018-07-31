@@ -5,12 +5,13 @@ $tablet:  "only screen and (min-width:768px)";
 $sp:  "only screen and (max-width:991px)";
 $sp2:  "only screen and (max-width:750px)";
 $sp3:  "only screen and (max-width:330px)"; //iphone5 se
+$sp4:  "only screen and (max-width:415px)"; //iphone8 plus
 $desktop:  "only screen and (min-width:992px)";
 $desktop2:  "only screen and (min-width:992px) and (max-width:1279px)";
 $desktop3:  "only screen and (min-width:992px) and (max-width:1280px)";
 $desktop4:  "only screen and (min-width:1400px)";
 
 $xs:  "only screen and (max-width:767px)";
-$sm: "only screen and (min-width:768px) and (max-width:991px)";
+$sm: "only screen and (min-width:768px) and (max-width:991px)"; //ipad
 $md:  "only screen and (min-width:992px) and (max-width:1199px)";
 $lg:  "only screen and (min-width:1200px)";
