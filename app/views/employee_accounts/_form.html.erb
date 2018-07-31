@@ -12,16 +12,16 @@ final edited by takuya at 2018.7.27
 
 <%= form_with model: @employee_account, local: true do |form| %>
 
-  <% if @employee_account.errors.any? %>
-      <h4>入力した内容にエラーが<%= @employee_account.errors.count %>件あります</h4>
-      <div class="form-error">
-        <ul>
-          <% @employee_account.errors.full_messages.each do |message| %>
-            <li> <%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-  <% end %>
+<% if @employee_account.errors.any? %>
+    <h4>入力した内容にエラーが<%= @employee_account.errors.count %>件あります</h4>
+    <div class="form-error">
+      <ul>
+        <% @employee_account.errors.full_messages.each do |message| %>
+          <li> <%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
 
 <div class="button_group">
   <div class="has-float-label_full_2col">
@@ -59,6 +59,13 @@ final edited by takuya at 2018.7.27
   <div class="has-float-label_full_2col">
     <%= form.label :email, 'メールアドレス' %>
     <%= form.text_field :email, id: :email, placeholder: "sample@mail.com" %>
+  </div>
+</div>
+
+<div class="button_group">
+  <div class="has-float-label_full_2col">
+    <%= form.label :password, 'パスワード' %>
+    <%= form.text_field :password, id: :password, placeholder: "012345AAA" %>
   </div>
 </div>
 

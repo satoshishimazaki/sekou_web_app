@@ -8,7 +8,7 @@ class EmployeeAccountsController < ApplicationController
   end
 
   def show
-    @employee_accout = EmployeeAccount.find(params[:id])
+    @employee_account = EmployeeAccount.find(params[:id])
   end
 
   def create
@@ -29,6 +29,7 @@ class EmployeeAccountsController < ApplicationController
   def update
     @employee_account = EmployeeAccount.find(params[:id])
     @employee_account.update(employee_account_params)
+    redirect_to employee_accounts_path(@employee_account)
   end
 
   def delete
@@ -43,6 +44,7 @@ class EmployeeAccountsController < ApplicationController
         :first_name_kana,
         :phone_number,
         :email,
+        :password,
         :birth,
         :sex,
         :employment_status,
