@@ -1,6 +1,7 @@
 class EmployeeAccountsController < ApplicationController
   def index
     @employee_account = EmployeeAccount.all
+    
   end
 
   def new
