@@ -32,8 +32,13 @@ class EmployeeAccountsController < ApplicationController
     redirect_to employee_accounts_path(@employee_account)
   end
 
-  def delete
-  end
+# employee accountだけじゃなくて関連するもの全て消去だと思うので、
+#　コーディングはし直す必要あり。 edited by takuya 08.01
+
+#  def destroy
+#    @employee_account = EmployeeAccount.find(params[:id]).destroy
+#    redirect_to employee_accounts_path(@employee_account)
+#  end
 
   private
     def employee_account_params
