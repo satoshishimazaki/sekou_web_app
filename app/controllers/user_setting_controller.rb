@@ -22,4 +22,5 @@ class UserSettingController < ApplicationController
 
   def viewconfig
   end
+
 end

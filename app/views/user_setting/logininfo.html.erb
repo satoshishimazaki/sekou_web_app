@@ -18,7 +18,7 @@
   <div class="registration-container">
     <p>登録済みのメールアドレス</p>
     <div class="mail-text">
-      <p>test@gmail.com</p>
+      <p>test@example.com</p>
     </div><!--mail-text -->
   </div><!--registration-container -->
 
@@ -50,7 +50,7 @@
           <input id="eee" type="text" placeholder=""/>
         </div>
       </form><!--from -->
-      <%= link_to "パスワードを忘れた方はこちら" , :action => 'index' %>
+      <%= link_to "パスワードを忘れた方はこちら" , edit_user_password_url %>
       <h3>新しいパスワード</h3>
       <form>
         <div class="has-float-label_full_lg">
