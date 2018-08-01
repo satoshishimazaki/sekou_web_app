@@ -1,4 +1,4 @@
 class Scout < ApplicationRecord
-    belongs_to :employee_id, class_name: "User"
-    belongs_to :client_id, class_name: "Client"
+    belongs_to :employee_account, :clients_company
+    has_many :scouts_message
 end

@@ -31,7 +31,4 @@ class Client < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable, :timeoutable
 
-  has_many :active_relationships, class_name:"Scout",
-            foreign_key: "client_id",
-            dependent: :destroy
 end
