@@ -33,10 +33,14 @@ Rails.application.routes.draw do
       get 'client_setting/popupconfig'    => 'popupconfig'
       get 'client_setting/accountdelete'  => 'accountdelete'
 
+  #求人会社(=client)のメニュー画面
+  get 'client_menu' => 'client_menu#index'
+
+  #clients_accountへのルーティング
+    resources :client_accounts
 
   #employee_accountsへのルーティング
     resources :employee_accounts
-
 
   #static_pagesへのルーティング
   get '/companysummary' => 'static_pages#companysummary'
@@ -56,7 +60,7 @@ Rails.application.routes.draw do
   devise_for :clients, controllers: {
       registrations: 'clients/registrations',
       sessions: 'clients/sessions',
-      confirmations: 'clients/confimation',
+      confirmations: 'clients/confirmations',
       unlooks: 'clients/unlooks',
       passwords: 'clients/passwords'
     }

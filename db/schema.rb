@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_02_023912) do
+ActiveRecord::Schema.define(version: 2018_08_02_084046) do
 
   create_table "careers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "employee_id"
@@ -26,6 +26,40 @@ ActiveRecord::Schema.define(version: 2018_08_02_023912) do
   create_table "careers_objectives", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "career_id"
     t.integer "objective_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "client_accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "address_post"
+    t.integer "prefecture_id"
+    t.string "address_city"
+    t.string "address_building"
+    t.date "established"
+    t.string "president"
+    t.integer "employees_number"
+    t.string "employees_memo"
+    t.integer "stock"
+    t.string "stock_memo"
+    t.string "homepage"
+    t.string "time_start"
+    t.string "time_end"
+    t.string "time_memo"
+    t.float "average_ages"
+    t.string "domain_text"
+    t.string "welfare"
+    t.string "day_off"
+    t.string "recruiter"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "client_id"
+    t.index ["client_id"], name: "index_client_accounts_on_client_id"
+  end
+
+  create_table "client_accounts_domains", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "clients_company_id"
+    t.integer "domain_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -54,31 +88,6 @@ ActiveRecord::Schema.define(version: 2018_08_02_023912) do
     t.index ["email"], name: "index_clients_on_email", unique: true
     t.index ["reset_password_token"], name: "index_clients_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_clients_on_unlock_token", unique: true
-  end
-
-  create_table "clients_companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.string "address_post"
-    t.integer "prefecture_id"
-    t.string "address_city"
-    t.string "address_building"
-    t.date "established"
-    t.string "president"
-    t.integer "employees_number"
-    t.string "employees_memo"
-    t.integer "stock"
-    t.string "stock_memo"
-    t.string "homepage"
-    t.string "time_start"
-    t.string "time_end"
-    t.string "time_memo"
-    t.float "average_ages"
-    t.string "domain_text"
-    t.string "welfare"
-    t.string "day_off"
-    t.string "recruiter"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "clients_domains", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -129,12 +138,6 @@ ActiveRecord::Schema.define(version: 2018_08_02_023912) do
   end
 
   create_table "employment_patterns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "job_objecticves", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -198,5 +201,6 @@ ActiveRecord::Schema.define(version: 2018_08_02_023912) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  add_foreign_key "client_accounts", "clients"
   add_foreign_key "employee_accounts", "users"
 end

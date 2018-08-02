@@ -30,5 +30,5 @@ class Client < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable, :timeoutable
-
+  has_one :client_account, dependent: :destroy, inverse_of: :client
 end

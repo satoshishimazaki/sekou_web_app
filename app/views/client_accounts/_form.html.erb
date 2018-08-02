@@ -1,0 +1,15 @@
+<%= form_with model: @client_account, local: true do |form| %>
+
+<div class="button_group">
+  <div class="has-float-label_full_2col">
+    <p class="must_btton_text">必須</p>
+    <%= form.label :name, '会社名' %>
+    <%= form.text_field :name, id: 'client_account_name', placeholder: "Zielson"%>
+  </div>
+  <div class="has-float-label_full_2col">
+    <p class="must_btton_text">必須</p>
+    <%= form.label :address_post, '郵便番号' %>
+    <%= form.text_field :address_post, id: 'client_account_address_post', placeholder: "1040033" %>
+  </div>
+  <%= form.submit :送信, class: 'basic-btn'%>
+<% end %>
