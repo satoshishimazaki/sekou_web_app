@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_02_084046) do
+ActiveRecord::Schema.define(version: 2018_08_02_133912) do
 
   create_table "careers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "employee_id"
@@ -26,6 +26,13 @@ ActiveRecord::Schema.define(version: 2018_08_02_084046) do
   create_table "careers_objectives", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "career_id"
     t.integer "objective_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "client_account_domains", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "client_account_id"
+    t.integer "domain_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -55,13 +62,6 @@ ActiveRecord::Schema.define(version: 2018_08_02_084046) do
     t.datetime "updated_at", null: false
     t.bigint "client_id"
     t.index ["client_id"], name: "index_client_accounts_on_client_id"
-  end
-
-  create_table "client_accounts_domains", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "clients_company_id"
-    t.integer "domain_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "clients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

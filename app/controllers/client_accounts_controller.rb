@@ -30,8 +30,8 @@ class ClientAccountsController < ApplicationController
 
   def update
     @client_account = ClientAccount.find(params[:id])
-    @client_account.update(clients_company_params)
-    redirect_to clients_company_path(@client_account)
+    @client_account.update(client_account_params)
+    redirect_to client_accounts_path(@client_account)
   end
 
 # employee accountだけじゃなくて関連するもの全て消去だと思うので、
@@ -46,6 +46,7 @@ class ClientAccountsController < ApplicationController
     def client_account_params
       params.require(:client_account).permit(
         :name,
-        :address_post)
+        :address_post,
+        {:domain_ids => []})
     end
 end

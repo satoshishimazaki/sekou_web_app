@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# coding: utf-8
+Domain.create(:name => '測量')
+Domain.create(:name => '設計')
+Domain.create(:name => '総合土木')
