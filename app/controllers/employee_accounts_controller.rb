@@ -1,7 +1,7 @@
 class EmployeeAccountsController < ApplicationController
   def index
     @employee_account = EmployeeAccount.all
-    
+
   end
 
   def new
@@ -14,6 +14,7 @@ class EmployeeAccountsController < ApplicationController
 
   def create
     @employee_account = EmployeeAccount.new(employee_account_params)
+    @employee_account.user_id = current_user.id
     #入力内容の検証を行い、正しく入力されてればindexへ、そうでなければ、新規入力フォームを作成する。
 
     if @employee_account.save

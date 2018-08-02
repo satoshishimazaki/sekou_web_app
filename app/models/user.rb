@@ -31,4 +31,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable, :timeoutable
 
+  has_one :employee_account, dependent: :destroy, inverse_of: :user
+
 end

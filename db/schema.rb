@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_01_043355) do
+ActiveRecord::Schema.define(version: 2018_08_02_023912) do
 
   create_table "careers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "employee_id"
@@ -117,6 +117,8 @@ ActiveRecord::Schema.define(version: 2018_08_01_043355) do
     t.string "not_public_company"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_employee_accounts_on_user_id"
   end
 
   create_table "employees_objectives", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -196,4 +198,5 @@ ActiveRecord::Schema.define(version: 2018_08_01_043355) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  add_foreign_key "employee_accounts", "users"
 end

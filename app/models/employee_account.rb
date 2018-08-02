@@ -5,7 +5,7 @@ class EmployeeAccount < ApplicationRecord
 # は検証対象外
 
 has_many :scout #, :employee_objective
-
+belongs_to :user, inverse_of: :employee_account, optional: true
 
   validates :last_name,
             :first_name,
