@@ -1,3 +1,6 @@
-<%= render 'form' , EmployeeAccount: @employee_account %>
+<p><%= @employee_account.last_name %></p>
+<p><%= @employee_account.first_name %></p>
 
 <%= link_to "元に戻る" , :action => 'index' %>
+<%= link_to "スカウト作成" , {:controller => 'scouts', :action => 'new', id: @employee_account.last_name } %>
+<%= link_to "スカウト作成" , new_scout_path(:id => @employee_account.id) %>

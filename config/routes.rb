@@ -40,7 +40,12 @@ Rails.application.routes.draw do
     resources :client_accounts
 
   #employee_accountsへのルーティング
-    resources :employee_accounts
+    resources :employee_accounts do
+      resources :scouts
+    end
+
+  # #clients_accountへのルーティング
+  #   resources :scouts
 
   #static_pagesへのルーティング
   get '/companysummary' => 'static_pages#companysummary'

@@ -1,0 +1,10 @@
+<%= form_with model: @scout, local: true do |form| %>
+
+<div class="button_group">
+  <div class="has-float-label_full_2col">
+    <p class="must_btton_text">必須</p>
+    <%= form.label :summary, 'サマリ' %>
+    <%= form.text_field :summary, id: 'scout_summary', placeholder: "お願いします"%>
+  </div>
+  <%= form.submit :送信, class: 'basic-btn'%>
+<% end %>

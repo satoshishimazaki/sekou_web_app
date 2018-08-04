@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_02_133912) do
+ActiveRecord::Schema.define(version: 2018_08_03_164920) do
 
   create_table "careers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "employee_id"
@@ -162,8 +162,12 @@ ActiveRecord::Schema.define(version: 2018_08_02_133912) do
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "employee_account_id"
+    t.bigint "client_account_id"
+    t.index ["client_account_id"], name: "index_scouts_on_client_account_id"
     t.index ["client_id", "employee_id"], name: "index_scouts_on_client_id_and_employee_id", unique: true
     t.index ["client_id"], name: "index_scouts_on_client_id"
+    t.index ["employee_account_id"], name: "index_scouts_on_employee_account_id"
     t.index ["employee_id"], name: "index_scouts_on_employee_id"
   end
 
@@ -203,4 +207,6 @@ ActiveRecord::Schema.define(version: 2018_08_02_133912) do
 
   add_foreign_key "client_accounts", "clients"
   add_foreign_key "employee_accounts", "users"
+  add_foreign_key "scouts", "client_accounts"
+  add_foreign_key "scouts", "employee_accounts"
 end

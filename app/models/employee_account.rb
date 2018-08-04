@@ -4,7 +4,8 @@ class EmployeeAccount < ApplicationRecord
 # :employee_account_faculty, :employee_account_university,:employee_account_graduate,:employee_account_not_public_company
 # は検証対象外
 
-has_many :scout #, :employee_objective
+has_many :scouts
+has_many :client_accounts, through: :scouts #, :employee_objective
 belongs_to :user, inverse_of: :employee_account, optional: true
 
   validates :last_name,
