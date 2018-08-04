@@ -64,7 +64,9 @@ class EmployeeAccountsController < ApplicationController
         :graduate,
         :desired_salary,
         :personal_summary,
-        :not_public_company)
+        :not_public_company,
+        {:qualification_ids =>[]},
+        {:job_objective_ids =>[]})
     end
 
 end

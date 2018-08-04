@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_04_064016) do
+ActiveRecord::Schema.define(version: 2018_08_04_072841) do
 
   create_table "careers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "employee_id"
@@ -130,20 +130,28 @@ ActiveRecord::Schema.define(version: 2018_08_04_064016) do
     t.index ["user_id"], name: "index_employee_accounts_on_user_id"
   end
 
-  create_table "employees_objectives", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "employee_id"
-    t.integer "objectives_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "employment_patterns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "job_objective_employee_accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "employee_account_id"
+    t.integer "job_objective_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "job_objectives", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+  end
+
+  create_table "qualification_employee_accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "qualification_id"
+    t.integer "employee_account_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -152,15 +160,6 @@ ActiveRecord::Schema.define(version: 2018_08_04_064016) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "scout_exclusions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "client_account_id"
-    t.bigint "employee_account_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["client_account_id"], name: "index_scout_exclusions_on_client_account_id"
-    t.index ["employee_account_id"], name: "index_scout_exclusions_on_employee_account_id"
   end
 
   create_table "scouts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -216,8 +215,6 @@ ActiveRecord::Schema.define(version: 2018_08_04_064016) do
 
   add_foreign_key "client_accounts", "clients"
   add_foreign_key "employee_accounts", "users"
-  add_foreign_key "scout_exclusions", "client_accounts"
-  add_foreign_key "scout_exclusions", "employee_accounts"
   add_foreign_key "scouts", "client_accounts"
   add_foreign_key "scouts", "employee_accounts"
 end
