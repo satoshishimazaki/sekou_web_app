@@ -173,6 +173,17 @@ final edited by takuya at 2018.7.27
   <% end %>
 </div>
 
+<div class="has-float-label_full_2col">
+  <p class="must_btton_text">必須</p>
+  <%= form.label :job_objectives, '希望職種' %>
+  <%= collection_check_boxes(:employee_account, :job_objective_ids, JobObjective.all, :id, :name) do |b| %>
+  <ul>
+    <li><%= b.label { b.check_box + b.text } %></li>
+  </ul>
+  <% end %>
+</div>
+
+
 <%= form.submit :送信, class: 'basic-btn'%>
 
 <% end %>

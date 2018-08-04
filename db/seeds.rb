@@ -16,6 +16,14 @@ Qualification.create(:name => '測量士補資格')
 Qualification.create(:name => '一級建築士資格')
 Qualification.create(:name => '二級建築士資格')
 
+JobObjective.create(:name => '測量士')
+JobObjective.create(:name => '測量士補')
+JobObjective.create(:name => 'ドローン操縦士')
+JobObjective.create(:name => 'CADオペレーター')
+JobObjective.create(:name => '建築士')
+JobObjective.create(:name => '施工管理士')
+
+
 # 5.times do |i|
 #   i += 1
 #   User.create(

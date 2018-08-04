@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_04_055637) do
+ActiveRecord::Schema.define(version: 2018_08_04_072841) do
 
   create_table "careers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "employee_id"
@@ -130,15 +130,15 @@ ActiveRecord::Schema.define(version: 2018_08_04_055637) do
     t.index ["user_id"], name: "index_employee_accounts_on_user_id"
   end
 
-  create_table "employees_objectives", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "employee_id"
-    t.integer "objectives_id"
+  create_table "employment_patterns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "employment_patterns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
+  create_table "job_objective_employee_accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "employee_account_id"
+    t.integer "job_objective_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -146,6 +146,7 @@ ActiveRecord::Schema.define(version: 2018_08_04_055637) do
   create_table "job_objectives", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
   end
 
   create_table "qualification_employee_accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
