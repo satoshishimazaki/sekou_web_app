@@ -5,9 +5,7 @@ class EmployeeAccount < ApplicationRecord
 # は検証対象外
 
 has_many :scouts
-has_many :scout_exclusions
 has_many :client_accounts, through: :scouts
-has_many :exclusion_client_accounts, through: :scout_exclusions, source: :client_acounts
 
 belongs_to :user, inverse_of: :employee_account, optional: true
 
