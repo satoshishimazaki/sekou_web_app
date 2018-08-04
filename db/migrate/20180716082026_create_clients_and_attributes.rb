@@ -1,6 +1,6 @@
 class CreateClientsCompanies < ActiveRecord::Migration[5.2]
   def change
-    create_table :clients_companies do |t|
+    create_table :client_accounts do |t|
       t.string :name
       t.string :address_post
       t.integer :prefecture_id
@@ -25,9 +25,20 @@ class CreateClientsCompanies < ActiveRecord::Migration[5.2]
       t.timestamps
     end
 
-    rename_table :clients_companies, :client_accounts
-
     add_reference :client_accounts, :client, foreign_key: true
+
+    create_table :domains do |t|
+      t.string :name
+
+      t.timestamps
+    end
+
+    create_table :client_accounts_domains do |t|
+      t.integer :client_account_id
+      t.integer :domain_id
+
+      t.timestamps
+    end
 
   end
 end
