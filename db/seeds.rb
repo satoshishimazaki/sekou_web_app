@@ -11,6 +11,11 @@ Domain.create(:name => '測量')
 Domain.create(:name => '設計')
 Domain.create(:name => '総合土木')
 
+Qualification.create(:name => '測量士資格')
+Qualification.create(:name => '測量士補資格')
+Qualification.create(:name => '一級建築士資格')
+Qualification.create(:name => '二級建築士資格')
+
 # 5.times do |i|
 #   i += 1
 #   User.create(

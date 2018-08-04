@@ -8,6 +8,9 @@ has_many :scouts
 has_many :client_accounts, through: :scouts #, :employee_objective
 belongs_to :user, inverse_of: :employee_account, optional: true
 
+has_many :qualification_employee_accounts
+has_many :qualification, through: :qualification_employee_accounts
+
   validates :last_name,
             :first_name,
             :last_name_kana,
