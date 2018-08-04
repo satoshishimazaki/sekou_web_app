@@ -1,0 +1,16 @@
+current directory: /Users/satoshishimazaki/rails_app/sekou_web_app/vendor/bundle/ruby/2.5.0/gems/eventmachine-1.2.7/ext/fastfilereader
+/Users/satoshishimazaki/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20180804-65488-i85fnd.rb extconf.rb
+creating Makefile
+
+current directory: /Users/satoshishimazaki/rails_app/sekou_web_app/vendor/bundle/ruby/2.5.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make "DESTDIR=" clean
+
+current directory: /Users/satoshishimazaki/rails_app/sekou_web_app/vendor/bundle/ruby/2.5.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make "DESTDIR="
+compiling mapper.cpp
+compiling rubymain.cpp
+linking shared-object fastfilereaderext.bundle
+
+current directory: /Users/satoshishimazaki/rails_app/sekou_web_app/vendor/bundle/ruby/2.5.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 fastfilereaderext.bundle ./.gem.20180804-65488-of066i

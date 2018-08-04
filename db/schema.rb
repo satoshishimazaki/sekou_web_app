@@ -162,6 +162,15 @@ ActiveRecord::Schema.define(version: 2018_08_04_072841) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "scout_exclusions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "client_account_id"
+    t.bigint "employee_account_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_account_id"], name: "index_scout_exclusions_on_client_account_id"
+    t.index ["employee_account_id"], name: "index_scout_exclusions_on_employee_account_id"
+  end
+
   create_table "scouts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "agreement_count"
     t.integer "client_id"
@@ -215,6 +224,8 @@ ActiveRecord::Schema.define(version: 2018_08_04_072841) do
 
   add_foreign_key "client_accounts", "clients"
   add_foreign_key "employee_accounts", "users"
+  add_foreign_key "scout_exclusions", "client_accounts"
+  add_foreign_key "scout_exclusions", "employee_accounts"
   add_foreign_key "scouts", "client_accounts"
   add_foreign_key "scouts", "employee_accounts"
 end

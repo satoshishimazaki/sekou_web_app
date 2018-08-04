@@ -24,5 +24,10 @@ class CreateClientsCompanies < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
+
+    rename_table :clients_companies, :client_accounts
+
+    add_reference :client_accounts, :client, foreign_key: true
+
   end
 end

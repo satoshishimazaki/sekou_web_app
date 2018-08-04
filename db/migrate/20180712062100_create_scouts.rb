@@ -13,6 +13,9 @@ class CreateScouts < ActiveRecord::Migration[5.2]
     add_index :scouts ,:client_id
     add_index :scouts ,:employee_id
     add_index :scouts ,[:client_id,:employee_id], unique:true
+
+    add_reference :scouts, :client_account, foreign_key: true
+    add_reference :scouts, :employee_account, foreign_key: true
   end
 
 end

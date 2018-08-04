@@ -6,5 +6,10 @@ class CreateClientsCompanyDomains < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
+
+    rename_table :clients_company_domains, :client_accounts_domains
+
+    rename_column :client_account_domains, :clients_company_id, :client_account_id
+
   end
 end
