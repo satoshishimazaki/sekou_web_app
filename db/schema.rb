@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_04_072841) do
+ActiveRecord::Schema.define(version: 2018_07_12_000004) do
 
   create_table "careers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "employee_id"
@@ -26,13 +26,6 @@ ActiveRecord::Schema.define(version: 2018_08_04_072841) do
   create_table "careers_objectives", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "career_id"
     t.integer "objective_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "client_account_domains", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "client_account_id"
-    t.integer "domain_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -64,6 +57,13 @@ ActiveRecord::Schema.define(version: 2018_08_04_072841) do
     t.index ["client_id"], name: "index_client_accounts_on_client_id"
   end
 
+  create_table "client_accounts_domains", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "client_account_id"
+    t.integer "domain_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "clients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -88,13 +88,6 @@ ActiveRecord::Schema.define(version: 2018_08_04_072841) do
     t.index ["email"], name: "index_clients_on_email", unique: true
     t.index ["reset_password_token"], name: "index_clients_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_clients_on_unlock_token", unique: true
-  end
-
-  create_table "clients_domains", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "clients_id"
-    t.integer "domains"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "domains", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -144,9 +137,9 @@ ActiveRecord::Schema.define(version: 2018_08_04_072841) do
   end
 
   create_table "job_objectives", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
   end
 
   create_table "qualification_employee_accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -179,8 +172,8 @@ ActiveRecord::Schema.define(version: 2018_08_04_072841) do
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "employee_account_id"
     t.bigint "client_account_id"
+    t.bigint "employee_account_id"
     t.index ["client_account_id"], name: "index_scouts_on_client_account_id"
     t.index ["client_id", "employee_id"], name: "index_scouts_on_client_id_and_employee_id", unique: true
     t.index ["client_id"], name: "index_scouts_on_client_id"
