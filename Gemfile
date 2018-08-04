@@ -55,6 +55,7 @@ group :development do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'overcommit'
+  gem 'mailcatcher'
 
   gem 'annotate'
 end

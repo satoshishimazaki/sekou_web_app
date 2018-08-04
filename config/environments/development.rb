@@ -64,15 +64,11 @@ Rails.application.configure do
     host: 'localhost',
     port: 3000
   }
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
   config.action_mailer.logger = nil
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address:         'smtp.gmail.com',
-    port:            587,
-    authentication:  :plain,
-    user_name:       "zielson.info@gmail.com",
-    password:        "xmhrwkdmohgwiobk"
-  }
+  config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
+
 
 
 end
