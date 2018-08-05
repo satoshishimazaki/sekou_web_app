@@ -119,34 +119,48 @@
   .three-boxes-container {
     @include cf;
     margin: 2% 0% 2% 0%;
-    ul {
+    .row {
       list-style: none;
       padding-left: 0px;
-      .inner-box {
-       border: 1px solid $cg;
-       @include shadow;
-       img {
-         width: 100%;
-       }//img
-       h3 {
-         text-align: center;
-         padding: 1%;
-         color: $ck;
-       }//h3
-       p {
-         padding: 5%;
-       }//p
-        .image-of-boxes {
+      .row-eq-height {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .col-md-4 {
+        border: 1px solid $cg;
+        @include shadow;
+        border: 1px solid #f3f3f3;
+        box-shadow: 1px 1px 1px #bfbfbf;
+        padding-left: 0%;
+        padding-right: 0%;
+        .inner-box {
+        padding-left: 0%;
+        padding-right: 0;
+        margin-left: 1%;
+        margin-right: 1%;
+         img {
+           width: 100%;
+         }//img
+         h3 {
+           text-align: center;
+           padding: 1%;
+           color: $ck;
+         }//h3
+         p {
+           padding: 5%;
+         }//p
+          .image-of-boxes {
 
-        }//image-of-boxes
-        .title-of-boxes {
+          }//image-of-boxes
+          .title-of-boxes {
 
-        }//title-of-boxes
-        .text-of-boxes {
+          }//title-of-boxes
+          .text-of-boxes {
 
-        }//title-of-boxes
-      }//one-of-boxes
-   }//ul
+          }//title-of-boxes
+        }//inner-box
+      }//col-md-4
+   }//row
   }//three-boxes-container
 }//top-point-container
 
@@ -221,6 +235,13 @@
       margin-right: auto;
       padding-top: 2%;
       position: relative;
+      .row {
+        list-style: none;
+        padding-left: 0px;
+        .row-eq-height {
+          display: flex;
+          flex-wrap: wrap;
+        }
       .step-arrow01 {
         position: absolute;
         top: 42%;
@@ -235,10 +256,19 @@
         width: 6%;
         z-index: 20;
       }//step-arrow02
-      .inner-box {
-       border: 1px solid $cg;
-       @include shadow;
-       background: $cb;
+      .col-md-4 {
+        border: 1px solid $cg;
+        @include shadow;
+        border: 1px solid #f3f3f3;
+        box-shadow: 1px 1px 1px #bfbfbf;
+        padding-left: 0%;
+        padding-right: 0%;
+        background: $cb;
+        .inner-box {
+        padding-left: 0%;
+        padding-right: 0;
+        margin-left: 1%;
+        margin-right: 1%;
        img {
          width: 100%;
        }//img
@@ -250,7 +280,9 @@
        p {
          padding: 5%;
        }//p
-      }//inner-box
+     }//inner-box
+     }//col-md-4
+     }//row
     }//three-boxes-container
     .guide-btn-container {
       @include cf;
@@ -357,6 +389,46 @@
   margin-bottom: 4%;
   .display-faq {
     box-shadow: 1px 1px 5px #bfbfbf;
+    @extend %display-container;
+    .display-detail {
+      h3 {
+        width: 96%;
+        border-bottom: 1px solid #b9b9b9;
+        font-size: 1.8rem;
+        padding-bottom: 1.5%;
+      }
+      p {
+        font-type: bold;
+      }
+      dl {
+      width: 100% ;
+      // height: 10em ;
+      padding: 0px 1em ;
+      text-align: left ;
+      }
+
+      dt {
+      width: 100% ;
+      // height: 1.6em ;
+      padding: 0px 1em ;
+      background-color: $cs9;
+      color: white;
+      margin-top: 4%;
+      line-height: 2.028571;
+      }
+
+      dd {
+      margin-left: 0px ;
+      width: 100% ;
+      padding: 0px 1em ;
+      font-size: 0.9em ;
+      text-align: left ;
+      background-color: $cg ;
+      line-height: 1.8;
+      padding-top: 1%;
+      padding-bottom: 1%;
+      }
+    }//display-detail
   }//display-faq
 }//top-section-faq
 
@@ -500,6 +572,7 @@
   }//pc-main-visual
   .inner-box {
     margin-bottom: 2%;
+    width: 100%;
   }
   .sp-main-visual {
     display: none;
@@ -526,8 +599,13 @@
       font-size: 2rem;
     }//top-guide-message-btn
   }//sp-main-visual
-  .inner-box {
-    margin-bottom: 2%;
+.three-boxes-container {
+  .row {
+    .inner-box {
+      margin-bottom: 2%;
+      width: 100%;
+    }
+  }
   }
   .top-guide-login-btn {
     top: 4%;
@@ -545,6 +623,7 @@
   }//sp-main-visual
   .inner-box {
     margin-bottom: 2%;
+    width: 100%;
   }
   h2 {
     font-size: 2.4rem;
@@ -592,9 +671,4 @@
     left: 67%;
     font-size: 1rem;
   }//top-guide-login-btn
-}
-
-
-@media #{$sp3} {
-
 }

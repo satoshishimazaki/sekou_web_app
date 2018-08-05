@@ -16,7 +16,7 @@
     <a href="/users/sign_in" class="top-guide-login-btn">登録済みの</br>方はこちら</a>
   </div>
   <div class="sp-main-visual" style= "background-image:url(<%= asset_path "bg-main-visual-sp.jpg"%>)">
-    <a href="/users/sing_up" class="top-guide-message-btn">まずはカンタン無料登録！</a>
+    <a href="/users/sign_up" class="top-guide-message-btn">まずはカンタン無料登録！</a>
     <a href="/users/sign_in" class="top-guide-login-btn">登録済みの</br>方はこちら</a>
   </div>
 
@@ -30,32 +30,32 @@
       </div><!--top-point-title -->
     </div><!--top-point-title -->
     <div class="three-boxes-container">
-      <ul class="row">
-          <li class="col-md-4">
+      <div class="row">
+        <div class="row-eq-height">
+          <div class="col-md-4">
             <div class="inner-box">
-              <%= image_tag("point/point01-specialized.gif", :alt => "特徴01測量・設計に特化アイコン") %>
+                <%= image_tag("point/point01-specialized.gif", :alt => "特徴01測量・設計に特化アイコン") %>
                 <h3>測量・設計に特化</h3>
-                <p>砂塵や鳥類のフンなどを専用の洗浄機と洗剤でクリーニングが可能です。。ソーラーパネル洗浄・清掃の専門業者を紹介をいたします。</p>
+                <p>施工ネットは測量、設計に特化した転職スカウトサービスです。あなたの技術や経験を生かす事のできる転職を支援いたします。</p>
+              </div>
             </div>
-          </li>
-          <li class="col-md-4">
-            <div class="inner-box">
-              <%= image_tag("point/point02-scout.gif", :alt => "特徴02スカウト受取りアイコン") %>
-              <h3>スカウトを受け取る</h3>
-              <p>ソーラーパネル洗浄・清掃の専門業者を紹介をいたします。ラインが揃わないなぜだろう<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </p>
+            <div class="col-md-4">
+              <div class="inner-box">
+                <%= image_tag("point/point02-scout.gif", :alt => "特徴02スカウト受取りアイコン") %>
+                <h3>スカウトを受け取る</h3>
+                <p>プロフィール登録(無料)をしていただければ、あなたをスカウトしたい企業からのスカウトメールを待つだけです。</p>
+              </div>
             </div>
-          </li>
-          <li class="col-md-4">
-            <div class="inner-box">
-              <%= image_tag("point/point03-anonymous.gif", :alt => "特徴03完全匿名性アイコン") %>
-              <h3>完全匿名制</h3>
-              <p>砂塵や鳥類のフンなどを専用の洗浄機と洗剤でクリーニングが可能です。。ソーラーパネル洗浄・清掃の専門業者を紹介をいたします。</p>
+            <div class="col-md-4">
+              <div class="inner-box">
+                <%= image_tag("point/point03-anonymous.gif", :alt => "特徴03完全匿名性アイコン") %>
+                <h3>完全匿名制</h3>
+                <p>企業からのスカウトメールに返信や受諾をするまでは、氏名、生年月日、メールアドレス等の個人情報は完全に非公開です。在職中の方でも安心してご利用いただけます。</p>
+              </div>
             </div>
-          </li>
-      </ul>
-     </div>
+        </div><!--row-eq-height -->
+      </div><!--row -->
+     </div><!--three-boxes-container -->
     </div><!--top-point-container -->
 
     <div class="section-flow">
@@ -73,23 +73,22 @@
 
         <div class="three-boxes-container">
         <div class="row">
+          <div class="row-eq-height">
             <div class="col-md-4">
               <div class="inner-box">
-                <%= image_tag("step/step01-register", :alt => "ステップ01プロフィール登録アイコン") %>
-                  <h3>プロフィールを登録</h3>
-                  <p>砂塵や鳥類のフンなどを専用の洗浄機と洗剤でクリーニングが可能です。。ソーラーパネル洗浄・清掃の専門業者を紹介をいたします。</p>
-              </div>
+              <%= image_tag("step/step01-register", :alt => "ステップ01プロフィール登録アイコン") %>
+              <h3>プロフィールを登録</h3>
+              <p>基本情報、希望条件、保有資格などを登録します。</p>
+            </div>
             </div>
             <div class="step-arrow01">
               <%= image_tag("img-right-arrow.svg", :alt => "右矢印") %>
             </div>
             <div class="col-md-4">
               <div class="inner-box">
-                <%= image_tag("step/step02-wait.gif", :alt => "ステップ02スカウト待ちアイコン") %>
-                <h3>スカウトメールを待つ</h3>
-                <p>ソーラーパネル洗浄・清掃の専門業者を紹介をいたします。ラインが揃わないなぜだろう<br>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </p>
+              <%= image_tag("step/step02-wait.gif", :alt => "ステップ02スカウト待ちアイコン") %>
+              <h3>スカウトメールを待つ</h3>
+              <p>登録した後はあなたをスカウトしたい企業からのスカウトを待ちます。</p>
               </div>
             </div>
             <div class="step-arrow02">
@@ -97,16 +96,17 @@
             </div>
             <div class="col-md-4">
               <div class="inner-box">
-                <%= image_tag("step/step03-contact.gif", :alt => "ステップ03企業とコンタクトアイコン") %>
-                <h3>企業とコンタクト</h3>
-                <p>砂塵や鳥類のフンなどを専用の洗浄機と洗剤でクリーニングが可能です。。ソーラーパネル洗浄・清掃の専門業者を紹介をいたします。</p>
-              </div>
+              <%= image_tag("step/step03-contact.gif", :alt => "ステップ03企業とコンタクトアイコン") %>
+              <h3>企業とコンタクト</h3>
+              <p>スカウトメールの条件や求人内容を確認し、気になった企業に返信しコンタクトをとりましょう。</p>
             </div>
+          </div>
+          </div>
         </div>
       </div>
       <div class="guide-btn-container">
         <div class="balloon1">
-          <p>簡単１０秒！まずはメールアドレスのみ！</p>
+          <p>簡単１０秒！まずはメールアドレスを登録！</p>
         </div>
         <a href="/users/sign_up" class="top-guide-message-btn">まずはカンタン無料登録！</a>
       </div>
@@ -126,20 +126,20 @@
       <div class="faq">
         <div class="display-detail">
           <dl>
-            <dt><span>Q.</span> 一括サイトとの違い</dt>
-            <dd><span>A.</span>一括見積もりサイトは複数の業者に対して自動的に情報を送り、見積もりを取り寄せたり、バラバラと勝手に連絡がお客様に入るのがほとんどです。<br>太陽光メンテプロでは、まずは専門コンシェルジュがお客様の要望をヒアリングし、最適な業者を紹介します。</dd>
+            <dt><span>Q.</span>利用するには費用がかかりますか？</dt>
+            <dd><span>A.</span>企業様からいただいており、みなさまは全て無料でご利用できます。</dd>
 
-            <dt><span>Q.</span> 一度にたくさんの電話が来そう</dt>
-            <dd><span>A.</span>最初に専門コンシェルジュがお客様へ要望を確認した上で適切な業者と連絡をとり、お客様へ見積もり提案をいたしますので、たくさんの電話が来ることはございません。コンシェジュが提案した業者の中から希望にそう業者とのみ連絡を取ることが可能となります。</dd>
+            <dt><span>Q.</span>プロフィールとして登録した情報のうち、企業に公開される項目は？</dt>
+            <dd><span>A.</span>お名前、電話番号、メールアドレス、誕生日の個人情報項目は、企業からのスカウトメールに承諾返信した場合のみ該当企業に公開されます。</dd>
 
-            <dt><span>Q.</span> 紹介後の見積もりで断ることは可能か</dt>
-            <dd><span>A.</span>はい、可能です。その場合は、直接、業者へお伝えください。直接お伝えが難しい場合は、ご連絡いただければコンシェルジュからお伝えいたします。また、契約にいたらなかった理由については後日お聞かせいただければ幸いです。</dd>
+            <dt><span>Q.</span>業務委託、契約社員、アルバイト、学生でも登録可能でしょうか？</dt>
+            <dd><span>A.</span>はい、可能です。正社員に限らずスカウトが届きます。</dd>
 
-            <dt><span>Q.</span> 太陽光メンテプロは無料なの</dt>
-            <dd><span>A.</span>はい、無料です。本サービスは、業者側から紹介料/成約料をいただいて運営しているので、お客様から金額はいただきません。無料でご利用することが可能となっております。</dd>
+            <dt><span>Q.</span>測量や設計の経験がなくても登録可能でしょうか？</dt>
+            <dd><span>A.</span>はい、可能です。未経験者の方もスカウトが届きます。</dd>
 
-            <dt><span>Q.</span> 問い合わせ後の流れは</dt>
-            <dd><span>A.</span>弊社の専門コンシェルジュがいただきました電話番号へ連絡差し上げます。太陽光発電の状況や希望サービス等の情報をヒアリングし、最適な業者から概算見積もりを取得します。その後、お客様へ見積もりを提示しますので、希望に沿う業者と成約していただく流れとなります。最終仕上げありに関してヒアリングさせていただければ幸いです。</dd>
+            <dt><span>Q.</span>スカウトメールが届いた後の流れは？</dt>
+            <dd><span>A.</span>スカウト企業様の情報をみて、選考へ進みたい場合のみ、承諾ボタンを押していただきます。承諾しますとお名前、メールアドレスなどの個人情報が開示されますので、企業様と直接やりとりをおこない、選考へ進んでいただきます。</dd>
           </dl>
         </div><!--display-detail -->
       </div><!--user-faq -->
@@ -151,7 +151,7 @@
 
   <div class="top-section-contact" id="contact">
     <div class="top-contact-title">
-      <h2>登録は無料です！</h2>
+      <h2>ご利用は無料です！</h2>
     </div><!--top-contact-title -->
     <div class="top-contact-container">
       <div class="top-contact-flow">
@@ -161,21 +161,14 @@
           <li >会員情報入力</li>
         </ul>
       </div><!--top-contact-flow -->
-      <div class="top-contact-mail">
-        <div class="has-float-label_full_sm">
-          <input id="ddd" type="text" placeholder="example@gmail.com"/>
-          <label for="ddd">メールアドレス</label>
-          <p class="must_btton_text">必須</p>
-        </div>
-      </div><!--top-contact-mail -->
       <div class="top-contact-mail-term-link">
-        <ul>
+        <!-- <ul>
           <li><%= link_to "『利用規約』" , convention_path %></li>
           <li><%= link_to "『プライバシーポリシー』" , privacypolicy_path %></li>
-        </ul>
+        </ul> -->
       </div><!--top-contact-mail-term-link -->
       <div class="top-contact-btn">
-        <a href="/" class="top-guide-message-btn">同意して仮登録メールを送る</a>
+        <a href="/users/sign_up" class="top-guide-message-btn">まずはカンタン無料登録！</a>
       </div><!--top-contact-btn -->
       <div class="top-contact-caution">
         <ul>
