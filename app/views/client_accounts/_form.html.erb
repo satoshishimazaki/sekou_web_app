@@ -12,6 +12,139 @@
     <%= form.text_field :address_post, id: 'client_account_address_post', placeholder: "1040033" %>
   </div>
 
+</div>
+<div class="has-float-label_full_2col">
+  <p class="must_btton_text">必須</p>
+  <%= form.label :prefecture_id, '都道府県' %>
+  <%= form.text_field :prefecture_id, id: 'client_account_prefecture_id', placeholder: "東京都" %>
+</div>
+
+</div>
+<div class="has-float-label_full_2col">
+  <p class="must_btton_text">必須</p>
+  <%= form.label :address_city, '住所 市町村' %>
+  <%= form.text_field :address_city, id: 'client_account_address_city', placeholder: "中央区" %>
+</div>
+
+</div>
+<div class="has-float-label_full_2col">
+  <p class="must_btton_text">必須</p>
+  <%= form.label :address_building, '住所 建物名' %>
+  <%= form.text_field :address_building, id: 'client_account_address_building', placeholder: "新川" %>
+</div>
+
+</div>
+<div class="has-float-label_full_2col">
+  <p class="must_btton_text">必須</p>
+  <%= form.label :established, '会社設立年' %>
+  <%= form.text_field :established, id: 'client_account_established', placeholder: "2011年" %>
+</div>
+
+</div>
+<div class="has-float-label_full_2col">
+  <p class="must_btton_text">必須</p>
+  <%= form.label :president, '代表者名' %>
+  <%= form.text_field :president, id: 'client_account_president', placeholder: "島崎聖" %>
+</div>
+
+</div>
+<div class="has-float-label_full_2col">
+  <p class="must_btton_text">必須</p>
+  <%= form.label :employees_number, '従業員数' %>
+  <%= form.text_field :employees_number, id: 'client_account_employees_numver', placeholder: "50名" %>
+</div>
+
+</div>
+<div class="has-float-label_full_2col">
+  <p class="must_btton_text">必須</p>
+  <%= form.label :employees_memo, '従業員数メモ' %>
+  <%= form.text_field :employees_memo, id: 'client_account_employees_memo', placeholder: "賑やかな職場です" %>
+</div>
+
+</div>
+<div class="has-float-label_full_2col">
+  <p class="must_btton_text">必須</p>
+  <%= form.label :stock, '資本金' %>
+  <%= form.text_field :stock, id: 'client_account_stock', placeholder: "1億円" %>
+</div>
+
+
+</div>
+<div class="has-float-label_full_2col">
+  <p class="must_btton_text">必須</p>
+  <%= form.label :stock_memo, '資本金メモ' %>
+  <%= form.text_field :stock_memo, id: 'client_account_stock_memo', placeholder: "ああああ" %>
+</div>
+
+</div>
+<div class="has-float-label_full_2col">
+  <p class="must_btton_text">必須</p>
+  <%= form.label :homepage, 'ホームページ' %>
+  <%= form.text_field :homepage, id: 'client_account_homapage', placeholder: "http://~~" %>
+</div>
+
+</div>
+<div class="has-float-label_full_2col">
+  <p class="must_btton_text">必須</p>
+  <%= form.label :time_start, '出勤時間' %>
+  <%= form.text_field :time_start, id: 'client_account_time_start', placeholder: "10:00" %>
+</div>
+
+</div>
+<div class="has-float-label_full_2col">
+  <p class="must_btton_text">必須</p>
+  <%= form.label :time_end, '退勤時間' %>
+  <%= form.text_field :time_end, id: 'client_account_time_end', placeholder: "18:00" %>
+</div>
+
+
+</div>
+<div class="has-float-label_full_2col">
+  <p class="must_btton_text">必須</p>
+  <%= form.label :time_memo, '出退勤メモ' %>
+  <%= form.text_field :time_memo, id: 'client_account_time_memo', placeholder: "フレックスタイム制です" %>
+</div>
+
+</div>
+<div class="has-float-label_full_2col">
+  <p class="must_btton_text">必須</p>
+  <%= form.label :average_ages, '平均年齢' %>
+  <%= form.text_field :average_ages, id: 'client_account_average_ages', placeholder: "39際" %>
+</div>
+
+</div>
+<div class="has-float-label_full_2col">
+  <p class="must_btton_text">必須</p>
+  <%= form.label :domain_text, '事業概要' %>
+  <%= form.text_field :domain_text, id: 'client_account_domain_text', placeholder: "施工業" %>
+</div>
+
+
+
+</div>
+<div class="has-float-label_full_2col">
+  <p class="must_btton_text">必須</p>
+  <%= form.label :welfare, '待遇・福利構成' %>
+  <%= form.text_field :welfare, id: 'client_account_welfare', placeholder: "有給" %>
+</div>
+
+</div>
+<div class="has-float-label_full_2col">
+  <p class="must_btton_text">必須</p>
+  <%= form.label :day_off, '休日' %>
+  <%= form.text_field :day_off, id: 'client_account_day_off', placeholder: "週休2日制" %>
+</div>
+
+</div>
+<div class="has-float-label_full_2col">
+  <p class="must_btton_text">必須</p>
+  <%= form.label :recruiter, '担当者' %>
+  <%= form.text_field :recruiter, id: 'client_account_recruiter', placeholder: "施工業" %>
+</div>
+
+
+
+
   <div class="has-float-label_full_2col">
     <p class="must_btton_text">必須</p>
     <%= form.label :domains, '領域' %>
@@ -19,6 +152,7 @@
       <p><%= b.label { b.check_box + b.text } %></p>
     <% end %>
   </div>
+
 
   <%= form.submit :送信, class: 'basic-btn'%>
 <% end %>
