@@ -45,7 +45,6 @@ Rails.application.routes.draw do
     end
 
   # #clients_accountへのルーティング
-  #
    resources :scouts
 
   #static_pagesへのルーティング
