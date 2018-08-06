@@ -46,7 +46,7 @@ Rails.application.routes.draw do
 
   # #clients_accountへのルーティング
   #
-  # resources :scouts
+   resources :scouts
 
   #static_pagesへのルーティング
   get '/companysummary' => 'static_pages#companysummary'

@@ -5,8 +5,8 @@ class ScoutsController < ApplicationController
 
   def new
     @scout = Scout.new
-    employee_account = EmployeeAccount.find_by(id: params[:id])
-    @scout.employee_account_id = employee_account.id
+    @employee_account = EmployeeAccount.find_by(id: params[:id])
+    @scout.employee_account_id = @employee_account
   end
 
   def show
@@ -16,6 +16,7 @@ class ScoutsController < ApplicationController
   def create
     put @scout
     @scout = Scout.new(scout_params)
+    @employee_account = EmployeeAccount.find_by(id: params[:id])
     @scout.client_account_id = current_client.id
     #入力内容の検証を行い、正しく入力されてればindexへ、そうでなければ、新規入力フォームを作成する。
     put @scout
