@@ -33,7 +33,7 @@ class CreateClientsAccounts < ActiveRecord::Migration[5.2]
       t.timestamps
     end
 
-    create_table :client_accounts_domains do |t|
+    create_table :client_account_domains do |t|
       t.integer :client_account_id
       t.integer :domain_id
 

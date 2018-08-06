@@ -8,5 +8,12 @@
     <%= form.label :summary, 'サマリ' %>
     <%= form.text_field :summary, id: 'scout_summary', placeholder: "お願いします"%>
   </div>
+
+  <div class="button_group">
+    <div class="has-float-label_full_2col">
+      <p class="must_btton_text">必須</p>
+      <%= form.label :content, '詳細' %>
+      <%= form.text_field :content, id: 'scout_content', placeholder: "ぜひ、弊社へご応募ください"%>
+    </div>
   <%= form.submit :送信, class: 'basic-btn'%>
 <% end %>
