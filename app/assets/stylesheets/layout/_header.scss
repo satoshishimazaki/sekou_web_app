@@ -101,6 +101,9 @@ header{
                       border-top: solid black 1px;
                       width: 62%;
                       padding: 3%;
+                      a {
+                        padding: 6px;
+                      }
                 }//inner li
                 /*設定項目4つをforで回す*/
                 $length:3;
