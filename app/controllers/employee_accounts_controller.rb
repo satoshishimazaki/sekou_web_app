@@ -1,4 +1,5 @@
 class EmployeeAccountsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @employee_account = EmployeeAccount.all
 
