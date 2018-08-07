@@ -6,7 +6,7 @@ class ScoutsController < ApplicationController
   def new
     @scout = Scout.new
     @employee_account = EmployeeAccount.find_by(id: current_user.employee_account.id)
-    @scout.employee_account_id = current_user.employee_account.id
+    @scout.employee_account_id = @employee_account.id
     @scout.client_account_id = current_client.client_account.id
   end
 
@@ -21,8 +21,9 @@ class ScoutsController < ApplicationController
     # 今のままだと、employee_account と client_accountの両方にログインしてないといけない状態なので、dbからemployeeaccountのidを取ってくる
     # 構文にする。もともと、find_by(id: [params[:id])となっていた。])
     # new actionも同様
+    @employee_account = EmployeeAccount.find_by(id: current_user.employee_account.id)
 
-    @scout.employee_account_id = current_user.employee_account.id
+    @scout.employee_account_id = @employee_account.id
     @scout.client_account_id = current_client.client_account.id
 
     #    @scout.client_account_id = current_client.id
