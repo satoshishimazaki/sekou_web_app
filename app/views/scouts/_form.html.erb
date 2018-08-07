@@ -1,4 +1,4 @@
-<%= @employee_account.last_name %>
+<h2> <%= @employee_account.last_name %>さん </h2>
 
 <%= form_with model: @scout, local: true do |form| %>
 
@@ -7,6 +7,13 @@
     <p class="must_btton_text">必須</p>
     <%= form.label :summary, 'サマリ' %>
     <%= form.text_field :summary, id: 'scout_summary', placeholder: "お願いします" %>
+
+<br><br>
+
+  <div class="has-float-label_full_2col">
+    <p class="must_btton_text">必須</p>
+    <%= form.label :content, '詳細' %>
+    <%= form.text_area :content, id: 'scout_content', placeholder: "弊社でぜひ、あなたの力を生かしてみませんか？" %>
   </div>
 
   <%= form.submit :送信, class: 'basic-btn'%>
