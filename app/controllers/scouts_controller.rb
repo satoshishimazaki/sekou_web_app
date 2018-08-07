@@ -15,20 +15,15 @@ class ScoutsController < ApplicationController
   end
 
   def create
-  #   put @scout
     @scout = Scout.new(scout_params)
-    # @employee_account = EmployeeAccount.find_by(id: current_user.employee_account.id)
+   @employee_account = EmployeeAccount.find_by(id: current_user.employee_account.id)
     # 今のままだと、employee_account と client_accountの両方にログインしてないといけない状態なので、dbからemployeeaccountのidを取ってくる
     # 構文にする。もともと、find_by(id: [params[:id])となっていた。])
     # new actionも同様
-    @employee_account = EmployeeAccount.find_by(id: current_user.employee_account.id)
 
     @scout.employee_account_id = @employee_account.id
     @scout.client_account_id = current_client.client_account.id
 
-    #    @scout.client_account_id = current_client.id
-    #入力内容の検証を行い、正しく入力されてればindexへ、そうでなければ、新規入力フォームを作成する。
-  #  put @scout
     if @scout.save
       redirect_to scout_path(@scout)
     else

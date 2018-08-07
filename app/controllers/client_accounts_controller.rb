@@ -1,6 +1,8 @@
 class ClientAccountsController < ApplicationController
 before_action :authenticate_user!
   def index
+
+    #初回ログイン時はnew画面を強制表示させ、企業情報の登録を促す。
     if current_client.client_account == nil
       redirect_to new_client_account_path
     else

@@ -1,6 +1,7 @@
 class EmployeeAccountsController < ApplicationController
   before_action :authenticate_user!
 
+  #初回ログイン時はnew画面を強制表示させ、履歴書登録を促す。
   def index
     if current_user.employee_account ==  nil
       redirect_to new_employee_account_url
