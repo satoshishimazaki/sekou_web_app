@@ -16,7 +16,7 @@ class ScoutsController < ApplicationController
 
   def create
     @scout = Scout.new(scout_params)
-   @employee_account = EmployeeAccount.find_by(id: current_user.employee_account.id)
+    @employee_account = EmployeeAccount.find_by(id: current_user.employee_account.id)
     # 今のままだと、employee_account と client_accountの両方にログインしてないといけない状態なので、dbからemployeeaccountのidを取ってくる
     # 構文にする。もともと、find_by(id: [params[:id])となっていた。])
     # new actionも同様

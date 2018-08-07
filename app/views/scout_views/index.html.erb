@@ -17,13 +17,20 @@
   <div class="detail_scout">
 
 <br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br>
+
+<h3> スカウト概要 </h3><br>
 
     <% @scouts.limit(3).each do |scout,i| %>
         <p>
           <% if scout.agreement_count == nil %>
-            <h3> スカウト概要 </h3><br>
+
+          <h4>
+            <%= @client_account.name %> からのスカウトです <br><br>
+          </h4>
+            <%= @employee_account.last_name %>さん<br>
             <%= scout.summary %><br>
+
+            <br>
           <% end %>
         </p>
     <% end %>
