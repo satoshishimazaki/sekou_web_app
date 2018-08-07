@@ -12,7 +12,7 @@
     <%= form.text_field :address_post, id: 'client_account_address_post', placeholder: "1040033" %>
   </div>
 
-</div>
+
 <div class="has-float-label_full_2col">
   <p class="must_btton_text">必須</p>
   <%= form.label :prefecture_id, '都道府県' %>
@@ -152,7 +152,7 @@
       <p><%= b.label { b.check_box + b.text } %></p>
     <% end %>
   </div>
-
+</div>
 
   <%= form.submit :送信, class: 'basic-btn'%>
 <% end %>
