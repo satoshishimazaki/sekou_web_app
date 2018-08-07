@@ -20,20 +20,16 @@
 <br><br><br><br><br><br><br><br>
 
     <% @scouts.limit(3).each do |scout,i| %>
-      <% if i == 3 %>
         <p>
-          <%= link_to "もっと情報を見てみる" , :action => 'detail' %>
-        </P>
-
-      <% else %>
-        <p>
-          <% if scout.agreement_count == 0 %>
+          <% if scout.agreement_count == nil %>
             <h3> スカウト概要 </h3><br>
             <%= scout.summary %><br>
           <% end %>
         </p>
-      <% end %>
     <% end %>
 
+    <p>
+      <%= link_to "もっと情報を見てみる" , :action => 'detail' %>
+    </P>
   </div>
 </div>

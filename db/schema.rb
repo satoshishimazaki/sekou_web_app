@@ -157,8 +157,6 @@ ActiveRecord::Schema.define(version: 2018_07_12_000003) do
 
   create_table "scouts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "agreement_count"
-    t.integer "client_id"
-    t.integer "employee_id"
     t.string "summary"
     t.string "content"
     t.datetime "created_at", null: false
@@ -166,10 +164,7 @@ ActiveRecord::Schema.define(version: 2018_07_12_000003) do
     t.bigint "client_account_id"
     t.bigint "employee_account_id"
     t.index ["client_account_id"], name: "index_scouts_on_client_account_id"
-    t.index ["client_id", "employee_id"], name: "index_scouts_on_client_id_and_employee_id", unique: true
-    t.index ["client_id"], name: "index_scouts_on_client_id"
     t.index ["employee_account_id"], name: "index_scouts_on_employee_account_id"
-    t.index ["employee_id"], name: "index_scouts_on_employee_id"
   end
 
   create_table "scouts_messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
