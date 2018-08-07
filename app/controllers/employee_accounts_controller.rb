@@ -1,8 +1,12 @@
 class EmployeeAccountsController < ApplicationController
   before_action :authenticate_user!
-  def index
-    @employee_account = EmployeeAccount.all
 
+  def index
+    if current_user.employee_account ==  nil
+      redirect_to new_employee_account_url
+    else
+      @employee_account = EmployeeAccount.all
+    end
   end
 
   def new

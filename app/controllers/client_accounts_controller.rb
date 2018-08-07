@@ -1,8 +1,11 @@
 class ClientAccountsController < ApplicationController
 before_action :authenticate_user!
   def index
-    @client_account = ClientAccount.all
-
+    if current_client.client_account == nil
+      redirect_to new_client_account_path
+    else
+      @client_account = ClientAccount.all
+    end
   end
 
   def new
