@@ -11,7 +11,6 @@ class Clients::SessionsController < Devise::SessionsController
   # POST /resource/sign_in
    def create
      super
-     redirect_to new_client_account_url
    end
 
   # DELETE /resource/sign_out

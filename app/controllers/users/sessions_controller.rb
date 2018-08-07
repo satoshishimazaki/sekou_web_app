@@ -11,7 +11,6 @@ class Users::SessionsController < Devise::SessionsController
    #POST /resource/sign_in
    def create
      super
-     redirect_to new_employee_account_url
    end
 
    #DELETE /resource/sign_out

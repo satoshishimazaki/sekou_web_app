@@ -11,8 +11,8 @@ edit 2018.7.31 by takuya
   <div class="setting-container">
     <ul>
       <li><%= link_to '履歴書の新規登録をする',        new_client_account_path %> </li>
-      <li><%= link_to '登録した履歴書の中身を確認する',  client_account_path(1) %></li>
-      <li><%= link_to '登録した履歴書の編集をする',     edit_client_account_path(1) %></li>
+      <li><%= link_to '登録した履歴書の中身を確認する',  client_account_path(current_client.client_account.id) %></li>
+      <li><%= link_to '登録した履歴書の編集をする',     edit_client_account_path(current_client.client_account.id) %></li>
       <li><%= link_to 'メニューへ戻る',               client_menu_url %></li>
     </ul>
   </div>
