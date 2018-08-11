@@ -1,0 +1,6 @@
+<p><%= @user.last_name %></p>
+<p><%= @user.first_name %></p>
+
+<%= link_to "元に戻る" , :action => 'index' %>
+<%= link_to "スカウト作成" , {:controller => 'scouts', :action => 'new', id: @user.last_name } %>
+<%= link_to "スカウト作成" , new_scout_path(:id => @user.id) %>
