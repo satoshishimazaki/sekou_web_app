@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   get 'detailscout' => 'home#detailscout', as: :home_detailscout
   get 'firstscout' => 'home#firstscout', as: :home_firstscout
 
+  scope :mypage do
+      get '' => 'mypage#index', as: :mypage
+  end
+
   #求人企業から送られてきたスカウト一覧を表示するページ  7.31記載のコメント
   get 'scout_views' => 'scout_views#index'
       get 'scout_views/detail' => 'detail'
