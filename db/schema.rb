@@ -30,38 +30,11 @@ ActiveRecord::Schema.define(version: 2018_07_12_000003) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "client_account_domains", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "client_account_id"
+  create_table "client_domains", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "client_id"
     t.integer "domain_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "client_accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.string "address_post"
-    t.integer "prefecture_id"
-    t.string "address_city"
-    t.string "address_building"
-    t.date "established"
-    t.string "president"
-    t.integer "employees_number"
-    t.string "employees_memo"
-    t.integer "stock"
-    t.string "stock_memo"
-    t.string "homepage"
-    t.string "time_start"
-    t.string "time_end"
-    t.string "time_memo"
-    t.float "average_ages"
-    t.string "domain_text"
-    t.string "welfare"
-    t.string "day_off"
-    t.string "recruiter"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "client_id"
-    t.index ["client_id"], name: "index_client_accounts_on_client_id"
   end
 
   create_table "clients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -82,6 +55,26 @@ ActiveRecord::Schema.define(version: 2018_07_12_000003) do
     t.integer "failed_attempts", default: 0, null: false
     t.string "unlock_token"
     t.datetime "locked_at"
+    t.string "name"
+    t.string "address_post"
+    t.integer "prefecture_id"
+    t.string "address_city"
+    t.string "address_building"
+    t.date "established"
+    t.string "president"
+    t.integer "employees_number"
+    t.string "employees_memo"
+    t.integer "stock"
+    t.string "stock_memo"
+    t.string "homepage"
+    t.string "time_start"
+    t.string "time_end"
+    t.string "time_memo"
+    t.float "average_ages"
+    t.string "domain_text"
+    t.string "welfare"
+    t.string "day_off"
+    t.string "recruiter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["confirmation_token"], name: "index_clients_on_confirmation_token", unique: true
@@ -134,9 +127,9 @@ ActiveRecord::Schema.define(version: 2018_07_12_000003) do
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "client_account_id"
+    t.bigint "client_id"
     t.bigint "user_id"
-    t.index ["client_account_id"], name: "index_scouts_on_client_account_id"
+    t.index ["client_id"], name: "index_scouts_on_client_id"
     t.index ["user_id"], name: "index_scouts_on_user_id"
   end
 
@@ -193,7 +186,6 @@ ActiveRecord::Schema.define(version: 2018_07_12_000003) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
-  add_foreign_key "client_accounts", "clients"
-  add_foreign_key "scouts", "client_accounts"
+  add_foreign_key "scouts", "clients"
   add_foreign_key "scouts", "users"
 end

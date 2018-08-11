@@ -1,43 +1,43 @@
-class ClientAccountsController < ApplicationController
+class ClientsController < ApplicationController
 before_action :authenticate_user!
   def index
 
     #初回ログイン時はnew画面を強制表示させ、企業情報の登録を促す。
-    if current_client.client_account == nil
+    if current_client == nil
       redirect_to new_client_account_path
     else
-      @client_account = ClientAccount.all
+      @client = Client.all
     end
   end
 
   def new
-    @client_account = ClientAccount.new
+    @client = Client.new
   end
 
   def show
-    @client_account = ClientAccount.find(params[:id])
+    @client = Client.find(params[:id])
   end
 
   def create
-    @client_account = ClientAccount.new(client_account_params)
-    @client_account.client_id = current_client.id
+    @client = Client.new(client_params)
+    @client.client_id = current_client.id
     #入力内容の検証を行い、正しく入力されてればindexへ、そうでなければ、新規入力フォームを作成する。
 
-    if @client_account.save
-      redirect_to client_account_path(@client_account)
+    if @client.save
+      redirect_to client_path(@client)
     else
       render action: :new
     end
   end
 
   def edit
-    @client_account = ClientAccount.find(params[:id])
+    @client = Client.find(params[:id])
   end
 
   def update
-    @client_account = ClientAccount.find(params[:id])
-    @client_account.update(client_account_params)
-    redirect_to client_accounts_path(@client_account)
+    @client = Client.find(params[:id])
+    @client.update(client_params)
+    redirect_to clients_path(@client)
   end
 
 # employee accountだけじゃなくて関連するもの全て消去だと思うので、
@@ -49,8 +49,8 @@ before_action :authenticate_user!
 #  end
 
   private
-    def client_account_params
-      params.require(:client_account).permit(
+    def client_params
+      params.require(:client).permit(
         :name,
         :address_post,
         :prefecture_id,

@@ -6,13 +6,11 @@ class User < ApplicationRecord
          :confirmable, :lockable, :timeoutable
 
   has_many :scouts
-  has_many :client_accounts, through: :scouts
+  has_many :clients, through: :scouts
   has_many :qualification_employee_accounts
   has_many :qualification, through: :qualification_employee_accounts
   has_many :job_objective_employee_accounts
   has_many :job_objectives, through: :job_objective_employee_accounts
-
-  belongs_to :user, inverse_of: :employee_account, optional: true
 
   validates :last_name,
             :first_name,
