@@ -8,7 +8,7 @@ class CreateScouts < ActiveRecord::Migration[5.2]
       t.timestamps
     end
     
-    add_reference :scouts, :client_account, foreign_key: true
+    add_reference :scouts, :client, foreign_key: true
     add_reference :scouts, :user, foreign_key: true
 
     create_table :scouts_messages do |t|

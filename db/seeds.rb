@@ -16,40 +16,23 @@ JobObjective.create(:name => '建築士')
 JobObjective.create(:name => '施工管理士')
 
 
-# 5.times do |i|
-#   i += 1
-#   User.create(
-#     email: "user#{i}@example.com",
-#     password: 'password9'
-#   )
-#
-#   Client.create(
-#     email: "user#{i}@example.com",
-#     password: 'password9'
-#   )
-#
-#   EmployeeAccount.create(
-#     last_name: "satshi#{i}",
-#     user_id: i
-#   )
-#
-#   ClientAccount.create(
-#     name: "zielson#{i}",
-#     client_id: i
-#   )
-# end
-#
-#
-# 5.times do |i|
-#   i += 1
-#   EmployeeAccount.create(
-#     last_name: "satshi#{i}",
-#     user_id: i
-#   )
-# end
-#
-# Scout.create(summary: 'hey1', employee_account_id: 1, client_account_id: 1)
-# Scout.create(summary: 'hey2', employee_account_id: 2, client_account_id: 2)
-# Scout.create(summary: 'hey3', employee_account_id: 3, client_account_id: 3)
-# Scout.create(summary: 'hey4', employee_account_id: 4, client_account_id: 4)
-# Scout.create(summary: 'hey5', employee_account_id: 5, client_account_id: 5)
+5.times do |i|
+  i += 1
+  user = User.create(
+    email: "user#{i}@example.com",
+    password: 'password9'
+  )
+  user.save!
+
+  client = Client.create(
+    email: "user#{i}@example.com",
+    password: 'password9'
+  )
+  client.save!
+end
+
+5.times do |i|
+  5.times do |j|
+    Scout.create(summary: "hey#{i}-#{j}}", user_id: i, client_id: j)
+  end
+end

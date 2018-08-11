@@ -32,6 +32,26 @@ class DeviseCreateClients < ActiveRecord::Migration[5.2]
       t.string   :unlock_token # Only if unlock strategy is :email or :both
       t.datetime :locked_at
 
+      t.string :name
+      t.string :address_post
+      t.integer :prefecture_id
+      t.string :address_city
+      t.string :address_building
+      t.date :established
+      t.string :president
+      t.integer :employees_number
+      t.string :employees_memo
+      t.integer :stock
+      t.string :stock_memo
+      t.string :homepage
+      t.string :time_start
+      t.string :time_end
+      t.string :time_memo
+      t.float :average_ages
+      t.string :domain_text
+      t.string :welfare
+      t.string :day_off
+      t.string :recruiter
 
       t.timestamps null: false
     end
@@ -41,4 +61,18 @@ class DeviseCreateClients < ActiveRecord::Migration[5.2]
     add_index :clients, :confirmation_token,   unique: true
     add_index :clients, :unlock_token,         unique: true
   end
+
+  create_table :domains do |t|
+    t.string :name
+
+    t.timestamps
+  end
+
+  create_table :client_domains do |t|
+    t.integer :client_id
+    t.integer :domain_id
+
+    t.timestamps
+  end
+
 end
