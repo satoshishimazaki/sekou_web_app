@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2018_07_12_000003) do
 
   create_table "careers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "employee_id"
+    t.integer "user_id"
     t.string "company_name"
     t.date "start"
     t.date "end"
@@ -96,33 +96,6 @@ ActiveRecord::Schema.define(version: 2018_07_12_000003) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "employee_accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "last_name"
-    t.string "first_name"
-    t.string "last_name_kana"
-    t.string "first_name_kana"
-    t.string "phone_number"
-    t.string "email"
-    t.date "birth"
-    t.string "sex"
-    t.string "password"
-    t.string "employment_status"
-    t.string "address_post"
-    t.integer "prefecture_id"
-    t.string "address_city"
-    t.string "address_building"
-    t.string "university"
-    t.string "faculty"
-    t.integer "graduate"
-    t.integer "desired_salary"
-    t.string "personal_summary"
-    t.string "not_public_company"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_employee_accounts_on_user_id"
-  end
-
   create_table "employment_patterns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -130,7 +103,7 @@ ActiveRecord::Schema.define(version: 2018_07_12_000003) do
   end
 
   create_table "job_objective_employee_accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "employee_account_id"
+    t.integer "user_id"
     t.integer "job_objective_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -144,7 +117,7 @@ ActiveRecord::Schema.define(version: 2018_07_12_000003) do
 
   create_table "qualification_employee_accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "qualification_id"
-    t.integer "employee_account_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -162,9 +135,9 @@ ActiveRecord::Schema.define(version: 2018_07_12_000003) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "client_account_id"
-    t.bigint "employee_account_id"
+    t.bigint "user_id"
     t.index ["client_account_id"], name: "index_scouts_on_client_account_id"
-    t.index ["employee_account_id"], name: "index_scouts_on_employee_account_id"
+    t.index ["user_id"], name: "index_scouts_on_user_id"
   end
 
   create_table "scouts_messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -176,7 +149,7 @@ ActiveRecord::Schema.define(version: 2018_07_12_000003) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "email", default: "", null: false
+    t.string "email"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -193,6 +166,25 @@ ActiveRecord::Schema.define(version: 2018_07_12_000003) do
     t.integer "failed_attempts", default: 0, null: false
     t.string "unlock_token"
     t.datetime "locked_at"
+    t.string "last_name"
+    t.string "first_name"
+    t.string "last_name_kana"
+    t.string "first_name_kana"
+    t.string "phone_number"
+    t.date "birth"
+    t.string "sex"
+    t.string "password"
+    t.string "employment_status"
+    t.string "address_post"
+    t.integer "prefecture_id"
+    t.string "address_city"
+    t.string "address_building"
+    t.string "university"
+    t.string "faculty"
+    t.integer "graduate"
+    t.integer "desired_salary"
+    t.string "personal_summary"
+    t.string "not_public_company"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
@@ -202,7 +194,6 @@ ActiveRecord::Schema.define(version: 2018_07_12_000003) do
   end
 
   add_foreign_key "client_accounts", "clients"
-  add_foreign_key "employee_accounts", "users"
   add_foreign_key "scouts", "client_accounts"
-  add_foreign_key "scouts", "employee_accounts"
+  add_foreign_key "scouts", "users"
 end

@@ -10,13 +10,13 @@ final edited by takuya at 2018.7.27
 
 -->
 
-<%= form_with model: @employee_account, local: true do |form| %>
+<%= form_with url: resume_edit_path, local: true do |form| %>
 
-<% if @employee_account.errors.any? %>
-    <h4>入力した内容にエラーが<%= @employee_account.errors.count %>件あります</h4>
+<% if @user.errors.any? %>
+    <h4>入力した内容にエラーが<%= @user.errors.count %>件あります</h4>
     <div class="form-error">
       <ul>
-        <% @employee_account.errors.full_messages.each do |message| %>
+        <% @user.errors.full_messages.each do |message| %>
           <li> <%= message %></li>
         <% end %>
       </ul>
@@ -27,12 +27,12 @@ final edited by takuya at 2018.7.27
   <div class="has-float-label_full_2col">
     <p class="must_btton_text">必須</p>
     <%= form.label :last_name, '苗字' %>
-    <%= form.text_field :last_name, id: 'employee_account_last_name', placeholder: "山田"%>
+    <%= form.text_field :last_name, id: 'user_last_name', placeholder: "山田"%>
   </div>
   <div class="has-float-label_full_2col">
     <p class="must_btton_text">必須</p>
     <%= form.label :first_name, '名前' %>
-    <%= form.text_field :first_name, id: 'employee_account_first_name', placeholder: "太郎" %>
+    <%= form.text_field :first_name, id: 'user_first_name', placeholder: "太郎" %>
   </div>
 </div>
 
@@ -166,7 +166,7 @@ final edited by takuya at 2018.7.27
 <div class="has-float-label_full_2col">
   <p class="must_btton_text">必須</p>
   <%= form.label :qualifications, '資格' %>
-  <%= collection_check_boxes(:employee_account, :qualification_ids, Qualification.all, :id, :name) do |b| %>
+  <%= collection_check_boxes(:user, :qualification_ids, Qualification.all, :id, :name) do |b| %>
   <ul>
     <li><%= b.label { b.check_box + b.text } %></li>
   </ul>
@@ -176,7 +176,7 @@ final edited by takuya at 2018.7.27
 <div class="has-float-label_full_2col">
   <p class="must_btton_text">必須</p>
   <%= form.label :job_objectives, '希望職種' %>
-  <%= collection_check_boxes(:employee_account, :job_objective_ids, JobObjective.all, :id, :name) do |b| %>
+  <%= collection_check_boxes(:user, :job_objective_ids, JobObjective.all, :id, :name) do |b| %>
   <ul>
     <li><%= b.label { b.check_box + b.text } %></li>
   </ul>

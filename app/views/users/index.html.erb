@@ -3,16 +3,16 @@
 edit 2018.7.31 by takuya
 -->
 
-<%= render 'layouts/header_user' , EmployeeAccount: @employee_account %>
+<%= render 'layouts/header_user' , User: @user %>
 <div class="content_upper">
   <h3>履歴書の登録・編集ページ</h3>
 </div>
 <div class="setting-container">
   <div class="setting-container">
     <ul>
-      <li><%= link_to '履歴書の新規登録をする',        new_employee_account_path %> </li>
-      <li><%= link_to '登録した履歴書の中身を確認する',  employee_account_path(current_user.employee_account.id) %></li>
-      <li><%= link_to '登録した履歴書の編集をする',     edit_employee_account_path(current_user.employee_account.id) %></li>
+      <li><%= link_to '履歴書の新規登録をする',        resume_edit_path %> </li>
+      <li><%= link_to '登録した履歴書の中身を確認する',  resume_show_path(current_user.id) %></li>
+      <li><%= link_to '登録した履歴書の編集をする',     resume_edit_path(current_user.id) %></li>
       <li><%= link_to 'メニューへ戻る',               user_menu_url %></li>
     </ul>
   </div>

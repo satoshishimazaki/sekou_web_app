@@ -17,6 +17,12 @@ Rails.application.routes.draw do
   #スカウトメッセージのメニュー画面
   get 'scout_messages' => 'scout_messages#index'
 
+  #ユーザーのルーティング
+  get 'resume' => 'users#index'
+  get 'resume/show' => 'users#show'
+  get 'resume/edit' => 'users#edit'
+  post 'resume/edit' => 'users#update'
+
   #このuser_settingはresourceをうまく使ってスリムにかけそう。後ほどリファクタリングする. 7.23記載のコメント
   get 'user_setting'   => 'user_setting#index'
       get 'user_setting/viewconfig'   => 'viewconfig'
@@ -39,10 +45,6 @@ Rails.application.routes.draw do
   #clients_accountへのルーティング
     resources :client_accounts
 
-  #employee_accountsへのルーティング
-    resources :employee_accounts do
-      resources :scouts
-    end
 
   # #clients_accountへのルーティング
    resources :scouts
