@@ -52,6 +52,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.integer :desired_salary
       t.string :personal_summary
       t.string :not_public_company
+      t.integer :quit_flag
 
       t.timestamps null: false
     end

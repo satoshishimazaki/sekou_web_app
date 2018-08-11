@@ -178,6 +178,7 @@ ActiveRecord::Schema.define(version: 2018_07_12_000003) do
     t.integer "desired_salary"
     t.string "personal_summary"
     t.string "not_public_company"
+    t.integer "quit_flag"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

@@ -27,6 +27,7 @@ class UserSettingController < ApplicationController
     @user = User.find(current_user.id)
     respond_to do |format|
       if @user.valid_password?(resign_params)
+        @user.update(:quit_flag => 1)
         format.js
       else
         format.js { render :informmistake }
