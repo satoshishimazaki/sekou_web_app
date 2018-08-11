@@ -28,6 +28,8 @@ class UserSettingController < ApplicationController
     respond_to do |format|
       if @user.valid_password?(resign_params)
         @user.update(:quit_flag => 1)
+        # @user = User.find(@user.id)
+        NotificationMailer.quit_message(@user).deliver
         format.js
       else
         format.js { render :informmistake }
