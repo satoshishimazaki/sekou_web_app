@@ -24,12 +24,13 @@ class UserSettingController < ApplicationController
   # end
 
   def byebyeaccept
-    #退会するボタンを押してpassを入力させる。一応保留にしておく。
     @user = User.find(current_user.id)
-    if @user.valid_password?(params[:user][:current_password])
-      render 
-    else
-
+    respond_to do |format|
+      if @user.valid_password?(resign_params)
+        format.js
+      else
+        format.js { render :informmistake }
+      end
     end
   end
 
@@ -41,5 +42,10 @@ class UserSettingController < ApplicationController
 
   def viewconfig
   end
+
+  private
+    def resign_params
+      params.require(:password)
+    end
 
 end
