@@ -24,6 +24,7 @@ Rails.application.routes.draw do
       get 'user_setting/logininfo'    => 'logininfo'
       get 'user_setting/popupconfig'  => 'popupconfig'
       get 'user_setting/byebyeresult' => 'byebyeresult'
+      post 'user_setting/byebyeaccept' => 'byebyeaccept'
 
   #このclient_settingはresourceをうまく使ってスリムにかけそう。後ほどリファクタリングする. 7.27記載のコメント
   get 'client_setting' => 'client_setting#index'

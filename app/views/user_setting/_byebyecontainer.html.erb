@@ -1,13 +1,16 @@
 <div class="register-new-mail">
   <div class="display-title">
-    <h3>新しいメールアドレスへの変更</h3>
+    <h3>パスワードの入力</h3>
   </div><!--display-title -->
   <div class="display-detail">
-    <form>
-      <div class="has-float-label_full_lg">
-        <input id="eee" type="text" placeholder=""/>
+    <%= form_with url: { action: "byebyeaccept" } do |form| %>
+    <div class="button_group">
+      <div class="has-float-label_full_2col">
+        <%= form.label :phone_number, 'パスワード' %>
+        <%= form.text_field :phone_number, id: :phone_number, placeholder: '09000000000' %>
       </div>
-    </form><!--from -->
-    <div class="update-btn">変更する</div>
+    </div>
+    <%= form.submit :手続きを行う, class: 'basic-btn'%>
+    <% end %>
   </div><!--display-detail -->
 </div><!--register-new-mail -->

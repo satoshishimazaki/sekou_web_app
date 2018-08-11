@@ -10,8 +10,27 @@ class UserSettingController < ApplicationController
   end
 
   def byebyeresult
-    #退会するボタンを押してメールアドレス入力させる。一応保留にしておく。
-    # @user = User.find(params[:id])
+    #退会するボタンを押してpassを入力させる。一応保留にしておく。
+    @user = User.find(current_user.id)
+  end
+
+  # def create
+  #   @user = User.find(current_user.id)
+  #   if @user.valid_password?(params[:user][:current_password])
+  #
+  #   else
+  #
+  #   end
+  # end
+
+  def byebyeaccept
+    #退会するボタンを押してpassを入力させる。一応保留にしておく。
+    @user = User.find(current_user.id)
+    if @user.valid_password?(params[:user][:current_password])
+      render 
+    else
+
+    end
   end
 
   def popupconfig
