@@ -65,9 +65,10 @@ header{
           overflow: hidden;
           ul {
             height: 100%;
-            width: 100%;
+            width: 90%;
+            margin-left: 25%;
             li {
-              width: 23%;
+              width: 27%;
               text-align: center;
               background-color: $ck;
               float: left;
