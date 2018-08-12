@@ -1,1 +1,5 @@
 ログイン後トップページ
+
+<% @scouts.each do |scout| %>
+    <p><%= scout.summary %></p>
+<% end %>
