@@ -7,34 +7,45 @@ Rails.application.routes.draw do
   get 'detailscout' => 'home#detailscout', as: :home_detailscout
   get 'firstscout' => 'home#firstscout', as: :home_firstscout
 
+  #ユーザーログイン後のマイページのルーティング
   scope :mypage do
       get '' => 'mypage#index', as: :mypage
+
+      #履歴書のルーティング
+      scope :resume do
+          get '' => 'users#index', as: :resume
+          get 'show' => 'users#show', as: :show_resume
+          get 'edit' => 'users#edit', as: :edit_resume
+          post 'edit' => 'users#update', as: ''
+      end
+
+      #設定ページのルーティング
+      scope :user_setting do
+          get ''   => 'user_setting#index', as: :user_setting
+          get 'viewconfig'   => 'user_setting#viewconfig', as: :user_setting_viewconfig
+          get 'byebye'       => 'user_setting#byebye', as: :user_setting_byebye
+          get 'logininfo'    => 'user_setting#logininfo', as: :user_setting_logininfo
+          get 'popupconfig'  => 'user_setting#popupconfig', as: :user_setting_poupconfig
+          get 'byebyeresult' => 'user_setting#byebyeresult', as: :user_setting_byebyeresult
+          post 'byebyeaccept' => 'user_setting#byebyeaccept', as: :user_setting_byebyeaccept
+      end
+
+      #スカウトページのルーティング
+      scope :scout_views do
+          get '' => 'scout_views#index', as: :scout_views
+          get 'detail' => 'scout_views#detail', as: :scout_view_detail
+      end
+
+      #求職者(=ユーザー)のメニュー画面
+      scope :user_menu do
+          get '' => 'user_menu#index', as: :user_menu
+      end
+
+      #スカウトメッセージのメニュー画面
+      scope :scout_messages do
+          get '' => 'scout_messages#index', as: :scout_messages
+      end
   end
-
-  #求人企業から送られてきたスカウト一覧を表示するページ  7.31記載のコメント
-  get 'scout_views' => 'scout_views#index'
-      get 'scout_views/detail' => 'detail'
-
-  #求職者(=ユーザー)のメニュー画面
-  get 'user_menu' => 'user_menu#index'
-
-  #スカウトメッセージのメニュー画面
-  get 'scout_messages' => 'scout_messages#index'
-
-  #ユーザーのルーティング
-  get 'resume' => 'users#index'
-  get 'resume/show' => 'users#show'
-  get 'resume/edit' => 'users#edit'
-  post 'resume/edit' => 'users#update'
-
-  #このuser_settingはresourceをうまく使ってスリムにかけそう。後ほどリファクタリングする. 7.23記載のコメント
-  get 'user_setting'   => 'user_setting#index'
-      get 'user_setting/viewconfig'   => 'viewconfig'
-      get 'user_setting/byebye'       => 'byebye'
-      get 'user_setting/logininfo'    => 'logininfo'
-      get 'user_setting/popupconfig'  => 'popupconfig'
-      get 'user_setting/byebyeresult' => 'byebyeresult'
-      post 'user_setting/byebyeaccept' => 'byebyeaccept'
 
   #このclient_settingはresourceをうまく使ってスリムにかけそう。後ほどリファクタリングする. 7.27記載のコメント
   get 'client_setting' => 'client_setting#index'

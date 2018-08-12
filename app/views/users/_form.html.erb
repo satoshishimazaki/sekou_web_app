@@ -10,7 +10,7 @@ final edited by takuya at 2018.7.27
 
 -->
 
-<%= form_with url: resume_edit_path, local: true do |form| %>
+<%= form_with url: edit_resume_path, local: true do |form| %>
 
 <% if @user.errors.any? %>
     <h4>入力した内容にエラーが<%= @user.errors.count %>件あります</h4>

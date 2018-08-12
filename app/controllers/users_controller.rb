@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   #初回ログイン時はnew画面を強制表示させ、履歴書登録を促す。
   def index
     if current_user ==  nil
-      redirect_to resume_edit_path
+      redirect_to edit_resume_path
     else
       @user = User.all
     end
