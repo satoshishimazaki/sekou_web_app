@@ -8,9 +8,9 @@
      </div> -->
      <!-- <h1><a href="/"><font color = "ffffff">施工ネット.com</font></a></h1> -->
      <div class="logo">
-       <a href="/mypage" id ="pate-top">
+       <%= link_to mypage_path do %>
          <%= image_tag("white-logo.svg", :alt => "施工ネット") %>
-       </a>
+       <% end %>
      </div><!--logo-->
      <div class="con-domain">
        <p>測量・設計</p>
