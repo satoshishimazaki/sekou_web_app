@@ -721,3 +721,19 @@ $easing: ease;
     }//th,td sp
   }//sp
 }//table_1
+
+/* 改行============*/
+.br-pc {
+  display:block;
+}
+.br-sp {
+display:none;
+}
+@media #{$sp2} {
+  .br-pc {
+    display:none;
+  }
+  .br-sp {
+    display:block;
+  }
+}

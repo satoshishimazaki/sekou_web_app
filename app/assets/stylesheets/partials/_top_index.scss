@@ -537,9 +537,7 @@
 }//top-section-contact
 
 
-
-
-/*サイズ別　↓記載
+/*デスクトップ ipadproの調整
 ---------------------------------------*/
 
 @media #{$desktop} {
@@ -561,7 +559,7 @@
   }//section-flow
 }
 
-/*sp Layout
+/*ipad Layout
 ---------------------------------------*/
 @media #{$sm} {
   .pc-main-visual {
@@ -570,6 +568,9 @@
       font-size: 2.4rem;
     }
   }//pc-main-visual
+  .col-md-4 {
+    width: 33%;
+  }
   .inner-box {
     margin-bottom: 2%;
     width: 100%;
@@ -580,9 +581,91 @@
   .top-guide-login-btn {
     width: 15%;
   }//top-guide-login-btn
-}
+  .section-flow {
+    h2 {
+      margin-bottom: 0px;
+      &::after {
+        display: none;
+      }
+    }//h2
+    .step-visual {
+      height: 100%;
+      padding-bottom: 20%;
+      .guide-btn-container {
+        width: 100%;
+        .balloon1 {
+          width: 60%;
+          margin-left: 20%;
+          font-size: 1.4rem;
+        }//balloon1
+        .top-guide-message-btn {
+          margin-left: -20%;
+          font-size: 1.8rem;
+          width: 70%;
+          margin-left: -10%;
+          font-size: 1.8rem;
+          height: 60%;
+          padding-top: 1%;
+        }//top-guide-message-btn
+      }//guide-btn-container
+    }//step-visual
+  }//section-flow
+  .top-section-faq {
+    width: 90%;
+  }//top-section-faq
+  .top-section-contact {
+    .top-contact-container {
+      .top-contact-flow {
+        width: 90%;
+      }//top-contact-flow
+      .top-contact-btn {
+        height: 70px;
+        .top-guide-message-btn {
+          padding-bottom: 6%;
+          height: 6%;
+          padding-top: 1.5%;
+        }//top-guide-message-btn
+      }//top-contact-btn
+      .top-contact-caution {
+        ul {
+          text-align: left;
+        }//ul
+      }//top-contact-caution
+    }//top-contact-container
+  }//top-section-contact
+}//@media sm
 
+/*sp2,sp3はsp Layout
+---------------------------------------*/
 @media #{$sp2} {
+  .top-point-title {
+    width: 100%;
+    .top-point-title-en {
+      h2 {
+        font-size: 2.6rem;
+      }//h2
+    }//top-point-title-en
+    .top-point-title-ja {
+      h3 {
+        font-size: 2rem;
+      }//h3
+    }//top-point-title-ja
+  }//top-point-title
+  .top-point-container {
+    .top-point-title {
+      width: 100%;
+      .top-point-title-en {
+        h2 {
+          font-size: 2.6rem;
+        }//h2
+      }//top-point-title-en
+      .top-point-title-ja {
+        h3 {
+          font-size: 2rem;
+        }//h3
+      }//top-point-title-ja
+    }//top-point-title
+  }//top-point-container
   .pc-main-visual {
     display: none;
   }//pc-main-visual
@@ -599,51 +682,57 @@
       font-size: 2rem;
     }//top-guide-message-btn
   }//sp-main-visual
-.three-boxes-container {
-  .row {
-    .inner-box {
-      margin-bottom: 2%;
-      width: 100%;
-    }
-  }
-  }
+  .three-boxes-container {
+    .row {
+      .inner-box {
+        margin-bottom: 2%;
+        width: 100%;
+      }//inner-box
+    }//row
+  }//three-boxes-container
   .top-guide-login-btn {
     top: 4%;
-    width: 25%;
+    width: 20%;
     top: 1%;
     height: 7%;
-    left: 67%;
+    left: 79%;
     font-size: 1rem;
   }//top-guide-login-btn
-}
-
-@media #{$sp3} {
-  .sp-main-visual {
-    height: 500px;
-  }//sp-main-visual
-  .inner-box {
-    margin-bottom: 2%;
-    width: 100%;
-  }
-  h2 {
-    font-size: 2.4rem;
-  }
   .section-flow {
     h2 {
-      padding: 3.5%;
+      font-size: 2.6rem;
+      font-weight: normal;
+      margin-bottom: 0px;
+      &::after{
+         display: none;
+      }//after
     }//h2
-    .step-visual {
-      height: 1700px;
-      margin-top: -19%;
-      .top-step-title {
-        padding-top: 20%;
+    .top-step-title {
+      .top-step-title-en{
         h3 {
-          font-size: 2.5rem;
+          font-size: 2rem;
         }//h3
+      }//top-step-title-en
+      .top-step-title-ja{
         p {
-          font-size: 1.8rem;
+          font-size: 2rem;
         }//p
-      }//top-step-title
+      }//top-step-title-ja
+    }//top-step-title
+    .step-visual {
+      height: 100%;
+      padding-bottom: 25%;
+      .three-boxes-container {
+        .row {
+          .col-md-4 {
+            border: 0px solid #f3f3f3;
+            .inner-box {
+              margin-left: 0%;
+              margin-right: 0%;
+            }//inner-box
+          }//col-md-4
+        }//row
+      }//three-boxes-container
       .guide-btn-container {
         width: 100%;
         .balloon1 {
@@ -660,6 +749,83 @@
           height: 60%;
         }//top-guide-message-btn
       }//guide-btn-container
+    }//step-visual
+  }//section-flow
+  .top-section-faq {
+    width: 100%;
+    .display-faq {
+      .display-detail {
+        dl {
+          padding: 0% 0% 0% 0%;
+          padding-right: 2%;
+        }//dl
+        dt {
+          padding: 2% 1em;
+          line-height: 1.528571;
+          font-size: 1.6rem;
+          font-weight: normal;
+        }//dt
+      }//display-detail
+    }//display-faq
+  }//top-section-faq
+  .top-section-contact {
+    .top-contact-title {
+      width: 100%;
+      margin-left: 0%;
+      h2 {
+        font-size: 2.6rem;
+        width: 100%;
+      }//h2
+    }//top-contact-title
+    .top-contact-container {
+      .top-contact-flow {
+        display: none;
+      }//top-contact-flow
+      .top-contact-btn {
+        .top-guide-message-btn {
+          height: 50%;
+          left: 4%;
+          width: 90%;
+          font-size: 1.5rem;
+          padding-top: 4%;
+        }//top-guide-message-btn
+      }//top-contact-btn
+      .top-contact-caution {
+        font-size: 1.3rem;
+        ul {
+          padding-left: 0%;
+          text-align: left;
+        }
+      }//top-contact-caution
+    }//top-contact-container
+  }//top-section-contact
+}
+
+@media #{$sp3} {
+  .sp-main-visual {
+    height: 500px;
+  }//sp-main-visual
+  .inner-box {
+    margin-bottom: 2%;
+    width: 100%;
+  }
+  h2 {
+    font-size: 2.6rem;
+  }
+  h3 {
+    font-size: 2.4rem;
+  }
+  .section-flow {
+    h2 {
+      padding: 3.5%;
+    }//h2
+    .step-visual {
+      .top-step-title {
+        padding-top: 5%;
+        p {
+          font-size: 1.8rem;
+        }//p
+      }//top-step-title
     }//step-visual
 
   }//section-flow
