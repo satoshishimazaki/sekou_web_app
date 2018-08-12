@@ -40,7 +40,15 @@ header{
         left: 22%;
         font-size: 1.2rem;
       }//con-domain
-
+      .con-domain-sign-in {
+        width: 20%;
+        float: left;
+        color: white;
+        position: absolute;
+        bottom: 1%;
+        left: 22%;
+        font-size: 1.2rem;
+      }//con-domain-sign-in
       h1{
         font-size: 1.8rem;
         position: relative;
@@ -68,17 +76,17 @@ header{
           overflow: hidden;
           ul {
             height: 100%;
-            width: 90%;
-            margin-left: 25%;
+            width: 100%;
+            margin-left: 16%;
             li {
-              width: 27%;
+              width: 21%;
               text-align: center;
               background-color: $ck;
               float: left;
               height: inherit;
               // line-height: 50px;
               margin-right: 2px;
-              font-size: 1.4rem;
+              font-size: 1.2rem;
               display: flex;
               // margin-top: 0.5%;
                 a {
@@ -97,7 +105,7 @@ header{
 
                 /*設定ドロップメニューのための共通処理*/
                 %inner-li {
-                      right: 145%;
+                      right: 102%;
                       position: absolute;
                       font-size: 1.2rem;
                       height: 80%;
@@ -227,7 +235,16 @@ header{
       width: 30%;
       bottom: -20%;
       left: 31%;
-    }
+    }//con-domain
+    .con-domain-sign-in {
+      margin: 4% 0% 0% 0%;
+      width: 30%;
+      bottom: -20%;
+      left: 31%;
+      p {
+        margin-bottom: 7%;
+      }
+    }//con-domain-sign-in
     .btn-mail{
       width: 40px;
       @include absPosition($top: 10px, $right: 15px, $bottom: auto, $left: auto);

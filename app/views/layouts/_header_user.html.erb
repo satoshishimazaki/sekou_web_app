@@ -17,17 +17,18 @@
      </div><!--con-domain-->
       <nav class="hidden-md-down">
         <ul>
-          <li><a href="/scout_views">スカウト</a></li>
+          <li><%= link_to 'スカウト', scouts_path %></li>
           <!-- <li><a href="/#point">メッセージ</a></li> -->
-          <li><a href="/resume">履歴書</a></li>
+          <li><%= link_to '履歴書', resume_path %></li>
           <li><a class="toggle menu">設定</a>
             <ul class="inner child">
-              <li class="inner-li_1"><a href="/user_setting/viewconfig">公開情報</a></li>
-              <li class="inner-li_2"><a href="/user_setting/logininfo">ログイン情報</a></li>
-              <li class="inner-li_3"><a href="/user_setting/popupconfig">通知機能</a></li>
-              <li class="inner-li_4"><a href="/user_setting/byebye">退会</a></li>
+              <li class="inner-li_1"><%= link_to '公開情報', user_setting_viewconfig_path %></li>
+              <li class="inner-li_2"><%= link_to 'ログイン情報', user_setting_logininfo_path %></li>
+              <li class="inner-li_3"><%= link_to '通知機能', user_setting_popupconfig_path %></li>
+              <li class="inner-li_4"><%= link_to '退会', user_setting_byebye_path %></li>
             </ul>
           </li>
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
         </ul>
       </nav>
       <div id="nav-drawer">
@@ -36,17 +37,18 @@
         <label class="nav-unshown" id="nav-close" for="nav-input"></label>
         <div id="nav-content">
           <ul>
-            <li class="nav-li_1"><a href="/scout_views">スカウト</a></li>
+            <li class="nav-li_1"><%= link_to 'スカウト', scouts_path %></li>
             <!-- <li class="nav-li_1"><a href="/#point">メッセージ</a></li> -->
-            <li class="nav-li_1"><a href="/resume">履歴書</a></li>
+            <li class="nav-li_1"><%= link_to '履歴書', resume_path %></li>
             <li class="nav-li_2">設定
               <ul class="inner child">
-                <li class="nav-li_1"><a href="/user_setting/viewconfig">公開情報</a></li>
-                <li class="nav-li_1"><a href="/user_setting/logininfo">ログイン情報</a></li>
-                <li class="nav-li_1"><a href="/user_setting/popupconfig">通知機能</a></li>
-                <li class="nav-li_1"><a href="/user_setting/byebye">退会</a></li>
+                <li class="nav-li_1"><%= link_to '公開情報', user_setting_viewconfig_path %></li>
+                <li class="nav-li_1"><%= link_to 'ログイン情報', user_setting_logininfo_path %></li>
+                <li class="nav-li_1"><%= link_to '通知機能', user_setting_popupconfig_path %></li>
+                <li class="nav-li_1"><%= link_to '退会', user_setting_byebye_path %></li>
               </ul>
             </li>
+            <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
           </ul>
         </div>
       </div>
