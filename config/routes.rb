@@ -25,7 +25,7 @@ Rails.application.routes.draw do
           get 'viewconfig'   => 'user_setting#viewconfig', as: :user_setting_viewconfig
           get 'byebye'       => 'user_setting#byebye', as: :user_setting_byebye
           get 'logininfo'    => 'user_setting#logininfo', as: :user_setting_logininfo
-          get 'popupconfig'  => 'user_setting#popupconfig', as: :user_setting_poupconfig
+          get 'popupconfig'  => 'user_setting#popupconfig', as: :user_setting_popupconfig
           get 'byebyeresult' => 'user_setting#byebyeresult', as: :user_setting_byebyeresult
           post 'byebyeaccept' => 'user_setting#byebyeaccept', as: :user_setting_byebyeaccept
       end
