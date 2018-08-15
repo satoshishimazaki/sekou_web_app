@@ -11,15 +11,16 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(current_user.id)
+    @user = User.find_by(id: current_user.id)
   end
 
   def edit
-    @user = User.find(current_user.id)
+    @user = User.find_by(id: current_user.id)
+    puts(@user)
   end
 
   def update
-    @user = User.find(current_user.id)
+    @user = User.find_by(id: current_user.id)
     @user.update(user_params)
     redirect_to resume_path(@user)
   end

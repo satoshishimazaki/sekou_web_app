@@ -17,6 +17,7 @@ Rails.application.routes.draw do
           get 'show' => 'users#show', as: :show_resume
           get 'edit' => 'users#edit', as: :edit_resume
           post 'edit' => 'users#update', as: ''
+          patch 'edit' => 'users#update', as: ''
       end
 
       #設定ページのルーティング
