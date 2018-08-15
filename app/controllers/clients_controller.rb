@@ -1,5 +1,5 @@
 class ClientsController < ApplicationController
-before_action :authenticate_user!
+before_action :authenticate_client!
   def index
 
     #初回ログイン時はnew画面を強制表示させ、企業情報の登録を促す。
@@ -10,25 +10,10 @@ before_action :authenticate_user!
     end
   end
 
-  def new
-    @client = Client.new
-  end
-
   def show
     @client = Client.find(params[:id])
   end
 
-  def create
-    @client = Client.new(client_params)
-    @client.client_id = current_client.id
-    #入力内容の検証を行い、正しく入力されてればindexへ、そうでなければ、新規入力フォームを作成する。
-
-    if @client.save
-      redirect_to client_path(@client)
-    else
-      render action: :new
-    end
-  end
 
   def edit
     @client = Client.find(params[:id])

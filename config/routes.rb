@@ -7,9 +7,10 @@ Rails.application.routes.draw do
   get 'detailscout' => 'home#detailscout', as: :home_detailscout
   get 'firstscout' => 'home#firstscout', as: :home_firstscout
 
-  #ユーザーログイン後のマイページのルーティング
-  scope :mypage do
-      get '' => 'mypage#index', as: :mypage
+  #ユーザーログイン後のユーザメニューへのルーティング
+  #求職者(=ユーザー)のメニュー画面
+  scope :user_menu do
+      get '' => 'user_menu#index', as: :user_menu
 
       #履歴書のルーティング
       scope :resume do
@@ -37,33 +38,40 @@ Rails.application.routes.draw do
           get 'detail' => 'scout_views#detail', as: :scout_view_detail
       end
 
-      #求職者(=ユーザー)のメニュー画面
-      scope :user_menu do
-          get '' => 'user_menu#index', as: :user_menu
-      end
-
       #スカウトメッセージのメニュー画面
       scope :scout_messages do
           get '' => 'scout_messages#index', as: :scout_messages
       end
   end
 
-  #このclient_settingはresourceをうまく使ってスリムにかけそう。後ほどリファクタリングする. 7.27記載のコメント
-  get 'client_setting' => 'client_setting#index'
-      get 'client_setting/accountsetting' => 'accountsetting'
-      get 'client_setting/template'       => 'template'
-      get 'client_setting/logininfo'      => 'logininfo'
-      get 'client_setting/popupconfig'    => 'popupconfig'
-      get 'client_setting/accountdelete'  => 'accountdelete'
 
   #求人会社(=client)のメニュー画面
-  get 'client_menu' => 'client_menu#index'
+  scoup :client_menu do
+    get 'client_menu' => 'client_menu#index'
 
-  #clients_accountへのルーティング
-    resources :client_accounts
+          #企業情報編集ページのルーティング
+          scope :coinfo do
+              get '' => 'clients#index', as: :resume
+              get 'show' => 'clients#show', as: :show_resume
+              get 'edit' => 'clients#edit', as: :edit_resume
+              post 'edit' => 'clients#update', as: ''
+              patch 'edit' => 'clients#update', as: ''
+          end
+
+          scope :client_setting do
+            #このclient_settingはresourceをうまく使ってスリムにかけそう。後ほどリファクタリングする. 7.27記載のコメント
+              get 'client_setting' => 'client_setting#index'
+                  get 'client_setting/accountsetting' => 'accountsetting'
+                  get 'client_setting/template'       => 'template'
+                  get 'client_setting/logininfo'      => 'logininfo'
+                  get 'client_setting/popupconfig'    => 'popupconfig'
+                  get 'client_setting/accountdelete'  => 'accountdelete'
+          end
 
 
-  # #clients_accountへのルーティング
+        end
+
+  # スカウトページへのルーティング
    resources :scouts
 
   #static_pagesへのルーティング
