@@ -1,4 +1,4 @@
-class ScoutsController < ApplicationController
+class ScoutsController < ApplicationClientController
   def index
     @scout = Scout.all
   end
@@ -7,7 +7,7 @@ class ScoutsController < ApplicationController
     @scout = Scout.new
     @user = User.find_by(id: current_user.id)
     @scout.user_id = @user.id
-    @scout.client_account_id = current_client.client_account.id
+    @scout.client_id = current_client.id
   end
 
   def show
@@ -22,7 +22,7 @@ class ScoutsController < ApplicationController
     # new actionも同様
 
     @scout.user_id = @user.id
-    @scout.client_account_id = current_client.client_account.id
+    @scout.client_id = current_client.id
 
     if @scout.save
       redirect_to scout_path(@scout)

@@ -1,5 +1,4 @@
-class ClientMenuController < ApplicationController
-before_action :authenticate_client!
+class ClientMenuController < ApplicationClientController
 
   def index
   end

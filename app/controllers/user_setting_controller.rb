@@ -1,4 +1,4 @@
-class UserSettingController < ApplicationController
+class UserSettingController < ApplicationUserController
   # ユーザーログイン後のlayout指定
   layout "user_application"
 

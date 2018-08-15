@@ -47,7 +47,7 @@ Rails.application.routes.draw do
 
   #求人会社(=client)のメニュー画面
   scope :client_menu do
-      get '' => 'client_menu#index' as: :client_menu
+      get '' => 'client_menu#index' ,as: :client_menu
 
           #企業情報編集ページのルーティング
           scope :coinfo do
@@ -59,13 +59,13 @@ Rails.application.routes.draw do
           end
 
           scope :client_setting do
-            #このclient_settingはresourceをうまく使ってスリムにかけそう。後ほどリファクタリングする. 7.27記載のコメント
-              get '' => 'client_setting#index'
-                  get 'accountsetting' => 'client_setting#accountsetting' as: :client_setting_accountsetting
-                  get 'template'       => 'client_setting#template'       as: :client_setting_template
-                  get 'logininfo'      => 'client_setting#logininfo'      as: :client_setting_logininfo
-                  get 'popupconfig'    => 'client_setting#popupconfig'    as: :client_setting_popupconfig
-                  get 'accountdelete'  => 'client_setting#accountdelete'  as: :client_setting_accountdelete
+
+              get '' => 'client_setting#index'  ,as: :client_setting
+                  get 'accountsetting' => 'client_setting#accountsetting' ,as: :client_setting_accountsetting
+                  get 'template'       => 'client_setting#template'       ,as: :client_setting_template
+                  get 'logininfo'      => 'client_setting#logininfo'      ,as: :client_setting_logininfo
+                  get 'popupconfig'    => 'client_setting#popupconfig'    ,as: :client_setting_popupconfig
+                  get 'accountdelete'  => 'client_setting#accountdelete'  ,as: :client_setting_accountdelete
           end
 
 

@@ -1,5 +1,5 @@
-class ClientsController < ApplicationController
-before_action :authenticate_client!
+class ClientsController < ApplicationClientController
+
   def index
 
     #初回ログイン時はnew画面を強制表示させ、企業情報の登録を促す。
