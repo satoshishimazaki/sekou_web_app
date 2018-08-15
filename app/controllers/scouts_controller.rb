@@ -7,7 +7,7 @@ class ScoutsController < ApplicationClientController
     @scout = Scout.new
     @user = User.find_by(id: current_user.id)
     @scout.user_id = @user.id
-    @scout.client_id = current_client.id
+    @scout.client_id = current_client
   end
 
   def show
