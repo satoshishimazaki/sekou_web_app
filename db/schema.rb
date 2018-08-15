@@ -142,7 +142,7 @@ ActiveRecord::Schema.define(version: 2018_07_12_000003) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "email"
+    t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -166,7 +166,6 @@ ActiveRecord::Schema.define(version: 2018_07_12_000003) do
     t.string "phone_number"
     t.date "birth"
     t.string "sex"
-    t.string "password"
     t.string "employment_status"
     t.string "address_post"
     t.integer "prefecture_id"
