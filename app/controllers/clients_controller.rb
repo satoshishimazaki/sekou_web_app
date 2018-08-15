@@ -11,18 +11,18 @@ before_action :authenticate_client!
   end
 
   def show
-    @client = Client.find(params[:id])
+    @client = Client.find_by(id: current_client.id)
   end
 
 
   def edit
-    @client = Client.find(params[:id])
+    @client = Client.find_by(id: current_client.id)
   end
 
   def update
-    @client = Client.find(params[:id])
+    @client = Client.find_by(id: current_client.id)
     @client.update(client_params)
-    redirect_to clients_path(@client)
+    redirect_to coinfo_path(@client)
   end
 
 # employee accountだけじゃなくて関連するもの全て消去だと思うので、

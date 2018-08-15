@@ -1,3 +1,4 @@
-<%= render 'form' , ClientAccount: @client %>
+<%= render 'layouts/header_client' , Client: @client %>
+<p><%= @client.name %></p>
 
 <%= link_to "元に戻る" , :action => 'index' %>
