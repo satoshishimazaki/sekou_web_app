@@ -5,12 +5,6 @@
 * 最終編集 : 2018.7.23  edited by takuya
 -->
 
-<!--
-* 未解決のバグ等
-  * 画面のヘッダーが最初のトップページの状態で、メニュー画面のようなページがない
-  * テーブルへレコードを格納して表示を確認していないので、テーブルの中身によってはうまく行かない可能性がある。
--->
-
 
 
 <div class="content_container">
@@ -20,23 +14,21 @@
 
 <h3> スカウト概要 </h3><br>
 
-    <% @scouts.limit(3).each do |scout,i| %>
+    <% @scout.each do |scout| %>
         <p>
-          <% if scout.agreement_count == nil %>
+          <% if scout.summary? then%>
 
           <h4>
-            <%= @client.name %> からのスカウトです <br><br>
+            <%= @client.name %> さんのスカウトです <br><br>
           </h4>
             <%= @user.last_name %>さん<br>
             <%= scout.summary %><br>
 
             <br>
+
+            <%= link_to "もっと情報を見てみる" ,:id => scout.id, :action => 'detail' %>
           <% end %>
         </p>
     <% end %>
-
-    <p>
-      <%= link_to "もっと情報を見てみる" , :action => 'detail' %>
-    </P>
   </div>
 </div>

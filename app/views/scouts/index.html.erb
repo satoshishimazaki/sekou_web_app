@@ -3,11 +3,25 @@
 </div>
 <div class="setting-container-detail">
 
-<h1> ここにスカウトからピックアップ表示する </h1>
+<h2> 求職者情報の一覧は次の通りです。 </h2>
 
-      <tbody>
-        <tr>
-          <%= link_to 'スカウトの新規作成', new_scout_path %><br>
-        </tr>
-      </tbody>
-</div>
+    <% @user.each do |u| %>
+
+        <% if u.last_name_kana? then %>
+          <ul>
+            ID <%= u.id + 1532 %> さん<br>
+            居住：<%= u.address_city %><br>
+            希望年収：<%= u.desired_salary %>万円<br>
+            現在の職種：<%= u.employment_status %><br>
+          </ul>
+
+          <tbody>
+            <tr>
+              <%= link_to 'スカウトの新規作成', new_scout_path(user_id: u.id) %><br>
+            </tr>
+          </tbody>
+        <% end %>  <!-- if 文の終了 -->
+
+    <% end %>
+
+  </div>

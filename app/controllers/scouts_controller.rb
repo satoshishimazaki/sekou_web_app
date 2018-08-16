@@ -1,11 +1,12 @@
 class ScoutsController < ApplicationClientController
   def index
     @scout = Scout.all
+    @user  = User.all
   end
 
   def new
     @scout = Scout.new
-    @user = User.find_by(id: current_user.id)
+    @user = User.find(params[:user_id])
     @scout.user_id = @user.id
     @scout.client_id = current_client
   end
@@ -23,7 +24,6 @@ class ScoutsController < ApplicationClientController
 
     @scout.user_id = @user.id
     @scout.client_id = current_client.id
-
     if @scout.save
       redirect_to scout_path(@scout)
     else
