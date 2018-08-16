@@ -19,8 +19,7 @@ class ScoutsController < ApplicationClientController
 
   def create
     @scout = Scout.new(scout_params)
-    @user = User.find_by(id: current_user.id)
-    @scout.user_id = @user.id
+    @user = User.find_by(id: @scout.user_id)
     @scout.client_id = current_client.id
     @scout.update(agreement_count: 0)
 

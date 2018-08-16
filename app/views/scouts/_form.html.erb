@@ -18,6 +18,8 @@
     <%= form.text_area :content, id: 'scout_content', placeholder: "弊社でぜひ、あなたの力を生かしてみませんか？" %>
   </div>
 
+  <%= form.hidden_field :user_id ,:value => @user.id %>
+
 
   <%= form.submit :送信, class: 'basic-btn' %>
 <% end %>
