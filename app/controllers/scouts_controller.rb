@@ -48,8 +48,9 @@ class ScoutsController < ApplicationClientController
         :agreement_count,
         :summary,
         :content,
-        :user_id,
-        :client_id)
+        :client_id,
+        :user_id
+        )
     end
 
 end
