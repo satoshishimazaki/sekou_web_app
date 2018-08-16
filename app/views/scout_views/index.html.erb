@@ -5,8 +5,6 @@
 * 最終編集 : 2018.7.23  edited by takuya
 -->
 
-
-
 <div class="content_container">
   <div class="detail_scout">
 
@@ -26,9 +24,13 @@
 
             <br>
 
-            <%= link_to "もっと情報を見てみる" ,:id => scout.id, :action => 'detail' %>
-          <% end %>
+            <%= link_to "もっと情報を見てみる",controller: 'scout_views' , action: 'detail' ,id: scout.id %>
+           <% end %>
         </p>
     <% end %>
+<br><br>
+<h3>
+<%= link_to "メニューへ戻る",controller: 'user_menu' , action: 'index'%>
+</h3>
   </div>
 </div>

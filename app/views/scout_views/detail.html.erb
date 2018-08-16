@@ -1,0 +1,29 @@
+<div class="content_container">
+  <div class="detail_scout">
+
+<br><br><br><br><br><br><br><br>
+
+<h3> スカウト詳細 </h3><br>
+
+    <h4>
+      スカウト企業詳細
+    </h4>
+      会社名:
+      <%= @client.name %>
+    <br>
+      会社立地:
+      <%= @client.prefecture_id %> <%= @client.address_city %> <%= @client.address_building %>
+    <br>
+    会社ホームページ:
+      <%= @client.homepage %>
+    <br>
+
+
+    <h2>スカウト本文</h2>
+    <%= @scout.content %>
+    <br><br>
+
+    <%= link_to "スカウトを承諾する", controller: 'scout_views' , action: 'agree' ,id: @scout.id %>
+
+  </div>
+</div>
