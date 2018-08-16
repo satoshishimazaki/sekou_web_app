@@ -22,6 +22,45 @@
           </tbody>
         <% end %>  <!-- if 文の終了 -->
 
-    <% end %>
+    <% end %><br><br>
+
+<!-- 求職者情報の一覧ページ終了 -->
+
+<!-- まだうまく表示されない
+
+<h2> スカウト送った求職者一覧 </h2>
+
+    <% @user.each do |u| %>
+      <% @scout.each do |s| %>
+        <% if s.agreement_count == 0 then %>
+          <ul>
+            ID <%= u.id + 1532 %> さん<br>
+            居住：<%= u.address_city %><br>
+            希望年収：<%= u.desired_salary %>万円<br>
+            現在の職種：<%= u.employment_status %><br>
+          </ul>
+
+        <% end %>
+      <% end %>
+    <% end %><br><br>
+
+<h2> スカウト承諾した求職者一覧 </h2>
+
+    <% @scout.each do |s| %>
+      <% @user.each do |u| %>
+        <% if s.agreement_count == 2 then %>
+          <ul>
+            名前 <%= u.last_name %> さん<br>
+            居住：<%= u.address_city %><br>
+            希望年収：<%= u.desired_salary %>万円<br>
+            現在の職種：<%= u.employment_status %><br>
+          </ul>
+
+        <% end %>
+      <% end %>
+    <% end %><br><br>
+-->
+
+<%= link_to 'メニューへ戻る', client_menu_path %><br>
 
   </div>

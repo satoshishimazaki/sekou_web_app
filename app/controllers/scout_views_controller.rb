@@ -12,7 +12,7 @@ class ScoutViewsController < ApplicationUserController
 
   def agree
       @scout = Scout.find(params[:id])
-      @scout.update(agreement_count: 1)
+      @scout.update(agreement_count: 2)
       redirect_to scout_views_path
   end
 

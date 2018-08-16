@@ -1,6 +1,14 @@
 # frozen_string_literal: true
 
 class Clients::ConfirmationsController < Devise::ConfirmationsController
+  def after_sign_out_path_for(resource)
+      client_sign_in_path
+  end
+
+  def after_sign_in_path_for(resource)
+       client_menu_path
+  end
+
   # GET /resource/confirmation/new
    def new
      super
