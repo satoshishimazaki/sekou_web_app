@@ -95,7 +95,7 @@ ActiveRecord::Schema.define(version: 2018_07_12_000003) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "job_objective_employee_accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "job_objective_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.integer "job_objective_id"
     t.datetime "created_at", null: false
@@ -108,7 +108,7 @@ ActiveRecord::Schema.define(version: 2018_07_12_000003) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "qualification_employee_accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "qualification_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "qualification_id"
     t.integer "user_id"
     t.datetime "created_at", null: false
