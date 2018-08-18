@@ -20,7 +20,11 @@ gem 'mini_racer', platforms: :ruby
 #gem 'therubyracer', platforms: :ruby
 
 gem 'unicorn', '~> 5.3'
+<<<<<<< HEAD
 
+=======
+#gem 'therubyracer', platforms: :ruby
+>>>>>>> 64b2b9a02ccaee07d6478621bb7a726f4be185cb
 
 gem "jquery-rails"
 

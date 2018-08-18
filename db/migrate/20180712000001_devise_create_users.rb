@@ -61,6 +61,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
     add_index :users, :unlock_token,         unique: true
   end
 
+  #求職者の職歴
   create_table :careers do |t|
     t.integer :user_id
     t.string :company_name
@@ -72,24 +73,28 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
     t.timestamps
   end
 
+  #求職者の職種
   create_table :job_objectives do |t|
     t.string :name
 
     t.timestamps
   end
 
+  #求職者の資格
   create_table :qualifications do |t|
     t.string :name
 
     t.timestamps
   end
 
+  #職歴の雇用形態
   create_table :employment_patterns do |t|
     t.string :name
 
     t.timestamps
   end
 
+  #求職者の職歴と職種の中間テーブル
   create_table :careers_objectives do |t|
     t.integer :career_id
     t.integer :objective_id
@@ -97,14 +102,14 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
     t.timestamps
   end
 
-  create_table :job_objective_employee_accounts do |t|
+  create_table :job_objective_users do |t|
     t.integer :user_id
     t.integer :job_objective_id
 
     t.timestamps
   end
 
-  create_table :qualification_employee_accounts do |t|
+  create_table :qualification_users do |t|
     t.integer :qualification_id
     t.integer :user_id
 

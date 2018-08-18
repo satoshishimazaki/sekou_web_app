@@ -123,7 +123,11 @@ GEM
       thor (>= 0.14, < 2.0)
     json (2.1.0)
     kgio (2.11.2)
+<<<<<<< HEAD
     libv8 (6.7.288.46.1)
+=======
+    libv8 (3.16.14.19)
+>>>>>>> 64b2b9a02ccaee07d6478621bb7a726f4be185cb
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -208,6 +212,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    ref (2.0.0)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
@@ -253,6 +258,9 @@ GEM
     temple (0.8.0)
     tether-rails (1.4.0)
       rails (>= 3.1)
+    therubyracer (0.12.3)
+      libv8 (~> 3.16.14.15)
+      ref
     thin (1.7.2)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0, >= 1.0.4)
@@ -312,6 +320,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   tether-rails
+  therubyracer
   tzinfo-data
   uglifier (>= 1.3.0)
   unicorn (~> 5.3)
