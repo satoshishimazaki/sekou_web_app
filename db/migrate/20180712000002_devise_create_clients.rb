@@ -62,17 +62,4 @@ class DeviseCreateClients < ActiveRecord::Migration[5.2]
     add_index :clients, :unlock_token,         unique: true
   end
 
-  create_table :domains do |t|
-    t.string :name
-
-    t.timestamps
-  end
-
-  create_table :client_domains do |t|
-    t.integer :client_id
-    t.integer :domain_id
-
-    t.timestamps
-  end
-
 end
