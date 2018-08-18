@@ -19,7 +19,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'mini_racer', platforms: :ruby
 
 gem 'unicorn', '~> 5.3'
-gem 'therubyracer', platforms: :ruby
+#gem 'therubyracer', platforms: :ruby
 
 gem "jquery-rails"
 

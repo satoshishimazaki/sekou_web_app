@@ -7,10 +7,10 @@ class User < ApplicationRecord
 
   has_many :scouts
   has_many :clients, through: :scouts
-  has_many :qualification_employee_accounts
-  has_many :qualification, through: :qualification_employee_accounts
-  has_many :job_objective_employee_accounts
-  has_many :job_objectives, through: :job_objective_employee_accounts
+  has_many :qualification_users
+  has_many :qualification, through: :qualification_users
+  has_many :job_objective_users
+  has_many :job_objectives, through: :job_objective_users
 
   validates :last_name,
             :first_name,
