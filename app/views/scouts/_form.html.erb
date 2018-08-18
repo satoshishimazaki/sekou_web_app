@@ -1,4 +1,6 @@
-<h2> <%= @employee_account.last_name %>さん </h2>
+
+<%= render 'layouts/header_client' , Client: @client %>
+<h2> <%= @user.last_name %>さん </h2>
 
 <%= form_with model: @scout, local: true do |form| %>
 
@@ -16,5 +18,8 @@
     <%= form.text_area :content, id: 'scout_content', placeholder: "弊社でぜひ、あなたの力を生かしてみませんか？" %>
   </div>
 
-  <%= form.submit :送信, class: 'basic-btn'%>
+  <%= form.hidden_field :user_id ,:value => @user.id %>
+
+
+  <%= form.submit :送信, class: 'basic-btn' %>
 <% end %>

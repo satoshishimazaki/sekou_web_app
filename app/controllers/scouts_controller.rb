@@ -1,13 +1,16 @@
-class ScoutsController < ApplicationController
+class ScoutsController < ApplicationClientController
   def index
     @scout = Scout.all
+    @user = User.all
   end
 
   def new
     @scout = Scout.new
-    @employee_account = EmployeeAccount.find_by(id: current_user.employee_account.id)
-    @scout.employee_account_id = @employee_account.id
-    @scout.client_account_id = current_client.client_account.id
+    @user = User.find(params[:user_id])
+    @client = Client.find_by(id: current_client.id)
+    @scout.user_id = @user.id
+    @scout.client_id = current_client.id
+
   end
 
   def show
@@ -16,13 +19,9 @@ class ScoutsController < ApplicationController
 
   def create
     @scout = Scout.new(scout_params)
-    @employee_account = EmployeeAccount.find_by(id: current_user.employee_account.id)
-    # 今のままだと、employee_account と client_accountの両方にログインしてないといけない状態なので、dbからemployeeaccountのidを取ってくる
-    # 構文にする。もともと、find_by(id: [params[:id])となっていた。])
-    # new actionも同様
-
-    @scout.employee_account_id = @employee_account.id
-    @scout.client_account_id = current_client.client_account.id
+    @user = User.find_by(id: @scout.user_id)
+    @scout.client_id = current_client.id
+    @scout.update(agreement_count: 0)
 
     if @scout.save
       redirect_to scout_path(@scout)
@@ -45,9 +44,12 @@ class ScoutsController < ApplicationController
   private
     def scout_params
       params.require(:scout).permit(
+        :agreement_count,
         :summary,
         :content,
-        :employee_account_id)
+        :client_id,
+        :user_id
+        )
     end
 
 end

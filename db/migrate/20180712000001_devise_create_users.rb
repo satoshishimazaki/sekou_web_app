@@ -37,10 +37,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :last_name_kana
       t.string :first_name_kana
       t.string :phone_number
-      t.string :email
       t.date :birth
       t.string :sex
-      t.string :password
       t.string :employment_status
       t.string :address_post
       t.integer :prefecture_id

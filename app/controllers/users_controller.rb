@@ -1,5 +1,5 @@
-class UsersController < ApplicationController
-  before_action :authenticate_user!
+class UsersController < ApplicationUserController
+
 
   #初回ログイン時はnew画面を強制表示させ、履歴書登録を促す。
   def index
@@ -11,15 +11,16 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(current_user.id)
+    @user = User.find_by(id: current_user.id)
   end
 
   def edit
-    @user = User.find(current_user.id)
+    @user = User.find_by(id: current_user.id)
+    puts(@user)
   end
 
   def update
-    @user = User.find(current_user.id)
+    @user = User.find_by(id: current_user.id)
     @user.update(user_params)
     redirect_to resume_path(@user)
   end
@@ -32,8 +33,6 @@ class UsersController < ApplicationController
         :last_name_kana,
         :first_name_kana,
         :phone_number,
-        :email,
-        :password,
         :birth,
         :sex,
         :employment_status,

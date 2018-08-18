@@ -10,7 +10,7 @@ final edited by takuya at 2018.7.27
 
 -->
 
-<%= form_with url: edit_resume_path, local: true do |form| %>
+<%= form_with model: @user, url: edit_resume_path, local: true do |form| %>
 
 <% if @user.errors.any? %>
     <h4>入力した内容にエラーが<%= @user.errors.count %>件あります</h4>
@@ -55,19 +55,6 @@ final edited by takuya at 2018.7.27
   </div>
 </div>
 
-<div class="button_group">
-  <div class="has-float-label_full_2col">
-    <%= form.label :email, 'メールアドレス' %>
-    <%= form.text_field :email, id: :email, placeholder: "sample@mail.com" %>
-  </div>
-</div>
-
-<div class="button_group">
-  <div class="has-float-label_full_2col">
-    <%= form.label :password, 'パスワード' %>
-    <%= form.text_field :password, id: :password, placeholder: "012345AAA" %>
-  </div>
-</div>
 
 <div class="button_group">
   <div class="has-float-label_full_2col">
@@ -168,8 +155,8 @@ final edited by takuya at 2018.7.27
   <p class="must_btton_text">必須</p>
   <%= form.label :qualifications, '資格' %>
   <%= collection_check_boxes(:user, :qualification_ids, Qualification.all, :id, :name) do |b| %>
-  <ul>
-    <li><%= b.label { b.check_box + b.text } %></li>
+  <ul class="check">
+    <li><%= b.label(class: 'labeltag') { b.check_box + b.text } %></li>
   </ul>
   <% end %>
 </div>

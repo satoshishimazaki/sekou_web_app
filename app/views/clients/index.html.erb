@@ -1,0 +1,18 @@
+<!-- このindex.html.erbがないとエラーが発生する。
+このviewファイルでは、履歴書の確認、編集を行えるようにリンクの一覧を貼るページにする。
+edit 2018.7.31 by takuya
+-->
+
+<%= render 'layouts/header_client' , Client: @client %>
+<div class="content_upper">
+  <h3>会社情報の登録・編集ページ</h3>
+</div>
+<div class="setting-container">
+  <div class="setting-container">
+    <ul>
+      <li><%= link_to '登録した履歴書の中身を確認する',  show_coinfo_path(current_client.id) %></li>
+      <li><%= link_to '登録した履歴書の編集をする',     edit_coinfo_path(current_client.id) %></li>
+      <li><%= link_to 'メニューへ戻る',               client_menu_url %></li>
+    </ul>
+  </div>
+</div>

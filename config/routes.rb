@@ -7,9 +7,10 @@ Rails.application.routes.draw do
   get 'detailscout' => 'home#detailscout', as: :home_detailscout
   get 'firstscout' => 'home#firstscout', as: :home_firstscout
 
-  #ユーザーログイン後のマイページのルーティング
-  scope :mypage do
-      get '' => 'mypage#index', as: :mypage
+  #ユーザーログイン後のユーザメニューへのルーティング
+  #求職者(=ユーザー)のメニュー画面
+  scope :user_menu do
+      get '' => 'user_menu#index', as: :user_menu
 
       #履歴書のルーティング
       scope :resume do
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
           get 'show' => 'users#show', as: :show_resume
           get 'edit' => 'users#edit', as: :edit_resume
           post 'edit' => 'users#update', as: ''
+          patch 'edit' => 'users#update', as: ''
       end
 
       #設定ページのルーティング
@@ -34,11 +36,7 @@ Rails.application.routes.draw do
       scope :scout_views do
           get '' => 'scout_views#index', as: :scout_views
           get 'detail' => 'scout_views#detail', as: :scout_view_detail
-      end
-
-      #求職者(=ユーザー)のメニュー画面
-      scope :user_menu do
-          get '' => 'user_menu#index', as: :user_menu
+          get 'agree' => 'scout_views#agree' , as: :scout_view_agree
       end
 
       #スカウトメッセージのメニュー画面
@@ -47,22 +45,34 @@ Rails.application.routes.draw do
       end
   end
 
-  #このclient_settingはresourceをうまく使ってスリムにかけそう。後ほどリファクタリングする. 7.27記載のコメント
-  get 'client_setting' => 'client_setting#index'
-      get 'client_setting/accountsetting' => 'accountsetting'
-      get 'client_setting/template'       => 'template'
-      get 'client_setting/logininfo'      => 'logininfo'
-      get 'client_setting/popupconfig'    => 'popupconfig'
-      get 'client_setting/accountdelete'  => 'accountdelete'
 
   #求人会社(=client)のメニュー画面
-  get 'client_menu' => 'client_menu#index'
+  scope :client_menu do
+      get '' => 'client_menu#index' ,as: :client_menu
 
-  #clients_accountへのルーティング
-    resources :client_accounts
+          #企業情報編集ページのルーティング
+          scope :coinfo do
+              get '' => 'clients#index', as: :coinfo
+              get 'show' => 'clients#show', as: :show_coinfo
+              get 'edit' => 'clients#edit', as: :edit_coinfo
+              post 'edit' => 'clients#update', as: ''
+              patch 'edit' => 'clients#update', as: ''
+          end
+
+          scope :client_setting do
+
+              get '' => 'client_setting#index'  ,as: :client_setting
+                  get 'accountsetting' => 'client_setting#accountsetting' ,as: :client_setting_accountsetting
+                  get 'template'       => 'client_setting#template'       ,as: :client_setting_template
+                  get 'logininfo'      => 'client_setting#logininfo'      ,as: :client_setting_logininfo
+                  get 'popupconfig'    => 'client_setting#popupconfig'    ,as: :client_setting_popupconfig
+                  get 'accountdelete'  => 'client_setting#accountdelete'  ,as: :client_setting_accountdelete
+          end
 
 
-  # #clients_accountへのルーティング
+  end
+
+  # スカウトページへのルーティング
    resources :scouts
 
   #static_pagesへのルーティング

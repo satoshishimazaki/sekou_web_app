@@ -1,6 +1,8 @@
-class UserMenuController < ApplicationController
-before_action :authenticate_user!
+class UserMenuController < ApplicationUserController
+
+layout "user_application"
   def index
-      @scouts = Scout.all
+    @user = User.find(current_user.id)
+    @scouts = @user.scouts
   end
 end
