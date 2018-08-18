@@ -150,14 +150,16 @@ final edited by takuya at 2018.7.27
   </div>
 </div>
 
+<div class="checkbox_col">
 <div class="has-float-label_full_2col">
   <p class="must_btton_text">必須</p>
   <%= form.label :qualifications, '資格' %>
   <%= collection_check_boxes(:user, :qualification_ids, Qualification.all, :id, :name) do |b| %>
-  <ul>
-    <li><%= b.label { b.check_box + b.text } %></li>
+  <ul class="check">
+    <li><%= b.label(class: 'labeltag') { b.check_box + b.text } %></li>
   </ul>
   <% end %>
+</div>
 </div>
 
 <div class="has-float-label_full_2col">
