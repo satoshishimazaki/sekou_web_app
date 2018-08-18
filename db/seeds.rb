@@ -15,6 +15,9 @@ JobObjective.create(:name => 'CADオペレーター')
 JobObjective.create(:name => '建築士')
 JobObjective.create(:name => '施工管理士')
 
+EmploymentPattern.create(:name => '正社員')
+EmploymentPattern.create(:name => '契約社員')
+EmploymentPattern.create(:name => 'アルバイト・パート')
 
 5.times do |i|
   i += 1
