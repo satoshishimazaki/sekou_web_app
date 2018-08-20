@@ -10,13 +10,14 @@
 <% user_count_flag = 0 %> <!-- 変数宣言 -->
 
  <% @scout.each do |s| %>
-    <%  user_count_flag = 0%>
-    <% if s.agreement_count == 0 then %>
+    <% @user.each do |u| %>
+      <% if s.agreement_count == 0 then %>
 
-        <% if @user.id == s.user_id then %>
-        <%= @user.number_id %>さん <br>
-        <% user_count_flag = 1 %>
-        <% end %>
+          <% if u.id == s.user_id then %>
+          <%= u.number_id %>さん <br>
+          <% user_count_flag = 1 %>
+          <% end %>
+      <% end %>
     <% end %>
 
   <% end %><!-- eachメソッドの終了 -->
@@ -32,15 +33,22 @@
 
 <h2> スカウトを承認した求職者の一覧です。 </h2>
 
+   <% user_count_flag = 0%>
  <% @scout.each do |s| %>
-    <% user_count_flag = 0%>
+   <% @user.each do |u| %>
     <% if s.agreement_count == 1 then %>
 
-        <% if @user.id == s.user_id then %>
-        <%= @user.last_name %>さん <br>
-        <% user_count_flat = 1 %>
-        <% end %>
+          <% if u.id == s.user_id then %>
+          <%= u.last_name %>さん <br>
+          希望年収 : <%= u.desired_salary %>
+          自己PR  : <%= u.personal_summary %>
+          <br>
+          <%= link_to 'メッセージを送る', scout_messages_url %><br>
 
+          <% user_count_flag = 1 %>
+          <% end %>
+
+        <% end %>
     <% end %>
   <% end %> <!-- eachメソッドの終了 -->
 

@@ -1,4 +1,4 @@
-class ScoutMessagesController < ApplicationUserController
+class ScoutMessagesController < ApplicationController
   def index
   end
 end

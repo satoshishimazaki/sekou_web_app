@@ -1,6 +1,9 @@
 class ScoutsController < ApplicationClientController
   def index
     @client = Client.find_by(id: current_client.id)
+    if @client.name == nil then
+      redirect_to coinfo_path
+    end
     @scout = Scout.where(client_id: @client.id)
     @user = User.all
   end
@@ -26,7 +29,7 @@ class ScoutsController < ApplicationClientController
     @scout.client_id = current_client.id
     @scout.update(agreement_count: 0)
 
-    if @scout.save
+    if @scout.save && @scout.agreement_count == nil
       redirect_to scout_path(@scout)
     else
       render action: :new
