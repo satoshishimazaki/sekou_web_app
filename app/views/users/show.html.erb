@@ -1,6 +1,23 @@
 <%= render 'layouts/header_user' , User: @user %>
-<p><%= @user.last_name %></p>
-<p><%= @user.first_name %></p>
+<p>ID<%= @user.number_id %></p>
+<p>苗字<%= @user.last_name %></p>
+<p>名前<%= @user.first_name %></p>
+<p>ミョウジ<%= @user.last_name_kana %></p>
+<p>ナマエ<%= @user.first_name_kana %></p>
+<p>電話番号<%= @user.phone_number %></p>
+<p>生年月日<%= @user.birth %></p>
+<p>性別<%= @user.sex %></p>
+<p>就労状況<%= @user.employee_status %></p>
+<p>郵便番号<%= @user.address_post %></p>
+<p>都道府県<%= @user.prefecture_id %></p>
+<p>市町村<%= @user.address_city %></p>
+<p>番地・建物名<%= @user.address_building %></p>
+<p>大学<%= @user.university %></p>
+<p>学部<%= @user.faculty %></p>
+<p>卒業年<%= @user.graduate %></p>
+<p>希望年収<%= @user.desired_salary %></p>
+<p>自己PR<%= @user.personal_summary%></p>
+
 
 <%= link_to "元に戻る" , :action => 'index' %>
 <%= link_to "スカウト作成" , {:controller => 'scouts', :action => 'new', id: @user.last_name } %>

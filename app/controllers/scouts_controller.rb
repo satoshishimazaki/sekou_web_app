@@ -15,6 +15,10 @@ class ScoutsController < ApplicationClientController
 
   def show
     @scout = Scout.find(params[:id])
+    @user = User.find(params[:id])
+    @client = Client.find_by(id: current_client.id)
+    @scout.user_id = @user.id
+    @scout.client_id = current_client.id
   end
 
   def create

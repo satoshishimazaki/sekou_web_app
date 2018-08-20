@@ -16,7 +16,13 @@ class UsersController < ApplicationUserController
 
   def edit
     @user = User.find_by(id: current_user.id)
-    puts(@user)
+
+    #求職者のIDをランダムで一意に付与する
+    if @user.number_id == nil then
+      require 'securerandom'
+      @user.update(number_id: SecureRandom.random_number(1000))
+    end
+
   end
 
   def update
@@ -28,6 +34,7 @@ class UsersController < ApplicationUserController
   private
     def user_params
       params.require(:user).permit(
+        :number_id,
         :last_name,
         :first_name,
         :last_name_kana,
