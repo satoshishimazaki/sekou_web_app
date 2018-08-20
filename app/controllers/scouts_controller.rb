@@ -1,6 +1,7 @@
 class ScoutsController < ApplicationClientController
   def index
-    @scout = Scout.all
+    @client = Client.find_by(id: current_client.id)
+    @scout = Scout.where(client_id: @client.id)
     @user = User.all
   end
 
@@ -15,9 +16,7 @@ class ScoutsController < ApplicationClientController
 
   def show
     @scout = Scout.find(params[:id])
-    @user = User.find(params[:id])
-    @client = Client.find_by(id: current_client.id)
-    @scout.user_id = @user.id
+    @user = User.find_by(id: @scout.user_id)
     @scout.client_id = current_client.id
   end
 

@@ -1,0 +1,55 @@
+
+<div class="content_upper">
+  <h3>Scout Checking Page</h3>
+</div>
+<div class="setting-container-detail">
+
+
+<h2> スカウトを送った求職者の一覧です。 </h2>
+
+<% user_count_flag = 0 %> <!-- 変数宣言 -->
+
+ <% @scout.each do |s| %>
+    <%  user_count_flag = 0%>
+    <% if s.agreement_count == 0 then %>
+
+        <% if @user.id == s.user_id then %>
+        <%= @user.number_id %>さん <br>
+        <% user_count_flag = 1 %>
+        <% end %>
+    <% end %>
+
+  <% end %><!-- eachメソッドの終了 -->
+
+    <% if user_count_flag == 0 then %>
+        スカウトを送り未承認の求職者はいません。 <br>
+    <% end %>
+
+
+    <br>
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+<h2> スカウトを承認した求職者の一覧です。 </h2>
+
+ <% @scout.each do |s| %>
+    <% user_count_flag = 0%>
+    <% if s.agreement_count == 1 then %>
+
+        <% if @user.id == s.user_id then %>
+        <%= @user.last_name %>さん <br>
+        <% user_count_flat = 1 %>
+        <% end %>
+
+    <% end %>
+  <% end %> <!-- eachメソッドの終了 -->
+
+      <% if user_count_flag == 0 then %>
+          スカウトを承認した求職者はいません。 <br>
+      <% end %>
+
+<br><br><br>
+
+
+
+      <%= link_to 'メニューへ戻る', client_menu_path %><br>

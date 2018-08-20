@@ -69,6 +69,10 @@ Rails.application.routes.draw do
                   get 'accountdelete'  => 'client_setting#accountdelete'  ,as: :client_setting_accountdelete
           end
 
+          scope :scout_checks do
+            get '' => 'scout_checks#index' , as: :scout_checks
+          end
+
 
   end
 

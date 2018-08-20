@@ -20,7 +20,7 @@ class UsersController < ApplicationUserController
     #求職者のIDをランダムで一意に付与する
     if @user.number_id == nil then
       require 'securerandom'
-      @user.update(number_id: SecureRandom.random_number(1000))
+      @user.update(number_id: SecureRandom.random_number(100000))
     end
 
   end
