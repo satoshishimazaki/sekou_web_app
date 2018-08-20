@@ -1,31 +1,85 @@
+<div class="content_upper">
+  <h2>スカウト詳細</h2>
+</div> <!--content_upper -->
+
 <div class="content_container">
   <div class="detail_scout">
 
-<br><br><br><br><br><br><br><br>
-
-<h3> スカウト詳細 </h3><br>
-
-    <h4>
-      スカウト企業詳細
-    </h4>
-      会社名:
-      <%= @client.name %>
-    <br>
-      会社立地:
-      <%= @client.prefecture_id %> <%= @client.address_city %> <%= @client.address_building %>
-    <br>
-    会社ホームページ:
-      <%= @client.homepage %>
-    <br>
-
-
-    <h2>スカウト本文</h2>
-    <%= @scout.content %>
-    <br><br>
-
-    <%= link_to "スカウトを承諾する", controller: 'scout_views' , action: 'agree' ,id: @scout.id %>
+    <table class="table_1">
+      <tr>
+      <th>会社名</th>
+      <td><%= @client.name %></td>
+      </tr>
+      <tr>
+      <th>件名</th>
+      <td><%= @scout.summary %></td>
+      </tr>
+    </table>
+    <div class="btn-position">
+      <%= link_to "スカウトを承諾する", {controller: 'scout_views' , action: 'agree' ,id: @scout.id}, class: "accept_btn" %>
+    </div>
+    <div class="message-dtail">
+      <p><%= @scout.content %></p>
+    </div>
+    <!-- スカウト情報を豊富にして増やしていく　職種などについて
+    <div class="tag-detail-scout">
+      <span class="tag_2"></span>
+    </div> -->
+    <table class="table_1">
+      <tr>
+        <th>会社名</th>
+        <td><%= @client.name %></td>
+      </tr>
+      <tr>
+        <th>住所</th>
+        <td><%= @client.prefecture_id %> <%= @client.address_city %> <%= @client.address_building %></td>
+      </tr>
+      <tr>
+        <th>代表者</th>
+        <td><%= @client.president %></td>
+      </tr>
+      <tr>
+        <th>設立年</th>
+        <td><%= @client.established %></td>
+      </tr>
+      <tr>
+        <th>事業概要</th>
+        <td><%= @client.domain_text %></td>
+      </tr>
+      <tr>
+        <th>従業員数</th>
+        <td><%= @client.employees_number %></td>
+      </tr>
+      <tr>
+        <th>資本金</th>
+        <td><%= @client.stock %></td>
+      </tr>
+      <tr>
+        <th>就労時間</th>
+        <td>開始<%= @client.time_start %><br>終了<%= @client.time_end %></td>
+      </tr>
+      <tr>
+        <th>平均年齢</th>
+        <td><%= @client.average_ages %></td>
+      </tr>
+      <tr>
+        <th>福利厚生</th>
+        <td><%= @client.welfare %></td>
+      </tr>
+      <tr>
+        <th>休日情報</th>
+        <td><%= @client.day_off %></td>
+      </tr>
+      <tr>
+        <th>会社ホームページ</th>
+        <td><%= @client.homepage %></td>
+      </tr>
+    </table>
+    <div class="btn-position">
+      <%= link_to "スカウトを承諾する", {controller: 'scout_views' , action: 'agree' ,id: @scout.id}, class: "accept_btn" %>
+    </div>
 
     <%= link_to "スカウト一覧へ戻る", controller: 'scout_views' , action: 'index'  %>
 
   </div>
-</div>
+</div><!--content_container -->

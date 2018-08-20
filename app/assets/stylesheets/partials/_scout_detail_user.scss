@@ -21,6 +21,7 @@
   float: left;
   margin-left: 5%;
   margin-right: 5%;
+  margin-bottom: 2%;
   p {
     overflow-wrap : break-word;
     font-size: 1.4rem;
@@ -29,5 +30,5 @@
 
 .tag-detail-scout {
   @extend .tag;
-  margin: 2% 0% 0% 5%;
+  margin: 3% 0% 3% 5%;
 }
