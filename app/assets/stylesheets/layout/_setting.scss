@@ -60,6 +60,16 @@ a {
   max-width: 960px;
 }
 
+//メニューへ戻る
+.menu-back {
+  padding-bottom: 2%;
+  padding-top: 2%;
+  margin-left: 16%;
+  margin-right: auto;
+  max-width: 960px;
+}
+
+
 //通常のviewで利用される、maxwidth870コンテナ
 .content_container {
   background: $cb;
@@ -213,21 +223,37 @@ a {
 
 /*sp Layout
 ---------------------------------------*/
-.setting-container-detail-form {
-  @media #{$sp} {
-    width: 90%;
-  }
-}
+// .setting-container-detail-form {
+//   @media #{$sp} {
+//     width: 90%;
+//   }
+// }
+//
+// .setting-container {
+//   @media #{$sp} {
+//     width: 100%;
+//   }
+// }
+//
+// .content_upper {
+//   @media #{$sp} {
+//     font-size: 1.6rem;
+//     margin-left: 4%;
+//   }
+// }
 
-.setting-container {
-  @media #{$sp} {
-    width: 100%;
+@media #{$sp} {
+  .menu-back {
+    margin-left: 4%;
   }
-}
-
-.content_upper {
-  @media #{$sp} {
+  .content_upper {
     font-size: 1.6rem;
     margin-left: 4%;
+  }
+  .setting-container {
+    width: 100%;
+  }
+  .setting-container-detail-form {
+    width: 90%;
   }
 }

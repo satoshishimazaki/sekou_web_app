@@ -32,3 +32,13 @@
   @extend .tag;
   margin: 3% 0% 3% 5%;
 }
+
+/* スカウト一覧============*/
+.frame_index {
+  .text {
+    width: 100%;
+    a {
+      margin-left: 1%;
+    }
+  }
+}//frame_index

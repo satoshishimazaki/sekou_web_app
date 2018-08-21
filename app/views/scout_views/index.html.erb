@@ -4,33 +4,25 @@
 * ひとまず、クライアントid順,全部表示で実装する
 * 最終編集 : 2018.7.23  edited by takuya
 -->
+<div class="content_upper">
+  <h2>スカウト一覧</h2>
+</div> <!--content_upper -->
 
 <div class="content_container">
   <div class="detail_scout">
-
-<br><br><br><br><br><br><br><br>
-
-<h3> スカウト概要 </h3><br>
-
     <% @scout.each do |scout| %>
-        <p>
-          <% if scout.summary? then%>
-
-          <h4>
-            <%= @client.name %> さんのスカウトです <br><br>
-          </h4>
-            <%= @user.last_name %>さん<br>
-            <%= scout.summary %><br>
-
-            <br>
-
-            <%= link_to "もっと情報を見てみる",controller: 'scout_views' , action: 'detail' ,id: scout.id %>
-           <% end %>
-        </p>
+      <% if scout.summary? then%>
+        <div class="frame_index">
+          <div class="text">
+            <p><%= @client.name %> からのスカウト</p>
+            <%= link_to "#{scout.summary}",controller: 'scout_views' , action: 'detail' ,id: scout.id %>
+          </div><!--text -->
+        </div><!--frame_index -->
+      <% end %>
     <% end %>
-<br><br>
-<h3>
-<%= link_to "メニューへ戻る",controller: 'user_menu' , action: 'index'%>
-</h3>
-  </div>
-</div>
+  </div><!--detail_scout -->
+</div><!--content_container -->
+
+<div class="menu-back">
+  <%= link_to "メニューへ戻る",controller: 'user_menu' , action: 'index'%>
+</div><!--menu_back -->
