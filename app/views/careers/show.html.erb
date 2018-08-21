@@ -1,0 +1,11 @@
+<%= render 'layouts/header_user' , User: @user %>
+<p>会社名<%= @career.company_name %></p>
+<p>勤務期間開始年<%= @career.start %></p>
+<p>勤務期間終了年<%= @career.end %></p>
+<p>雇用形態<%= @career.employee_pattern_id %></p>
+<p>業務内容<%= @career.career_outline %></p>
+<p>事業領域<%= @career.domain_ids %></p>
+
+
+
+<%= link_to "元に戻る" , :action => 'index' %>

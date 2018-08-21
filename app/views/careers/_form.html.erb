@@ -1,0 +1,76 @@
+<!--
+* userモデルとの整合性をとって、メールアドレスの記入を不要にする or 認証をとってバッティングしないようにする。
+という設定が必要。
+
+いくつか、フィールドの制限(integerとか。testとか。が縛りが弱いので直す。)
+
+* 入力途中でフォームを送信できてしまうので、必須回答を埋めないと送信できないように制限をかける。
+
+final edited by takuya at 2018.7.27
+
+-->
+
+<%= form_with model: @career, local: true do |form| %>
+
+<% if @career.errors.any? %>
+    <h4>入力した内容にエラーが<%= @career.errors.count %>件あります</h4>
+    <div class="form-error">
+      <ul>
+        <% @career.errors.full_messages.each do |message| %>
+          <li> <%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
+<div class="button_group">
+  <div class="has-float-label_full_2col">
+    <p class="must_btton_text">必須</p>
+    <%= form.label :company_name, '会社名' %>
+    <%= form.text_field :company_name, id: 'career_company_name', placeholder: "田中建設"%>
+  </div>
+  <div class="has-float-label_full_2col">
+    <p class="must_btton_text">必須</p>
+    <%= form.label :start, '勤務期間開始年' %>
+    <%= form.date_field :start, id: :start, placeholder: "2003年" %>
+  </div>
+</div>
+
+<div class="button_group">
+  <div class="has-float-label_full_2col">
+    <%= form.label :end, '勤務期間終了' %>
+    <%= form.date_field :end, id: :end, placeholder: "2018年" %>
+  </div>
+</div>
+
+<div class="button_group">
+  <div class="has-float-label_full_2col">
+    <%= form.label :employee_pattern_id, '雇用形態' %>
+    <%= form.text_field :employee_pattern_id, id: 'career_employee_pattern_id', placeholder: "2018年" %>
+  </div>
+</div>
+
+
+  <div class="button_group">
+  <div class="has-float-label_full_2col">
+    <%= form.label :career_outline, '業務内容' %>
+    <%= form.text_field :career_outline, id: 'career_career_outline', placeholder: "設計業務" %>
+  </div>
+</div>
+
+
+<div class="has-float-label_full_2col">
+  <p class="must_btton_text">必須</p>
+  <%= form.label :career, '事業領域' %>
+  <%= collection_check_boxes(:career, :domain_ids, Domain.all, :id, :name) do |b| %>
+  <ul>
+    <li><%= b.label { b.check_box + b.text } %></li>
+  </ul>
+  <% end %>
+</div>
+
+  <%= form.hidden_field :user_id ,:value => current_user.id %>
+
+<%= form.submit :送信, class: 'basic-btn'%>
+
+<% end %>

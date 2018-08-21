@@ -21,6 +21,18 @@ Rails.application.routes.draw do
           patch 'edit' => 'users#update', as: ''
       end
 
+      #職歴のルーティング
+      resources :careers
+    #  scope :careers do
+    #      get '' => 'careers#index', as: :careers
+    #      get 'new' => 'careers#new', as: :new_careers
+    #      post 'create' => 'careers#create', as: ''
+    #      get 'show' => 'careers#show', as: :show_careers
+    #      get 'edit' => 'careers#edit', as: :edit_careers
+    #      post 'edit' => 'careers#update', as: ''
+    #      patch 'edit' => 'careers#update', as: ''
+    #  end
+
       #設定ページのルーティング
       scope :user_setting do
           get ''   => 'user_setting#index', as: :user_setting
@@ -78,6 +90,9 @@ Rails.application.routes.draw do
 
   # スカウトページへのルーティング
    resources :scouts
+
+   #職歴のルーティング
+   #resources :careers
 
   #static_pagesへのルーティング
   get '/companysummary' => 'static_pages#companysummary'
