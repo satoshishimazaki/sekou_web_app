@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :qualification, through: :qualification_users
   has_many :job_objective_users
   has_many :job_objectives, through: :job_objective_users
+  has_many :careers
 
   validates :last_name,
             :first_name,
