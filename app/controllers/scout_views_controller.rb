@@ -4,7 +4,6 @@ class ScoutViewsController < ApplicationUserController
   def index
     @scout = Scout.where(user_id: current_user.id)
     @user   = User.find_by(id: current_user.id)
-    @client = Client.where(params[:id])
   end
 
   def detail

@@ -14,7 +14,7 @@
       <% if scout.summary? then%>
         <div class="frame_index">
           <div class="text">
-            <p><%= @client.name %> からのスカウト</p>
+            <p><%= scout.client.name %> からのスカウト</p>
             <%= link_to "#{scout.summary}",controller: 'scout_views' , action: 'detail' ,id: scout.id %>
           </div><!--text -->
         </div><!--frame_index -->
