@@ -4,5 +4,4 @@ class ScoutChecksController < ApplicationClientController
     @scout = Scout.where(client_id: @client.id)
     @user = User.all
   end
-
 end

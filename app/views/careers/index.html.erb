@@ -4,13 +4,27 @@
 <div class="content_upper">
   <h3>職歴の登録・編集ページ</h3>
 </div>
-<div class="setting-container">
-  <div class="setting-container">
-    <ul>
-        <li><%= link_to '職歴の作成をする',     new_career_path %></li>
-        <!-- <li><%= link_to '職歴を確認する',       career_url(@career) %></li> --->
-        <!-- <li><%= link_to '職歴を編集する',       edit_career_url(id: @career.ids , user_id: current_user.id) %></li> --->
-        <li><%= link_to 'メニューへ戻る',       user_menu_url %></li>
-    </ul>
+
+<div class="content_container">
+  <div class="detail_scout">
+    <% @career.each do |career| %>
+      <div class="frame_index">
+        <div class="text">
+          <div id="edit-career"></div>
+          <div class="career-box">
+            <p><%= career.company_name %></p>
+            <p><%= career.company_name %></p>
+            <p><%= career.company_name %></p>
+          </div>
+          <%= link_to '編集する', edit_career_path(id: career.id, user_id: current_user.id) %>
+        </div><!--text -->
+      </div><!--frame_index -->
+    <% end %>
+    <%= link_to '職歴登録', new_career_path, remote: true %>
+    <div id="form-career"></div>
   </div>
+</div>
+
+<div class="menu-back">
+  <%= link_to 'メニューへ戻る',       user_menu_url %>
 </div>

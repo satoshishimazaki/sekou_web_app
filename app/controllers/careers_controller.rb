@@ -1,7 +1,7 @@
 class CareersController < ApplicationUserController
 
   def index
-    @career = Career.all
+    @career = Career.all.order(id: "DESC")
   end
 
   def new
@@ -11,7 +11,6 @@ class CareersController < ApplicationUserController
 
   def create
     @career = Career.new(career_params)
-
     if @career.save
       redirect_to careers_path(@career)
     else
