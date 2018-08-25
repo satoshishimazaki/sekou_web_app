@@ -68,7 +68,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
     t.string :company_name
     t.date :start
     t.date :end
-    t.integer :employee_pattern_id
+    t.string :employee_pattern
     t.string :career_outline
 
     t.timestamps

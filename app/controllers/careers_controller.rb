@@ -41,7 +41,7 @@ class CareersController < ApplicationUserController
         :company_name,
         :start,
         :end,
-        :employee_pattern_id,
+        :employee_pattern,
         :career_outline,
         :domain_ids
       )

@@ -44,11 +44,10 @@ final edited by takuya at 2018.7.27
 
 <div class="button_group">
   <div class="has-float-label_full_2col">
-    <%= form.label :employee_pattern_id, '雇用形態' %>
-    <%= form.text_field :employee_pattern_id, id: 'career_employee_pattern_id', placeholder: "2018年" %>
+    <%= form.label :employee_pattern, '雇用形態' %>
+    <%= form.select :employee_pattern, ['正社員','契約社員','アルバイト・パート'], :prompt =>'選択してください' %>
   </div>
 </div>
-
 
   <div class="button_group">
   <div class="has-float-label_full_2col">
