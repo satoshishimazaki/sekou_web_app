@@ -44,7 +44,7 @@
           自己PR  : <%= u.personal_summary %>
           <br>
           <%= link_to 'メッセージを送る', scout_messages_url %><br>
-
+          <%= link_to 'ユーザー情報を見る', user_views_show_path(:user_id => u.id) %><br>
           <% user_count_flag = 1 %>
           <% end %>
 

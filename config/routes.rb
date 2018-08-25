@@ -89,9 +89,17 @@ Rails.application.routes.draw do
 
   end
 
-  # スカウトページへのルーティング
-   resources :scouts
+ # スカウトページへのルーティング
+ resources :scouts
 
+ scope :scouts do
+
+   #スカウトページでユーザー情報閲覧ルーティング
+   scope :user_views do
+     get 'show' => 'user_views#show' ,as: :user_views_show
+   end
+
+ end
    #職歴のルーティング
    #resources :careers
 

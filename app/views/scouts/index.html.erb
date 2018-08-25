@@ -13,12 +13,18 @@
             居住：<%= u.address_city %><br>
             希望年収：<%= u.desired_salary %>万円<br>
             現在の職種：<%= u.employment_status %><br>
+            <% link_to %>
           </ul>
 
           <tbody>
             <tr>
-              <%= link_to 'スカウトの新規作成', new_scout_path(user_id: u.id) %><br>
+              <% if u.scouts.find_by(:client_id => current_client.id).blank? %>
+                <%= link_to 'スカウトの新規作成', new_scout_path(user_id: u.id) %>
+              <% else %>
+                <P>スカウト送付済</P>
+              <% end %>
             </tr>
+              <%= link_to '求職者の詳細をみる', user_views_show_path(user_id: u.id) %><br>
           </tbody>
         <% end %>  <!-- if 文の終了 -->
 

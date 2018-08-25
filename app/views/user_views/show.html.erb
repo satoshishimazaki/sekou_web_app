@@ -1,0 +1,18 @@
+<% if @user.scouts.find_by(:client_id => current_client.id, :agreement_count => 1).blank? %>
+  <%= @user.number_id %>
+<% else %>
+  <%= @user.last_name %>
+<% end %>
+
+<% if @career.blank? %>
+  <p>経歴情報はありません</p>
+<% else %>
+  <% @career.each do |d| %>
+    <p><%= d.career_outline %></p>
+    <% if @user.scouts.find_by(:client_id => current_client.id, :agreement_count => 1).blank? %>
+      <p>未承諾のため表示できません</p>
+    <% else %>
+      <p><%= d.company_name %></p>
+    <% end %>
+  <% end %>
+<% end %>

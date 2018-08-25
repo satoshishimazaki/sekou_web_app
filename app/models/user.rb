@@ -25,4 +25,5 @@ class User < ApplicationRecord
 
   validates :personal_summary,
             length: { maximum: 300, too_long: "最大%{count}文字まで使用できます"}
+
 end
