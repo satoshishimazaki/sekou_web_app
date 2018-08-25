@@ -137,41 +137,42 @@ final edited by takuya at 2018.7.27
 </div>
 
 <div class="button_group">
-  <div class="has-float-label_full_lg">
+  <div class="has-float-label_full_lg-text">
     <%= form.label :personal_summary, '自己PR' %>
     <%= form.text_area :personal_summary, id: :personal_summary %>
   </div>
 </div>
 
-<div class="button_group">
+<!-- <div class="button_group">
   <div class="has-float-label_full_2col">
     <%= form.label :not_public_company, '公開NG企業' %>
     <%= form.text_field :not_public_company, id: :not_public_company, placeholder: "株式会社○○" %>
   </div>
+</div> -->
+
+<div class="button_group">
+  <p class="must-btton-check">必須</p>
+  <%= form.label :qualifications, '資格', class: "checkbox-label" %>
+  <div class="checkbox_col">
+    <%= collection_check_boxes(:user, :qualification_ids, Qualification.all, :id, :name) do |b| %>
+      <div class="check">
+        <p class="value"><%= b.label(class: 'labeltag') { b.check_box + b.text } %></p>
+      </div>
+    <% end %>
+  </div>
 </div>
 
-<div class="checkbox_col">
-<div class="has-float-label_full_2col">
-  <p class="must_btton_text">必須</p>
-  <%= form.label :qualifications, '資格' %>
-  <%= collection_check_boxes(:user, :qualification_ids, Qualification.all, :id, :name) do |b| %>
-  <ul class="check">
-    <li><%= b.label(class: 'labeltag') { b.check_box + b.text } %></li>
-  </ul>
-  <% end %>
+<div class="button_group-2">
+  <p class="must-btton-check-2">必須</p>
+  <%= form.label :job_objectives, '希望職種', class: "checkbox-label" %>
+  <div class="checkbox_col">
+    <%= collection_check_boxes(:user, :job_objective_ids, JobObjective.all, :id, :name) do |b| %>
+      <div class="check">
+        <p class="value"><%= b.label(class: 'labeltag-2') { b.check_box + b.text } %></p>
+      </div>
+    <% end %>
+  </div>
 </div>
-</div>
-
-<div class="has-float-label_full_2col">
-  <p class="must_btton_text">必須</p>
-  <%= form.label :job_objectives, '希望職種' %>
-  <%= collection_check_boxes(:user, :job_objective_ids, JobObjective.all, :id, :name) do |b| %>
-  <ul>
-    <li><%= b.label { b.check_box + b.text } %></li>
-  </ul>
-  <% end %>
-</div>
-
 
 <%= form.submit :送信, class: 'basic-btn'%>
 
