@@ -10,6 +10,11 @@
   background: #1927a2;
 }
 
+/* 送付済みボタン*/
+.accept-btn-fin {
+  @extend .accept_btn;
+  background: $cf;
+}
 
 /* スカウト詳細メッセージ============*/
 .message-dtail{

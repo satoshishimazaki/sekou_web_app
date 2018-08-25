@@ -16,7 +16,11 @@
       </tr>
     </table>
     <div class="btn-position">
-      <%= link_to "スカウトを承諾する", {controller: 'scout_views' , action: 'agree' ,id: @scout.id}, class: "accept_btn" %>
+      <%if @scout.agreement_count.nil? %>
+          <%= link_to "スカウトを承諾する", {controller: 'scout_views' , action: 'agree' ,id: @scout.id}, class: "accept_btn" %>
+        <% else %>
+          <p class="accept-btn-fin">承諾済み</p>
+      <% end %>
     </div>
     <div class="message-dtail">
       <p><%= @scout.content %></p>
@@ -76,7 +80,11 @@
       </tr>
     </table>
     <div class="btn-position">
-      <%= link_to "スカウトを承諾する", {controller: 'scout_views' , action: 'agree' ,id: @scout.id}, class: "accept_btn" %>
+      <%if @scout.agreement_count.nil? %>
+          <%= link_to "スカウトを承諾する", {controller: 'scout_views' , action: 'agree' ,id: @scout.id}, class: "accept_btn" %>
+        <% else %>
+          <p class="accept-btn-fin">承諾済み</p>
+      <% end %>
     </div>
   </div>
 </div><!--content_container -->
