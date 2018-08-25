@@ -1,0 +1,6 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+   <p>スカウトを承諾すると、お名前とメールアドレス、職歴の会社名が<%= @scout.client.name %>へ共有されます。<br>こちらのスカウトを承諾し、選考を進めますか。</p>
+   <%= link_to "承諾して進める", {controller: 'scout_views' , action: 'agree' ,id: @scout.id, remote: true}, class: "accept_btn" %>
+  </div>
+</div>

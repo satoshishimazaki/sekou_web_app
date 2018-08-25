@@ -48,6 +48,7 @@ Rails.application.routes.draw do
       scope :scout_views do
           get '' => 'scout_views#index', as: :scout_views
           get 'detail' => 'scout_views#detail', as: :scout_view_detail
+          get 'agree_window' => 'scout_views#agree_window' , as: :scout_view_agree_window
           get 'agree' => 'scout_views#agree' , as: :scout_view_agree
       end
 

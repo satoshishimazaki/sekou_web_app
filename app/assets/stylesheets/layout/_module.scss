@@ -742,3 +742,18 @@ display:none;
 .menu_back {
   margin:2% 1% 2% 0%;
 }
+
+/* モーダルウィンドウ ============*/
+.modal-dialog {
+  top: 37%;
+  transition: transform 0.1s ease-out, -webkit-transform 0.1s;
+  p {
+    text-align: left;
+    margin: 7%;
+  }
+  a {
+    .modal-link {
+      margin: 2% 2% 2% 7%;
+    }
+  }
+}

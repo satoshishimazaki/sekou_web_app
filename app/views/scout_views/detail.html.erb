@@ -17,7 +17,8 @@
     </table>
     <div class="btn-position">
       <%if @scout.agreement_count.nil? %>
-          <%= link_to "スカウトを承諾する", {controller: 'scout_views' , action: 'agree' ,id: @scout.id}, class: "accept_btn" %>
+          <%= link_to "スカウトを承諾する", {controller: 'scout_views' , action: 'agree_window' ,id: @scout.id, remote: true}, class: "accept_btn" %>
+          <div id="agree-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
         <% else %>
           <p class="accept-btn-fin">承諾済み</p>
       <% end %>
@@ -81,7 +82,7 @@
     </table>
     <div class="btn-position">
       <%if @scout.agreement_count.nil? %>
-          <%= link_to "スカウトを承諾する", {controller: 'scout_views' , action: 'agree' ,id: @scout.id}, class: "accept_btn" %>
+          <%= link_to "スカウトを承諾する", {controller: 'scout_views' , action: 'agree_window' ,id: @scout.id}, class: "accept_btn" %>
         <% else %>
           <p class="accept-btn-fin">承諾済み</p>
       <% end %>

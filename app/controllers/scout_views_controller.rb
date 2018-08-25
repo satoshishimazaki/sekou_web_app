@@ -11,10 +11,15 @@ class ScoutViewsController < ApplicationUserController
     @client = Client.find_by(id: @scout.client_id)
   end
 
+  def agree_window
+    @scout = Scout.find(params[:id])
+    # @scout.update(agreement_count: 1)
+    # redirect_to scout_views_path
+  end
+
   def agree
-      @scout = Scout.find(params[:id])
-      @scout.update(agreement_count: 1)
-      redirect_to scout_views_path
+    @scout = Scout.find(params[:id])
+    @scout.update(agreement_count: 1)
   end
 
 end
