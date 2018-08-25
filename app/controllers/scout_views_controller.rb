@@ -2,7 +2,7 @@ class ScoutViewsController < ApplicationUserController
   layout "user_application"
 
   def index
-    @scout = Scout.where(user_id: current_user.id)
+    @scout = Scout.where(user_id: current_user.id).order(id: "DESC")
     @user   = User.find_by(id: current_user.id)
   end
 
