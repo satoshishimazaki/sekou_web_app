@@ -90,6 +90,10 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
+  config.action_mailer.default_url_options = {
+      host: 'http://153.126.131.93/'
+  }
+    
   # config.action_mailer.default_url_options = {
   #   # host: 'localhost',
   #   # port: 3000
