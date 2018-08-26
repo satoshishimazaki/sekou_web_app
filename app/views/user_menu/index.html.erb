@@ -12,38 +12,31 @@
 </div>
 
 <div class="content_container">
-<% if @scouts.blank? %>
-  <P>現在、スカウトは特にありません。</p>
-<% else %>
-  <% @scouts.each do |scout| %>
-    <% if scout.summary? then%>
-      <div class="frame_index">
-        <div class="text">
-          <p><%= scout.client.name %> からのスカウト</p>
-          <p class="time"><%= dateformat scout.created_at %></p>
-          <%= link_to "#{scout.summary}",controller: 'scout_views' , action: 'detail' ,id: scout.id %>
-        </div><!--text -->
-      </div><!--frame_index -->
-    <% end %>
+  <% if @scouts.blank? %>
+    <P>現在、スカウトは特にありません。</p>
+  <% else %>
+    <div class="scout-job-content-index">
+      <% @scouts.each do |scout| %>
+        <% if scout.summary? then%>
+          <div class="frame_index">
+            <div class="text">
+              <p><%= scout.client.name %> からのスカウト</p>
+              <div class="time">受け取り日：<%= dateformat scout.created_at %></div>
+              <%= link_to "#{scout.summary}",controller: 'scout_views' , action: 'detail' ,id: scout.id %>
+            </div><!--text -->
+          </div><!--frame_index -->
+        <% end %>
+      <% end %>
+    </div><!--scout-job-content-index -->
   <% end %>
-<% end %>
 
+  <div class="setting-container">
+    <ul>
+      <li><%= link_to 'スカウトの一覧を表示', scout_views_path %></li>
+      <li><%= link_to '履歴書の確認・編集', resume_path %></li>
+      <li><%= link_to '職歴の確認・編集', careers_path %></li>
+      <li><%= link_to '設定ページ', user_setting_path %></li>
+    </ul>
+  </div><!--setting-container -->
 
-      <tbody>
-        <tr>
-          <%= link_to 'スカウトの一覧を表示', scout_views_url %><br>
-        </tr>
-        <tr>
-          <%= link_to '履歴書登録情報の確認・編集', resume_url %><br>
-        </tr>
-        <tr>
-          <%= link_to '職歴登録情報の確認・編集', careers_url %><br>
-        </tr>
-        <tr>
-          <%= link_to 'メッセージページ', scout_messages_url %><br>
-        </tr>
-        <tr>
-          <%= link_to '設定ページ', user_setting_url %><br>
-        </tr>
-      </tbody>
-</div>
+</div><!--content_container -->

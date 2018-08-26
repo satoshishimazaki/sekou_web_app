@@ -1,0 +1,84 @@
+@import "definition/base";
+@import "layout/base";
+
+
+/* オファー受け取りボタン*/
+.accept_btn {
+  @extend %btn_skel;
+  @extend %btn_mid;
+  @extend %btn_color;
+  background: #1927a2;
+}
+
+/* 送付済みボタン*/
+.accept-btn-fin {
+  @extend .accept_btn;
+  background: $cf;
+}
+
+/* スカウト詳細メッセージ============*/
+.message-dtail{
+  width: 90%;
+  border: 1px solid #ddd;
+  box-shadow: 0px 0px 2px #bfbfbf;
+  margin-top: 3%;
+  padding: 2%;
+  float: left;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 2%;
+  p {
+    overflow-wrap : break-word;
+    font-size: 1.4rem;
+  }
+}
+
+.tag-detail-scout {
+  @extend .tag;
+  margin: 3% 0% 3% 5%;
+}
+
+/* スカウト一覧============*/
+.scout-job-content-index {
+  @include cf;
+  width: 100%;
+  margin-bottom: 3%;
+  .frame_index {
+    .text {
+      width: 100%;
+      a {
+        margin-left: 1%;
+        font-size: 1.8rem;
+      }
+      p {
+        width: 40%;
+        float: left;
+      }
+      .time {
+        width: 40%;
+        float: right;
+        text-align: right;
+        font-size: 1.3rem;
+      }//time
+    }//text
+  }//frame_index
+}//scout-content-index
+
+
+
+@media #{$sp2} {
+  .scout-job-content-index {
+    .frame_index {
+      .text {
+        p {
+          width: 100%;
+        }//p
+        .time {
+          width: 100%;
+          float: left;
+          text-align: left;
+        }//time
+      }//text
+    }//frame_index
+  }//scout-content-index
+}//sp2

@@ -7,19 +7,19 @@
 
 <div class="content_container">
   <div class="detail_scout">
-    <% @career.each do |career| %>
-      <div class="frame_index">
-        <div class="text">
-          <div id="edit-career"></div>
-          <div class="career-box">
-            <p><%= career.company_name %></p>
-            <p><%= career.company_name %></p>
-            <p><%= career.company_name %></p>
-          </div>
-          <%= link_to '編集する', edit_career_path(id: career.id, user_id: current_user.id) %>
-        </div><!--text -->
-      </div><!--frame_index -->
-    <% end %>
+    <div class="scout-job-content-index">
+      <% @career.each do |career| %>
+        <div class="frame_index">
+          <div class="text">
+            <div id="edit-career"></div>
+            <div class="career-box">
+              <p><%= career.company_name %></p>
+            </div>
+            <%= link_to '編集する', edit_career_path(id: career.id, user_id: current_user.id) %>
+          </div><!--text -->
+        </div><!--frame_index -->
+      <% end %>
+    </div>
     <%= link_to '職歴登録', new_career_path, remote: true %>
     <div id="form-career"></div>
   </div>
