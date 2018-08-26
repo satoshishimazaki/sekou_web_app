@@ -9,15 +9,14 @@
         <div class="frame_index">
           <div class="text">
             <div id="edit-career"></div>
-            <div class="career-box">
               <p><%= career.company_name %></p>
-            </div>
-            <%= link_to '編集する', edit_career_path(id: career.id, user_id: current_user.id) %>
+              <div class="time">就労期間：<%= career.start %>~<%= career.end %></div>
+            <%= link_to '確認・編集する', edit_career_path(id: career.id, user_id: current_user.id), class: "link" %>
           </div><!--text -->
         </div><!--frame_index -->
       <% end %>
     </div>
-    <%= link_to '職歴登録', new_career_path, remote: true %>
+    <%= link_to '職歴登録', new_career_path, remote: true, class: "accept_btn" %>
     <div id="form-career"></div>
   </div>
 </div>

@@ -211,11 +211,18 @@ button{
 
 /* css checkbox01 */
 .checkbox_col {
-    width: 100%;
-    display: flex;
-    position: relative;
-    padding-top: 6%;
+  width: 100%;
+  display: flex;
+  position: relative;
+  padding-top: 6%;
 }
+
+/* css checkbox02 */
+.checkbox_col_2 {
+  @extend .checkbox_col;
+  padding-top: 2%;
+}
+
 
 .checkbox01-input{
   display: none;
