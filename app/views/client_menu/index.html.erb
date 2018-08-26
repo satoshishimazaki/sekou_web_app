@@ -1,26 +1,13 @@
 <%= provide(:title, 'SekouAPP') %>
 <div class="content_upper">
-  <h3>Client Menu</h3>
+  <h3>企業メニューページ</h3>
 </div>
 <div class="setting-container-detail">
-
-<h1> ここにユーザーピックアップする </h1>
-
-      <tbody>
-        <tr>
-          <%= link_to 'スカウトをする', scouts_url %><br>
-        </tr>
-        <tr>
-          <%= link_to 'スカウト状況を確認する', scout_checks_url %><br>
-        </tr>
-        <tr>
-          <%= link_to '登録情報の確認・編集', coinfo_path %><br>
-        </tr>
-        <tr>
-          <%= link_to 'メッセージページ', scout_messages_url %><br>
-        </tr>
-        <tr>
-          <%= link_to '設定ページ', client_setting_url %><br>
-        </tr>
-      </tbody>
+  <div class="setting-container">
+    <ul>
+      <li><%= link_to 'スカウトの送付・管理', scout_manage_path %></li>
+      <li><%= link_to '企業情報の確認・編集', coinfo_path %></li>
+      <li><%= link_to '設定ページ', client_setting_url %></li>
+    </ul>
+  </div>
 </div>
