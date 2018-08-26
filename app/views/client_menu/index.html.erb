@@ -7,7 +7,8 @@
     <ul>
       <li><%= link_to 'スカウトの送付・管理', scout_manage_path %></li>
       <li><%= link_to '企業情報の確認・編集', coinfo_path %></li>
-      <li><%= link_to '設定ページ', client_setting_url %></li>
+      <li><%= link_to 'ログアウト', destroy_client_session_path, method: :delete %></li>
+      <!-- <li><%= link_to '設定ページ', client_setting_url %></li> -->
     </ul>
   </div>
 </div>
