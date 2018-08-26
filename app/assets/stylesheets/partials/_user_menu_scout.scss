@@ -10,6 +10,14 @@
   background: #1927a2;
 }
 
+/* スカウト送付ボタン*/
+.scout_btn {
+  @extend %btn_skel;
+  @extend %btn_sm;
+  @extend %btn_color;
+  background: #1927a2;
+  width: 30%;
+}
 /* 送付済みボタン*/
 .accept-btn-fin {
   @extend .accept_btn;

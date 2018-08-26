@@ -1,42 +1,29 @@
 <div class="content_upper">
-  <h3>Scout Operation Page</h3>
+  <h3>求職者一覧ページ</h3>
 </div>
+
 <div class="setting-container-detail">
-
-<h2> 求職者情報の一覧は次の通りです。 </h2>
-
-    <% @user.each do |u| %>
-
-        <% if u.last_name_kana? then %>
-          <ul>
-            ID <%= u.number_id %> さん<br>
-            居住：<%= u.address_city %><br>
-            希望年収：<%= u.desired_salary %>万円<br>
-            現在の職種：<%= u.employment_status %><br>
-            <% link_to %>
-          </ul>
-
-          <tbody>
-            <tr>
-              <% if u.scouts.find_by(:client_id => current_client.id).blank? %>
-                <%= link_to 'スカウトの新規作成', new_scout_path(user_id: u.id) %>
-              <% else %>
-                <P>スカウト送付済</P>
-              <% end %>
-            </tr>
-              <%= link_to '求職者の詳細をみる', user_views_show_path(user_id: u.id) %><br>
-          </tbody>
-        <% end %>  <!-- if 文の終了 -->
-
-    <% end %><br><br>
-
+    <div class="scout-job-content-index">
+      <% @user.each do |u| %>
+          <% if u.last_name_kana? then %>
+            <div class="frame_index">
+                <div class="text">
+                  <p>ID <%= u.number_id %> さん</p>
+                  <p>希望年収：<%= u.desired_salary %>万円</p>
+                  <p>現在の職種：<%= u.employment_status %></p>
+                  <%= link_to '求職者の詳細をみる', user_views_show_path(user_id: u.id) %><br>
+                  <% if u.scouts.find_by(:client_id => current_client.id).blank? %>
+                    <p><%= link_to 'スカウトの新規作成', new_scout_path(user_id: u.id) %></p>
+                  <% else %>
+                    <P>ステータス：スカウト送付済</P>
+                  <% end %>
+                </div><!-- text -->
+            </div><!--frame_index-->
+          <% end %>  <!-- if 文の終了 -->
+      <% end %>
+    </div><!--scout-job-content-index -->
 <!-- 求職者情報の一覧ページ終了 -->
-
-
-
-
-
-
-<%= link_to 'メニューへ戻る', client_menu_path %><br>
-
-  </div>
+</div>
+<div class="menu-back">
+  <%= link_to 'スカウト管理画面へ戻る', scout_manage_path %><br>
+</div>

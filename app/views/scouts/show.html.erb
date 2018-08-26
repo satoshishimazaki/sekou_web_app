@@ -1,7 +1,21 @@
-<h5> 以下の登録文でスカウトメッセージを作成しました。</h5>
+<div class="content_upper">
+  <h2>スカウト送付確認画面</h2>
+</div>
 
-<p><%= @user.number_id %>さん</p>
-<p><%= @scout.summary %></p>
-<p><%= @scout.content %></p>
+<div class="content_container">
+  <p> <%= @user.number_id %>さんへ</br>以下の登録文でスカウトメッセージを作成しました。</p>
+  <table class="table_1">
+    <tr>
+      <th>要件</th>
+      <td><%= @scout.summary %></td>
+    </tr>
+    <tr>
+      <th>スカウトメッセージ</th>
+      <td><%= @scout.content %></td>
+    </tr>
+  </table>
+</div>
 
-<%= link_to "元に戻る" , :action => 'index' %>
+<div class="menu-back">
+  <%= link_to "スカウト送付ページへ戻る" , :action => 'index' %>
+</div>

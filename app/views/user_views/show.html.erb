@@ -1,18 +1,116 @@
-<% if @user.scouts.find_by(:client_id => current_client.id, :agreement_count => 1).blank? %>
-  <%= @user.number_id %>
-<% else %>
-  <%= @user.last_name %>
-<% end %>
+<div class="content_upper">
+  <h2>求職者情報</h2>
+</div>
 
-<% if @career.blank? %>
-  <p>経歴情報はありません</p>
-<% else %>
-  <% @career.each do |d| %>
-    <p><%= d.career_outline %></p>
-    <% if @user.scouts.find_by(:client_id => current_client.id, :agreement_count => 1).blank? %>
-      <p>未承諾のため表示できません</p>
-    <% else %>
-      <p><%= d.company_name %></p>
-    <% end %>
+<div class="content_container">
+  <table class="table_1">
+    <tr>
+      <th>お名前</th>
+      <td>
+        <% if @user.scouts.find_by(:client_id => current_client.id, :agreement_count => 1).blank? %>
+          <%= @user.number_id %></br>承諾後に閲覧できます。
+        <% else %>
+          <%= @user.last_name %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <th>電話番号</th>
+      <td>
+        <% if @user.scouts.find_by(:client_id => current_client.id, :agreement_count => 1).blank? %>
+          承諾後に閲覧できます。
+        <% else %>
+          <%= @user.phone_number %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <th>生年月日</th>
+      <td><%= @user.birth %></td>
+    </tr>
+    <tr>
+      <th>性別</th>
+      <td><%= @user.sex %></td>
+    </tr>
+    <tr>
+      <th>就労状況</th>
+      <td><%= @user.employment_status %></td>
+    </tr>
+    <tr>
+      <th>郵便番号</th>
+      <td><%= @user.address_post %></td>
+    </tr>
+    <tr>
+      <th>都道府県</th>
+      <td><%= @user.prefecture_id %></td>
+    </tr>
+    <tr>
+      <th>市町村</th>
+      <td><%= @user.address_city %></td>
+    </tr>
+    <tr>
+      <th>番地・建物名</th>
+      <td><%= @user.address_building %></td>
+    </tr>
+    <tr>
+      <th>大学</th>
+      <td><%= @user.university %></td>
+    </tr>
+    <tr>
+      <th>学部</th>
+      <td><%= @user.faculty %></td>
+    </tr>
+    <tr>
+      <th>卒業年</th>
+      <td><%= @user.graduate %></td>
+    </tr>
+    <tr>
+      <th>希望年収</th>
+      <td><%= @user.desired_salary %></td>
+    </tr>
+    <tr>
+      <th>自己PR</th>
+      <td><%= @user.personal_summary %></td>
+    </tr>
+    <tr>
+      <th>資格情報</th>
+      <td>
+        <% @user.qualification.each do |qualification| %>
+          <%= qualification.name %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <th>希望職種</th>
+      <td>
+        <% @user.job_objectives.each do |job| %>
+          <%= job.name %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <th>職歴</th>
+      <td>
+        <% if @career.blank? %>
+          <p>経歴情報はありません</p>
+        <% else %>
+          <% @career.each do |d| %>
+            <p><%= d.career_outline %></p>
+            <% if @user.scouts.find_by(:client_id => current_client.id, :agreement_count => 1).blank? %>
+              <p>会社名は承諾後に閲覧できます。</p>
+            <% else %>
+              <p><%= d.company_name %></p>
+            <% end %>
+          <% end %>
+        <% end %>
+      </td>
+    </tr>
+  </table>
+  <% if @user.scouts.find_by(:client_id => current_client.id).blank? %>
+    <p><%= link_to 'スカウトの新規作成', new_scout_path(user_id: @user.id), class: "accept_btn" %></p>
   <% end %>
-<% end %>
+</div>
+
+<div class="menu-back">
+  <%= link_to "スカウト送付ページへ戻る" , {:controller => "scouts", :action => 'index'}, Client: @client %>
+</div>

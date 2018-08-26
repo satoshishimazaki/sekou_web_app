@@ -1,18 +1,14 @@
-
-<%= render 'layouts/header_client' , Client: @client %>
 <h2> ID:<%= @user.number_id %>さん </h2>
 
 <%= form_with model: @scout, local: true do |form| %>
 
-<div class="button_group">
-  <div class="has-float-label_full_2col">
+  <div class="has-float-label_full_lg">
     <p class="must_btton_text">必須</p>
     <%= form.label :summary, 'サマリ' %>
     <%= form.text_field :summary, id: 'scout_summary', placeholder: "お願いします" %>
+  </div>
 
-<br><br>
-
-  <div class="has-float-label_full_2col">
+  <div class="has-float-label_full_lg">
     <p class="must_btton_text">必須</p>
     <%= form.label :content, '詳細' %>
     <%= form.text_area :content, id: 'scout_content', placeholder: "弊社でぜひ、あなたの力を生かしてみませんか？" %>

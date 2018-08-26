@@ -182,6 +182,8 @@ button{
 .has-float-label_full_lg {
   @extend %has-float-label;
   width: 70%;
+  margin-left: auto;
+  margin-right: auto;
   @media #{$sp} {
     width: 100%;
     margin-left: auto;

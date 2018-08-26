@@ -6,7 +6,7 @@ class ScoutsController < ApplicationClientController
       redirect_to coinfo_path #Ajaxなどでメッセージボックスで履歴書登録が必要であるというメッセージをクライアントへ伝える。
     end
     @scout = Scout.where(client_id: @client.id)
-    @user = User.all
+    @user = User.all.order(created_at: "DESC")
   end
 
   def new
