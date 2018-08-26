@@ -1,5 +1,5 @@
 class ClientsController < ApplicationClientController
-  # layout "client_application"
+  layout "client_application"
   def index
 
     #初回ログイン時はnew画面を強制表示させ、企業情報の登録を促す。
@@ -12,12 +12,12 @@ class ClientsController < ApplicationClientController
 
   def show
     @client = Client.find_by(id: current_client.id)
+    @domains = Domain.where(client_id: current_client.id)
   end
 
 
   def edit
     @client = Client.find_by(id: current_client.id)
-    render layout: "client_application", Client: @client
   end
 
   def update

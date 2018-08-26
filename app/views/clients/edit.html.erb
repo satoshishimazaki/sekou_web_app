@@ -1,4 +1,9 @@
-
-<%= render 'form' , ClientAccount: @client %>
-
-<%= link_to "元に戻る" , :action => 'show' %>
+<div class="content_upper">
+    <h3>企業情報の編集</h3>
+</div>
+<div class="setting-container-detail-form">
+    <%= render 'form' , ClientAccount: @client %>
+</div>
+<div class="menu-back">
+  <%= link_to "企業情報へ閲覧画面へ戻る" , :action => 'show' %>
+</div>
