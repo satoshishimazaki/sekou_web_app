@@ -1,5 +1,5 @@
 class CareersController < ApplicationUserController
-
+layout "user_application"
   def index
     @career = Career.where(user_id: current_user.id).order(id: "DESC")
   end
