@@ -15,6 +15,16 @@
       </td>
     </tr>
     <tr>
+      <th>メールアドレス</th>
+      <td>
+        <% if @user.scouts.find_by(:client_id => current_client.id, :agreement_count => 1).blank? %>
+          承諾後に閲覧できます。
+        <% else %>
+          <%= @user.email %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
       <th>電話番号</th>
       <td>
         <% if @user.scouts.find_by(:client_id => current_client.id, :agreement_count => 1).blank? %>
@@ -112,5 +122,6 @@
 </div>
 
 <div class="menu-back">
-  <%= link_to "スカウト送付ページへ戻る" , {:controller => "scouts", :action => 'index'}, Client: @client %>
+  <%= link_to "スカウト送付ページへ戻る" , {:controller => "scouts", :action => 'index'}, Client: @client %><br>
+  <%= link_to "スカウト送付済み確認画面へ戻る" , {:controller => "scout_checks", :action => 'index'}, Client: @client %>
 </div>

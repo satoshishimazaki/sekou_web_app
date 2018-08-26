@@ -73,6 +73,26 @@
   }//frame_index
 }//scout-content-index
 
+.scout-container-index {
+  @extend %display-container;
+  h2 {
+    border-bottom: 1px solid gray;
+    margin-bottom: 3%;
+  }
+  .frame_index {
+    margin: 2% 2% 2% 0%;
+    padding: 4%;
+    p {
+
+    }
+    a {
+      margin: 5% 0%;
+    }
+  }
+}
+
+
+
 @media #{$sp2} {
   .accept_btn {
     width: 80%;
