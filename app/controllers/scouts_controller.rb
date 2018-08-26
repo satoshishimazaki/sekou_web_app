@@ -1,4 +1,5 @@
 class ScoutsController < ApplicationClientController
+  layout "client_application"
   def index
     @client = Client.find_by(id: current_client.id)
     if @client.name == nil then

@@ -86,6 +86,9 @@ Rails.application.routes.draw do
             get '' => 'scout_checks#index' , as: :scout_checks
           end
 
+          scope :scout_manage do
+            get '' => 'scout_manage#index' , as: :scout_manage
+          end
 
   end
 

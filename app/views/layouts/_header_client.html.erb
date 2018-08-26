@@ -4,27 +4,27 @@
  <div class="row">
    <div class="container-fluid">
      <div class="logo">
-       <a href="/" id ="pate-top">
-         <%= image_tag("white-logo.svg", :alt => "施工ネット") %>
-       </a>
+        <%= link_to client_menu_path do %>
+          <%= image_tag("white-logo.svg", :alt => "施工ネット") %>
+        <% end %>
      </div><!--logo-->
      <div class="con-domain">
        <p>測量・設計</p>
      </div><!--con-domain-->
       <nav class="hidden-md-down-cl">
         <ul>
-          <li><a href="/#service">求職者</a></li>
-          <li><a href="/#point">スカウト</a></li>
+          <li><%= link_to 'スカウト管理', scout_manage_path %></li>
+          <li><%= link_to '企業情報', coinfo_path %></li>
           <!-- <li><a href="/#flow">メッセージ</a></li> -->
-          <li><a href="/#flow">クリップ</a></li>
-          <li><a class="toggle menu" href="/#faq">設定</a>
+          <li><a class="toggle menu">設定</a>
             <ul class="inner child">
-              <li class="inner-li_1"><a href="/user_setting/viewconfig">アカウント情報</a></li>
-              <li class="inner-li_2"><a href="/user_setting/logininfo">ログイン情報</a></li>
-              <li class="inner-li_3"><a href="/user_setting/popupconfig">通知機能</a></li>
-              <li class="inner-li_4"><a href="/user_setting/byebye">退会</a></li>
+              <!-- <li class="inner-li_1"><a href="/user_setting/viewconfig">アカウント情報</a></li> -->
+              <li class="inner-li_1"><%= link_to 'ログイン情報', client_setting_logininfo_path %></li>
+              <li class="inner-li_2"><%= link_to '通知機能', client_setting_popupconfig_path %></li>
+              <li class="inner-li_3"><%= link_to '退会', client_setting_accountdelete_path %></li>
             </ul>
           </li>
+          <li><%= link_to 'ログアウト', destroy_client_session_path, method: :delete %></li>
         </ul>
       </nav>
       <div id="nav-drawer">
@@ -33,16 +33,16 @@
         <label class="nav-unshown" id="nav-close" for="nav-input"></label>
         <div id="nav-content">
           <ul>
-            <li class="nav-li_1"><a href="/#service">求職者</a></li>
-            <li class="nav-li_1"><a href="/#point">スカウト</a></li>
+            <li class="nav-li_1"><%= link_to 'スカウト管理', scout_manage_path %></li>
+            <li class="nav-li_1"><%= link_to '企業情報', coinfo_path %></li>
             <!-- <li class="nav-li_1"><a href="/#flow">メッセージ</a></li> -->
-            <li class="nav-li_1"><a href="/#flow">クリップ</a></li>
+            <!-- <li class="nav-li_1"><a href="/#flow">クリップ</a></li> -->
             <li class="nav-li_2">設定
               <ul class="inner child">
-                <li class="nav-li_1"><a href="/user_setting/viewconfig">公開情報</a></li>
-                <li class="nav-li_1"><a href="/user_setting/logininfo">ログイン情報</a></li>
-                <li class="nav-li_1"><a href="/user_setting/popupconfig">通知機能</a></li>
-                <li class="nav-li_1"><a href="/user_setting/byebye">退会</a></li>
+                <!-- <li class="nav-li_1"><a href="/user_setting/viewconfig">公開情報</a></li> -->
+                <li class="nav-li_1"><%= link_to 'ログイン情報', client_setting_logininfo_path %></li>
+                <li class="nav-li_1"><%= link_to '通知機能', client_setting_popupconfig_path %></li>
+                <li class="nav-li_1"><%= link_to '退会', client_setting_accountdelete_path %></li>
               </ul>
             </li>
           </ul>

@@ -1,3 +1,4 @@
 <%= provide(:title, 'SekouAPP') %>
-<%= render 'layouts/header_client' %>
+<%= render 'layouts/header_client', Client: @client %>
+<%= render 'layouts/footer' %>
 <% parent_layout 'application' %>
