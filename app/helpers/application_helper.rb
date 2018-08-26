@@ -12,4 +12,8 @@ module ApplicationHelper
     self.output_buffer = render(file: "layouts/#{layout}")
   end
 
+  def dateformat(date)
+    date.strftime("%Y年%m月%d日")
+  end
+
 end

@@ -5,15 +5,29 @@
 -->
 <%= provide(:title, 'SekouAPP') %>
 
-
 <%= render 'viewscout',Scout: @scout  %>
 
 <div class="content_upper">
-  <h3>User Menu</h3>
+  <h2>ユーザーメニュー</h2>
 </div>
-<div class="setting-container-detail">
 
-<h1> ここにスカウトからピックアップ表示する </h1>
+<div class="content_container">
+<% if @scouts.blank? %>
+  <P>現在、スカウトは特にありません。</p>
+<% else %>
+  <% @scouts.each do |scout| %>
+    <% if scout.summary? then%>
+      <div class="frame_index">
+        <div class="text">
+          <p><%= scout.client.name %> からのスカウト</p>
+          <p class="time"><%= dateformat scout.created_at %></p>
+          <%= link_to "#{scout.summary}",controller: 'scout_views' , action: 'detail' ,id: scout.id %>
+        </div><!--text -->
+      </div><!--frame_index -->
+    <% end %>
+  <% end %>
+<% end %>
+
 
       <tbody>
         <tr>
