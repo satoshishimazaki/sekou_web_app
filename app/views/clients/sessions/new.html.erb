@@ -1,26 +1,39 @@
-<h2>Log in</h2>
+<%= render 'layouts/header' %>
+<div class="register-session-container">
+  <div class="form-wrapper">
+    <h2>登録がお済みの企業様</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+
+      <% if devise_mapping.rememberable? -%>
+        <div class="field">
+          <%= f.check_box :remember_me, :class =>"heckbox"  %>
+          <%= f.label :remember_me, :class =>"label-remeber-me"  %>
+        </div>
+      <% end -%>
+
+      <div class="button-panel">
+        <%= f.submit "ログインする", :class=> "button" %>
+      </div>
+    <% end %>
+
+    <%= render "clients/shared/links" %>
+
+
+  </div><!--form-wrapper-->
+  <div class="request-service">
+    <a class="accept_btn" href="http://zielson.com/#sec4">初めての企業様はこちら</a>
+    <p>運営会社の株式会社Zielson(ジールソン)の</br>上記フォームへ入力してください。</br>担当より連絡いたします。</p>
   </div>
+</div><!--register-session-container-->
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "clients/shared/links" %>
+<%= render 'layouts/footer' %>
