@@ -1,24 +1,114 @@
+<div class="content_upper">
+  <h2>登録履歴書</h2>
+</div> <!--content_upper -->
 
-<p>ID<%= @user.number_id %></p>
-<p>苗字<%= @user.last_name %></p>
-<p>名前<%= @user.first_name %></p>
-<p>ミョウジ<%= @user.last_name_kana %></p>
-<p>ナマエ<%= @user.first_name_kana %></p>
-<p>電話番号<%= @user.phone_number %></p>
-<p>生年月日<%= @user.birth %></p>
-<p>性別<%= @user.sex %></p>
-<p>就労状況<%= @user.employment_status %></p>
-<p>郵便番号<%= @user.address_post %></p>
-<p>都道府県<%= @user.prefecture_id %></p>
-<p>市町村<%= @user.address_city %></p>
-<p>番地・建物名<%= @user.address_building %></p>
-<p>大学<%= @user.university %></p>
-<p>学部<%= @user.faculty %></p>
-<p>卒業年<%= @user.graduate %></p>
-<p>希望年収<%= @user.desired_salary %></p>
-<p>自己PR<%= @user.personal_summary%></p>
-
-
-<%= link_to "元に戻る" , :action => 'index' %>
-<%= link_to "スカウト作成" , {:controller => 'scouts', :action => 'new', id: @user.last_name } %>
-<%= link_to "スカウト作成" , new_scout_path(:id => @user.id) %>
+<div class="content_container">
+  <table class="table_1">
+    <tr>
+      <th>ID</th>
+      <td><%= @user.number_id %></td>
+    </tr>
+    <tr>
+      <th>苗字</th>
+      <td><%= @user.last_name %></td>
+    </tr>
+    <tr>
+      <th>名前</th>
+      <td><%= @user.first_name %></td>
+    </tr>
+    <tr>
+      <th>ミョウジ</th>
+      <td><%= @user.last_name_kana %></td>
+    </tr>
+    <tr>
+      <th>ナマエ</th>
+      <td><%= @user.first_name_kana %></td>
+    </tr>
+    <tr>
+      <th>電話番号</th>
+      <td><%= @user.phone_number %></td>
+    </tr>
+    <tr>
+      <th>生年月日</th>
+      <td><%= @user.birth %></td>
+    </tr>
+    <tr>
+      <th>性別</th>
+      <td><%= @user.sex %></td>
+    </tr>
+    <tr>
+      <th>就労状況</th>
+      <td><%= @user.employment_status %></td>
+    </tr>
+    <tr>
+      <th>郵便番号</th>
+      <td><%= @user.address_post %></td>
+    </tr>
+    <tr>
+      <th>都道府県</th>
+      <td><%= @user.prefecture_id %></td>
+    </tr>
+    <tr>
+      <th>市町村</th>
+      <td><%= @user.address_city %></td>
+    </tr>
+    <tr>
+      <th>番地・建物名</th>
+      <td><%= @user.address_building %></td>
+    </tr>
+    <tr>
+      <th>大学</th>
+      <td><%= @user.university %></td>
+    </tr>
+    <tr>
+      <th>学部</th>
+      <td><%= @user.faculty %></td>
+    </tr>
+    <tr>
+      <th>卒業年</th>
+      <td><%= @user.graduate %></td>
+    </tr>
+    <tr>
+      <th>希望年収</th>
+      <td><%= @user.desired_salary %></td>
+    </tr>
+    <tr>
+      <th>自己PR</th>
+      <td><%= @user.personal_summary %></td>
+    </tr>
+    <tr>
+      <th>資格情報</th>
+      <td>
+        <% @user.qualification.each do |qualification| %>
+          <%= qualification.name %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <th>希望職種</th>
+      <td>
+        <% @user.job_objectives.each do |job| %>
+          <%= job.name %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <th>職歴</th>
+      <td>
+        <% @careers.each do |career| %>
+          <%= career.company_name %>
+          <%= dateformat career.start %>~<%= dateformat career.end %></br>
+        <% end %>
+      </td>
+    </tr>
+  </table>
+  <div class="btn-position">
+    <%= link_to "履歴書を編集する",  edit_resume_path, class: "accept_btn" %>
+  </div>
+  <div class="btn-position">
+    <%= link_to "職歴情報を確認する",  careers_path, class: "accept_btn" %>
+  </div>
+</div>
+<div class="menu-back">
+  <%= link_to "履歴書ページへ戻る" , :action => 'index' %>
+</div>

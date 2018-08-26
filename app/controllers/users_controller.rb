@@ -11,6 +11,7 @@ layout "user_application"
 
   def show
     @user = User.find_by(id: current_user.id)
+    @careers = Career.where(user_id: current_user.id).order(:start => "DESC")
   end
 
   def edit

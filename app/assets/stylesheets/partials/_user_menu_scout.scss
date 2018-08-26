@@ -65,9 +65,10 @@
   }//frame_index
 }//scout-content-index
 
-
-
 @media #{$sp2} {
+  .accept_btn {
+    width: 80%;
+  }
   .scout-job-content-index {
     .frame_index {
       .text {
