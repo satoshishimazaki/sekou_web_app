@@ -101,7 +101,7 @@ Rails.application.configure do
     port: 587,
     authentication: :plain,
     user_name: 'zielson.info@gmail.com',
-    password: 'zielson913'
+    password: 'zsxheisbxslxtygy'
     # user_name: Rails.application.secrets.SMTP_EMAIL,
     # password: Rails.application.secrets.SMTP_PASSWORD
   }
