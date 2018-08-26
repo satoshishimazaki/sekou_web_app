@@ -29,7 +29,7 @@ class UserSettingController < ApplicationUserController
       if @user.valid_password?(resign_params)
         @user.update(:quit_flag => 1)
         # @user = User.find(@user.id)
-        NotificationMailer.quit_message(@user).deliver
+        # NotificationMailer.quit_message(@user).deliver
         format.js
       else
         format.js { render :informmistake }
@@ -41,6 +41,7 @@ class UserSettingController < ApplicationUserController
   end
 
   def logininfo
+    @user = User.find(current_user.id)
   end
 
   def viewconfig

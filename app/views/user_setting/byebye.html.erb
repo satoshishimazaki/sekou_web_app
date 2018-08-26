@@ -12,7 +12,7 @@
   * 画面のヘッダーが最初のトップページの状態で、メニュー画面のようなページがない
 -->
 
-<!-- 
+<!--
 *jQueryが効かないのでAjaxがうまくいかない？
   * できれば退会ボタンを押したらパスワード入力させて退会手続きにさせる。
 -->
@@ -26,9 +26,8 @@
     <p>本当に退会しますか？</p>
   </div><!--confirm-quit-head -->
   <%= link_to "退会する", {action: :byebyeresult}, remote: true, class: "btn quit-btn" %>
-<div id="result-accept">
-  <div id="result-quit">
-  </div><!--result-quit ajaxのresult箇所 -->
+  <div id="result-accept"></div>
+  <div id="result-quit"></div><!--result-quit ajaxのresult箇所 -->
 </div><!--setting-container-detail -->
 <!-- ここはいらなさそう。なぜなら、退会するから設定画面に戻ることはない。
   <tr>

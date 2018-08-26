@@ -12,62 +12,22 @@
 -->
 
 <div class="content_upper">
-  <h3>メールアドレスの変更</h3>
+  <h3>ログイン情報の確認</h3>
 </div>
+
 <div class="setting-container-detail">
   <div class="registration-container">
-    <p>登録済みのメールアドレス</p>
+    <p>登録しているメールアドレス</p>
     <div class="mail-text">
-      <p>test@example.com</p>
+      <%= @user.email %>
     </div><!--mail-text -->
   </div><!--registration-container -->
 
-  <div class="register-new-mail">
-    <div class="display-title">
-      <h3>新しいメールアドレスへの変更</h3>
-    </div><!--display-title -->
-    <div class="display-detail">
-      <form>
-        <div class="has-float-label_full_lg">
-          <input id="eee" type="text" placeholder=""/>
-        </div>
-      </form><!--from -->
-      <div class="update-btn">変更する</div>
-    </div><!--display-detail -->
-  </div><!--register-new-mail -->
+  <p>登録メールアドレス、パスワードを変更をご希望の場合は、お手数ですが運営者であるジョブ建設までお問い合わせください。</p>
+
 
   <div class="return-guide">
     <%= link_to "設定画面へ戻る" , :action => 'index' %>
   </div>
-</div><!--setting-container-detail -->
 
-<div class="setting-container-detail">
-  <div class="register-new-pass">
-    <div class="display-detail">
-      <h3>現在のパスワード</h3>
-      <form>
-        <div class="has-float-label_full_lg">
-          <input id="eee" type="text" placeholder=""/>
-        </div>
-      </form><!--from -->
-      <%= link_to "パスワードを忘れた方はこちら" , edit_user_password_url %>
-      <h3>新しいパスワード</h3>
-      <form>
-        <div class="has-float-label_full_lg">
-          <input id="eee" type="text" placeholder=""/>
-        </div>
-      </form><!--from -->
-      <h3>もう一度新しいパスワード</h3>
-      <form>
-        <div class="has-float-label_full_lg">
-          <input id="eee" type="text" placeholder=""/>
-        </div>
-      </form><!--from -->
-    </div><!--display-detail -->
-    <div class="update-btn">変更する</div>
-  </div><!--register-new-pass -->
-
-  <div class="return-guide">
-    <%= link_to "設定画面へ戻る" , :action => 'index' %>
-  </div>
 </div><!--setting-container-detail -->
