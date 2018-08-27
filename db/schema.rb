@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2018_07_12_000004) do
     t.string "company_name"
     t.date "start"
     t.date "end"
-    t.string "employee_pattern"
+    t.integer "employee_pattern_id"
     t.string "career_outline"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

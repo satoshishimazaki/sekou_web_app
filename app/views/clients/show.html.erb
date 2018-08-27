@@ -9,6 +9,10 @@
         <td><%= @client.name %></td>
       </tr>
       <tr>
+        <th>郵便番号</th>
+        <td><%= @client.address_post %></td>
+      </tr>
+      <tr>
         <th>住所</th>
         <td><%= @client.prefecture_id %> <%= @client.address_city %> <%= @client.address_building %></td>
       </tr>
@@ -27,14 +31,17 @@
       <tr>
         <th>従業員数</th>
         <td><%= @client.employees_number %></td>
+        <td><%= @client.employees_memo %></td>
       </tr>
       <tr>
         <th>資本金</th>
         <td><%= @client.stock %></td>
+        <td><%= @client.stock_memo %></td>
       </tr>
       <tr>
         <th>就労時間</th>
         <td>開始<%= @client.time_start %><br>終了<%= @client.time_end %></td>
+        <td>メモ<%= @client.time_memo%>
       </tr>
       <tr>
         <th>平均年齢</th>
@@ -52,6 +59,11 @@
         <th>会社ホームページ</th>
         <td><%= @client.homepage %></td>
       </tr>
+      <tr>
+        <th>担当者</th>
+        <td><%= @client.recruiter %></td>
+      </tr>
+
     </table>
     <div class="btn-position">
       <%= link_to "企業情報を編集する",  edit_coinfo_path, class: "accept_btn" %>

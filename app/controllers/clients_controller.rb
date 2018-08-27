@@ -12,7 +12,7 @@ class ClientsController < ApplicationClientController
 
   def show
     @client = Client.find_by(id: current_client.id)
-    @domains = Domain.where(client_id: current_client.id)
+    #@c_domains = ClientDomain.find_by(client_id: current_client.id)
   end
 
 
