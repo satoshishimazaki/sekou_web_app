@@ -1,14 +1,4 @@
-<!--
-* userモデルとの整合性をとって、メールアドレスの記入を不要にする or 認証をとってバッティングしないようにする。
-という設定が必要。
 
-いくつか、フィールドの制限(integerとか。testとか。が縛りが弱いので直す。)
-
-* 入力途中でフォームを送信できてしまうので、必須回答を埋めないと送信できないように制限をかける。
-
-final edited by takuya at 2018.7.27
-
--->
 <%= form_with model: @career, local: true do |form| %>
 
 <% if @career.errors.any? %>
