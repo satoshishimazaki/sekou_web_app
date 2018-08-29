@@ -41,7 +41,7 @@ layout "user_application"
         :company_name,
         :start,
         :end,
-        :employee_pattern,
+        :employment_pattern,
         :career_outline,
         :domain_ids
       )

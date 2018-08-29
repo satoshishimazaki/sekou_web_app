@@ -15,7 +15,7 @@ class CreateDomains < ActiveRecord::Migration[5.2]
       t.timestamps
     end
 
-    #顧客の事業領域
+    #クライアント企業の事業領域
     create_table :client_domains do |t|
       t.integer :client_id
       t.integer :domain_id

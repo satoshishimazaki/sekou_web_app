@@ -26,7 +26,7 @@ class ClientsController < ApplicationClientController
     redirect_to coinfo_path(@client)
   end
 
-# employee accountだけじゃなくて関連するもの全て消去だと思うので、
+# userだけじゃなくて関連するもの全て消去だと思うので、
 #　コーディングはし直す必要あり。 edited by takuya 08.01
 
 #  def destroy
