@@ -7,7 +7,7 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
   end
 
   def after_sign_in_path_for(resource)
-       user_menu_path
+      home_register_fin_path
   end
 
    #GET /resource/confirmation/new
