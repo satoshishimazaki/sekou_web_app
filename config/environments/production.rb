@@ -91,7 +91,7 @@ Rails.application.configure do
   end
 
   config.action_mailer.default_url_options = {
-      host: 'http://153.126.131.93/'
+      host: 'http://job-kensetsu.com'
   }
   # config.action_mailer.default_url_options = {
   #   # host: 'localhost',
@@ -103,8 +103,8 @@ Rails.application.configure do
     address: 'smtp.gmail.com',
     port: 587,
     authentication: :plain,
-    user_name: 'zielson.info@gmail.com',
-    password: 'zsxheisbxslxtygy'
+    user_name: 'noreply@job-kensetsu.com',
+    password: 'edison0209913'
     # user_name: Rails.application.secrets.SMTP_EMAIL,
     # password: Rails.application.secrets.SMTP_PASSWORD
   }

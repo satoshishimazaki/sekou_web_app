@@ -1,10 +1,10 @@
 class NotificationMailer < ActionMailer::Base
-  default from: 'zielson.info@gmail.com'
+  default from: 'noreply@job-kensetsu.com'
 
   def quit_message(user)
     @user = user
     mail(
-      to: "zielson.info@gmail.com",
+      to: "support@job-kensetsu.com",
       suject: "退会希望のユーザーのお知らせ"
     ) do |format|
       format.html

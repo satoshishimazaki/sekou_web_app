@@ -13,7 +13,11 @@ module ApplicationHelper
   end
 
   def dateformat(date)
-    date.strftime("%Y年%m月%d日")
+    if date.blank?
+      return ""
+    else
+      date.strftime("%Y年%m月%d日")
+    end
   end
 
 end
