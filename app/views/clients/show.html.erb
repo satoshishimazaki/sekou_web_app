@@ -28,21 +28,42 @@
         <th>事業概要</th>
         <td><%= @client.domain_text %></td>
       </tr>
-      <tr>
-        <th>従業員数</th>
-        <td><%= @client.employees_number %></td>
-        <td><%= @client.employees_memo %></td>
-      </tr>
-      <tr>
-        <th>資本金</th>
-        <td><%= @client.stock %></td>
-        <td><%= @client.stock_memo %></td>
-      </tr>
-      <tr>
-        <th>就労時間</th>
-        <td>開始<%= @client.time_start %><br>終了<%= @client.time_end %></td>
-        <td>メモ<%= @client.time_memo%>
-      </tr>
+      <% if @client.employees_memo.blank? %>
+        <tr>
+          <th>従業員数</th>
+          <td><%= @client.employees_number %>名</td>
+        </tr>
+      <% else %>
+        <tr>
+          <th rowspan="2">従業員数</th>
+          <td><%= @client.employees_number %>名</td>
+        </tr>
+        <tr><td><%= @client.employees_memo %></td></tr>
+      <% end %>
+      <% if @client.stock_memo.blank? %>
+        <tr>
+          <th>資本金</th>
+          <td><%= @client.stock %></td>
+        </tr>
+      <% else %>
+        <tr>
+          <th rowspan="2">資本金</th>
+          <td><%= @client.stock %></td>
+        </tr>
+        <tr><td><%= @client.stock_memo %></td></tr>
+      <% end %>
+      <% if @client.time_memo.blank? %>
+        <tr>
+          <th>就労時間</th>
+          <td>開始<%= @client.time_start %><br>終了<%= @client.time_end %></td>
+        </tr>
+      <% else %>
+        <tr>
+          <th rowspan="2">就労時間</th>
+          <td>開始<%= @client.time_start %><br>終了<%= @client.time_end %></td>
+        </tr>
+        <tr><td>メモ<%= @client.time_memo%></td></tr>
+      <% end %>
       <tr>
         <th>平均年齢</th>
         <td><%= @client.average_ages %></td>
