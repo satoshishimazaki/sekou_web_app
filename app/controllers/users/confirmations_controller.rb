@@ -9,7 +9,7 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
   def after_sign_in_path_for(resource)
        user_menu_path
   end
-    
+
    #GET /resource/confirmation/new
    def new
      super
@@ -17,7 +17,14 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
 
    #POST /resource/confirmation
    def create
-     super
+     self.resource = resource_class.send_confirmation_instructions(resource_params)
+     yield resource if block_given?
+
+     if successfully_sent?(resource)
+       redirect_to home_register_fin_path
+     else
+       respond_with(resource)
+     end
    end
 
    #GET /resource/confirmation?confirmation_token=abcdef

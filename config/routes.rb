@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'home#index'
   get 'thanks' => 'home#thanks', as: :home_thanks
+  get 'register_fin' => 'home#register_fin', as: :home_register_fin
   get 'test' => 'home#test', as: :home_test
   get 'dbindex' => 'home#dbindex', as: :home_dbindex
   get 'detailscout' => 'home#detailscout', as: :home_detailscout
