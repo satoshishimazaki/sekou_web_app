@@ -41,4 +41,10 @@ module ApplicationHelper
     end
   end
 
+  def tag_manage
+    if Rails.env.production?
+      render 'layouts/tag'
+    end
+  end
+
 end

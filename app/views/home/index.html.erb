@@ -12,7 +12,7 @@
 
 <div class="top-full-container">
   <div class="pc-main-visual" style= "background-image:url(<%= asset_path "bg-main-visual-pc03.jpg"%>)">
-    <a href="/users/sign_up" class="top-guide-message-btn">まずはカンタン無料登録！</a>
+    <%= link_to "まずは無料登録！", new_user_registration_path, class: "top-guide-message-btn", :onclick => "ga('send', 'event', 'click', 'form_tap', {'nonInteraction': 1});" %>
     <a href="/users/sign_in" class="top-guide-login-btn">登録済みの</br>方はこちら</a>
   </div>
   <div class="sp-main-visual" style= "background-image:url(<%= asset_path "bg-main-visual-sp03.jpg"%>)">
@@ -108,7 +108,7 @@
         <div class="balloon1">
           <p>簡単１０秒！<br class="br-sp" />まずはメールアドレスを登録！</p>
         </div>
-        <a href="/users/sign_up" class="top-guide-message-btn">まずはカンタン無料登録！</a>
+        <%= link_to "まずは無料登録！", new_user_registration_path, class: "top-guide-message-btn", :onclick => "ga('send', 'event', 'click', 'form_tap', {'nonInteraction': 1});" %>
       </div>
       </div>
     </div><!--section-flow-->
@@ -168,7 +168,7 @@
         </ul> -->
       </div><!--top-contact-mail-term-link -->
       <div class="top-contact-btn">
-        <a href="/users/sign_up" class="top-guide-message-btn">まずはカンタン無料登録！</a>
+        <%= link_to "まずは無料登録！", new_user_registration_path, class: "top-guide-message-btn", :onclick => "ga('send', 'event', 'click', 'form_tap', {'nonInteraction': 1});" %>
       </div><!--top-contact-btn -->
       <div class="top-contact-caution">
         <ul>
