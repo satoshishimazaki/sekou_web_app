@@ -13,6 +13,9 @@ class HomeController < ApplicationController
   # 本登録thanks
   def register_fin
     render :layout => 'static_application'
+    now = Time.now
+    @user = User.find_by(email: params[:email])
+    @user.update(:confirmed_at => now)
   end
 
   def test
