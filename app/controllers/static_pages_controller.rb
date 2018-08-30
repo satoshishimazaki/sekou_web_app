@@ -3,8 +3,11 @@ class StaticPagesController <  ActionController::Base
   ##なぜならば、applicationControlerで、ユーザー認証をしないと
   ## スカウトページなどを閲覧できないようにリダイレクトするコードを実装しているため
   def companysummary
-    @user = 1
-    if @user = 1
+    @user = User.find_by(id: params[:user_id])
+    @client = Client.find_by(id: params[:client_id])
+    if @user == nil && @client == nil
+      render :layout => 'static_application'
+    elsif !@user.blank?
       render :layout => 'user_application'
     else
       render :layout => 'client_application'
@@ -12,36 +15,48 @@ class StaticPagesController <  ActionController::Base
   end
 
   def contactus
-    @user = 1
-    if @user = 1
+    @user = User.find_by(id: params[:user_id])
+    @client = Client.find_by(id: params[:client_id])
+    if @user == nil && @client == nil
       render :layout => 'static_application'
+    elsif !@user.blank?
+      render :layout => 'user_application'
     else
       render :layout => 'client_application'
     end
   end
 
   def convention
-    @user = 1
-    if @user = 1
+    @user = User.find_by(id: params[:user_id])
+    @client = Client.find_by(id: params[:client_id])
+    if @user == nil && @client == nil
       render :layout => 'static_application'
+    elsif !@user.blank?
+      render :layout => 'user_application'
     else
       render :layout => 'client_application'
     end
   end
 
   def faq
-    @user = 1
-    if @user = 1
+    @user = User.find_by(id: params[:user_id])
+    @client = Client.find_by(id: params[:client_id])
+    if @user == nil && @client == nil
       render :layout => 'static_application'
+    elsif !@user.blank?
+      render :layout => 'user_application'
     else
       render :layout => 'client_application'
     end
   end
 
   def privacypolicy
-    @user = 1
-    if @user = 1
+    @user = User.find_by(id: params[:user_id])
+    @client = Client.find_by(id: params[:client_id])
+    if @user == nil && @client == nil
       render :layout => 'static_application'
+    elsif !@user.blank?
+      render :layout => 'user_application'
     else
       render :layout => 'client_application'
     end

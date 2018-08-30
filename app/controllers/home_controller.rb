@@ -5,6 +5,11 @@ class HomeController < ApplicationController
     render :layout => 'application'
   end
 
+  # 仮登録mail
+  def thanks
+    render :layout => 'static_application'
+  end
+
   def test
     render :layout => 'client_application'
   end

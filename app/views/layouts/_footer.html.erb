@@ -3,14 +3,38 @@
 <div class="container">
  <div class="row">
      <div class="logo"><strong>
-       <a href="/"><%= image_tag("blue-logo02.svg", :alt => "ジョブ建設青色ロゴ") %></a>
+      <% if !current_user.blank? %>
+        <%= link_to user_menu_path do %>
+          <%= image_tag("blue-logo02.svg", :alt => "ジョブ建設青色ロゴ") %>
+        <% end %>
+      <% elsif !current_client.blank? %>
+        <%= link_to client_menu_path do %>
+          <%= image_tag("blue-logo02.svg", :alt => "ジョブ建設青色ロゴ") %>
+        <% end %>
+      <% else %>
+          <a href="/"><%= image_tag("blue-logo02.svg", :alt => "ジョブ建設青色ロゴ") %></a>
+      <% end %>
      </strong></div>
      <ul>
-       <li><%= link_to "運営会社", companysummary_path %></li>
-       <li><%= link_to "利用規約", convention_path %></li>
-       <li><%= link_to "プライバシーポリシー", privacypolicy_path %></li>
-       <li><%= link_to "よくあるご質問", faq_path %></li>
-       <li><%= link_to "お問い合わせ", contactus_path %></li>
+       <% if !current_user.blank? %>
+         <li><%= link_to "運営会社", companysummary_path(user_id: current_user.id) %></li>
+         <li><%= link_to "利用規約", convention_path(user_id: current_user.id) %></li>
+         <li><%= link_to "プライバシーポリシー", privacypolicy_path(user_id: current_user.id) %></li>
+         <li><%= link_to "よくあるご質問", faq_path(user_id: current_user.id) %></li>
+         <li><%= link_to "お問い合わせ", contactus_path(user_id: current_user.id) %></li>
+       <% elsif !current_client.blank? %>
+         <li><%= link_to "運営会社", companysummary_path(client_id: current_client.id) %></li>
+         <li><%= link_to "利用規約", convention_path(client_id: current_client.id) %></li>
+         <li><%= link_to "プライバシーポリシー", privacypolicy_path(client_id: current_client.id) %></li>
+         <li><%= link_to "よくあるご質問", faq_path(client_id: current_client.id) %></li>
+         <li><%= link_to "お問い合わせ", contactus_path(client_id: current_client.id) %></li>
+       <% else %>
+         <li><%= link_to "運営会社", companysummary_path %></li>
+         <li><%= link_to "利用規約", convention_path %></li>
+         <li><%= link_to "プライバシーポリシー", privacypolicy_path %></li>
+         <li><%= link_to "よくあるご質問", faq_path %></li>
+         <li><%= link_to "お問い合わせ", contactus_path %></li>
+       <% end %>
      </ul>
       <p class="copy">&copy;&nbsp;ジョブ建設</p>
  </div><!--row-->

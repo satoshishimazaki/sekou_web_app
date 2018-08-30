@@ -6,7 +6,7 @@
        <div class="container-fluid">
          <div class="logo">
            <a href="/" id ="pate-top">
-             <%= image_tag("white-logo.svg", :alt => "施工ネット") %>
+             <%= image_tag("white-logo02.svg", :alt => "ジョブ建設") %>
            </a>
          </div>
          <div class="con-domain">
@@ -16,32 +16,100 @@
       </div><!--row-->
     </div><!--container-->
   </header>
-  <% else %>
+  <% elsif !@user == nil %>
   <header>
-    <div class="container">
-     <div class="row">
-       <div class="container-fluid">
-         <h1>施工ネット 測量・設計</h1>
-          <nav class="hidden-md-down-cl">
-
+  <div class="container">
+   <div class="row">
+     <div class="container-fluid">
+       <!-- <div class="sub-title">
+          <p>測量に特化したサービス</p>
+       </div> -->
+       <!-- <h1><a href="/"><font color = "ffffff">施工ネット.com</font></a></h1> -->
+       <div class="logo">
+         <%= link_to user_menu_path do %>
+           <%= image_tag("white-logo02.svg", :alt => "ジョブ建設") %>
+         <% end %>
+       </div><!--logo-->
+       <div class="con-domain">
+         <p>測量・設計</p>
+       </div><!--con-domain-->
+        <nav class="hidden-md-down">
+          <ul>
+            <li><%= link_to 'スカウト一覧', scout_views_path %></li>
+            <!-- <li><a href="/#point">メッセージ</a></li> -->
+            <li><%= link_to '履歴書', resume_path %></li>
+            <li><a class="toggle menu">設定</a>
+              <ul class="inner child">
+                <li class="inner-li_1"><%= link_to 'ログイン情報', user_setting_logininfo_path %></li>
+                <li class="inner-li_2"><%= link_to '通知機能', user_setting_popupconfig_path %></li>
+                <li class="inner-li_3"><%= link_to '退会', user_setting_byebye_path %></li>
+              </ul>
+            </li>
+            <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+          </ul>
+        </nav>
+        <div id="nav-drawer">
+          <input id="nav-input" type="checkbox" class="nav-unshown">
+          <label id="nav-open" for="nav-input"><span></span></label>
+          <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+          <div id="nav-content">
             <ul>
-              <li><a href="/#service">求職者</a></li>
-              <li><a href="/#point">スカウト</a></li>
-              <li><a href="/#flow">メッセージ</a></li>
-              <li><a href="/#flow">クリップ</a></li>
-              <li><a class="toggle menu" href="/#faq">設定</a>
+              <li class="nav-li_1"><%= link_to 'スカウト一覧', scout_views_path %></li>
+              <!-- <li class="nav-li_1"><a href="/#point">メッセージ</a></li> -->
+              <li class="nav-li_1"><%= link_to '履歴書', resume_path %></li>
+              <li class="nav-li_2">設定
                 <ul class="inner child">
-                  <li class="inner-li_1">公開情報</li>
-                  <li class="inner-li_2">ログイン情報</li>
-                  <li class="inner-li_3">通知機能</li>
-                  <li class="inner-li_4">退会</li>
+                  <li class="nav-li_1"><%= link_to 'ログイン情報', user_setting_logininfo_path %></li>
+                  <li class="nav-li_1"><%= link_to '通知機能', user_setting_popupconfig_path %></li>
+                  <li class="nav-li_1"><%= link_to '退会', user_setting_byebye_path %></li>
                 </ul>
               </li>
+              <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
             </ul>
-          </nav>
+          </div>
+        </div>
       </div><!--container-fluid-->
     </div><!--row-->
-    </div><!--container-->
+  </div><!--container-->
+  </header>
+  <% else !@client == nil %>
+  <header>
+  <div class="container">
+   <div class="row">
+     <div class="container-fluid">
+       <div class="logo">
+          <%= link_to client_menu_path do %>
+            <%= image_tag("white-logo02.svg", :alt => "ジョブ建設") %>
+          <% end %>
+       </div><!--logo-->
+       <div class="con-domain">
+         <p>測量・設計</p>
+       </div><!--con-domain-->
+        <nav class="hidden-md-down-cl">
+          <ul>
+            <li><%= link_to 'スカウト管理', scout_manage_path %></li>
+            <li><%= link_to '企業情報', coinfo_path %></li>
+            <!-- <li><a href="/#flow">メッセージ</a></li> -->
+            <li><%= link_to 'ログアウト', destroy_client_session_path, method: :delete %></li>
+          </ul>
+        </nav>
+        <div id="nav-drawer">
+          <input id="nav-input" type="checkbox" class="nav-unshown">
+          <label id="nav-open" for="nav-input"><span></span></label>
+          <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+          <div id="nav-content">
+            <ul>
+              <li class="nav-li_1"><%= link_to 'スカウト管理', scout_manage_path %></li>
+              <li class="nav-li_1"><%= link_to '企業情報', coinfo_path %></li>
+              <!-- <li class="nav-li_1"><a href="/#flow">メッセージ</a></li> -->
+              <!-- <li class="nav-li_1"><a href="/#flow">クリップ</a></li> -->
+              <li><%= link_to 'ログアウト', destroy_client_session_path, method: :delete %></li>
+            </ul>
+          </div>
+        </div>
+      </div><!--container-fluid-->
+    </div><!--row-->
+  </div><!--container-->
   </header>
   <% end %>
 <% end %>
