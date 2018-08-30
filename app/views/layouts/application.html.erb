@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= yield(:title) %></title>
+    <%= gtm_script %>
+    <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -11,6 +12,7 @@
   </head>
 
   <body>
+    <%= gtm_noscript %>
     <div id="wrapper">
       <%= yield :header %>
       <div class="container py-4 px-0">

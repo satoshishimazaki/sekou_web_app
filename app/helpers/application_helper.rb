@@ -20,4 +20,25 @@ module ApplicationHelper
     end
   end
 
+  def full_title(page_title)
+    base_title = "ジョブ建設 測量・設計"
+    if page_title.empty?
+      base_title
+    else
+      "#{page_title} | #{base_title}"
+    end
+  end
+
+  def gtm_script
+    if Rails.env.production?
+      render 'layouts/gtm'
+    end
+  end
+
+  def gtm_noscript
+    if Rails.env.production?
+      render 'layouts/gtm_noscript'
+    end
+  end
+
 end
