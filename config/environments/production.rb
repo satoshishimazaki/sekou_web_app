@@ -91,7 +91,7 @@ Rails.application.configure do
   end
 
   config.action_mailer.default_url_options = {
-      host: 'http://job-kensetsu.com'
+      host: 'https://job-kensetsu.com'
   }
   # config.action_mailer.default_url_options = {
   #   # host: 'localhost',
