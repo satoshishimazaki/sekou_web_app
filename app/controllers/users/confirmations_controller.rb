@@ -7,7 +7,7 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
   end
 
   def after_sign_in_path_for(resource)
-      home_register_fin_path
+      user_menu_path
   end
 
    #GET /resource/confirmation/new
@@ -17,19 +17,20 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
 
    #POST /resource/confirmation
    def create
-     self.resource = resource_class.send_confirmation_instructions(resource_params)
-     yield resource if block_given?
-
-     if successfully_sent?(resource)
-       redirect_to home_register_fin_path
-     else
-       redirect_to home_register_fin_path
-     end
+     super
    end
 
    #GET /resource/confirmation?confirmation_token=abcdef
    def show
-     super
+     self.resource = resource_class.confirm_by_token(params[:confirmation_token])
+     yield resource if block_given?
+
+     if resource.errors.empty?
+
+       redirect_to home_register_fin_path
+     else
+       respond_with_navigational(resource.errors, status: :unprocessable_entity){ render :new }
+     end
    end
 
    protected
