@@ -23,7 +23,7 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
      if successfully_sent?(resource)
        redirect_to home_register_fin_path
      else
-       respond_with(resource)
+       redirect_to home_register_fin_path
      end
    end
 
