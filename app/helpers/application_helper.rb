@@ -53,4 +53,10 @@ module ApplicationHelper
     end
   end
 
+  def tag_adwords
+    if Rails.env.production?
+      render 'layouts/tag/adwords'
+    end
+  end
+
 end
