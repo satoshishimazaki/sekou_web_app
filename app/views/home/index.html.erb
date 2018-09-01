@@ -12,7 +12,7 @@
 
 <div class="top-full-container">
   <div class="pc-main-visual" style= "background-image:url(<%= asset_path "bg-main-visual-pc03.jpg"%>)">
-    <%= link_to "まずは無料登録！", new_user_registration_path, class: "top-guide-message-btn", :onclick => "ga('send', 'event', 'click', 'form_tap', {'nonInteraction': 1});" %>
+    <%= link_to "まずは無料登録！", new_user_registration_path, onclick: "ga('send', 'event', 'click', 'form_tap', {'nonInteraction': 1});", class: "top-guide-message-btn" %>
     <a href="/users/sign_in" class="top-guide-login-btn">登録済みの</br>方はこちら</a>
   </div>
   <div class="sp-main-visual" style= "background-image:url(<%= asset_path "bg-main-visual-sp03.jpg"%>)">

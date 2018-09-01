@@ -43,7 +43,13 @@ module ApplicationHelper
 
   def tag_manage
     if Rails.env.production?
-      render 'layouts/tag'
+      render 'layouts/tag/tag'
+    end
+  end
+
+  def tag_hotjar
+    if Rails.env.production?
+      render 'layouts/tag/hotjar'
     end
   end
 
