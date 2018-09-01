@@ -21,7 +21,7 @@ module ApplicationHelper
   end
 
   def full_title(page_title)
-    base_title = "ジョブ建設 測量・設計"
+    base_title = "ジョブ建設 測量・設計 測量・設計の専門スカウトサービス"
     if page_title.empty?
       base_title
     else
