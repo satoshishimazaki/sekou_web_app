@@ -42,7 +42,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :sex
       t.string :employment_status
       t.string :address_post
-      t.integer :prefecture_id
+      t.string :prefecture_id
       t.string :address_city
       t.string :address_building
       t.string :university

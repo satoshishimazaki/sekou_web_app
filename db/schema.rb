@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2018_07_12_000004) do
     t.string "company_name"
     t.date "start"
     t.date "end"
-    t.integer "employee_pattern_id"
+    t.string "employee_pattern"
     t.string "career_outline"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -55,10 +55,6 @@ ActiveRecord::Schema.define(version: 2018_07_12_000004) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.string "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string "unconfirmed_email"
     t.integer "failed_attempts", default: 0, null: false
     t.string "unlock_token"
     t.datetime "locked_at"
@@ -84,7 +80,6 @@ ActiveRecord::Schema.define(version: 2018_07_12_000004) do
     t.string "recruiter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["confirmation_token"], name: "index_clients_on_confirmation_token", unique: true
     t.index ["email"], name: "index_clients_on_email", unique: true
     t.index ["reset_password_token"], name: "index_clients_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_clients_on_unlock_token", unique: true
