@@ -21,7 +21,7 @@ class User < ApplicationRecord
             :employment_status,
             :address_city,
             :address_building,
-            length: { maximum: 30, too_long: "最大%{count}文字まで使用できます"}
+            length: { maximum: 50, too_long: "最大%{count}文字まで使用できます"}
 
   validates :personal_summary,
             length: { maximum: 300, too_long: "最大%{count}文字まで使用できます"}

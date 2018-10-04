@@ -171,7 +171,7 @@ ActiveRecord::Schema.define(version: 2018_07_12_000004) do
     t.string "sex"
     t.string "employment_status"
     t.string "address_post"
-    t.integer "prefecture_id"
+    t.string "prefecture_id"
     t.string "address_city"
     t.string "address_building"
     t.string "university"
