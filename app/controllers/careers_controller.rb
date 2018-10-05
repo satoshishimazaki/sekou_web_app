@@ -41,9 +41,9 @@ layout "user_application"
         :company_name,
         :start,
         :end,
-        :employment_pattern,
+        :employee_pattern,
         :career_outline,
-        :domain_ids
+        {:domain_ids =>[]}
       )
     end
 
