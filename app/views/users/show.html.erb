@@ -9,23 +9,23 @@
       <td><%= @user.number_id %></td>
     </tr>
     <tr>
-      <th>苗字</th>
+      <th>苗字　※承諾後に公開</th>
       <td><%= @user.last_name %></td>
     </tr>
     <tr>
-      <th>名前</th>
+      <th>名前　※承諾後に公開</th>
       <td><%= @user.first_name %></td>
     </tr>
     <tr>
-      <th>ミョウジ</th>
+      <th>ミョウジ　※承諾後に公開</th>
       <td><%= @user.last_name_kana %></td>
     </tr>
     <tr>
-      <th>ナマエ</th>
+      <th>ナマエ　※承諾後に公開</th>
       <td><%= @user.first_name_kana %></td>
     </tr>
     <tr>
-      <th>電話番号</th>
+      <th>電話番号　※承諾後に公開</th>
       <td><%= @user.phone_number %></td>
     </tr>
     <tr>
@@ -73,7 +73,7 @@
       <td><%= @user.desired_salary %></td>
     </tr>
     <tr>
-      <th>自己PR</th>
+      <th>自己PR・その他</th>
       <td><%= @user.personal_summary %></td>
     </tr>
     <tr>
@@ -93,7 +93,7 @@
       </td>
     </tr>
     <tr>
-      <th>職歴</th>
+      <th>職歴　※社名は承諾後に公開</th>
       <td>
         <% @careers.each do |career| %>
           <%= career.company_name %>

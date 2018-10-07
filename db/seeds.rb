@@ -1,7 +1,8 @@
 # coding: utf-8
 Domain.create(:name => '測量')
 Domain.create(:name => '設計')
-Domain.create(:name => '総合土木')
+Domain.create(:name => '総合建設')
+Domain.create(:name => 'その他')
 
 Qualification.create(:name => '測量士資格')
 Qualification.create(:name => '測量士補資格')
