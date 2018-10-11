@@ -61,6 +61,8 @@ group :development do
   gem 'mailcatcher'
 
   gem 'annotate'
+
+  gem 'capistrano'
 end
 
 group :test do
